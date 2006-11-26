@@ -1,0 +1,654 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+<path>s76c.ac</path>
+ 
+
+ 
+  <animation>
+  <type>select</type>
+  <object-name>blade1</object-name>
+  <object-name>blade2</object-name>
+  <object-name>blade3</object-name>
+  <object-name>blade4</object-name>
+  <condition>
+   <less-than>
+    <property>/rotors/main/rpm</property>
+    <value>351</value>
+   </less-than>
+  </condition>
+ </animation>
+
+   <animation>
+  <type>select</type>
+  <object-name>fastblade1</object-name>
+  <object-name>fastblade2</object-name>
+  <object-name>fastblade3</object-name>
+  <object-name>fastblade4</object-name>
+  <condition>
+   <greater-than>
+    <property>/rotors/main/rpm</property>
+    <value>350</value>
+   </greater-than>
+  </condition>
+ </animation>
+
+   <animation>
+  <type>select</type>
+  <object-name>tailfast</object-name>
+  <condition>
+   <greater-than>
+    <property>/rotors/tail/rpm</property>
+    <value>500</value>
+   </greater-than>
+  </condition>
+ </animation>
+
+   <animation>
+  <type>select</type>
+  <object-name>TailRotor</object-name>
+  <condition>
+   <less-than>
+    <property>/rotors/tail/rpm</property>
+    <value>501</value>
+   </less-than>
+  </condition>
+ </animation>
+
+     
+ <animation>
+  <type>spin</type>
+  <object-name>blade1</object-name>
+  <object-name>blade2</object-name>
+  <object-name>blade3</object-name>
+  <object-name>blade4</object-name>
+ <property>/rotors/main/rpm</property>
+ <factor>0.25</factor>
+  <center>
+  <x-m>0.021</x-m>
+   <y-m>0.0</y-m>
+   <z-m>0.2</z-m>
+  </center>
+  <axis>
+   <x>-0.087</x>
+   <y>0.0</y>
+   <z>0.996</z>
+  </axis>
+ </animation>
+
+  <animation>
+  <type>rotate</type>
+ <object-name>fastblade1</object-name>
+ <property>/rotors/main/cone-deg</property>
+  <center>
+  <x-m>0</x-m>
+   <y-m>0</y-m>
+   <z-m>0</z-m>
+  </center>
+  <axis>
+   <x>0.0</x>
+   <y>-1.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>
+
+      <animation>
+  <type>rotate</type>
+  <object-name>fastblade2</object-name>
+ <property>/rotors/main/cone-deg</property>
+  <center>
+  <x-m>0.021</x-m>
+   <y-m>0.0</y-m>
+   <z-m>0.2</z-m>
+  </center>
+  <axis>
+   <x>1.0</x>
+   <y>0.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>
+
+      <animation>
+  <type>rotate</type>
+  <object-name>fastblade3</object-name>
+ <property>/rotors/main/cone-deg</property>
+  <center>
+  <x-m>0.0</x-m>
+   <y-m>0.0</y-m>
+   <z-m>0.0</z-m>
+  </center>
+  <axis>
+   <x>0.0</x>
+   <y>1.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>
+
+      <animation>
+  <type>rotate</type>
+  <object-name>fastblade4</object-name>
+ <property>/rotors/main/cone-deg</property>
+  <center>
+  <x-m>0.0</x-m>
+   <y-m>0.0</y-m>
+   <z-m>0.0</z-m>
+  </center>
+  <axis>
+   <x>-1.0</x>
+   <y>0.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>
+  
+ <animation>
+  <type>spin</type>
+  <object-name>fastblade1</object-name>
+  <object-name>fastblade2</object-name>
+  <object-name>fastblade3</object-name>
+  <object-name>fastblade4</object-name>
+ <property>/rotors/main/rpm</property>
+ <factor>0.05</factor>
+   <center>
+  <x-m>0.021</x-m>
+   <y-m>0.0</y-m>
+   <z-m>0.2</z-m>
+  </center>
+  <axis>
+   <x>-0.087</x>
+   <y>0.0</y>
+   <z>0.996</z>
+  </axis>
+ </animation>
+
+    
+  <animation>
+  <type>spin</type>
+  <object-name>TailRotor</object-name>
+ <property>/rotors/tail/rpm</property>
+ <factor>0.25</factor>
+    <center>
+  <x-m>8.120</x-m>
+   <y-m>-0.377</y-m>
+   <z-m>0.424</z-m>
+  </center>
+  <axis>
+   <x>0.0</x>
+   <y>-1.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>
+
+
+ 
+<!-- ________________ Gear ____________________-->
+
+
+
+ <animation>
+  <type>rotate</type>
+  <object-name>RHgeardoor</object-name>
+  <property>/gear/gear[2]/position-norm</property>
+    <interpolation>
+    <entry>
+      <ind>0.0</ind>
+      <dep>-137.0</dep>
+    </entry>
+    <entry>
+      <ind>0.75</ind>
+      <dep>0.0</dep>
+    </entry>
+    <entry>
+      <ind>1.0</ind>
+      <dep>0.0</dep>
+    </entry>
+  </interpolation>
+ <center>
+  <x-m>1.3</x-m>
+   <y-m>0.766</y-m>
+   <z-m>-2.022</z-m>
+  </center>
+  <axis>
+   <x>0.952</x>
+   <y>-0.305</y>
+   <z>0.037</z>
+  </axis>
+ </animation>
+
+
+ <animation>
+  <type>rotate</type>
+  <object-name>RHgear</object-name>
+  <object-name>RHstrut</object-name>
+  <object-name>rWheel</object-name>
+    <property>/gear/gear[2]/position-norm</property>
+    <interpolation>
+    <entry>
+      <ind>0.0</ind>
+      <dep>-100.0</dep>
+    </entry>
+    <entry>
+      <ind>0.25</ind>
+      <dep>-100.0</dep>
+    </entry>
+    <entry>
+      <ind>1.0</ind>
+      <dep>0.0</dep>
+    </entry>
+  </interpolation>
+   <center>
+  <x-m>1.366</x-m>
+   <y-m>0.439</y-m>
+   <z-m>-2.014</z-m>
+  </center>
+  <axis>
+   <x>0.262</x>
+   <y>0.720</y>
+   <z>0.643</z>
+  </axis>
+ </animation>
+
+
+
+
+ <animation>
+  <type>rotate</type>
+  <object-name>LHgeardoor</object-name>
+  <property>/gear/gear[1]/position-norm</property>
+    <interpolation>
+    <entry>
+      <ind>0.0</ind>
+      <dep>137.0</dep>
+    </entry>
+    <entry>
+      <ind>0.75</ind>
+      <dep>0.0</dep>
+    </entry>
+    <entry>
+      <ind>1.0</ind>
+      <dep>0.0</dep>
+    </entry>
+  </interpolation>
+  <center>
+  <x-m>1.3</x-m>
+   <y-m>-0.766</y-m>
+   <z-m>-2.022</z-m>
+  </center>
+  <axis>
+   <x>0.952</x>
+   <y>0.305</y>
+   <z>0.037</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>LHgear</object-name>
+  <object-name>LHstrut</object-name>
+  <object-name>lWheel</object-name>
+  <property>/gear/gear[1]/position-norm</property>
+  <interpolation>
+    <entry>
+      <ind>0.0</ind>
+      <dep>100.0</dep>
+    </entry>
+    <entry>
+      <ind>0.25</ind>
+      <dep>100.0</dep>
+    </entry>
+    <entry>
+      <ind>1.0</ind>
+      <dep>0.0</dep>
+    </entry>
+  </interpolation>
+   <center>
+  <x-m>1.366</x-m>
+   <y-m>-0.439</y-m>
+   <z-m>-2.014</z-m>
+  </center>
+  <axis>
+   <x>0.262</x>
+   <y>-0.720</y>
+   <z>0.643</z>
+  </axis>
+ </animation>
+
+
+
+ <animation>
+  <type>rotate</type>
+  <object-name>FrtGear</object-name>
+  <object-name>fWheel</object-name>
+  <property>/gear/gear[0]/position-norm</property>
+  <interpolation>
+    <entry>
+      <ind>0.0</ind>
+      <dep>80.0</dep>
+    </entry>
+    <entry>
+      <ind>0.5</ind>
+      <dep>80.0</dep>
+    </entry>
+    <entry>
+      <ind>1.0</ind>
+      <dep>0.0</dep>
+    </entry>
+  </interpolation>
+   <center>
+  <x-m>-3.591</x-m>
+   <y-m>0.0</y-m>
+   <z-m>-2.149</z-m>
+  </center>
+  <axis>
+   <x>0.0</x>
+   <y>-1.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>
+
+
+ <animation>
+  <type>rotate</type>
+  <object-name>LHfrtgeardoor</object-name>
+  <property>/gear/gear[0]/position-norm</property>
+    <interpolation>
+    <entry>
+      <ind>0.0</ind>
+      <dep>90.0</dep>
+    </entry>
+    <entry>
+      <ind>0.5</ind>
+      <dep>0.0</dep>
+    </entry>
+    <entry>
+      <ind>1.0</ind>
+      <dep>0.0</dep>
+    </entry>
+  </interpolation>
+  <center>
+  <x-m>-3.829</x-m>
+   <y-m>-0.148</y-m>
+   <z-m>-2.385</z-m>
+  </center>
+  <axis>
+   <x>0.997</x>
+   <y>0.0</y>
+   <z>-0.073</z>
+  </axis>
+ </animation>
+
+
+ <animation>
+  <type>rotate</type>
+  <object-name>RHfrtgeardoor</object-name>
+  <property>/gear/gear[0]/position-norm</property>
+    <interpolation>
+    <entry>
+      <ind>0.0</ind>
+      <dep>-90.0</dep>
+    </entry>
+    <entry>
+      <ind>0.5</ind>
+      <dep>0.0</dep>
+    </entry>
+    <entry>
+      <ind>1.0</ind>
+      <dep>0.0</dep>
+    </entry>
+  </interpolation>
+  <center>
+  <x-m>-3.829</x-m>
+   <y-m>0.148</y-m>
+   <z-m>-2.385</z-m>
+  </center>
+  <axis>
+   <x>0.997</x>
+   <y>0.0</y>
+   <z>-0.073</z>
+  </axis>
+ </animation>
+<!--___________________Controls__________________________________________-->
+
+<animation>
+	<type>rotate</type>
+	<object-name>GearLever</object-name>
+	<property>/controls/gear/gear-down</property>
+	<factor>40</factor>
+	<center>
+		<x-m>-3.110</x-m>
+		<y-m>0.239</y-m>
+		<z-m>-1.882</z-m>
+	</center>
+	<axis>
+		<x>0.0</x>
+		<y>1.0</y>
+		<z>0.0</z>
+	</axis>
+</animation>
+
+<animation>
+	<type>translate</type>
+	<object-name>Ebrake</object-name>
+	<property>/controls/gear/brake-parking</property>
+	<factor>-0.06</factor>
+	<center>
+		<x-m>-3.082</x-m>
+		<y-m>0.197</y-m>
+		<z-m>-1.868</z-m>
+	</center>
+	<axis>
+		<x>-0.985</x>
+		<y>0.0</y>
+		<z>-0.174</z>
+	</axis>
+</animation>
+
+<animation>
+	<type>rotate</type>
+	<object-name>Ebrake</object-name>
+	<property>/controls/gear/brake-parking</property>
+	<factor>90</factor>
+	<center>
+		<x-m>-3.082</x-m>
+		<y-m>0.197</y-m>
+		<z-m>-1.868</z-m>
+	</center>
+	<axis>
+		<x>-0.985</x>
+		<y>0.0</y>
+		<z>-0.174</z>
+	</axis>
+</animation>
+
+
+
+<!-- _________________________Instrumentation____________________________-->
+
+<animation>
+	<type>rotate</type>
+	<object-name>ASIneedle</object-name>
+	<property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
+	<interpolation>
+		<entry>
+			<ind>  0.0</ind>
+			<dep>0.0</dep>
+		</entry>
+		<entry>
+			<ind>  20.0</ind>
+			<dep>12.5</dep>
+		</entry>		<entry>
+			<ind> 40.0</ind>
+			<dep>76.0</dep>
+		</entry>
+		<entry>
+			<ind> 80.0</ind>
+			<dep>169.5</dep>
+		</entry>
+		<entry>
+			<ind> 120.0</ind>
+			<dep>230.0</dep>
+		</entry>
+		<entry>
+			<ind> 160.0</ind>
+			<dep>294.0</dep>
+		</entry>
+		<entry>
+			<ind> 190.0</ind>
+			<dep>342.0</dep>
+		</entry>
+	</interpolation>
+	<axis>
+		<x>-0.985</x>
+		<y>0</y>
+		<z>-0.174</z>
+	</axis>
+	<center>
+		<x-m>-3.154</x-m>
+		<y-m>0.230</y-m>
+		<z-m>-1.468</z-m>
+	</center>
+</animation>
+
+<animation>
+	<type>rotate</type>
+	<object-name>ALTneedle100</object-name>
+	<property>/instrumentation/altimeter/indicated-altitude-ft</property>
+	<factor>0.36</factor>
+	<axis>
+		<x>-0.985</x>
+		<y>0</y>
+		<z>-0.174</z>
+	</axis>
+	<center>
+		<x-m>-3.154</x-m>
+		<y-m>0.327</y-m>
+		<z-m>-1.468</z-m>
+	</center>
+</animation>
+
+<animation>
+	<type>rotate</type>
+	<object-name>ALTneedle1000</object-name>
+	<property>/instrumentation/altimeter/indicated-altitude-ft</property>
+	<factor>0.036</factor>
+	<axis>
+		<x>-0.985</x>
+		<y>0</y>
+		<z>-0.174</z>
+	</axis>
+	<center>
+		<x-m>-3.154</x-m>
+		<y-m>0.327</y-m>
+		<z-m>-1.468</z-m>
+	</center>
+</animation>
+
+<animation>
+	<type>texmultiple</type>
+	<object-name>ATIgauge</object-name>
+	<transform>
+		<property>/orientation/pitch-deg</property>
+		<subtype>textranslate</subtype>
+		<factor>0.0023</factor>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</transform>
+	<transform>
+		<property>/orientation/roll-deg</property>
+		<subtype>texrotate</subtype>
+		<center>
+			<x>0.25</x>
+			<y>0.25</y>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>-1</z>
+		</axis>
+	</transform>
+</animation>              
+
+<animation>
+	<type>rotate</type>
+	<object-name>VSIneedle</object-name>
+	<property>/autopilot/internal/vert-speed-fpm</property>
+	<min>-4000.0</min>
+	<max>4000.0</max>
+	<interpolation>
+		<entry>
+			<ind>  -4000.0</ind>
+			<dep>-52.0</dep>
+		</entry>
+				<entry>
+			<ind>  -3000.0</ind>
+			<dep>-42.0</dep>
+		</entry>
+		<entry>
+			<ind>  -2000.0</ind>
+			<dep>-31.5</dep>
+		</entry>
+		<entry>
+			<ind>  -1000.0</ind>
+			<dep> -21.0</dep>
+		</entry>
+		<entry>
+			<ind>   -500.0</ind>
+			<dep> -10</dep>
+		</entry>
+		<entry>
+			<ind>      0.0</ind>
+			<dep>   0.0</dep>
+		</entry>
+		<entry>
+			<ind>    500.0</ind>
+			<dep>  10</dep>
+		</entry>
+		<entry>
+			<ind>   1000.0</ind>
+			<dep>  21.0</dep>
+		</entry>
+		<entry>
+			<ind>   2000.0</ind>
+			<dep> 31.5</dep>
+		</entry>
+		<entry>
+			<ind>   3000.0</ind>
+			<dep> 42.0</dep>
+		</entry>
+			<entry>
+			<ind>  4000.0</ind>
+			<dep>-52.0</dep>
+		</entry>
+	</interpolation>
+	<axis>
+		<x>-0.985</x>
+		<y>0.0</y>
+		<z>-0.174</z>
+	</axis>
+	<center>
+		<x-m>-3.123</x-m>
+		<y-m>0.557</y-m>
+		<z-m>-1.649</z-m>
+	</center>
+</animation>
+
+<animation>
+	<type>texrotate</type>
+	<object-name>Cmps</object-name>
+	<property>/orientation/heading-deg</property>
+	<center>
+			<x>0.625</x>
+			<y>0.625</y>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>-1</z>
+		</axis>
+  </animation>
+
+
+</PropertyList>

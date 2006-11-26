@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<!--
+************************************************************************
+Sikorsky S-76C
+ Syd Adams
+************************************************************************
+-->
+
+<PropertyList>
+ <sim>
+
+  <description>Sikorsky S76C (YASim)</description>
+  <author>Syd Adams</author>
+
+  <flight-model>yasim</flight-model>
+  <aero>S76c</aero>
+  <fuel-fraction>0.75</fuel-fraction>
+  
+  <startup>
+	  <splash-texture>Aircraft/Sikorsky-76C/S76C_splash.gz</splash-texture>
+  </startup>
+    
+  
+  <panel>
+   <path>Aircraft/c182/Panels/c182s-panel.xml</path>
+  <visibility archive="y">false</visibility>
+  </panel>
+
+   <systems>
+   <electrical>
+    <path>Aircraft/Generic/generic-electrical.xml</path>
+   </electrical>
+  </systems> 
+
+  <sound>
+   <path>Aircraft/Sikorsky-76C/bo105-sound.xml</path>
+  </sound>
+
+  <model>
+   <path>Aircraft/Sikorsky-76C/Models/sikorsky76c.xml</path>
+  </model> 
+
+  <virtual-cockpit archive="y">true</virtual-cockpit>
+  <allow-toggle-cockpit archive="y">true</allow-toggle-cockpit>
+
+  <view>
+   <internal archive="y">true</internal>
+   <config>
+     <!-- x/y/z == right/up/back -->
+     <x-offset-m archive="y">0.35</x-offset-m>
+     <y-offset-m archive="y">-1.20</y-offset-m>
+     <z-offset-m archive="y">-2.20</z-offset-m>
+     <pitch-offset-deg>-12</pitch-offset-deg>
+     <default-field-of-view-deg type="double">55.0</default-field-of-view-deg>
+     </config>
+  </view>
+  <chase-distance-m type="double" archive="y">-30.0</chase-distance-m>
+
+        <weight n="0">
+        <name>Crew</name>
+        <weight-lb>180</weight-lb> 
+        <max-lb>400</max-lb>
+       <min-lb>180</min-lb>
+        </weight>
+
+        <weight n="1">
+        <name>Payload</name>
+        <weight-lb>0</weight-lb> 
+        <max-lb>4800</max-lb>
+        <min-lb>0</min-lb>      
+        </weight>
+
+</sim>
+
+
+
+
+
+  <controls>
+  <engines>
+    <engine>
+      <throttle>1.0</throttle>
+    </engine>
+  </engines>
+  <gear>
+  <brake-parking>1</brake-parking>
+ </gear>
+</controls>
+
+ 
+
+</PropertyList>
