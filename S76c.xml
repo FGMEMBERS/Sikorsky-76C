@@ -6,6 +6,10 @@ Empty : 6887 lbs
 Fuel: 281 gal usable
 Avg Fuel Flow  620 pph
 
+Main Rotor :
+Dia: 13.41 m
+Single Blade : 6.089 m
+97 lbs
 -->
 <airplane mass="6887">
 
@@ -22,7 +26,7 @@ Avg Fuel Flow  620 pph
   maxcollective="15.8" mincollective="0.2"
   mincyclicele="-4.7" maxcyclicele="10.5"
   mincyclicail="-4.23" maxcyclicail="5.65"
-  diameter="13.41" numblades="4" weightperblade="75" relbladecenter="0.5"
+  diameter="13.41" numblades="4" weightperblade="95" relbladecenter="0.5"
   dynamic="1" rpm="442" rellenflaphinge="0.18" delta3="0"
   delta=".25"
   pitch-a="10"

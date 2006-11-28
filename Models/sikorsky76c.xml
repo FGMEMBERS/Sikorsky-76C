@@ -4,32 +4,40 @@
 
 <path>s76c.ac</path>
  
-
- 
-  <animation>
-  <type>select</type>
+<animation>
+   <name>Rotors</name>
   <object-name>blade1</object-name>
   <object-name>blade2</object-name>
   <object-name>blade3</object-name>
   <object-name>blade4</object-name>
+ </animation>
+
+<animation>
+   <name>BlurredRotors</name>
+  <object-name>fastblade1</object-name>
+  <object-name>fastblade2</object-name>
+  <object-name>fastblade3</object-name>
+  <object-name>fastblade4</object-name>
+ </animation>
+ 
+  <animation>
+  <type>select</type>
+  <object-name>Rotors</object-name>
   <condition>
    <less-than>
     <property>/rotors/main/rpm</property>
-    <value>351</value>
+    <value>350.999999</value>
    </less-than>
   </condition>
  </animation>
 
    <animation>
   <type>select</type>
-  <object-name>fastblade1</object-name>
-  <object-name>fastblade2</object-name>
-  <object-name>fastblade3</object-name>
-  <object-name>fastblade4</object-name>
+  <object-name>BlurredRotors</object-name>
   <condition>
    <greater-than>
     <property>/rotors/main/rpm</property>
-    <value>350</value>
+    <value>350.999998</value>
    </greater-than>
   </condition>
  </animation>
@@ -56,26 +64,70 @@
   </condition>
  </animation>
 
-     
- <animation>
-  <type>spin</type>
-  <object-name>blade1</object-name>
+  <animation>
+  <type>rotate</type>
+ <object-name>blade1</object-name>
+ <property>/rotors/main/cone-deg</property>
+  <center>
+  <x-m>0</x-m>
+   <y-m>0</y-m>
+   <z-m>0</z-m>
+  </center>
+  <axis>
+   <x>0.0</x>
+   <y>1.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>
+
+      <animation>
+  <type>rotate</type>
   <object-name>blade2</object-name>
-  <object-name>blade3</object-name>
-  <object-name>blade4</object-name>
- <property>/rotors/main/rpm</property>
- <factor>0.25</factor>
+ <property>/rotors/main/cone-deg</property>
   <center>
   <x-m>0.021</x-m>
    <y-m>0.0</y-m>
    <z-m>0.2</z-m>
   </center>
   <axis>
-   <x>-0.087</x>
+   <x>-1.0</x>
    <y>0.0</y>
-   <z>0.996</z>
+   <z>0.0</z>
   </axis>
  </animation>
+
+      <animation>
+  <type>rotate</type>
+  <object-name>blade3</object-name>
+ <property>/rotors/main/cone-deg</property>
+  <center>
+  <x-m>0.0</x-m>
+   <y-m>0.0</y-m>
+   <z-m>0.0</z-m>
+  </center>
+  <axis>
+   <x>0.0</x>
+   <y>-1.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>
+
+      <animation>
+  <type>rotate</type>
+  <object-name>blade4</object-name>
+ <property>/rotors/main/cone-deg</property>
+  <center>
+  <x-m>0.0</x-m>
+   <y-m>0.0</y-m>
+   <z-m>0.0</z-m>
+  </center>
+  <axis>
+   <x>1.0</x>
+   <y>0.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>
+
 
   <animation>
   <type>rotate</type>
@@ -88,7 +140,7 @@
   </center>
   <axis>
    <x>0.0</x>
-   <y>-1.0</y>
+   <y>1.0</y>
    <z>0.0</z>
   </axis>
  </animation>
@@ -103,7 +155,7 @@
    <z-m>0.2</z-m>
   </center>
   <axis>
-   <x>1.0</x>
+   <x>-1.0</x>
    <y>0.0</y>
    <z>0.0</z>
   </axis>
@@ -120,7 +172,7 @@
   </center>
   <axis>
    <x>0.0</x>
-   <y>1.0</y>
+   <y>-1.0</y>
    <z>0.0</z>
   </axis>
  </animation>
@@ -135,24 +187,55 @@
    <z-m>0.0</z-m>
   </center>
   <axis>
-   <x>-1.0</x>
+   <x>1.0</x>
    <y>0.0</y>
    <z>0.0</z>
   </axis>
  </animation>
-  
+
  <animation>
   <type>spin</type>
-  <object-name>fastblade1</object-name>
-  <object-name>fastblade2</object-name>
-  <object-name>fastblade3</object-name>
-  <object-name>fastblade4</object-name>
+  <object-name>Rotorhub</object-name> 
  <property>/rotors/main/rpm</property>
- <factor>0.05</factor>
+ <factor>0.25</factor>
    <center>
-  <x-m>0.021</x-m>
+  <x-m>-0.021</x-m>
    <y-m>0.0</y-m>
-   <z-m>0.2</z-m>
+   <z-m>0.188</z-m>
+  </center>
+  <axis>
+   <x>-0.087</x>
+   <y>0.0</y>
+   <z>0.996</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>spin</type>
+  <object-name>Rotors</object-name> 
+ <property>/rotors/main/rpm</property>
+ <factor>0.25</factor>
+   <center>
+  <x-m>-0.021</x-m>
+   <y-m>0.0</y-m>
+   <z-m>0.188</z-m>
+  </center>
+  <axis>
+   <x>-0.087</x>
+   <y>0.0</y>
+   <z>0.996</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>spin</type>
+  <object-name>BlurredRotors</object-name> 
+ <property>/rotors/main/rpm</property>
+ <factor>0.25</factor>
+   <center>
+  <x-m>-0.021</x-m>
+   <y-m>0.0</y-m>
+   <z-m>0.188</z-m>
   </center>
   <axis>
    <x>-0.087</x>
