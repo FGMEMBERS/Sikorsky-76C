@@ -27,10 +27,10 @@ Forward pitch 5 degrees
 
 <rotor name="main" x="0.0" y="0.0" z="0.0" nx="0.087" ny="0" nz="0.996" fx="1" fy="0" fz="0" ccw="0"
   maxcollective="15.8" mincollective="0.2"
-  mincyclicele="-4.7" maxcyclicele="10.5"
-  mincyclicail="-4.23" maxcyclicail="5.65"
+  mincyclicele="-5.0" maxcyclicele="15.0"
+  mincyclicail="-5.0" maxcyclicail="5.0"
   diameter="13.41" numblades="4" weightperblade="97" relbladecenter="0.5"
-  dynamic="1" rpm="293" rellenflaphinge="0.02" delta3="0"
+  dynamic="1" rpm="293" rellenflaphinge="0.05" delta3="0"
   delta=".5"
   pitch-a="10"
   pitch-b="15"
@@ -76,7 +76,7 @@ Forward pitch 5 degrees
 </rotor>
 
 
-<rotor name="tail" x="-8.12" y="0.4" z="0.424" nx="0.0" ny="1" nz="0.0" fx="1" fy="0" fz="0" ccw="0"
+<rotor name="tail" x="-8.12" y="0.2" z="0.424" nx="0.0" ny="1" nz="0.0" fx="1" fy="0" fz="0" ccw="0"
   maxcollective="20" mincollective="-10"
   diameter="2.44" numblades="4" weightperblade="2" relbladecenter="0.7"
   dynamic="1" rpm="1750" rellenflaphinge="0.05" delta3="1" translift="0" delta="0.5"
@@ -115,7 +115,7 @@ Forward pitch 5 degrees
   engine-accel-limit="4"
 
   yasimdragfactor="15"
-  yasimliftfactor="140"
+  yasimliftfactor="160"
 >
   <control-input axis="/controls/engines/engine[0]/magnetos" control="ROTORGEARENGINEON"/>
   <control-input axis="/controls/rotor/brake" control="ROTORBRAKE"
@@ -144,11 +144,11 @@ Forward pitch 5 degrees
 
 
 
-<vstab x="-7.02" y="0" z="-.86" taper=".8" length="2.0" chord="1.0" sweep="40">
+<vstab x="-8.12" y="0" z="-.86" taper=".8" length="2.0" chord="1.0" sweep="40">
   <stall aoa="16" width="4" peak="1.5"/>
 </vstab>
 
-<hstab x="-7.08" y="0.1" z="-1.2" taper="1.0" effectiveness="0.5" length="1.20" chord="0.36" sweep="0">
+<hstab x="-7.08" y="0.01" z="-1.2" taper="0.8" effectiveness="1.1" length="1.20" chord="0.36" sweep="0">
   <stall aoa="0" width="0" peak="1.5"/>
 </hstab>
 
@@ -176,6 +176,7 @@ Forward pitch 5 degrees
   </gear>
 
 
+
 <tank x="-0.5" y="0.0" z="-2.0" capacity="1880"/>
 <tank x="0" y="0" z="0" capacity="0"/>		<!-- work around bug in native_fdm.cxx:184 -->
 <tank x="0" y="0" z="0" capacity="0"/>
@@ -183,8 +184,8 @@ Forward pitch 5 degrees
 <weight x="2.2" y="0.0"  z="-2" mass-prop="/sim/weight[0]/weight-lb"/>	<!-- crew -->
 <weight x="0.0" y="0.0" z="-2" mass-prop="/sim/weight[1]/weight-lb"/>	<!-- cargo -->
 
-<ballast x="4.0" y="0.0" z="-1.9" mass="400"/>
-<ballast x="0.0" y="0.0" z="-1.0" mass="3500"/>
-<ballast x="-1.8" y="0.90" z="-1.9" mass="500"/>
-<ballast x="-1.8" y="-0.90" z="-1.9" mass="500"/>
+<ballast x="-8.12" y="-0.04" z="0.424" mass="8"/>
+<ballast x="-0.127" y="-0.001" z="-1.5" mass="1500"/>
+<ballast x="3.0" y="0.0" z="-1.9" mass="150"/>
+
 </airplane>
