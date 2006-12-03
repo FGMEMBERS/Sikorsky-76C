@@ -11,7 +11,7 @@
 				<and>
 					<greater-than>
 						<property>rotors/main/rpm</property>
-						<value>50</value>
+						<value>10</value>
 					</greater-than>
 					<not>
 						<property>sim/crashed</property>
@@ -25,9 +25,9 @@
 			</volume>
 			<pitch>
 				<property>rotors/main/rpm</property>
-				<offset>-0.2</offset>
-				<factor>0.003</factor>
-				<max>1.2</max>
+				<offset>0.0</offset>
+				<factor>0.0025</factor>
+				<max>1.0</max>
 			</pitch>
 		</rotor>
 

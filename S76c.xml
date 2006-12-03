@@ -12,6 +12,7 @@ Single Blade : 6.089 m
 97 lbs
 Chord: 0.39 m
 RPM: 293
+Forward pitch 5 degrees
 -->
 <airplane mass="6887">
 
@@ -89,7 +90,7 @@ RPM: 293
   chord="0.16"
   number-of-segments="5"
   number-of-parts="4"
-  rel-len-blade-start="0.25"
+  rel-len-blade-start="0.2"
   incidence-stall-zero-speed="9"
   incidence-stall-half-sonic-speed="18"
   lift-factor-stall="0.18"
@@ -114,7 +115,7 @@ RPM: 293
   engine-accel-limit="4"
 
   yasimdragfactor="15"
-  yasimliftfactor="120"
+  yasimliftfactor="140"
 >
   <control-input axis="/controls/engines/engine[0]/magnetos" control="ROTORGEARENGINEON"/>
   <control-input axis="/controls/rotor/brake" control="ROTORBRAKE"
@@ -180,9 +181,10 @@ RPM: 293
 <tank x="0" y="0" z="0" capacity="0"/>
 
 <weight x="2.2" y="0.0"  z="-2" mass-prop="/sim/weight[0]/weight-lb"/>	<!-- crew -->
-<weight x="0.0" y="0.0" z="2" mass-prop="/sim/weight[1]/weight-lb"/>	<!-- cargo -->
+<weight x="0.0" y="0.0" z="-2" mass-prop="/sim/weight[1]/weight-lb"/>	<!-- cargo -->
 
-<ballast x="4.5" y="0.0" z="-1.9" mass="700"/>
+<ballast x="4.0" y="0.0" z="-1.9" mass="400"/>
+<ballast x="0.0" y="0.0" z="-1.0" mass="3500"/>
 <ballast x="-1.8" y="0.90" z="-1.9" mass="500"/>
 <ballast x="-1.8" y="-0.90" z="-1.9" mass="500"/>
 </airplane>
