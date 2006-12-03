@@ -26,7 +26,7 @@
   <condition>
    <less-than>
     <property>/rotors/main/rpm</property>
-    <value>350.999999</value>
+    <value>150.999999</value>
    </less-than>
   </condition>
  </animation>
@@ -37,7 +37,7 @@
   <condition>
    <greater-than>
     <property>/rotors/main/rpm</property>
-    <value>350.999998</value>
+    <value>150.999998</value>
    </greater-than>
   </condition>
  </animation>
@@ -48,7 +48,7 @@
   <condition>
    <greater-than>
     <property>/rotors/tail/rpm</property>
-    <value>500</value>
+    <value>550</value>
    </greater-than>
   </condition>
  </animation>
@@ -59,7 +59,7 @@
   <condition>
    <less-than>
     <property>/rotors/tail/rpm</property>
-    <value>501</value>
+    <value>551</value>
    </less-than>
   </condition>
  </animation>
@@ -197,7 +197,7 @@
   <type>spin</type>
   <object-name>Rotorhub</object-name> 
  <property>/rotors/main/rpm</property>
- <factor>0.25</factor>
+ <factor>1.0</factor>
    <center>
   <x-m>-0.021</x-m>
    <y-m>0.0</y-m>
@@ -214,7 +214,7 @@
   <type>spin</type>
   <object-name>Rotors</object-name> 
  <property>/rotors/main/rpm</property>
- <factor>0.25</factor>
+ <factor>1.0</factor>
    <center>
   <x-m>-0.021</x-m>
    <y-m>0.0</y-m>
@@ -231,7 +231,7 @@
   <type>spin</type>
   <object-name>BlurredRotors</object-name> 
  <property>/rotors/main/rpm</property>
- <factor>0.25</factor>
+ <factor>1.0</factor>
    <center>
   <x-m>-0.021</x-m>
    <y-m>0.0</y-m>
@@ -292,9 +292,9 @@
    <z-m>-2.022</z-m>
   </center>
   <axis>
-   <x>0.952</x>
-   <y>-0.305</y>
-   <z>0.037</z>
+   <x>0.975</x>
+   <y>-0.220</y>
+   <z>0.038</z>
   </axis>
  </animation>
 
@@ -358,9 +358,9 @@
    <z-m>-2.022</z-m>
   </center>
   <axis>
-   <x>0.952</x>
-   <y>0.305</y>
-   <z>0.037</z>
+   <x>0.975</x>
+   <y>0.220</y>
+   <z>0.038</z>
   </axis>
  </animation>
 

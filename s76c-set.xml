@@ -33,7 +33,7 @@ Sikorsky S-76C
   </systems> 
 
   <sound>
-   <path>Aircraft/Sikorsky-76C/bo105-sound.xml</path>
+   <path>Aircraft/Sikorsky-76C/s76c-sound.xml</path>
   </sound>
 
   <model>
@@ -87,6 +87,10 @@ Sikorsky S-76C
  </gear>
 </controls>
 
- 
+    <nasal>
+        <S-76C>
+        <file>Aircraft/Sikorsky-76C/Nasal/S76C.nas</file>
+        </S-76C>
+    </nasal> 
 
 </PropertyList>
