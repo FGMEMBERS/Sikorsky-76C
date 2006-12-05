@@ -14,7 +14,7 @@ Sikorsky S-76C
  <sim>
 
   <description>Sikorsky S76C (YASim)</description>
-  <author>Syd Adams</author>
+  <author>Syd Adams(Model), Maik Justus (FDM)</author>
 
   <flight-model>yasim</flight-model>
   <aero>S76c</aero>
@@ -24,6 +24,10 @@ Sikorsky S-76C
 	  <splash-texture>Aircraft/Sikorsky-76C/S76C_splash.gz</splash-texture>
   </startup>
     
+   <instrumentation>
+	   <path>Aircraft/bo105/Instruments/instrumentation.xml</path>
+   </instrumentation>
+  
   
   <panel>
    <path>Aircraft/c182/Panels/c182s-panel.xml</path>
@@ -32,7 +36,7 @@ Sikorsky S-76C
 
    <systems>
    <electrical>
-    <path>Aircraft/Generic/generic-electrical.xml</path>
+    <path></path>
    </electrical>
   </systems> 
 
@@ -76,7 +80,11 @@ Sikorsky S-76C
 
 </sim>
 
-
+<engines>
+   <engine>
+      <rpm>500</rpm>
+   </engine>
+</engines>
 
 
 
@@ -94,6 +102,7 @@ Sikorsky S-76C
     <nasal>
         <S-76C>
         <file>Aircraft/Sikorsky-76C/Nasal/S76C.nas</file>
+        <file>Aircraft/Sikorsky-76C/Nasal/electrical.nas</file>
         </S-76C>
     </nasal> 
 
