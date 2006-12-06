@@ -15,9 +15,9 @@ var et_hr = 0.0;
 var et_min_start = 0.0;
 
 strobe_switch = props.globals.getNode("controls/switches/strobe", 1);
-aircraft.light.new("sim/model/S-76C/lighting/strobe", 0.05, 1.50, strobe_switch);
+aircraft.light.new("sim/model/S-76C/lighting/strobe", [0.05, 1.50], strobe_switch);
 beacon_switch = props.globals.getNode("controls/switches/beacon", 1);
-aircraft.light.new("sim/model/S-76C/lighting/beacon", 1.0, 1.0, beacon_switch);
+aircraft.light.new("sim/model/S-76C/lighting/beacon", [1.0, 1.0], beacon_switch);
 
 setlistener("/sim/signals/fdm-initialized", func {
    setprop("/environment/turbulence/use-cloud-turbulence","true");
