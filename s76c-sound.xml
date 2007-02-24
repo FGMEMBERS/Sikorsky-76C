@@ -1,33 +1,19 @@
-<?xml version="1.0"?>
-
+<!-- S-76C sound config experiment-->
 <PropertyList>
-	<fx>
-		<!-- rotor -->
-		<rotor>
-			<name>rotor</name>
+ 	<fx>
+	<rotor>
+			<name>main rotor</name>
 			<mode>looped</mode>
 			<path>Sounds/rotor.wav</path>
 			<condition>
-				<and>
-					<greater-than>
-						<property>rotors/main/rpm</property>
-						<value>10</value>
-					</greater-than>
-					<not>
-						<property>sim/crashed</property>
-					</not>
-				</and>
+				<property>/sim/sound/MR/on</property>
 			</condition>
 			<volume>
-				<property>rotors/main/rpm</property>
-				<factor>0.01</factor>
-				<max>0.6</max>
+				<property>/sim/sound/MR/volume</property>
 			</volume>
 			<pitch>
-				<property>rotors/main/rpm</property>
-				<offset>0.0</offset>
-				<factor>0.0025</factor>
-				<max>1.0</max>
+				<property>/sim/sound/MR/pitch</property>
+				<offset>0</offset>
 			</pitch>
 		</rotor>
 
@@ -36,19 +22,11 @@
 			<mode>looped</mode>
 			<path>Sounds/overspeed.wav</path>
 			<condition>
-				<greater-than>
-					<property>velocities/airspeed-kt</property>
-					<value>156</value>
-				</greater-than>
+				<property>/sim/sound/MR/overspeed</property>
 			</condition>
 			<volume>
-				<factor>0.9</factor>
+				<property>/sim/sound/MR/volume</property>
 			</volume>
-			<pitch>
-				<factor>0.1</factor>
-			</pitch>
-			<reference-dist>1.0</reference-dist>
-			<max-dist>2.0</max-dist>
 		</overspeed>
 
 		<contact>

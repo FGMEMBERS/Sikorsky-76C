@@ -13,6 +13,7 @@ Single Blade : 6.089 m
 Chord: 0.39 m
 RPM: 293
 Forward pitch 5 degrees
+17 degrees delta3
 -->
 <airplane mass="6887">
 
@@ -25,13 +26,13 @@ Forward pitch 5 degrees
 </cruise>
 
 
-<rotor name="main" x="0.0" y="0.0" z="0.0" nx="0.087" ny="0" nz="0.996" fx="1" fy="0" fz="0" ccw="1"
-  maxcollective="15.8" mincollective="0.2"
-  mincyclicele="-3" maxcyclicele="8"
-  mincyclicail="-3.5" maxcyclicail="3.5"
-  diameter="13.41" numblades="4" weightperblade="97" relbladecenter="0.5"
-  dynamic="1" rpm="293" rellenflaphinge="0.07" delta3="1"
-  delta="0.25"
+<rotor name="main" x="0.0" y="0.0" z="0.2" nx="0.0" ny="0" nz="0.996" fx="1" fy="0" fz="0" ccw="1"
+  maxcollective="18" mincollective="0.2"
+  mincyclicele="-5" maxcyclicele="10"
+  mincyclicail="-3.5" maxcyclicail="4.0"
+  diameter="13.41" numblades="4" weightperblade="97" relbladecenter="0.51"
+  dynamic="0.9" rpm="293" rellenflaphinge="0.09" delta3="0.9"
+  delta=".2"
   pitch-a="10"
   pitch-b="15"
   flapmin="-15"
@@ -39,7 +40,7 @@ Forward pitch 5 degrees
   flap0="-5"
   flap0factor="0"
   notorque="0"
-  dragfactor="0.30"
+  dragfactor="0.25"
   translift-ve="20"
   translift-maxfactor="1.2"
   ground-effect-constant="0.1"
@@ -49,11 +50,11 @@ Forward pitch 5 degrees
   number-of-segments="8"
   number-of-parts="8"
   rel-len-where-incidence-is-measured="0.7"
-  rel-len-blade-start="0.093"
+  rel-len-blade-start="0.0918"
 
   airfoil-lift-coefficient="6.5"
-  airfoil-drag-coefficient0="0.021"
-  airfoil-drag-coefficient1="0.69"
+  airfoil-drag-coefficient0="0.025"
+  airfoil-drag-coefficient1="0.75"
   incidence-stall-zero-speed="15"
   incidence-stall-half-sonic-speed="14.5"
   lift-factor-stall="0.28"
@@ -76,18 +77,18 @@ Forward pitch 5 degrees
 </rotor>
 
 
-<rotor name="tail" x="-8.12" y="0.4" z="0.424" nx="0.0" ny="-1" nz="0.0" fx="1" fy="0" fz="0" ccw="0"
-  maxcollective="20" mincollective="-10"
-  diameter="2.44" numblades="4" weightperblade="2" relbladecenter="0.7"
-  dynamic="1" rpm="1750" rellenflaphinge="0.05" delta3="1" translift="0" delta="0.5"
+<rotor name="tail" x="-8.12" y="0.2" z="0.4" nx="0.0" ny="-1" nz="0.0" fx="1" fy="0" fz="0" ccw="1"
+  maxcollective="20" mincollective="-12"
+  diameter="2.44" numblades="4" weightperblade="2" relbladecenter="0.55"
+  dynamic="1.0" rpm="1750" rellenflaphinge="0.0" delta3="1" translift="0" delta="0.5"
   pitch-a="10"
   pitch-b="15"
   airfoil-lift-coefficient="6.4"
-  airfoil-drag-coefficient0="0.0035"
+  airfoil-drag-coefficient0="0.005"
   airfoil-drag-coefficient1="0.10"
   notorque="0"
   taper="1"
-  chord="0.16"
+  chord="0.15"
   number-of-segments="5"
   number-of-parts="4"
   rel-len-blade-start="0.2"
@@ -96,14 +97,11 @@ Forward pitch 5 degrees
   lift-factor-stall="0.18"
   stall-change-over="5.5"
   drag-factor-stall="8"
-  rotor-correction-factor="0.8"
+  rotor-correction-factor="0.9"
 >
-  <control-input axis="/controls/flight/rudder" control="COLLECTIVE" invert="true"
-                 src0="-1.0" src1="1.0"
-                 dst0="-1.0" dst1="1.0"/>
-  <control-input axis="/controls/engines/engine[0]/throttle" control="COLLECTIVE"
-                 src0="0.0" src1="1.0"
-                 dst0="0.0" dst1="0.0"/>
+<control-input axis="/controls/flight/rudder" control="COLLECTIVE" invert="true"
+	  src0="-1.0" src1="1.0"
+	  dst0="-1.0" dst1="1.0"/>
 </rotor>
 
 
@@ -112,10 +110,10 @@ Forward pitch 5 degrees
   max-power-rotor-brake="100"
   rotorgear-friction="1.4"
   engine-prop-factor="0.02"
-  engine-accel-limit="4"
+  engine-accel-limit="5"
 
-  yasimdragfactor="15"
-  yasimliftfactor="140"
+  yasimdragfactor="20"
+  yasimliftfactor="280"
 >
   <control-input axis="/controls/engines/engine[0]/magnetos" control="ROTORGEARENGINEON"/>
   <control-input axis="/controls/rotor/brake" control="ROTORBRAKE"
@@ -126,11 +124,14 @@ Forward pitch 5 degrees
 
 <cockpit x="2.28" y=".33" z="-1.15"/>
 
-<fuselage ax="3.15" ay="0" az="-1.5" bx="-3.15" by="0" bz="-1.5"
-          width="2.19" taper="0.6" midpoint="0.5"/>
+<fuselage ax="3.0" ay="0" az="-1.6" bx="-3.0" by="0" bz="-1.6"
+          width="2.0" taper="0.7" midpoint="0.5"/>
 
-<fuselage ax="-3.15" ay="0" az="-1.5" bx="-7.878" by="0" bz="-1.08"
-          width="0.5" taper="0.1" midpoint="0.01"/>
+fuselage ax="1.1" ay="0" az="-0.38" bx="-2.4" by="0" bz="-0.38"
+          width="1.2" taper="0.5" midpoint="0.5"/>
+
+<fuselage ax="-3.0" ay="0" az="-1.6" bx="-8.0" by="0" bz="-1.1"
+          width="1.6" taper="0.1" midpoint="0.01"/>
 
 <!--  CONTACT POINTS -->
 <fuselage ax="4.15" ay="0.825" az="-2.45" bx="-2.38" by="0.825" bz="-2.45"
@@ -144,15 +145,16 @@ Forward pitch 5 degrees
 
 
 
-<vstab x="-7.02" y="0" z="-.86" taper=".8" effectiveness="1.1" length="2.0" chord="1.0" sweep="40">
+<vstab x="-7.02" y="0" z="-.86" taper=".8" effectiveness="1.5" length="2.0" chord="1.0" sweep="40">
   <stall aoa="16" width="4" peak="1.5"/>
 </vstab>
 
-<hstab x="-8.12" y="0.1" z="0.420" taper="0.8" effectiveness="1.1" length="1.20" chord="0.36" sweep="0">
+<hstab x="-8.12" y="0.1" z="0.420" taper="0.8" effectiveness="1.5" length="1.20" chord="0.36" sweep="0">
   <stall aoa="0" width="0" peak="1.5"/>
 </hstab>
 
-  <gear x="3.593" y="0.00" z="-2.838" compression=".1" retract-time="4">
+<gear x="3.593" y="0.00" z="-2.838" compression=".2" sfric="0.9" dfric="0.8" retract-time="4"
+	spring="1.5" damp="2.0">
     <control-input axis="/controls/flight/rudder" control="STEER" square="true"
                  src0="-1.0" src1="1.0"
                  dst0="-1.68" dst1="1.68"/>
@@ -160,14 +162,16 @@ Forward pitch 5 degrees
 	<control-speed control="EXTEND" transition-time="4"/>
     <control-output control="EXTEND" prop="/gear/gear[0]/position-norm"/>
   </gear>
-  <gear x="-1.366" y="1.1" z="-2.838" compression=".1" retract-time="4">
+  <gear x="-1.366" y="1.1" z="-2.838" compression=".2" sfric="1.0" dfric="0.9" retract-time="4"
+	  spring="1.5" damp="2.0">
     <control-input axis="/controls/gear/brake-left" control="BRAKE"/>
     <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
     <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
 	<control-speed control="EXTEND" transition-time="4"/>
     <control-output control="EXTEND" prop="/gear/gear[1]/position-norm"/>
   </gear>
-  <gear x="-1.366" y="-1.1" z="-2.838" compression=".1" retract-time="3.95">
+  <gear x="-1.366" y="-1.1" z="-2.838" compression=".2" sfric="1.0" dfric="0.9" retract-time="3.95"
+	  spring="1.5" damp="2.0">
     <control-input axis="/controls/gear/brake-right" control="BRAKE"/>
     <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
     <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
@@ -183,9 +187,12 @@ Forward pitch 5 degrees
 <weight x="2.2" y="0.0"  z="-2" mass-prop="/sim/weight[0]/weight-lb"/>	<!-- crew -->
 <weight x="0.0" y="0.0" z="-2" mass-prop="/sim/weight[1]/weight-lb"/>	<!-- cargo -->
 
-<ballast x="-8.12" y="-0.4" z="0.424" mass="12"/>
-<ballast x="-5.0" y="0.0" z="1.5" mass="-150"/>
-<ballast x="-0.1" y="0.0" z="-2.5" mass="1500"/>
-<ballast x="-1.8" y="0.90" z="-1.9" mass="500"/>
-<ballast x="-1.8" y="-0.90" z="-1.9" mass="500"/>
+<ballast x="0.8" y="0.0" z="-2.4" mass="4000"/>
+
+<!-- hitch -->
+<hitch name="aerotow" x="0.0" y="0" z="-2.5"  force-is-calculated-by-other="1">
+  <tow length="100" weight-per-meter="0.035" elastic-constant="8000" break-force="10000" mp-auto-connect-period="1.0"/>
+  <winch max-tow-length="1000" min-tow-length="100" initial-tow-length="100"/>
+</hitch>
+
 </airplane>
