@@ -11,151 +11,171 @@ Sikorsky S-76C
 -->
 
 <PropertyList>
-	
-<sim>
-   <description>Sikorsky S76C (YASim)</description>
-   <author>Syd Adams(Model), Maik Justus (FDM)</author>
-   <flight-model>yasim</flight-model>
-   <aero>S76c</aero>
-   <fuel-fraction>0.75</fuel-fraction>
-   <startup>
-      <splash-texture>Aircraft/Sikorsky-76C/S76C_splash.gz</splash-texture>
-   </startup>
-     
-   <hud>
-      <enable3d>false</enable3d>
-   </hud>
-   
-   <systems>
-      <electrical>
-         <path></path>
-      </electrical>
-   </systems> 
 
-   <sound>
-      <path>Aircraft/Sikorsky-76C/s76c-sound.xml</path>
-   </sound>
+    <sim>
+        <description>Sikorsky S76C (YASim)</description>
+        <author>Syd Adams(Model), Maik Justus (FDM)</author>
+        <flight-model>yasim</flight-model>
+        <aero>S76c</aero>
+        <fuel-fraction>0.75</fuel-fraction>
+        <startup>
+            <splash-texture>Aircraft/Sikorsky-76C/S76C_splash.rgb</splash-texture>
+        </startup>
 
-   <model>
-      <path>Aircraft/Sikorsky-76C/Models/sikorsky76c.xml</path>
-   </model> 
+        <hud>
+            <enable3d>false</enable3d>
+        </hud>
 
-   <virtual-cockpit archive="y">true</virtual-cockpit>
-   <allow-toggle-cockpit archive="y">true</allow-toggle-cockpit>
+        <systems>
+            <electrical>
+                <path></path>
+            </electrical>
+        </systems>
 
-   <view>
-	   <internal archive="y">true</internal>
-	   <config>
-		   <x-offset-m archive="y">0.45</x-offset-m>
-           <y-offset-m archive="y">-1.10</y-offset-m>
-           <z-offset-m archive="y">-2.20</z-offset-m>
-           <pitch-offset-deg>-12</pitch-offset-deg>
-           <default-field-of-view-deg type="double">60.0</default-field-of-view-deg>
-       </config>
-   </view>
-   <chase-distance-m type="double" archive="y">-30.0</chase-distance-m>
-   
-   <weight n="0">
-	   <name>Crew</name>
-       <weight-lb>180</weight-lb> 
-       <max-lb>400</max-lb>
-       <min-lb>180</min-lb>
-   </weight>
+        <sound>
+            <path>Aircraft/Sikorsky-76C/Sound/s76c-sound.xml</path>
+        </sound>
 
-   <weight n="1">
-	   <name>Payload</name>
-       <weight-lb>0</weight-lb> 
-       <max-lb>4800</max-lb>
-	   <min-lb>0</min-lb>
-    </weight>
+        <model>
+            <path>Aircraft/Sikorsky-76C/Models/sikorsky76c.xml</path>
+        </model>
 
-	<help>
-		<title>Sikorsky S-76C+</title>
-        <line></line>
-        <key>
-            <name>o</name>
-            <desc>lock aerotow-hook</desc>
-        </key>
-        <key>
-            <name>O</name>
-            <desc>open aerotow-hook</desc>
-        </key>
-	</help>
+        <virtual-cockpit archive="y">true</virtual-cockpit>
+        <allow-toggle-cockpit archive="y">true</allow-toggle-cockpit>
 
-<hitches>
-	<aerotow>
-		<tow>
-            <length type="float">100</length>
-            <elastic-constant type="float">10000</elastic-constant>
-            <weight-per-m-kg-m type="float">1</weight-per-m-kg-m>
-            <dist type="float">1</dist>
-            <connected-to-property-node type="bool"></connected-to-property-node>
-            <brake-force type="float">100000</brake-force>
-            <connected-to-ai-or-mp-callsign type ="string">*</connected-to-ai-or-mp-callsign>
-            <end-force-x type ="float">0</end-force-x>
-            <end-force-y type ="float">0</end-force-y>
-            <end-force-z type ="float">0</end-force-z>
-        </tow>
-        <speed-in-tow-direction type="float">0</speed-in-tow-direction>
-        <open type="bool">true</open>
-        <local-pos-x type="float">0</local-pos-x>
-        <local-pos-y type="float">0</local-pos-y>
-        <local-pos-z type="float">0</local-pos-z>
-        <is-slave type="bool">false</is-slave>
-        </aerotow>
-    </hitches>
-</sim>
+        <view>
+            <internal archive="y">true</internal>
+            <config>
+                <x-offset-m archive="y">0.45</x-offset-m>
+                <y-offset-m archive="y">-1.10</y-offset-m>
+                <z-offset-m archive="y">-2.20</z-offset-m>
+                <pitch-offset-deg>-12</pitch-offset-deg>
+                <default-field-of-view-deg type="double">60.0</default-field-of-view-deg>
+            </config>
+        </view>
 
-<engines>
-    <engine>
-        <rpm>500</rpm>
-    </engine>
-</engines>
+        <chase-distance-m type="double" archive="y">-30.0</chase-distance-m>
 
+        <weight n="0">
+            <name>Crew</name>
+            <weight-lb>180</weight-lb> 
+            <max-lb>400</max-lb>
+            <min-lb>180</min-lb>
+        </weight>
 
+        <weight n="1">
+            <name>Payload</name>
+            <weight-lb>0</weight-lb> 
+            <max-lb>4800</max-lb>
+            <min-lb>0</min-lb>
+        </weight>
 
-<controls>
+        <help>
+            <title>Sikorsky S-76C+</title>
+            <line></line>
+            <key>
+                <name>o</name>
+                <desc>lock aerotow-hook</desc>
+            </key>
+            <key>
+                <name>O</name>
+                <desc>open aerotow-hook</desc>
+            </key>
+        </help>
+
+        <hitches>
+            <aerotow>
+                <tow>
+                    <length type="float">100</length>
+                    <elastic-constant type="float">10000</elastic-constant>
+                    <weight-per-m-kg-m type="float">1</weight-per-m-kg-m>
+                    <dist type="float">1</dist>
+                    <connected-to-property-node type="bool"></connected-to-property-node>
+                    <brake-force type="float">100000</brake-force>
+                    <connected-to-ai-or-mp-callsign type ="string">*</connected-to-ai-or-mp-callsign>
+                    <end-force-x type ="float">0</end-force-x>
+                    <end-force-y type ="float">0</end-force-y>
+                    <end-force-z type ="float">0</end-force-z>
+                </tow>
+                <speed-in-tow-direction type="float">0</speed-in-tow-direction>
+                <open type="bool">true</open>
+                <local-pos-x type="float">0</local-pos-x>
+                <local-pos-y type="float">0</local-pos-y>
+                <local-pos-z type="float">0</local-pos-z>
+                <is-slave type="bool">false</is-slave>
+            </aerotow>
+        </hitches>
+    </sim>
+
     <engines>
         <engine>
-			<throttle>1.0</throttle>
+            <rpm>500</rpm>
+            <running type="bool">false</running>
         </engine>
     </engines>
-    <gear>
-        <brake-parking>1</brake-parking>
-    </gear>
-    <aerotow>
-        <find-aircraft type="bool">false</find-aircraft>
-    </aerotow>
-</controls>
 
-<input>
-    <keyboard>
-        <key n="79">
-            <name>O</name>
-			<desc>Open aerotow hook</desc>
-			<binding>
-				<command>property-assign</command>
-				<property>/sim/hitches/aerotow/open</property>
-				<value type="bool">true</value>
-			</binding>
-        </key>
-        <key n="111">
-			<name>o</name>
-			<desc>Lock aerotow hook</desc>
-			<binding>
-				<command>property-assign</command>
-				<property>/sim/hitches/aerotow/open</property>
-				<value type="bool">false</value>
-			</binding>
-        </key>
-    </keyboard>
-</input>
+    <controls>
+        <engines>
+            <engine>
+                <throttle>1.0</throttle>
+            </engine>
+        </engines>
+        <gear>
+            <brake-parking>1</brake-parking>
+        </gear>
+        <aerotow>
+            <find-aircraft type="bool">false</find-aircraft>
+        </aerotow>
+    </controls>
 
-<nasal>
-	<S-76C>
-	<file>Aircraft/Sikorsky-76C/Nasal/S76C.nas</file>
-	<file>Aircraft/Sikorsky-76C/Nasal/electrical.nas</file>
-	</S-76C>
-</nasal> 
+    <input>
+        <keyboard>
+            <key n="123">
+                <name>{</name>
+                <desc>Shutdown Engines</desc>
+                <binding>
+                    <command>property-assign</command>
+                    <property>/engines/engine/running</property>
+                    <value>false</value>
+                </binding>
+            </key>
+
+            <key n="125">
+                <name>}</name>
+                <desc>Start Engines</desc>
+                <binding>
+                    <command>property-assign</command>
+                    <property>/engines/engine/running</property>
+                    <value>true</value>
+                </binding>
+            </key>
+
+            <key n="79">
+                <name>O</name>
+                <desc>Open aerotow hook</desc>
+                <binding>
+                    <command>property-assign</command>
+                    <property>/sim/hitches/aerotow/open</property>
+                    <value type="bool">true</value>
+                </binding>
+            </key>
+            <key n="111">
+                <name>o</name>
+                <desc>Lock aerotow hook</desc>
+                <binding>
+                    <command>property-assign</command>
+                    <property>/sim/hitches/aerotow/open</property>
+                    <value type="bool">false</value>
+                </binding>
+            </key>
+        </keyboard>
+    </input>
+
+    <nasal>
+        <S-76C>
+            <file>Aircraft/Sikorsky-76C/Nasal/Electrical.nas</file>
+            <file>Aircraft/Sikorsky-76C/Nasal/S76C.nas</file>
+        </S-76C>
+    </nasal>
 
 </PropertyList>
