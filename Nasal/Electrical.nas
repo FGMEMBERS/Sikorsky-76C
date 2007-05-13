@@ -118,7 +118,7 @@ setlistener("/sim/signals/fdm-initialized", func {
     FDM = 1;
     settimer(update_electrical,1);
     print("Electrical System ... ok");
-    });
+});
 
 
 update_virtual_bus = func( dt ) {
@@ -132,7 +132,7 @@ update_virtual_bus = func( dt ) {
     if (engine0_state > 50){
     alternator1_volts = alternator1.get_output_volts();
     }
-#props.globals.getNode("/engines/engine[0]/amp-v",1).setValue(alternator1_volts);
+    #props.globals.getNode("/engines/engine[0]/amp-v",1).setValue(alternator1_volts);
 
     external_volts = 0.0;
     load = 0.0;
