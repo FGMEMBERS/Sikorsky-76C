@@ -178,22 +178,21 @@ Forward pitch 5 degrees
   </gear>
 
 
-<tank x="-0.5" y="0.0" z="-2.0" capacity="1880"/>
-<tank x="0" y="0" z="0" capacity="0"/><!-- work around bug in native_fdm.cxx:184 -->
-<tank x="0" y="0" z="0" capacity="0"/>
+<tank x="-0.5" y="0.0" z="-1.8" capacity="1888.32" jet="true"/>
 
-<weight x="2.2" y="0.0"  z="-2" mass-prop="/sim/weight[0]/weight-lb"/><!-- crew -->
-<weight x="0.0" y="0.0" z="-2" mass-prop="/sim/weight[1]/weight-lb"/><!-- cargo -->
+<weight x="2.2" y="0.0"  z="-1.8" mass-prop="/sim/weight[0]/weight-lb"/><!-- crew -->
+<weight x="0.0" y="0.0" z="-1.8" mass-prop="/sim/weight[1]/weight-lb"/><!-- cargo -->
 
 <ballast x="0.4" y="0.0" z="-1.5" mass="2500"/>
 <ballast x="-1.35" y="1.0" z="-2.5" mass="1000"/>
 <ballast x="-1.35" y="-1.0" z="-2.5" mass="500"/>
 <ballast x="3.0" y="0.0" z="-2.5" mass="500"/>
+<ballast x="-1.5" y="0.0" z="-0.5" mass="1000"/>
 <ballast x="-5.0" y="1.0" z="-1.3" mass="-500"/>
-
+<!--
 <hitch name="aerotow" x="0.0" y="0" z="-2.5"  force-is-calculated-by-other="1">
   <tow length="100" weight-per-meter="0.035" elastic-constant="8000" break-force="10000" mp-auto-connect-period="1.0"/>
   <winch max-tow-length="1000" min-tow-length="100" initial-tow-length="100"/>
 </hitch>
-
+-->
 </airplane>

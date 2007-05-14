@@ -1,13 +1,11 @@
 <?xml version="1.0"?>
 <!--
-************************************************************************
+############
 Sikorsky S-76C
- Syd Adams
- 
- And a big THANK YOU to :
- Maik Justus for fine tuning the FDM
- Wim for supplying performance data
-************************************************************************
+Syd Adams
+Maik Justus (FDM)
+Wim (performance specs)
+############
 -->
 
 <PropertyList>
@@ -55,7 +53,7 @@ Sikorsky S-76C
         </view>
 
         <chase-distance-m type="double" archive="y">-30.0</chase-distance-m>
-
+<!--  11,700 Max Gross Weight-->
         <weight n="0">
             <name>Crew</name>
             <weight-lb>180</weight-lb> 
@@ -66,7 +64,7 @@ Sikorsky S-76C
         <weight n="1">
             <name>Payload</name>
             <weight-lb>0</weight-lb> 
-            <max-lb>4800</max-lb>
+            <max-lb>2550</max-lb>
             <min-lb>0</min-lb>
         </weight>
 

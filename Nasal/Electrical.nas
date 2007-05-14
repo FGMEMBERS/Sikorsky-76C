@@ -96,7 +96,7 @@ Alternator = {
 
 var battery = Battery.new(24,30,12,1.0,7.0);
 
-alternator1 = Alternator.new("/rotors/main/rpm",500.0,28.0,60.0);
+alternator1 = Alternator.new("/rotors/main/rpm",50.0,28.0,60.0);
 
 #####################################
 setlistener("/sim/signals/fdm-initialized", func {
