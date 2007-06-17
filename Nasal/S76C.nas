@@ -71,7 +71,7 @@ update_fuel = func{
             NoFuel.setBoolValue(1);
         }
     }
-    
+
 }
 
 update_systems = func {
@@ -86,13 +86,6 @@ update_systems = func {
         if(N1.getValue() < 70){
             props.globals.getNode("controls/engines/engine/magnetos").setValue(0);
         }
-    }
-
-    force = props.globals.getNode("/accelerations/pilot-g").getValue();
-    if(force == nil) {force = 1.0;}
-    eyepoint = EyePoint - (force * 0.02);
-    if(ViewNum == 0){
-        props.globals.getNode("/sim/current-view/y-offset-m").setDoubleValue(eyepoint);
     }
 settimer(update_systems,0);
 }
