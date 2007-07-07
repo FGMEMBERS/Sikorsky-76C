@@ -16,6 +16,9 @@ aircraft.light.new("sim/model/S-76C/lighting/strobe-state", [0.05, 1.50], strobe
 beacon_switch = props.globals.getNode("controls/lighting/beacon", 1);
 aircraft.light.new("sim/model/S-76C/lighting/beacon-state", [1.0, 1.0], beacon_switch);
 
+var FHmeter = aircraft.timer.new("/instrumentation/clock/flight-meter-sec", 10);
+FHmeter.stop();
+
 Cvolume.setDoubleValue(0.0);
 Ovolume.setDoubleValue(0.0);
 N1.setDoubleValue(0.0);
@@ -27,7 +30,7 @@ setlistener("/sim/signals/fdm-initialized", func {
     setprop("/environment/turbulence/use-cloud-turbulence","true");
     setprop("/instrumentation/clock/ET-min",0);
     setprop("/instrumentation/clock/ET-hr",0);
-    EyePoint = 0.02 + getprop("sim/view/config/y-offset-m");
+    setprop("/instrumentation/clock/flight-meter-hour",0);
     print("Systems ... Check");
     settimer(update_systems,1);
 });
@@ -41,6 +44,12 @@ setlistener("/sim/current-view/view-number", func {
         Cvolume.setValue(0.1);
         Ovolume.setValue(1.0);
     }
+});
+
+setlistener("/gear/gear[1]/wow", func {
+    if(cmdarg().getBoolValue()){
+    FHmeter.stop();
+    }else{FHmeter.start();}
 });
 
 setlistener("/engines/engine/running", func {
@@ -60,6 +69,13 @@ setlistener("/engines/engine/out-of-fuel", func {
         props.globals.getNode("/engines/engine/running").setBoolValue(0);
     }
 });
+
+flight_meter = func{
+var fmeter = getprop("/instrumentation/clock/flight-meter-sec");
+var fminute = fmeter * 0.016666;
+var fhour = fminute * 0.016666;
+setprop("/instrumentation/clock/flight-meter-hour",fhour);
+}
 
 update_fuel = func{
     var amnt = arg[0] * GPS;
@@ -87,6 +103,7 @@ update_systems = func {
             props.globals.getNode("controls/engines/engine/magnetos").setValue(0);
         }
     }
+flight_meter();
 settimer(update_systems,0);
 }
 
