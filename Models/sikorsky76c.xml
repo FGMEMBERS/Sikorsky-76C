@@ -5,12 +5,254 @@
     <path>s76c.ac</path>
 
     <animation>
-        <name>Rotors</name>
-        <object-name>blade1</object-name>
-        <object-name>blade2</object-name>
-        <object-name>blade3</object-name>
-        <object-name>blade4</object-name>
+      <type>material</type>
+      <object-name>S76C</object-name>
+      <object-name>LHgeardoor</object-name>
+      <object-name>LHbaggage</object-name>
+      <object-name>RHbaggage</object-name>
+      <object-name>RHgeardoor</object-name>
+      <object-name>RHfrtgeardoor</object-name>
+      <object-name>LHfrtgeardoor</object-name>
+      <object-name>LHflap1</object-name>
+      <object-name>Rr.Doors</object-name>
+      <object-name>RF.door</object-name>
+      <object-name>LF.door</object-name>
+      <object-name>RHflap1</object-name>
+      <property-base>/sim/model/livery/all</property-base>
+      <texture-prop>texture</texture-prop>
+      <texture>S76livery.rgb</texture>
     </animation>
+
+
+    <panel>
+        <name>Main Panel</name>
+        <path>Aircraft/Sikorsky-76C/Panels/s76c-panel.xml</path>
+        <bottom-left>
+            <x-m>-2.991</x-m>
+            <y-m>-0.659</y-m>
+            <z-m>-1.736</z-m>
+        </bottom-left>
+        <bottom-right>
+            <x-m>-2.991</x-m>
+            <y-m>0.662</y-m>
+            <z-m>-1.736</z-m>
+        </bottom-right>
+        <top-left>
+            <x-m>-3.055</x-m>
+            <y-m>-0.659</y-m>
+            <z-m>-1.374</z-m>
+        </top-left>
+    </panel>
+
+    <panel>
+        <name>Console</name>
+        <path>Aircraft/Sikorsky-76C/Panels/s76c-console.xml</path>
+        <bottom-left>
+            <x-m>-2.223</x-m>
+            <y-m>-0.0173</y-m>
+            <z-m>-1.866</z-m>
+        </bottom-left>
+        <bottom-right>
+            <x-m>-2.223</x-m>
+            <y-m>0.164</y-m>
+            <z-m>-1.866</z-m>
+        </bottom-right>
+        <top-left>
+            <x-m>-2.979</x-m>
+            <y-m>-0.0173</y-m>
+            <z-m>-1.732</z-m>
+        </top-left>
+    </panel>
+
+    <model>
+        <path>Aircraft/Sikorsky-76C/Models/Instruments/ehsi.xml</path>
+        <offsets>
+            <x-m>-3.024</x-m>
+            <y-m>0.447</y-m>
+            <z-m>-1.615</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <path>Aircraft/Sikorsky-76C/Models/Instruments/ehsi.xml</path>
+        <offsets>
+            <x-m>-3.024</x-m>
+            <y-m>-0.447</y-m>
+            <z-m>-1.615</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <path>Aircraft/Sikorsky-76C/Models/Instruments/eadi.xml</path>
+        <offsets>
+            <x-m>-3.046</x-m>
+            <y-m>-0.447</y-m>
+            <z-m>-1.478</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <path>Aircraft/Sikorsky-76C/Models/Instruments/eadi.xml</path>
+        <offsets>
+            <x-m>-3.046</x-m>
+            <y-m>0.447</y-m>
+            <z-m>-1.478</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <path>Aircraft/Sikorsky-76C/Models/Instruments/iids.xml</path>
+        <offsets>
+            <x-m>-3.032</x-m>
+            <y-m>-0.267</y-m>
+            <z-m>-1.556</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <path>Aircraft/Sikorsky-76C/Models/Instruments/iids.xml</path>
+        <offsets>
+            <x-m>-3.032</x-m>
+            <y-m>0.267</y-m>
+            <z-m>-1.556</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <path>Aircraft/Sikorsky-76C/Models/Instruments/iids.xml</path>
+        <offsets>
+            <x-m>-3.047</x-m>
+            <y-m>-0.022</y-m>
+            <z-m>-1.478</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <path>Aircraft/Instruments-3d/RDR-160/RDR-160.xml</path>
+        <offsets>
+            <x-m>-3.019</x-m>
+            <y-m>0.082</y-m>
+            <z-m>-1.627</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <path>Aircraft/Sikorsky-76C/Models/Instruments/asi.xml</path>
+        <offsets>
+            <x-m>-3.053</x-m>
+            <y-m>0.217</y-m>
+            <z-m>-1.436</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <path>Aircraft/Sikorsky-76C/Models/Instruments/alt.xml</path>
+        <offsets>
+            <x-m>-3.053</x-m>
+            <y-m>0.310</y-m>
+            <z-m>-1.436</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <path>Aircraft/Sikorsky-76C/Models/Instruments/tcas.xml</path>
+        <offsets>
+            <x-m>-3.053</x-m>
+            <y-m>-0.219</y-m>
+            <z-m>-1.441</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <path>Aircraft/Sikorsky-76C/Models/Instruments/rtu4200-1.xml</path>
+        <offsets>
+            <x-m>-2.933</x-m>
+            <y-m>-0.083</y-m>
+            <z-m>-1.748</z-m>
+            <pitch-deg>-80.0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <path>Aircraft/Sikorsky-76C/Models/Instruments/rtu4200-2.xml</path>
+        <offsets>
+            <x-m>-2.933</x-m>
+            <y-m>0.083</y-m>
+            <z-m>-1.748</z-m>
+            <pitch-deg>-80.0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <path>Aircraft/Sikorsky-76C/Models/Instruments/spz700.xml</path>
+        <offsets>
+            <x-m>-3.010</x-m>
+            <y-m>-0.309</y-m>
+            <z-m>-1.687</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <path>Aircraft/Sikorsky-76C/Models/Instruments/spz700.xml</path>
+        <offsets>
+            <x-m>-3.010</x-m>
+            <y-m>0.309</y-m>
+            <z-m>-1.687</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <path>Aircraft/Sikorsky-76C/Models/Instruments/standby-ai.xml</path>
+        <offsets>
+            <x-m>-3.048</x-m>
+            <y-m>0.120</y-m>
+            <z-m>-1.464</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <path>Aircraft/Sikorsky-76C/Models/Instruments/altset.xml</path>
+        <offsets>
+            <x-m>-3.035</x-m>
+            <y-m>0.121</y-m>
+            <z-m>-1.538</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <path>Aircraft/Sikorsky-76C/Models/Instruments/Ralt.xml</path>
+        <offsets>
+            <x-m>-3.010</x-m>
+            <y-m>0.581</y-m>
+            <z-m>-1.679</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <path>Aircraft/Sikorsky-76C/Models/Instruments/dc.xml</path>
+        <offsets>
+            <x-m>-3.006</x-m>
+            <y-m>0.449</y-m>
+            <z-m>-1.708</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
 
     <animation>
         <name>BlurredRotors</name>
@@ -21,12 +263,39 @@
     </animation>
 
     <animation>
+        <name>Rotors</name>
+        <object-name>blade1</object-name>
+        <object-name>blade2</object-name>
+        <object-name>blade3</object-name>
+        <object-name>blade4</object-name>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>Rotorhub</object-name>
+        <object-name>BlurredRotors</object-name>
+        <object-name>Rotors</object-name>
+        <property>rotors/main/tilt/pitch-deg</property>
+        <center>
+            <x-m>0</x-m>
+            <y-m>0</y-m>
+            <z-m>0.151</z-m>
+        </center>
+        <axis>
+            <x>0.0</x>
+            <y>1.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+
+
+    <animation>
         <type>select</type>
         <object-name>Rotors</object-name>
         <condition>
             <less-than>
                 <property>rotors/main/rpm</property>
-                <value>150.999999</value>
+                <value>201</value>
             </less-than>
         </condition>
     </animation>
@@ -37,7 +306,7 @@
         <condition>
             <greater-than>
                 <property>rotors/main/rpm</property>
-                <value>150.999998</value>
+                <value>200</value>
             </greater-than>
         </condition>
     </animation>
@@ -63,183 +332,20 @@
             </less-than>
         </condition>
     </animation>
-
+<!-- Hub Tilt-->
     <animation>
         <type>rotate</type>
-        <object-name>blade1</object-name>
-        <property>rotors/main/cone-deg</property>
+        <object-name>Rotorhub</object-name>
+        <property>rotors/main/blade/position-deg</property>
         <center>
             <x-m>0</x-m>
             <y-m>0</y-m>
-            <z-m>0</z-m>
+            <z-m>0.151</z-m>
         </center>
         <axis>
             <x>0.0</x>
-            <y>1.0</y>
-            <z>0.0</z>
-        </axis>
-    </animation>
-
-    <animation>
-        <type>rotate</type>
-        <object-name>blade2</object-name>
-        <property>rotors/main/cone-deg</property>
-        <center>
-            <x-m>0.021</x-m>
-            <y-m>0.0</y-m>
-            <z-m>0.2</z-m>
-        </center>
-        <axis>
-            <x>-1.0</x>
             <y>0.0</y>
-            <z>0.0</z>
-        </axis>
-    </animation>
-
-    <animation>
-        <type>rotate</type>
-        <object-name>blade3</object-name>
-        <property>rotors/main/cone-deg</property>
-        <center>
-            <x-m>0.0</x-m>
-            <y-m>0.0</y-m>
-            <z-m>0.0</z-m>
-        </center>
-        <axis>
-            <x>0.0</x>
-            <y>-1.0</y>
-            <z>0.0</z>
-        </axis>
-    </animation>
-
-    <animation>
-        <type>rotate</type>
-        <object-name>blade4</object-name>
-        <property>rotors/main/cone-deg</property>
-        <center>
-            <x-m>0.0</x-m>
-            <y-m>0.0</y-m>
-            <z-m>0.0</z-m>
-        </center>
-        <axis>
-            <x>1.0</x>
-            <y>0.0</y>
-            <z>0.0</z>
-        </axis>
-    </animation>
-
-    <animation>
-        <type>rotate</type>
-        <object-name>fastblade1</object-name>
-        <property>rotors/main/cone-deg</property>
-        <center>
-            <x-m>0</x-m>
-            <y-m>0</y-m>
-            <z-m>0</z-m>
-        </center>
-        <axis>
-            <x>0.0</x>
-            <y>1.0</y>
-            <z>0.0</z>
-        </axis>
-    </animation>
-
-    <animation>
-        <type>rotate</type>
-        <object-name>fastblade2</object-name>
-        <property>rotors/main/cone-deg</property>
-        <center>
-            <x-m>0.021</x-m>
-            <y-m>0.0</y-m>
-            <z-m>0.2</z-m>
-        </center>
-        <axis>
-            <x>-1.0</x>
-            <y>0.0</y>
-            <z>0.0</z>
-        </axis>
-    </animation>
-
-    <animation>
-        <type>rotate</type>
-        <object-name>fastblade3</object-name>
-        <property>rotors/main/cone-deg</property>
-        <center>
-            <x-m>0.0</x-m>
-            <y-m>0.0</y-m>
-            <z-m>0.0</z-m>
-        </center>
-        <axis>
-            <x>0.0</x>
-            <y>-1.0</y>
-            <z>0.0</z>
-        </axis>
-    </animation>
-
-    <animation>
-        <type>rotate</type>
-        <object-name>fastblade4</object-name>
-        <property>rotors/main/cone-deg</property>
-        <center>
-            <x-m>0.0</x-m>
-            <y-m>0.0</y-m>
-            <z-m>0.0</z-m>
-        </center>
-        <axis>
-            <x>1.0</x>
-            <y>0.0</y>
-            <z>0.0</z>
-        </axis>
-    </animation>
-
-    <animation>
-        <type>spin</type>
-        <object-name>Rotorhub</object-name> 
-        <property>rotors/main/rpm</property>
-        <factor>1.0</factor>
-        <center>
-            <x-m>-0.021</x-m>
-            <y-m>0.0</y-m>
-            <z-m>0.188</z-m>
-        </center>
-        <axis>
-            <x>-0.087</x>
-            <y>0.0</y>
-            <z>0.996</z>
-        </axis>
-    </animation>
-
-    <animation>
-        <type>spin</type>
-        <object-name>Rotors</object-name> 
-        <property>rotors/main/rpm</property>
-        <factor>1.0</factor>
-        <center>
-            <x-m>-0.021</x-m>
-            <y-m>0.0</y-m>
-            <z-m>0.188</z-m>
-        </center>
-        <axis>
-            <x>-0.087</x>
-            <y>0.0</y>
-            <z>0.996</z>
-        </axis>
-    </animation>
-
-    <animation>
-        <type>spin</type>
-        <object-name>BlurredRotors</object-name> 
-        <property>rotors/main/rpm</property>
-        <factor>1.0</factor>
-        <center>
-            <x-m>-0.021</x-m>
-            <y-m>0.0</y-m>
-            <z-m>0.188</z-m>
-        </center>
-        <axis>
-            <x>-0.087</x>
-            <y>0.0</y>
-            <z>0.996</z>
+            <z>1.0</z>
         </axis>
     </animation>
 
@@ -260,26 +366,391 @@
         </axis>
     </animation>
 
+<!--  Blade 1-->
+
+    <animation>
+        <type>rotate</type>
+        <object-name>blade1</object-name>
+        <property>rotors/main/blade/position-deg</property>
+        <center>
+            <x-m>0</x-m>
+            <y-m>0</y-m>
+            <z-m>0.151</z-m>
+        </center>
+        <axis>
+            <x>0.0</x>
+            <y>0.0</y>
+            <z>1.0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>blade1</object-name>
+        <property>rotors/main/blade/incidence-deg</property>
+        <center>
+            <x-m>0</x-m>
+            <y-m>0</y-m>
+            <z-m>0.151</z-m>
+        </center>
+        <axis>
+            <x>-1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>blade1</object-name>
+        <property>rotors/main/blade[2]/flap-deg</property>
+        <center>
+            <x-m>-0.309</x-m>
+            <y-m>0</y-m>
+            <z-m>0.151</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>1.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+
+
+<!--  Blade 2-->
+
+    <animation>
+        <type>rotate</type>
+        <object-name>blade2</object-name>
+        <property>rotors/main/blade[0]/position-deg</property>
+        <center>
+            <x-m>0</x-m>
+            <y-m>0</y-m>
+            <z-m>0.151</z-m>
+        </center>
+        <axis>
+            <x>0.0</x>
+            <y>0.0</y>
+            <z>1.0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>blade2</object-name>
+        <property>rotors/main/blade[1]/incidence-deg</property>
+        <center>
+            <x-m>0</x-m>
+            <y-m>0</y-m>
+            <z-m>0.151</z-m>
+        </center>
+        <axis>
+            <x>0.0</x>
+            <y>-1.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>blade2</object-name>
+        <property>rotors/main/blade[3]/flap-deg</property>
+        <center>
+            <x-m>-0.309</x-m>
+            <y-m>0</y-m>
+            <z-m>0.151</z-m>
+        </center>
+        <axis>
+            <x>-1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+
+<!--  Blade 3-->
+
+    <animation>
+        <type>rotate</type>
+        <object-name>blade3</object-name>
+        <property>rotors/main/blade[0]/position-deg</property>
+        <center>
+            <x-m>0</x-m>
+            <y-m>0</y-m>
+            <z-m>0.151</z-m>
+        </center>
+        <axis>
+            <x>0.0</x>
+            <y>0.0</y>
+            <z>1.0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>blade3</object-name>
+        <property>rotors/main/blade[2]/incidence-deg</property>
+        <center>
+            <x-m>0</x-m>
+            <y-m>0</y-m>
+            <z-m>0.151</z-m>
+        </center>
+        <axis>
+            <x>1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>blade3</object-name>
+        <property>rotors/main/blade[0]/flap-deg</property>
+        <center>
+            <x-m>-0.309</x-m>
+            <y-m>0</y-m>
+            <z-m>0.151</z-m>
+        </center>
+        <axis>
+            <x>0.0</x>
+            <y>-1.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+
+
+<!--  Blade 4-->
+    <animation>
+        <type>rotate</type>
+        <object-name>blade4</object-name>
+        <property>rotors/main/blade[0]/position-deg</property>
+        <center>
+            <x-m>0</x-m>
+            <y-m>0</y-m>
+            <z-m>0.151</z-m>
+        </center>
+        <axis>
+            <x>0.0</x>
+            <y>0.0</y>
+            <z>1.0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>blade4</object-name>
+        <property>rotors/main/blade[3]/incidence-deg</property>
+        <center>
+            <x-m>0</x-m>
+            <y-m>0</y-m>
+            <z-m>0.151</z-m>
+        </center>
+        <axis>
+            <x>0.0</x>
+            <y>1.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>blade4</object-name>
+        <property>rotors/main/blade[1]/flap-deg</property>
+        <center>
+            <x-m>-0.309</x-m>
+            <y-m>0</y-m>
+            <z-m>0.151</z-m>
+        </center>
+        <axis>
+            <x>1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+
+<!-- Blurred rotors-->
+
+    <animation>
+        <type>rotate</type>
+        <object-name>fastblade1</object-name>
+        <property>rotors/main/blade/position-deg</property>
+        <center>
+            <x-m>0</x-m>
+            <y-m>0</y-m>
+            <z-m>0.209</z-m>
+        </center>
+        <axis>
+            <x>0.0</x>
+            <y>0.0</y>
+            <z>1.0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>fastblade1</object-name>
+        <property>rotors/main/blade[2]/flap-deg</property>
+        <center>
+            <x-m>-0.309</x-m>
+            <y-m>0</y-m>
+            <z-m>0.151</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>1.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>fastblade2</object-name>
+        <property>rotors/main/blade[0]/position-deg</property>
+        <center>
+            <x-m>0</x-m>
+            <y-m>0</y-m>
+            <z-m>0.151</z-m>
+        </center>
+        <axis>
+            <x>0.0</x>
+            <y>0.0</y>
+            <z>1.0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>fastblade2</object-name>
+        <property>rotors/main/blade[3]/flap-deg</property>
+        <center>
+            <x-m>-0.309</x-m>
+            <y-m>0</y-m>
+            <z-m>0.151</z-m>
+        </center>
+        <axis>
+            <x>-1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>fastblade3</object-name>
+        <property>rotors/main/blade[0]/position-deg</property>
+        <center>
+            <x-m>0</x-m>
+            <y-m>0</y-m>
+            <z-m>0.151</z-m>
+        </center>
+        <axis>
+            <x>0.0</x>
+            <y>0.0</y>
+            <z>1.0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>fastblade3</object-name>
+        <property>rotors/main/blade[0]/flap-deg</property>
+        <center>
+            <x-m>-0.309</x-m>
+            <y-m>0</y-m>
+            <z-m>0.151</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>-1.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>fastblade4</object-name>
+        <property>rotors/main/blade[0]/position-deg</property>
+        <center>
+            <x-m>0</x-m>
+            <y-m>0</y-m>
+            <z-m>0.151</z-m>
+        </center>
+        <axis>
+            <x>0.0</x>
+            <y>0.0</y>
+            <z>1.0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>fastblade4</object-name>
+        <property>rotors/main/blade[1]/flap-deg</property>
+        <center>
+            <x-m>-0.309</x-m>
+            <y-m>0</y-m>
+            <z-m>0.151</z-m>
+        </center>
+        <axis>
+            <x>1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+
 <!--####    Gear    ####-->
+
+    <animation>
+        <type>select</type>
+        <object-name>Glamp.N</object-name>
+        <condition>
+            <equals>
+                <property>gear/gear[0]/position-norm</property>
+                <value>1</value>
+            </equals>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>Glamp.L</object-name>
+        <condition>
+            <equals>
+                <property>gear/gear[1]/position-norm</property>
+                <value>1</value>
+            </equals>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>Glamp.R</object-name>
+        <condition>
+            <equals>
+                <property>gear/gear[2]/position-norm</property>
+                <value>1</value>
+            </equals>
+        </condition>
+    </animation>
+
 
     <animation>
         <type>rotate</type>
         <object-name>RHgeardoor</object-name>
         <property>gear/gear[2]/position-norm</property>
         <interpolation>
-            <entry><ind>0.0</ind><dep>-137.0</dep></entry>
-            <entry><ind>0.75</ind><dep>0.0</dep></entry>
-            <entry><ind>1.0</ind><dep>0.0</dep></entry>
+            <entry><ind>0.0</ind><dep>0.0</dep></entry>
+            <entry><ind>0.75</ind><dep>137.0</dep></entry>
+            <entry><ind>1.0</ind><dep>137.0</dep></entry>
         </interpolation>
         <center>
-            <x-m>1.3</x-m>
-            <y-m>0.766</y-m>
-            <z-m>-2.022</z-m>
+            <x-m>1.306</x-m>
+            <y-m>0.904</y-m>
+            <z-m>-1.976</z-m>
         </center>
         <axis>
-            <x>0.975</x>
-            <y>-0.220</y>
-            <z>0.038</z>
+            <x>0.966</x>
+            <y>-0.258</y>
+            <z>0.0</z>
         </axis>
     </animation>
 
@@ -311,19 +782,19 @@
         <object-name>LHgeardoor</object-name>
         <property>gear/gear[1]/position-norm</property>
         <interpolation>
-            <entry><ind>0.0</ind><dep>137.0</dep></entry>
-            <entry><ind>0.75</ind><dep>0.0</dep></entry>
-            <entry><ind>1.0</ind><dep>0.0</dep></entry>
+            <entry><ind>0.0</ind><dep>0.0</dep></entry>
+            <entry><ind>0.75</ind><dep>-137.0</dep></entry>
+            <entry><ind>1.0</ind><dep>-137.0</dep></entry>
         </interpolation>
         <center>
-            <x-m>1.3</x-m>
-            <y-m>-0.766</y-m>
-            <z-m>-2.022</z-m>
+            <x-m>1.306</x-m>
+            <y-m>-0.904</y-m>
+            <z-m>-1.976</z-m>
         </center>
         <axis>
-            <x>0.975</x>
-            <y>0.220</y>
-            <z>0.038</z>
+            <x>0.966</x>
+            <y>0.258</y>
+            <z>0.0</z>
         </axis>
     </animation>
 
@@ -377,19 +848,19 @@
         <object-name>LHfrtgeardoor</object-name>
         <property>gear/gear[0]/position-norm</property>
         <interpolation>
-            <entry><ind>0.0</ind><dep>90.0</dep></entry>
-            <entry><ind>0.5</ind><dep>0.0</dep></entry>
-            <entry><ind>1.0</ind><dep>0.0</dep></entry>
+            <entry><ind>0.0</ind><dep>0.0</dep></entry>
+            <entry><ind>0.75</ind><dep>-90.0</dep></entry>
+            <entry><ind>1.0</ind><dep>-90.0</dep></entry>
         </interpolation>
         <center>
-            <x-m>-3.829</x-m>
-            <y-m>-0.148</y-m>
-            <z-m>-2.385</z-m>
+            <x-m>-3.728</x-m>
+            <y-m>-0.154</y-m>
+            <z-m>-2.386</z-m>
         </center>
         <axis>
             <x>0.997</x>
             <y>0.0</y>
-            <z>-0.073</z>
+            <z>-0.071</z>
         </axis>
     </animation>
 
@@ -398,19 +869,19 @@
         <object-name>RHfrtgeardoor</object-name>
         <property>gear/gear[0]/position-norm</property>
         <interpolation>
-            <entry><ind>0.0</ind><dep>-90.0</dep></entry>
-            <entry><ind>0.5</ind><dep>0.0</dep></entry>
-            <entry><ind>1.0</ind><dep>0.0</dep></entry>
+            <entry><ind>0.0</ind><dep>0.0</dep></entry>
+            <entry><ind>0.75</ind><dep>90.0</dep></entry>
+            <entry><ind>1.0</ind><dep>90.0</dep></entry>
         </interpolation>
         <center>
-            <x-m>-3.829</x-m>
-            <y-m>0.148</y-m>
-            <z-m>-2.385</z-m>
+            <x-m>-3.728</x-m>
+            <y-m>0.154</y-m>
+            <z-m>-2.386</z-m>
         </center>
         <axis>
             <x>0.997</x>
             <y>0.0</y>
-            <z>-0.073</z>
+            <z>-0.071</z>
         </axis>
     </animation>
 
@@ -420,11 +891,11 @@
         <type>rotate</type>
         <object-name>GearLever</object-name>
         <property>controls/gear/gear-down</property>
-        <factor>40</factor>
+        <factor>20</factor>
         <center>
-            <x-m>-3.110</x-m>
-            <y-m>0.239</y-m>
-            <z-m>-1.882</z-m>
+            <x-m>-3.039</x-m>
+            <y-m>0.231</y-m>
+            <z-m>-1.849</z-m>
         </center>
         <axis>
             <x>0.0</x>
@@ -437,16 +908,16 @@
         <type>translate</type>
         <object-name>Ebrake</object-name>
         <property>controls/gear/brake-parking</property>
-        <factor>-0.06</factor>
+        <factor>0.06</factor>
         <center>
-            <x-m>-3.082</x-m>
-            <y-m>0.197</y-m>
-            <z-m>-1.868</z-m>
+            <x-m>-3.025</x-m>
+            <y-m>0.189</y-m>
+            <z-m>-1.839</z-m>
         </center>
         <axis>
-            <x>-0.985</x>
+            <x>0.940</x>
             <y>0.0</y>
-            <z>-0.174</z>
+            <z>0.342</z>
         </axis>
     </animation>
 
@@ -456,150 +927,19 @@
         <property>controls/gear/brake-parking</property>
         <factor>90</factor>
         <center>
-            <x-m>-3.082</x-m>
-            <y-m>0.197</y-m>
-            <z-m>-1.868</z-m>
+            <x-m>-3.025</x-m>
+            <y-m>0.189</y-m>
+            <z-m>-1.839</z-m>
         </center>
         <axis>
-            <x>-0.985</x>
+            <x>0.940</x>
             <y>0.0</y>
-            <z>-0.174</z>
+            <z>0.342</z>
         </axis>
     </animation>
 
 <!--####    Instrumentation    ####-->
 
-    <animation>
-        <type>rotate</type>
-        <object-name>ASIneedle</object-name>
-        <property>instrumentation/airspeed-indicator/indicated-speed-kt</property>
-        <interpolation>
-            <entry><ind>0.0</ind><dep>0.0</dep></entry>
-            <entry><ind>20.0</ind><dep>12.5</dep></entry>
-            <entry><ind>40.0</ind><dep>76.0</dep></entry>
-            <entry><ind>80.0</ind><dep>169.5</dep></entry>
-            <entry><ind>120.0</ind><dep>230.0</dep></entry>
-            <entry><ind>160.0</ind><dep>294.0</dep></entry>
-            <entry><ind>190.0</ind><dep>342.0</dep></entry>
-        </interpolation>
-        <axis>
-            <x>-0.985</x>
-            <y>0</y>
-            <z>-0.174</z>
-        </axis>
-        <center>
-            <x-m>-3.154</x-m>
-            <y-m>0.230</y-m>
-            <z-m>-1.468</z-m>
-        </center>
-    </animation>
 
-    <animation>
-        <type>rotate</type>
-        <object-name>ALTneedle100</object-name>
-        <property>instrumentation/altimeter/indicated-altitude-ft</property>
-        <factor>0.36</factor>
-        <axis>
-            <x>-0.985</x>
-            <y>0</y>
-            <z>-0.174</z>
-        </axis>
-        <center>
-            <x-m>-3.154</x-m>
-            <y-m>0.327</y-m>
-            <z-m>-1.468</z-m>
-        </center>
-    </animation>
-
-    <animation>
-        <type>rotate</type>
-        <object-name>ALTneedle1000</object-name>
-        <property>instrumentation/altimeter/indicated-altitude-ft</property>
-        <factor>0.036</factor>
-        <axis>
-            <x>-0.985</x>
-            <y>0</y>
-            <z>-0.174</z>
-        </axis>
-        <center>
-            <x-m>-3.154</x-m>
-            <y-m>0.327</y-m>
-            <z-m>-1.468</z-m>
-        </center>
-    </animation>
-
-    <animation>
-        <type>texmultiple</type>
-        <object-name>ATIgauge</object-name>
-        <transform>
-            <property>orientation/pitch-deg</property>
-            <subtype>textranslate</subtype>
-            <factor>0.0023</factor>
-            <axis>
-                <x>0</x>
-                <y>1</y>
-                <z>0</z>
-            </axis>
-        </transform>
-        <transform>
-            <property>orientation/roll-deg</property>
-            <subtype>texrotate</subtype>
-            <center>
-                <x>0.25</x>
-                <y>0.25</y>
-            </center>
-            <axis>
-                <x>0</x>
-                <y>0</y>
-                <z>-1</z>
-            </axis>
-        </transform>
-    </animation>
-
-    <animation>
-        <type>rotate</type>
-        <object-name>VSIneedle</object-name>
-        <property>autopilot/internal/vert-speed-fpm</property>
-        <min>-4000.0</min>
-        <max>4000.0</max>
-        <interpolation>
-            <entry><ind>-4000.0</ind><dep>-52.0</dep></entry>
-            <entry><ind>-3000.0</ind><dep>-42.0</dep></entry>
-            <entry><ind>-2000.0</ind><dep>-31.5</dep></entry>
-            <entry><ind>-1000.0</ind><dep>-21.0</dep></entry>
-            <entry><ind>-500.0</ind><dep>-10</dep></entry>
-            <entry><ind>0.0</ind><dep>0.0</dep></entry>
-            <entry><ind>500.0</ind><dep>10</dep></entry>
-            <entry><ind>1000.0</ind><dep>21.0</dep></entry>
-            <entry><ind>2000.0</ind><dep>31.5</dep></entry>
-            <entry><ind>3000.0</ind><dep>42.0</dep></entry>
-            <entry><ind>4000.0</ind><dep>-52.0</dep></entry>
-        </interpolation>
-        <axis>
-            <x>-0.985</x>
-            <y>0.0</y>
-            <z>-0.174</z>
-        </axis>
-        <center>
-            <x-m>-3.123</x-m>
-            <y-m>0.557</y-m>
-            <z-m>-1.649</z-m>
-        </center>
-    </animation>
-
-    <animation>
-        <type>texrotate</type>
-        <object-name>Cmps</object-name>
-        <property>orientation/heading-deg</property>
-        <center>
-            <x>0.625</x>
-            <y>0.625</y>
-        </center>
-        <axis>
-            <x>0</x>
-            <y>0</y>
-            <z>-1</z>
-        </axis>
-    </animation>
 
 </PropertyList>
