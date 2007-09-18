@@ -10,7 +10,7 @@
 
     <instrument include="../../Instruments-3d/RDR-160/wxradar-hotspots.xml">
         <name>radar hotspots</name>
-        <x>579</x>
+        <x>576</x>
         <y>88</y>
         <w>133</w>
         <h>102</h>
@@ -26,8 +26,8 @@
 
     <instrument include="altset-hotspots.xml">
         <name>altset hotspots</name>
-        <x>610</x>
-        <y>185</y>
+        <x>608</x>
+        <y>158</y>
         <w>64</w>
         <h>32</h>
     </instrument>
