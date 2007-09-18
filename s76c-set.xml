@@ -15,7 +15,7 @@ Wim (performance specs)
         <author>Syd Adams(Model), Maik Justus (FDM)</author>
         <flight-model>yasim</flight-model>
         <aero>S76c</aero>
-        <fuel-fraction>0.75</fuel-fraction>
+        <fuel-fraction>0.5</fuel-fraction>
         <startup>
             <splash-texture>Aircraft/Sikorsky-76C/S76C_splash.rgb</splash-texture>
         </startup>
@@ -28,7 +28,14 @@ Wim (performance specs)
             <electrical>
                 <path></path>
             </electrical>
+            <autopilot>
+            <path>Aircraft/Sikorsky-76C/S76C-autopilot.xml</path>
+        </autopilot>
         </systems>
+
+        <instrumentation>
+            <path>Aircraft/Sikorsky-76C/instrumentation.xml</path>
+        </instrumentation>
 
         <sound>
             <path>Aircraft/Sikorsky-76C/Sound/s76c-sound.xml</path>
@@ -45,26 +52,101 @@ Wim (performance specs)
             <internal archive="y">true</internal>
             <config>
                 <x-offset-m archive="y">0.45</x-offset-m>
-                <y-offset-m archive="y">-1.10</y-offset-m>
-                <z-offset-m archive="y">-2.20</z-offset-m>
-                <pitch-offset-deg>-12</pitch-offset-deg>
-                <default-field-of-view-deg type="double">60.0</default-field-of-view-deg>
+                <y-offset-m archive="y">-1.05</y-offset-m>
+                <z-offset-m archive="y">-2.05</z-offset-m>
+                <pitch-offset-deg>-14.5</pitch-offset-deg>
+                <default-field-of-view-deg type="double">55.0</default-field-of-view-deg>
             </config>
         </view>
 
-        <chase-distance-m type="double" archive="y">-30.0</chase-distance-m>
+    <view n="1">
+        <config>
+            <target-y-offset-m archive="y" type="double">-1.5</target-y-offset-m>
+            <target-z-offset-m archive="y" type="double">-1</target-z-offset-m>
+            <default-field-of-view-deg type="double">55.0</default-field-of-view-deg>
+        </config>
+    </view>
+        
+    <view n="2">
+        <config>
+            <target-y-offset-m archive="y" type="double">-1.5</target-y-offset-m>
+            <target-z-offset-m archive="y" type="double">-1</target-z-offset-m>
+            <default-field-of-view-deg type="double">55.0</default-field-of-view-deg>
+        </config>
+    </view>
+    
+    <view n="3">
+        <config>
+            <target-y-offset-m archive="y" type="double">-1.5</target-y-offset-m>
+            <target-z-offset-m archive="y" type="double">-1</target-z-offset-m>
+            <default-field-of-view-deg type="double">55.0</default-field-of-view-deg>
+        </config>
+    </view>
+        
+    <view n="4">
+        <config>
+            <target-y-offset-m archive="y" type="double">-1.5</target-y-offset-m>
+            <target-z-offset-m archive="y" type="double">-1</target-z-offset-m>
+            <default-field-of-view-deg type="double">55.0</default-field-of-view-deg>
+        </config>
+    </view>
+        
+    <view n="5">
+        <config>
+            <target-y-offset-m archive="y" type="double">-1.5</target-y-offset-m>
+            <target-z-offset-m archive="y" type="double">-1</target-z-offset-m>
+            <default-field-of-view-deg type="double">55.0</default-field-of-view-deg>
+        </config>
+    </view>
+        
+    <view n="6">
+        <config>
+            <target-y-offset-m archive="y" type="double">-1.5</target-y-offset-m>
+            <target-z-offset-m archive="y" type="double">-1</target-z-offset-m>
+            <default-field-of-view-deg type="double">55.0</default-field-of-view-deg>
+        </config>
+    </view>
+
+    <view n="100">
+        <name>Panel View</name>
+        <type>lookfrom</type>
+        <internal type="bool">true</internal>
+        <config>
+            <from-model type="bool">true</from-model>
+            <from-model-idx type="int">0</from-model-idx>
+            <ground-level-nearplane-m type="double">0.5f</ground-level-nearplane-m>
+            <default-field-of-view-deg type="double">30.0</default-field-of-view-deg>
+            <default-pitch-deg type="double">0</default-pitch-deg>
+            <default-heading-deg type="double">0</default-heading-deg>
+            <front-direction-deg type="double">0</front-direction-deg>
+            <front-left-direction-deg type="double">45</front-left-direction-deg>
+            <left-direction-deg type="double">90</left-direction-deg>
+            <back-left-direction-deg type="double">135</back-left-direction-deg>
+            <back-direction-deg type="double">180</back-direction-deg>
+            <back-right-direction-deg type="double">225</back-right-direction-deg>
+            <right-direction-deg type="double">270</right-direction-deg>
+            <front-right-direction-deg type="double">315</front-right-direction-deg>
+            <x-offset-m archive="y">0.45</x-offset-m>
+            <y-offset-m archive="y">-1.05</y-offset-m>
+            <z-offset-m archive="y">-2.05</z-offset-m>
+            <heading-offset-deg>8.4</heading-offset-deg>
+            <pitch-offset-deg>-28</pitch-offset-deg>
+        </config>
+    </view>
+
+        <chase-distance-m type="double" archive="y">-25.0</chase-distance-m>
 <!--  11,700 Max Gross Weight-->
         <weight n="0">
             <name>Crew</name>
-            <weight-lb>180</weight-lb> 
-            <max-lb>400</max-lb>
-            <min-lb>180</min-lb>
+            <weight-lb>400</weight-lb>
+            <max-lb>500</max-lb>
+            <min-lb>160</min-lb>
         </weight>
 
         <weight n="1">
             <name>Payload</name>
-            <weight-lb>0</weight-lb> 
-            <max-lb>2550</max-lb>
+            <weight-lb>1000</weight-lb>
+            <max-lb>3500</max-lb>
             <min-lb>0</min-lb>
         </weight>
 
@@ -118,12 +200,19 @@ Wim (performance specs)
                 <throttle>1.0</throttle>
             </engine>
         </engines>
+        <flight>
+            <aileron-trim>0</aileron-trim>
+            <elevator-trim>0</elevator-trim>
+        </flight>
         <gear>
             <brake-parking>1</brake-parking>
         </gear>
         <aerotow>
-            <find-aircraft type="bool">false</find-aircraft>
+            <find-aircraft type="bool">true</find-aircraft>
         </aerotow>
+        <rotor>
+            <pitch>1</pitch>
+        </rotor>
     </controls>
 
     <input>
@@ -166,13 +255,25 @@ Wim (performance specs)
                     <value type="bool">false</value>
                 </binding>
             </key>
+
+            <key n="108">
+        <name>l</name>
+        <desc>Show livery select dialog</desc>
+        <binding>
+            <command>nasal</command>
+            <script>aircraft.livery.dialog.toggle()</script>
+        </binding>
+        </key>
         </keyboard>
     </input>
 
     <nasal>
         <S-76C>
             <file>Aircraft/Sikorsky-76C/Nasal/Electrical.nas</file>
+            <file>Aircraft/Sikorsky-76C/Nasal/flightdirector.nas</file>
+            <file>Aircraft/Sikorsky-76C/Nasal/RTU4200.nas</file>
             <file>Aircraft/Sikorsky-76C/Nasal/S76C.nas</file>
+            <file>Aircraft/Instruments-3d/RDR-160/RDR160.nas</file>
         </S-76C>
     </nasal>
 

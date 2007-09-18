@@ -1,3 +1,4 @@
+aircraft.livery.init("Aircraft/Sikorsky-76C/Liveries", "sim/model/livery/variant", "sim/model/livery/ordered");
 var ViewNum=0;
 var EyePoint = 0;
 var last_time = 0;
@@ -7,8 +8,10 @@ Fuel_Level= props.globals.getNode("/consumables/fuel/tank/level-gal_us",1);
 Fuel_LBS= props.globals.getNode("/consumables/fuel/tank/level-lbs",1);
 NoFuel=props.globals.getNode("/engines/engine/out-of-fuel",1);
 Cvolume=props.globals.getNode("/sim/sound/S76C/Cvolume",1);
+Spitch=props.globals.getNode("/sim/sound/S76C/pitch",1);
 Ovolume=props.globals.getNode("/sim/sound/S76C/Ovolume",1);
 N1 = props.globals.getNode("engines/engine/n1",1);
+N2 = props.globals.getNode("engines/engine/n2",1);
 var FDM = 0;
 
 strobe_switch = props.globals.getNode("controls/lighting/strobe", 1);
@@ -22,28 +25,35 @@ FHmeter.stop();
 Cvolume.setDoubleValue(0.0);
 Ovolume.setDoubleValue(0.0);
 N1.setDoubleValue(0.0);
+N2.setDoubleValue(0.0);
 
 setlistener("/sim/signals/fdm-initialized", func {
-    Cvolume.setDoubleValue(0.7);
+    Cvolume.setDoubleValue(0.8);
     Ovolume.setDoubleValue(0.3);
     Fuel_Density=props.globals.getNode("/consumables/fuel/tank/density-ppg").getValue();
     setprop("/environment/turbulence/use-cloud-turbulence","true");
     setprop("/instrumentation/clock/ET-min",0);
     setprop("/instrumentation/clock/ET-hr",0);
     setprop("/instrumentation/clock/flight-meter-hour",0);
+    setprop("/instrumentation/inst-vertical-speed-indicator/serviceable",1);
+    setprop("/instrumentation/altimeter/DH",200);
+    setprop("/autopilot/settings/altitude-preset",0);
     print("Systems ... Check");
     settimer(update_systems,1);
 });
 
 setlistener("/sim/current-view/view-number", func {
     ViewNum = cmdarg().getValue();
+    Cvolume.setValue(0.1);
+    Ovolume.setValue(1.0);
     if(ViewNum == 0){
-        Cvolume.setValue(0.7);
+        Cvolume.setValue(0.8);
         Ovolume.setValue(0.3);
-        }else{
-        Cvolume.setValue(0.1);
-        Ovolume.setValue(1.0);
-    }
+        }
+    if(ViewNum == 7){
+        Cvolume.setValue(0.8);
+        Ovolume.setValue(0.3);
+        }
 });
 
 setlistener("/gear/gear[1]/wow", func {
@@ -56,10 +66,10 @@ setlistener("/engines/engine/running", func {
     var running = cmdarg().getBoolValue();
     var fuel =props.globals.getNode("/engines/engine/out-of-fuel").getBoolValue();
     if(running and !fuel){
-        interpolate(N1, 95, 10);
-    }else{
+        interpolate(N2, 100, 10);
+        }else{
         props.globals.getNode("/engines/engine/running").setBoolValue(0);
-        interpolate(N1, 0, 15);
+        interpolate(N2, 0, 15);
     }
 });
 
@@ -91,16 +101,19 @@ update_fuel = func{
 }
 
 update_systems = func {
-    var time = props.globals.getNode("/sim/time/elapsed-sec").getValue();
+    var time = getprop("/sim/time/elapsed-sec");
     var dt = time - last_time;
     last_time = time;
-    var n1 = N1.getValue();
-    if(n1 >30){
-        props.globals.getNode("controls/engines/engine/magnetos").setValue(1);
+    var n2 = N2.getValue();
+    N1.setValue(n2 * 0.95);
+    setprop("engines/engine/T5",getprop("rotors/tail/torque") * 0.6666);
+    setprop("engines/engine/TQ",getprop("rotors/main/torque") * 0.0025);
+    if(n2 >30){
+        setprop("controls/engines/engine/magnetos",1);
         update_fuel(dt);
     }else{
-        if(N1.getValue() < 70){
-            props.globals.getNode("controls/engines/engine/magnetos").setValue(0);
+        if(N2.getValue() < 70){
+            setprop("controls/engines/engine/magnetos",0);
         }
     }
 flight_meter();
