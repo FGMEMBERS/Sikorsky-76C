@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+  <sim>
+    <model>
+      <livery>
+        <variant type="string">HK</variant>
+        <ordered type="int">2</ordered>
+        <all>
+          <texture>S76livery2.rgb</texture>
+        </all>
+      </livery>
+    </model>
+  </sim>
+</PropertyList>
