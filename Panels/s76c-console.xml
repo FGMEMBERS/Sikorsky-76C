@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+<name>Console</name>
+<background>Aircraft/Sikorsky-76C/Panels/transparent-bg.rgb</background>
+<w>333</w>
+<h>768</h>
+
+<instruments>
+
+
+</instruments>
+
+</PropertyList>

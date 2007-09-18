@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+<name>Main Panel</name>
+<background>Aircraft/Sikorsky-76C/Panels/transparent-bg.rgb</background>
+<w>1024</w>
+<h>285</h>
+
+<instruments>
+
+    <instrument include="../../Instruments-3d/RDR-160/wxradar-hotspots.xml">
+        <name>radar hotspots</name>
+        <x>579</x>
+        <y>88</y>
+        <w>133</w>
+        <h>102</h>
+    </instrument>
+
+    <instrument include="spz700-hotspots.xml">
+        <name>autopilot hotspots</name>
+        <x>750</x>
+        <y>41</y>
+        <w>70</w>
+        <h>70</h>
+    </instrument>
+
+    <instrument include="altset-hotspots.xml">
+        <name>altset hotspots</name>
+        <x>610</x>
+        <y>185</y>
+        <w>64</w>
+        <h>32</h>
+    </instrument>
+    
+</instruments>
+
+</PropertyList>
