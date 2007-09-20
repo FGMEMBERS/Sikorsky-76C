@@ -117,7 +117,7 @@ setlistener("/sim/signals/fdm-initialized", func {
     props.globals.getNode("/controls/lighting/instrument-lights",1).setBoolValue(1);
     FDM = 1;
     settimer(update_electrical,1);
-    print("Electrical System ... ok");
+    print("Electrical System ... Check");
 });
 
 
@@ -221,7 +221,7 @@ avionics_bus = func() {
         } else {
         setprop(Outputs~"instrument-lights",0);
         }
-        
+        setprop(Outputs~"clock",bus_volts);
         setprop(Outputs~"adf",bus_volts);
         setprop(Outputs~"dme",bus_volts);
         setprop(Outputs~"encoder",bus_volts);

@@ -254,6 +254,26 @@
         </offsets>
     </model>
 
+    <model>
+        <path>Aircraft/Sikorsky-76C/Models/Instruments/m877.xml</path>
+        <offsets>
+            <x-m>-3.006</x-m>
+            <y-m>0.207</y-m>
+            <z-m>-1.702</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <path>Aircraft/Sikorsky-76C/Models/Instruments/m877.xml</path>
+        <offsets>
+            <x-m>-3.006</x-m>
+            <y-m>-0.216</y-m>
+            <z-m>-1.702</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+
     <animation>
         <name>BlurredRotors</name>
         <object-name>fastblade1</object-name>
@@ -317,7 +337,7 @@
         <condition>
             <greater-than>
                 <property>rotors/tail/rpm</property>
-                <value>550</value>
+                <value>999.999</value>
             </greater-than>
         </condition>
     </animation>
@@ -328,7 +348,7 @@
         <condition>
             <less-than>
                 <property>rotors/tail/rpm</property>
-                <value>551</value>
+                <value>1000</value>
             </less-than>
         </condition>
     </animation>
@@ -352,8 +372,8 @@
     <animation>
         <type>spin</type>
         <object-name>TailRotor</object-name>
+        <object-name>TailHub</object-name>
         <property>rotors/tail/rpm</property>
-        <factor>0.25</factor>
         <center>
             <x-m>8.120</x-m>
             <y-m>-0.377</y-m>
@@ -361,7 +381,7 @@
         </center>
         <axis>
             <x>0.0</x>
-            <y>-1.0</y>
+            <y>1.0</y>
             <z>0.0</z>
         </axis>
     </animation>
@@ -698,6 +718,7 @@
     </animation>
 
 <!--####    Gear    ####-->
+<!--     indicators-->
 
     <animation>
         <type>select</type>
@@ -732,6 +753,66 @@
         </condition>
     </animation>
 
+<!--  front gear  -->
+
+    <animation>
+        <type>rotate</type>
+        <object-name>FrtGear</object-name>
+        <object-name>fWheel</object-name>
+        <property>gear/gear[0]/position-norm</property>
+        <interpolation>
+            <entry><ind>0.0</ind><dep>80.0</dep></entry>
+            <entry><ind>0.5</ind><dep>80.0</dep></entry>
+            <entry><ind>1.0</ind><dep>0.0</dep></entry>
+        </interpolation>
+        <center>
+            <x-m>-3.458</x-m>
+            <y-m>0.0</y-m>
+            <z-m>-2.149</z-m>
+        </center>
+        <axis>
+            <x>0.0</x>
+            <y>-1.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>FrtGear</object-name>
+        <object-name>fWheel</object-name>
+        <property>controls/gear/steering</property>
+        <factor>30</factor>
+        <center>
+            <x-m>-3.458</x-m>
+            <y-m>0.0</y-m>
+            <z-m>-2.149</z-m>
+        </center>
+        <axis>
+            <x>0.0</x>
+            <y>-0</y>
+            <z>-1.0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>translate</type>
+        <object-name>FrtGear</object-name>
+        <object-name>fWheel</object-name>
+        <property>gear/gear[0]/compression-m</property>
+        <center>
+            <x-m>-3.458</x-m>
+            <y-m>0.0</y-m>
+            <z-m>-2.149</z-m>
+        </center>
+        <axis>
+            <x>0.0</x>
+            <y>-0</y>
+            <z>1.0</z>
+        </axis>
+    </animation>
+
+<!-- RH gear -->
 
     <animation>
         <type>rotate</type>
@@ -755,10 +836,32 @@
     </animation>
 
     <animation>
+        <type>translate</type>
+        <object-name>rWheel</object-name>
+        <object-name>rWheel.knuckle</object-name>
+        <object-name>rWheelD1</object-name>
+        <property>gear/gear[2]/compression-m</property>
+        <factor>1.25</factor>
+        <center>
+            <x-m>1.329</x-m>
+            <y-m>0.826</y-m>
+            <z-m>-2.444</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>-0.643</y>
+            <z>0.766</z>
+        </axis>
+    </animation>
+
+    <animation>
         <type>rotate</type>
         <object-name>RHgear</object-name>
         <object-name>RHstrut</object-name>
         <object-name>rWheel</object-name>
+        <object-name>rWheel.knuckle</object-name>
+        <object-name>rWheelD1</object-name>
+        <object-name>rWheelD2</object-name>
         <property>gear/gear[2]/position-norm</property>
         <interpolation>
             <entry><ind>0.0</ind><dep>-100.0</dep></entry>
@@ -776,6 +879,8 @@
             <z>0.643</z>
         </axis>
     </animation>
+
+<!-- LH gear -->
 
     <animation>
         <type>rotate</type>
@@ -799,10 +904,32 @@
     </animation>
 
     <animation>
+        <type>translate</type>
+        <object-name>lWheel</object-name>
+        <object-name>lWheel.knuckle</object-name>
+        <object-name>lWheelD1</object-name>
+        <property>gear/gear[1]/compression-m</property>
+        <factor>1.25</factor>
+        <center>
+            <x-m>1.329</x-m>
+            <y-m>-0.826</y-m>
+            <z-m>-2.444</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>0.643</y>
+            <z>0.766</z>
+        </axis>
+    </animation>
+
+    <animation>
         <type>rotate</type>
         <object-name>LHgear</object-name>
         <object-name>LHstrut</object-name>
         <object-name>lWheel</object-name>
+        <object-name>lWheel.knuckle</object-name>
+        <object-name>lWheelD1</object-name>
+        <object-name>lWheelD2</object-name>
         <property>gear/gear[1]/position-norm</property>
         <interpolation>
             <entry><ind>0.0</ind><dep>100.0</dep></entry>
@@ -818,28 +945,6 @@
             <x>0.262</x>
             <y>-0.720</y>
             <z>0.643</z>
-        </axis>
-    </animation>
-
-    <animation>
-        <type>rotate</type>
-        <object-name>FrtGear</object-name>
-        <object-name>fWheel</object-name>
-        <property>gear/gear[0]/position-norm</property>
-        <interpolation>
-            <entry><ind>0.0</ind><dep>80.0</dep></entry>
-            <entry><ind>0.5</ind><dep>80.0</dep></entry>
-            <entry><ind>1.0</ind><dep>0.0</dep></entry>
-        </interpolation>
-        <center>
-            <x-m>-3.591</x-m>
-            <y-m>0.0</y-m>
-            <z-m>-2.149</z-m>
-        </center>
-        <axis>
-            <x>0.0</x>
-            <y>-1.0</y>
-            <z>0.0</z>
         </axis>
     </animation>
 

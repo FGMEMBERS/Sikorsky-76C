@@ -273,6 +273,7 @@ Wim (performance specs)
             <file>Aircraft/Sikorsky-76C/Nasal/flightdirector.nas</file>
             <file>Aircraft/Sikorsky-76C/Nasal/RTU4200.nas</file>
             <file>Aircraft/Sikorsky-76C/Nasal/S76C.nas</file>
+            <file>Aircraft/Sikorsky-76C/Nasal/M877.nas</file>
             <file>Aircraft/Instruments-3d/RDR-160/RDR160.nas</file>
         </S-76C>
     </nasal>

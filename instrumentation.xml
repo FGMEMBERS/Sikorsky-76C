@@ -32,6 +32,11 @@ This file selects the instrumentation modules that should be available.
         <suction>/systems/vacuum/suction-inhg</suction>
     </attitude-indicator>
 
+    <clock>
+        <name>clock</name>
+        <number>0</number>
+    </clock>
+
     <dme>
         <name>dme</name>
         <number>0</number>

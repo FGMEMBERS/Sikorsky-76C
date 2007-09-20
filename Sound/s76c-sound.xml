@@ -31,7 +31,7 @@
             <mode>looped</mode>
             <path>Aircraft/Sikorsky-76C/Sound/s76-rotor.wav</path>
             <max-dist>500</max-dist>
-            <reference-dist>100</reference-dist>
+            <reference-dist>150</reference-dist>
             <condition>
                 <greater-than>
                 <property>/rotors/main/rpm</property>
@@ -89,7 +89,7 @@
             <name>turbine off</name>
             <mode>once</mode>
             <path>Aircraft/Sikorsky-76C/Sound/s76-shutdown.wav</path>
-            <max-dist>20</max-dist>
+            <max-dist>10</max-dist>
             <reference-dist>5</reference-dist>
             <condition>
                 <not>
