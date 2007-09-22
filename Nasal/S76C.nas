@@ -1,4 +1,3 @@
-aircraft.livery.init("Aircraft/Sikorsky-76C/Liveries", "sim/model/livery/variant", "sim/model/livery/ordered");
 var ViewNum=0;
 var EyePoint = 0;
 var last_time = 0;

@@ -19,7 +19,7 @@
     <instrument include="spz700-hotspots.xml">
         <name>autopilot hotspots</name>
         <x>750</x>
-        <y>41</y>
+        <y>32</y>
         <w>70</w>
         <h>70</h>
     </instrument>

@@ -2,28 +2,6 @@
 
 <PropertyList>
 
-    <path>s76c.ac</path>
-
-    <animation>
-      <type>material</type>
-      <object-name>S76C</object-name>
-      <object-name>LHgeardoor</object-name>
-      <object-name>LHbaggage</object-name>
-      <object-name>RHbaggage</object-name>
-      <object-name>RHgeardoor</object-name>
-      <object-name>RHfrtgeardoor</object-name>
-      <object-name>LHfrtgeardoor</object-name>
-      <object-name>LHflap1</object-name>
-      <object-name>Rr.Doors</object-name>
-      <object-name>RF.door</object-name>
-      <object-name>LF.door</object-name>
-      <object-name>RHflap1</object-name>
-      <property-base>/sim/model/livery/all</property-base>
-      <texture-prop>texture</texture-prop>
-      <texture>S76livery.rgb</texture>
-    </animation>
-
-
     <panel>
         <name>Main Panel</name>
         <path>Aircraft/Sikorsky-76C/Panels/s76c-panel.xml</path>
@@ -197,9 +175,9 @@
     <model>
         <path>Aircraft/Sikorsky-76C/Models/Instruments/spz700.xml</path>
         <offsets>
-            <x-m>-3.010</x-m>
+            <x-m>-3.008</x-m>
             <y-m>-0.309</y-m>
-            <z-m>-1.687</z-m>
+            <z-m>-1.698</z-m>
             <pitch-deg>-10.0</pitch-deg>
         </offsets>
     </model>
@@ -207,9 +185,9 @@
     <model>
         <path>Aircraft/Sikorsky-76C/Models/Instruments/spz700.xml</path>
         <offsets>
-            <x-m>-3.010</x-m>
+            <x-m>-3.008</x-m>
             <y-m>0.309</y-m>
-            <z-m>-1.687</z-m>
+            <z-m>-1.698</z-m>
             <pitch-deg>-10.0</pitch-deg>
         </offsets>
     </model>
@@ -249,7 +227,17 @@
         <offsets>
             <x-m>-3.006</x-m>
             <y-m>0.449</y-m>
-            <z-m>-1.708</z-m>
+            <z-m>-1.714</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <path>Aircraft/Sikorsky-76C/Models/Instruments/dc.xml</path>
+        <offsets>
+            <x-m>-3.006</x-m>
+            <y-m>-0.449</y-m>
+            <z-m>-1.714</z-m>
             <pitch-deg>-10.0</pitch-deg>
         </offsets>
     </model>

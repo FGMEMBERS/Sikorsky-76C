@@ -13,10 +13,10 @@ setlistener("/sim/signals/fdm-initialized", func {
     set_min.setBoolValue(0);
     mode.setIntValue(MODE);
     modestring.setValue(modetext[MODE]);
-    HR.setDoubleValue(0);
-    MN.setDoubleValue(0);
+    HR.setIntValue(0);
+    MN.setIntValue(0);
     print("Chronometer ... Check");
-    settimer(update_clock,5);
+    settimer(update_clock,2);
 });
 
 setlistener("/instrumentation/clock/m877/mode", func {
@@ -26,7 +26,8 @@ setlistener("/instrumentation/clock/m877/mode", func {
 
 update_clock = func{
     var FThr =getprop("/instrumentation/clock/flight-meter-hour");
-
+    
+    var FM =0;
     if (MODE == 0) {
     setprop("/instrumentation/clock/m877/indicated-hour",getprop("/instrumentation/clock/indicated-hour"));
     setprop("/instrumentation/clock/m877/indicated-min",getprop("/instrumentation/clock/indicated-min"));
@@ -38,9 +39,10 @@ update_clock = func{
     }
 
     if (MODE == 2) {
-    var FH = sprintf("%2.0d", FThr);
-    var FM = sprintf("%2.0d", 60 * (FThr - FH));
-    setprop("/instrumentation/clock/m877/indicated-hour",FH);
+    setprop("/instrumentation/clock/m877/indicated-hour",FThr);
+    FH = getprop("/instrumentation/clock/m877/indicated-hour");
+    FM = FThr - FH;
+    FM = FM * 60;
     setprop("/instrumentation/clock/m877/indicated-min",FM);
     }
 
