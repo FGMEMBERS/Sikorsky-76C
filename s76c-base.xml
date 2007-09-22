@@ -47,7 +47,7 @@ Wim (performance specs)
                 <x-offset-m archive="y">0.45</x-offset-m>
                 <y-offset-m archive="y">-1.05</y-offset-m>
                 <z-offset-m archive="y">-2.05</z-offset-m>
-                <pitch-offset-deg>-14.5</pitch-offset-deg>
+                <pitch-offset-deg>-16</pitch-offset-deg>
                 <default-field-of-view-deg type="double">55.0</default-field-of-view-deg>
             </config>
         </view>
@@ -257,7 +257,7 @@ Wim (performance specs)
             <file>Aircraft/Sikorsky-76C/Nasal/flightdirector.nas</file>
             <file>Aircraft/Sikorsky-76C/Nasal/RTU4200.nas</file>
             <file>Aircraft/Sikorsky-76C/Nasal/S76C.nas</file>
-            <file>Aircraft/Sikorsky-76C/Nasal/M877.nas</file>
+            <file>Aircraft/Instruments-3d/clock/M877/M877.nas</file>
             <file>Aircraft/Instruments-3d/RDR-160/RDR160.nas</file>
         </S-76C>
     </nasal>

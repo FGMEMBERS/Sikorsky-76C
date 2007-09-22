@@ -7,11 +7,11 @@ MATERIAL "DefaultWhite.003" rgb 0 0 0 amb 0 0 0 emis 0 0 0 spec 0 0 0 shi 64 tra
 MATERIAL "darkmtl.005" rgb 0.25 0.25 0.25 amb 0.5 0.5 0.5 emis 0 0 0 spec 0.818478 0.818478 0.818478 shi 71 trans 0
 MATERIAL "Material.011" rgb 0.1 0.1 0.1 amb 0.5 0.5 0.5 emis 0 0 0 spec 0 0 0 shi 32 trans 0
 MATERIAL "glow.001" rgb 1 1 1 amb 0.5 0.5 0.5 emis 1 1 1 spec 0 0 0 shi 32 trans 0
-MATERIAL "greenglow.001" rgb 0.198402 0.559596 0.212119 amb 0 0 0 emis 0 0 0 spec 1 1 1 shi 32 trans 0
+MATERIAL "greenglow.001" rgb 0.198402 0.559596 0.212119 amb 0 0 0 emis 0.198402 0.559596 0.212119 spec 1 1 1 shi 32 trans 0
 MATERIAL "glass.001" rgb 0.253993 0.292163 0.355624 amb 0 0 0 emis 0 0 0 spec 1 1 1 shi 64 trans 0.4
 MATERIAL "dkred" rgb 0.478036 0.13427 0.13427 amb 0.5 0.5 0.5 emis 0 0 0 spec 0.529716 0.529716 0.529716 shi 32 trans 0
 MATERIAL "dark.blue.001" rgb 0.124155 0.196497 0.340264 amb 0 0 0 emis 0 0 0 spec 0.726098 0.726098 0.726098 shi 32 trans 0
-MATERIAL "redglow.001" rgb 0.847059 0.215686 0.215686 amb 0 0 0 emis 0 0 0 spec 0.995273 0.816808 0.816808 shi 32 trans 0
+MATERIAL "redglow.001" rgb 0.847059 0.215686 0.215686 amb 0 0 0 emis 0.847059 0.215686 0.215686 spec 0.995273 0.816808 0.816808 shi 32 trans 0
 MATERIAL "metal" rgb 0.322998 0.322998 0.322998 amb 0.5 0.5 0.5 emis 0 0 0 spec 0 0 0 shi 32 trans 0
 MATERIAL "transp.001" rgb 1 1 1 amb 0.5 0.5 0.5 emis 0 0 0 spec 0.877409 0.877409 0.877409 shi 32 trans 0.6
 MATERIAL "DefaultWhite.002" rgb 0 0 0 amb 0 0 0 emis 0 0 0 spec 0 0 0 shi 64 trans 0
@@ -13066,7 +13066,7 @@ OBJECT poly
 name "Ebrake"
 data 12
 Cylinder.093
-texture "interior.rgb"
+texture "panel.rgb"
 texrep 1 1
 crease 45.000000
 numvert 50
@@ -16757,7 +16757,7 @@ OBJECT poly
 name "LdgGear.001"
 data 9
 Plane.337
-texture "interior.rgb"
+texture "panel.rgb"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -16778,7 +16778,7 @@ OBJECT poly
 name "LndGearInd.001"
 data 9
 Plane.338
-texture "interior.rgb"
+texture "panel.rgb"
 texrep 1 1
 crease 30.000000
 numvert 8
@@ -16794,17 +16794,17 @@ numsurf 2
 SURF 0x00
 mat 7
 refs 4
-0 -0.226095482707 0.491090804338
-3 -0.276166975498 0.491090804338
-2 -0.276166975498 0.474168479443
-1 -0.226095482707 0.474168479443
+0 0.973585426807 0.676128923893
+3 0.866749465466 0.676128923893
+2 0.866749465466 0.640022218227
+1 0.973585426807 0.640022218227
 SURF 0x00
 mat 7
 refs 4
-7 0.73955053091 0.491090804338
-4 0.68947905302 0.491090804338
-5 0.68947905302 0.474168628454
-6 0.73955053091 0.474168628454
+7 0.973666846752 0.676128923893
+4 0.86683100462 0.676128923893
+5 0.86683100462 0.64002263546
+6 0.973666846752 0.64002263546
 kids 0
 OBJECT poly
 name "Plane.152"
@@ -16862,7 +16862,7 @@ OBJECT poly
 name "Plane.153"
 data 9
 Plane.340
-texture "interior.rgb"
+texture "panel.rgb"
 texrep 1 1
 crease 30.000000
 numvert 7
@@ -16899,7 +16899,7 @@ OBJECT poly
 name "Plane.154"
 data 9
 Plane.341
-texture "interior.rgb"
+texture "panel.rgb"
 texrep 1 1
 crease 30.000000
 numvert 7

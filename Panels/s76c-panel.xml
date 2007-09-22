@@ -32,7 +32,7 @@
         <h>32</h>
     </instrument>
 
-    <instrument include="m877-hotspots.xml">
+    <instrument include="../../Instruments-3d/clock/M877/m877-hotspots.xml">
         <name>m877 hotspots</name>
         <x>673</x>
         <y>31</y>

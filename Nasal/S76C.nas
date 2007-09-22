@@ -38,7 +38,7 @@ setlistener("/sim/signals/fdm-initialized", func {
     setprop("/instrumentation/altimeter/DH",200);
     setprop("/autopilot/settings/altitude-preset",0);
     print("Systems ... Check");
-    settimer(update_systems,1);
+    settimer(update_systems,2);
 });
 
 setlistener("/sim/current-view/view-number", func {
