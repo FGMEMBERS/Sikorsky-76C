@@ -168,8 +168,8 @@ length="1.20" chord="0.36" sweep="0" effectiveness="1.5">
   <stall aoa="0" width="0" peak="1.5"/>
 </hstab>
 
-<gear x="3.458" y="0.00" z="-2.879" compression=".4" sfric="1.5" dfric="0.8" retract-time="4"
-    spring="5" damp="1.5" initial-load="0">
+<gear x="3.458" y="0.00" z="-2.879" compression=".5" sfric="1.5" dfric="0.8" retract-time="4"
+    spring="10" damp="1.5" initial-load="0">
     <control-input axis="/controls/flight/rudder" control="STEER" square="true"
                  src0="-1.0" src1="1.0"
                  dst0="-1.0" dst1="1.0"/>
@@ -178,16 +178,16 @@ length="1.20" chord="0.36" sweep="0" effectiveness="1.5">
     <control-speed control="EXTEND" transition-time="4"/>
     <control-output control="EXTEND" prop="/gear/gear[0]/position-norm"/>
   </gear>
-  <gear x="-1.366" y="1.1" z="-2.920" compression=".6" sfric="1.5" dfric="0.8" retract-time="4"
-    spring="5" damp="1.5" initial-load="0">
+  <gear x="-1.366" y="1.1" z="-2.920" compression=".7" sfric="1.5" dfric="0.8" retract-time="4"
+    spring="10" damp="1.5" initial-load="0">
     <control-input axis="/controls/gear/brake-left" control="BRAKE"/>
     <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
     <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
     <control-speed control="EXTEND" transition-time="4"/>
     <control-output control="EXTEND" prop="/gear/gear[1]/position-norm"/>
   </gear>
-  <gear x="-1.366" y="-1.1" z="-2.920" compression=".6" sfric="1.5" dfric="0.8" retract-time="3.95"
-    spring="5" damp="1.5" initial-load="0">
+  <gear x="-1.366" y="-1.1" z="-2.920" compression=".7" sfric="1.5" dfric="0.8" retract-time="3.95"
+    spring="10" damp="1.5" initial-load="0">
     <control-input axis="/controls/gear/brake-right" control="BRAKE"/>
     <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
     <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
