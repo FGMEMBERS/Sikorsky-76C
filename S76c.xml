@@ -31,7 +31,7 @@ Forward pitch 5 degrees
   mincyclicele="-6" maxcyclicele="5"
   mincyclicail="-2.0" maxcyclicail="3.6"
   diameter="13.41" numblades="4" weightperblade="97" relbladecenter="0.5"
-  dynamic="0.85" rpm="293" rellenflaphinge="0.09" delta3="0.3"
+  dynamic="0.8" rpm="293" rellenflaphinge="0.09" delta3="0.3"
   delta=".15"
   pitch-a="10"
   pitch-b="15"
@@ -178,7 +178,7 @@ length="1.20" chord="0.36" sweep="0" effectiveness="1.5">
     <control-speed control="EXTEND" transition-time="4"/>
     <control-output control="EXTEND" prop="/gear/gear[0]/position-norm"/>
   </gear>
-  <gear x="-1.366" y="1.1" z="-2.920" compression=".7" sfric="1.5" dfric="0.8" retract-time="4"
+  <gear x="-1.366" y="1.1" z="-2.920" compression="0.8" sfric="1.5" dfric="0.8" retract-time="4"
     spring="10" damp="1.5" initial-load="0">
     <control-input axis="/controls/gear/brake-left" control="BRAKE"/>
     <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
@@ -186,7 +186,7 @@ length="1.20" chord="0.36" sweep="0" effectiveness="1.5">
     <control-speed control="EXTEND" transition-time="4"/>
     <control-output control="EXTEND" prop="/gear/gear[1]/position-norm"/>
   </gear>
-  <gear x="-1.366" y="-1.1" z="-2.920" compression=".7" sfric="1.5" dfric="0.8" retract-time="3.95"
+  <gear x="-1.366" y="-1.1" z="-2.920" compression="0.8" sfric="1.5" dfric="0.8" retract-time="3.95"
     spring="10" damp="1.5" initial-load="0">
     <control-input axis="/controls/gear/brake-right" control="BRAKE"/>
     <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>

@@ -12,7 +12,7 @@ Ovolume=props.globals.getNode("/sim/sound/S76C/Ovolume",1);
 N1 = props.globals.getNode("engines/engine/n1",1);
 N2 = props.globals.getNode("engines/engine/n2",1);
 var FDM = 0;
-
+var Tx_list =["S76livery.rgb","S76livery1.rgb","S76livery2.rgb","S76livery3.rgb"];
 strobe_switch = props.globals.getNode("controls/lighting/strobe", 1);
 aircraft.light.new("sim/model/S-76C/lighting/strobe-state", [0.05, 1.50], strobe_switch);
 beacon_switch = props.globals.getNode("controls/lighting/beacon", 1);
@@ -27,8 +27,6 @@ N1.setDoubleValue(0.0);
 N2.setDoubleValue(0.0);
 
 setlistener("/sim/signals/fdm-initialized", func {
-    Cvolume.setDoubleValue(0.8);
-    Ovolume.setDoubleValue(0.3);
     Fuel_Density=props.globals.getNode("/consumables/fuel/tank/density-ppg").getValue();
     setprop("/environment/turbulence/use-cloud-turbulence","true");
     setprop("/instrumentation/clock/ET-min",0);
@@ -37,8 +35,15 @@ setlistener("/sim/signals/fdm-initialized", func {
     setprop("/instrumentation/inst-vertical-speed-indicator/serviceable",1);
     setprop("/instrumentation/altimeter/DH",200);
     setprop("/autopilot/settings/altitude-preset",0);
+    var VR = getprop("sim/model/variant");
+    if(VR == nil) VR=0;
+    if(VR > size(Tx_list)){VR = 0;
+        setprop("sim/model/variant",0);
+        }
+    setprop("sim/model/texture",Tx_list[VR]);
     print("Systems ... Check");
     settimer(update_systems,2);
+    settimer(update_sound,10);
 });
 
 setlistener("/sim/current-view/view-number", func {
@@ -59,6 +64,15 @@ setlistener("/gear/gear[1]/wow", func {
     if(cmdarg().getBoolValue()){
     FHmeter.stop();
     }else{FHmeter.start();}
+});
+
+setlistener("/sim/model/variant", func {
+    var VR = cmdarg().getValue();
+    if(VR == nil) VR = 0;
+    if(VR > size(Tx_list)){VR = 0;
+        setprop("sim/model/variant",0);
+        }
+    setprop("sim/model/texture",Tx_list[VR]);
 });
 
 setlistener("/engines/engine/running", func {
@@ -97,6 +111,11 @@ update_fuel = func{
         }
     }
 
+}
+
+update_sound = func{
+    Cvolume.setDoubleValue(0.8);
+    Ovolume.setDoubleValue(0.3);
 }
 
 update_systems = func {

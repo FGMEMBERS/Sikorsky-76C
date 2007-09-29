@@ -109,8 +109,8 @@ Wim (performance specs)
             <from-model-idx type="int">0</from-model-idx>
             <ground-level-nearplane-m type="double">0.5f</ground-level-nearplane-m>
             <default-field-of-view-deg type="double">30.0</default-field-of-view-deg>
-            <default-pitch-deg type="double">0</default-pitch-deg>
-            <default-heading-deg type="double">0</default-heading-deg>
+            <default-pitch-deg type="double">-28</default-pitch-deg>
+            <default-heading-deg type="double">7.7</default-heading-deg>
             <front-direction-deg type="double">0</front-direction-deg>
             <front-left-direction-deg type="double">45</front-left-direction-deg>
             <left-direction-deg type="double">90</left-direction-deg>
@@ -122,7 +122,7 @@ Wim (performance specs)
             <x-offset-m archive="y">0.45</x-offset-m>
             <y-offset-m archive="y">-1.05</y-offset-m>
             <z-offset-m archive="y">-2.05</z-offset-m>
-            <heading-offset-deg>8.4</heading-offset-deg>
+            <heading-offset-deg>7.7</heading-offset-deg>
             <pitch-offset-deg>-28</pitch-offset-deg>
         </config>
     </view>
@@ -187,6 +187,24 @@ Wim (performance specs)
         </engine>
     </engines>
 
+
+    <instrumentation>
+        <IIDS>
+            <unit n="0">
+                <serviceable type="bool">1</serviceable>
+                <mode type="int">0</mode>
+            </unit>
+            <unit n="1">
+                <serviceable type="bool">1</serviceable>
+                <mode type="int">1</mode>
+            </unit>
+            <unit n="2">
+                <serviceable type="bool">1</serviceable>
+                <mode type="int">0</mode>
+            </unit>
+        </IIDS>
+    </instrumentation>
+
     <controls>
         <engines>
             <engine>
@@ -199,6 +217,7 @@ Wim (performance specs)
         </flight>
         <gear>
             <brake-parking>1</brake-parking>
+            <gear-down>1</gear-down>
         </gear>
         <aerotow>
             <find-aircraft type="bool">true</find-aircraft>

@@ -72,12 +72,12 @@
         <prop>/controls/flight/aileron</prop>
     </output>
     <config>
-        <Kp>0.05</Kp>        <!-- proportional gain -->
+        <Kp>0.1</Kp>        <!-- proportional gain -->
         <beta>1.0</beta>    <!-- input value weighing factor -->
         <alpha>0.1</alpha>  <!-- low pass filter weighing factor -->
         <gamma>0.0</gamma>  <!-- input value weighing factor for -->
         <Ti>10.0</Ti>       <!-- integrator time -->
-        <Td>0.01</Td>       <!-- derivator time -->
+        <Td>0.00001</Td>       <!-- derivator time -->
         <u_min>-1.0</u_min> <!-- minimum output clamp -->
         <u_max>1.0</u_max>  <!-- maximum output clamp -->
     </config>
@@ -153,11 +153,11 @@
         <prop>/autopilot/internal/target-roll-deg</prop>
     </output>
     <config>
-        <Kp>-1.3</Kp>        <!-- proportional gain -->
+        <Kp>-0.5</Kp>        <!-- proportional gain -->
         <beta>1.0</beta>     <!-- input value weighing factor -->
         <alpha>0.1</alpha>   <!-- low pass filter weighing factor -->
         <gamma>0.0</gamma>   <!-- input value weighing factor for -->
-        <Ti>40</Ti>          <!-- integrator time -->
+        <Ti>20</Ti>          <!-- integrator time -->
         <Td>0.00001</Td>     <!-- derivator time -->
         <u_min>-30.0</u_min> <!-- minimum output clamp -->
         <u_max>30.0</u_max>  <!-- maximum output clamp -->
@@ -182,12 +182,12 @@
         <prop>/controls/flight/aileron</prop>
     </output>
     <config>
-        <Kp>0.5</Kp>        <!-- proportional gain -->
+        <Kp>0.025</Kp>        <!-- proportional gain -->
         <beta>1.0</beta>    <!-- input value weighing factor -->
         <alpha>0.1</alpha>  <!-- low pass filter weighing factor -->
         <gamma>0.0</gamma>  <!-- input value weighing factor for -->
         <Ti>10.0</Ti>       <!-- integrator time -->
-        <Td>0.02</Td>       <!-- derivator time -->
+        <Td>0.001</Td>       <!-- derivator time -->
         <u_min>-1.0</u_min> <!-- minimum output clamp -->
         <u_max>1.0</u_max>  <!-- maximum output clamp -->
     </config>
@@ -211,12 +211,12 @@
         <prop>/controls/engines/engine/throttle</prop>
     </output>
     <config>
-        <Kp>-0.25</Kp>      <!-- proportional gain -->
+        <Kp>-0.2</Kp>      <!-- proportional gain -->
         <beta>1.0</beta>    <!-- input value weighing factor -->
         <alpha>0.1</alpha>  <!-- low pass filter weighing factor -->
         <gamma>0.0</gamma>  <!-- input value weighing factor for -->
-        <Ti>10.0</Ti>       <!-- integrator time -->
-        <Td>0.00002</Td>       <!-- derivator time -->
+        <Ti>1.0</Ti>       <!-- integrator time -->
+        <Td>0.0001</Td>       <!-- derivator time -->
         <u_min>0.1</u_min> <!-- minimum output clamp -->
         <u_max>0.8</u_max>  <!-- maximum output clamp -->
     </config>
@@ -430,13 +430,13 @@
       <prop>/autopilot/settings/target-pitch-deg</prop>
     </output>
     <config>
-      <Kp>-1.5</Kp>       <!-- proportional gain -->
+      <Kp>-0.5</Kp>       <!-- proportional gain -->
       <beta>1.0</beta>    <!-- input value weighing factor -->
       <alpha>0.1</alpha>  <!-- low pass filter weighing factor -->
       <gamma>0.0</gamma>  <!-- input value weighing factor for -->
                           <!-- unfiltered derivative error -->
-      <Ti>1.0</Ti>        <!-- integrator time -->
-      <Td>0.01</Td>    <!-- derivator time -->
+      <Ti>20.0</Ti>        <!-- integrator time -->
+      <Td>0.00001</Td>    <!-- derivator time -->
       <u_min>-2.0</u_min><!-- minimum output clamp -->
       <u_max>10.0</u_max> <!-- maximum output clamp -->
     </config>
@@ -465,8 +465,8 @@
       <alpha>0.1</alpha>  <!-- low pass filter weighing factor -->
       <gamma>0.0</gamma>  <!-- input value weighing factor for -->
                           <!-- unfiltered derivative error -->
-      <Ti>1.0</Ti>        <!-- integrator time -->
-      <Td>0.001</Td>    <!-- derivator time -->
+      <Ti>10.0</Ti>        <!-- integrator time -->
+      <Td>0.00001</Td>    <!-- derivator time -->
       <u_min>-1.0</u_min> <!-- minimum output clamp -->
       <u_max>1.0</u_max>  <!-- maximum output clamp -->
     </config>

@@ -2,6 +2,27 @@
 
 <PropertyList>
 
+    <path>s76c.ac</path>
+
+
+    <animation>
+      <type>material</type>
+      <object-name>LHgeardoor</object-name>
+      <object-name>RHgeardoor</object-name>
+      <object-name>S76C</object-name>
+      <object-name>RF.door</object-name>
+      <object-name>LF.door</object-name>
+      <object-name>Rr.Doors</object-name>
+      <object-name>RHbaggage</object-name>
+      <object-name>LHbaggage</object-name>
+      <object-name>RHfrtgeardoor</object-name>
+      <object-name>LHfrtgeardoor</object-name>
+      <property-base>sim/model</property-base>
+      <texture-prop>texture</texture-prop>
+      <texture>S76livery.rgb</texture>
+    </animation>
+
+
     <panel>
         <name>Main Panel</name>
         <path>Aircraft/Sikorsky-76C/Panels/s76c-panel.xml</path>
@@ -42,6 +63,17 @@
         </top-left>
     </panel>
 
+    <animation>
+        <type>shader</type>
+        <shader>chrome</shader>
+        <texture>chrome1.rgb</texture>
+        <object-name>Rr.doorglass</object-name>
+        <object-name>S76C.glass</object-name>
+        <object-name>LF.doorglass</object-name>
+        <object-name>RF.doorglass.001</object-name>
+    </animation>
+
+
     <model>
         <path>Aircraft/Sikorsky-76C/Models/Instruments/ehsi.xml</path>
         <offsets>
@@ -83,7 +115,7 @@
     </model>
 
     <model>
-        <path>Aircraft/Sikorsky-76C/Models/Instruments/iids.xml</path>
+        <path>Aircraft/Sikorsky-76C/Models/Instruments/iids-1.xml</path>
         <offsets>
             <x-m>-3.032</x-m>
             <y-m>-0.267</y-m>
@@ -93,7 +125,7 @@
     </model>
 
     <model>
-        <path>Aircraft/Sikorsky-76C/Models/Instruments/iids.xml</path>
+        <path>Aircraft/Sikorsky-76C/Models/Instruments/iids-2.xml</path>
         <offsets>
             <x-m>-3.032</x-m>
             <y-m>0.267</y-m>
@@ -103,7 +135,7 @@
     </model>
 
     <model>
-        <path>Aircraft/Sikorsky-76C/Models/Instruments/iids.xml</path>
+        <path>Aircraft/Sikorsky-76C/Models/Instruments/iids-3.xml</path>
         <offsets>
             <x-m>-3.047</x-m>
             <y-m>-0.022</y-m>
@@ -360,6 +392,21 @@
     <animation>
         <type>spin</type>
         <object-name>TailRotor</object-name>
+        <property>rotors/tail/rpm</property>
+        <center>
+            <x-m>8.120</x-m>
+            <y-m>-0.377</y-m>
+            <z-m>0.424</z-m>
+        </center>
+        <axis>
+            <x>0.0</x>
+            <y>1.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>spin</type>
         <object-name>TailHub</object-name>
         <property>rotors/tail/rpm</property>
         <center>
@@ -464,8 +511,8 @@
         <object-name>blade2</object-name>
         <property>rotors/main/blade[3]/flap-deg</property>
         <center>
-            <x-m>-0.309</x-m>
-            <y-m>0</y-m>
+            <x-m>0.0</x-m>
+            <y-m>-0.309</y-m>
             <z-m>0.151</z-m>
         </center>
         <axis>
@@ -514,7 +561,7 @@
         <object-name>blade3</object-name>
         <property>rotors/main/blade[0]/flap-deg</property>
         <center>
-            <x-m>-0.309</x-m>
+            <x-m>0.309</x-m>
             <y-m>0</y-m>
             <z-m>0.151</z-m>
         </center>
@@ -564,8 +611,8 @@
         <object-name>blade4</object-name>
         <property>rotors/main/blade[1]/flap-deg</property>
         <center>
-            <x-m>-0.309</x-m>
-            <y-m>0</y-m>
+            <x-m>0.0</x-m>
+            <y-m>0.309</y-m>
             <z-m>0.151</z-m>
         </center>
         <axis>
@@ -630,8 +677,8 @@
         <object-name>fastblade2</object-name>
         <property>rotors/main/blade[3]/flap-deg</property>
         <center>
-            <x-m>-0.309</x-m>
-            <y-m>0</y-m>
+            <x-m>0.0</x-m>
+            <y-m>-0.309</y-m>
             <z-m>0.151</z-m>
         </center>
         <axis>
@@ -662,7 +709,7 @@
         <object-name>fastblade3</object-name>
         <property>rotors/main/blade[0]/flap-deg</property>
         <center>
-            <x-m>-0.309</x-m>
+            <x-m>0.309</x-m>
             <y-m>0</y-m>
             <z-m>0.151</z-m>
         </center>
@@ -694,8 +741,8 @@
         <object-name>fastblade4</object-name>
         <property>rotors/main/blade[1]/flap-deg</property>
         <center>
-            <x-m>-0.309</x-m>
-            <y-m>0</y-m>
+            <x-m>0.0</x-m>
+            <y-m>0.309</y-m>
             <z-m>0.151</z-m>
         </center>
         <axis>

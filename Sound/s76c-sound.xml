@@ -7,9 +7,14 @@
             <mode>once</mode>
             <path>Aircraft/Sikorsky-76C/Sound/s76-start.wav</path>
             <max-dist>10</max-dist>
-            <reference-dist>5</reference-dist>
+            <reference-dist>2</reference-dist>
             <condition>
-                <property>/engines/engine/running</property>
+                <and>
+                    <not>
+                        <property>/sim/crashed</property>
+                    </not>
+                    <property>/engines/engine/running</property>
+                </and>
             </condition>
             <volume>
                 <property>/sim/sound/S76C/Ovolume</property>
@@ -30,13 +35,18 @@
             <name>main rotor</name>
             <mode>looped</mode>
             <path>Aircraft/Sikorsky-76C/Sound/s76-rotor.wav</path>
-            <max-dist>500</max-dist>
+            <max-dist>1000</max-dist>
             <reference-dist>150</reference-dist>
             <condition>
-                <greater-than>
-                <property>/rotors/main/rpm</property>
-                <value>2</value>
-                </greater-than>
+                <and>
+                    <not>
+                        <property>/sim/crashed</property>
+                    </not>
+                    <greater-than>
+                        <property>/rotors/main/rpm</property>
+                        <value>10</value>
+                    </greater-than>
+                </and>
             </condition>
             <volume>
                 <property>/sim/sound/S76C/Ovolume</property>
@@ -46,8 +56,8 @@
             <pitch>
                 <property>/rotors/main/rpm</property>
                 <factor>0.0034</factor>
-                <offset>0.0</offset>
-                <min>0.00</min>
+                <offset>0.000</offset>
+                <min>0.0</min>
                 <max>1.0</max>
             </pitch>
             <position>
@@ -62,10 +72,15 @@
             <mode>looped</mode>
             <path>Aircraft/Sikorsky-76C/Sound/whine.wav</path>
             <condition>
-                <greater-than>
-                <property>/rotors/main/rpm</property>
-                <value>5</value>
-                </greater-than>
+                <and>
+                    <not>
+                        <property>/sim/crashed</property>
+                    </not>
+                    <greater-than>
+                        <property>/rotors/main/rpm</property>
+                        <value>5</value>
+                    </greater-than>
+                </and>
             </condition>
             <reference-dist>5</reference-dist>
             <volume>
@@ -92,9 +107,14 @@
             <max-dist>10</max-dist>
             <reference-dist>5</reference-dist>
             <condition>
-                <not>
-                    <property>/engines/engine/running</property>
-                </not>
+                <and>
+                    <not>
+                        <property>/engines/engine/running</property>
+                    </not>
+                    <not>
+                        <property>/sim/crashed</property>
+                    </not>
+                </and>
             </condition>
             <volume>
                 <property>/sim/sound/S76C/Ovolume</property>
@@ -116,10 +136,15 @@
             <mode>looped</mode>
             <path>Sounds/overspeed.wav</path>
             <condition>
-                <greater-than>
-                <property>/velocities/airspeed-kt</property>
-                <value>155</value>
-                </greater-than>
+                <and>
+                    <not>
+                        <property>/sim/crashed</property>
+                    </not>
+                    <greater-than>
+                    <property>/velocities/airspeed-kt</property>
+                    <value>155</value>
+                    </greater-than>
+                </and>
             </condition>
             <max-dist>10</max-dist>
             <reference-dist>5</reference-dist>
@@ -250,13 +275,16 @@
             <mode>in-transit</mode>
             <path>Sounds/gear.wav</path>
             <property>gear/gear[0]/position-norm</property>
+            <volume>
+                <property>/sim/sound/S76C/Cvolume</property>
+            </volume>
             <pitch>
                 <internal>dt_play</internal>
                 <offset>0.8</offset>
                 <factor>-0.001</factor>
             </pitch>
-            <reference-dist>5.0</reference-dist>
-            <max-dist>10.0</max-dist>
+            <reference-dist>3.0</reference-dist>
+            <max-dist>6.0</max-dist>
             <position>
                 <x>-2</x>
                 <y>0</y>
@@ -273,10 +301,13 @@
                     <value>0</value>
                 </equals>
             </condition>
+            <volume>
+                <property>/sim/sound/S76C/Cvolume</property>
+            </volume>
             <reference-dist>5.0</reference-dist>
             <max-dist>10.0</max-dist>
             <position>
-                <x>-2</x>
+                <x>0</x>
                 <y>0</y>
                 <z>-2</z>
             </position>
