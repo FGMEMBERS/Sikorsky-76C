@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!--
+############
+Sikorsky S-76C
+Syd Adams
+Maik Justus (FDM)
+Wim (performance specs)
+############
+-->
+
+<PropertyList include="s76c-base.xml">
+
+    <sim>
+        <startup>
+            <splash-texture>Aircraft/Sikorsky-76C/splash4.rgb</splash-texture>
+        </startup>
+
+        <model>
+            <path>Aircraft/Sikorsky-76C/Models/s76c.xml</path>
+            <variant type="int">3</variant>
+            <texture>S76Livery3.rgb</texture>
+        </model>
+    </sim>
+</PropertyList>
