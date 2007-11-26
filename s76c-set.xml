@@ -17,6 +17,16 @@ Wim (performance specs)
         <aero>S76c</aero>
         <fuel-fraction>0.5</fuel-fraction>
 
+        <startup>
+            <splash-texture>Aircraft/Sikorsky-76C/splash2.rgb</splash-texture>
+        </startup>
+
+        <model>
+            <path>Aircraft/Sikorsky-76C/Models/s76c.xml</path>
+            <start-idling type="bool"></start-idling>
+            <variant type="int">1</variant>
+        </model>
+
         <hud>
             <enable3d>false</enable3d>
         </hud>
@@ -178,6 +188,30 @@ Wim (performance specs)
                 <is-slave type="bool">false</is-slave>
             </aerotow>
         </hitches>
+
+    <menubar>
+        <default>
+            <menu n="10">
+                <label>S76C++</label>
+                <enabled type="bool">true</enabled>
+                <item>
+                    <label>Start Idling</label>
+                    <binding>
+                        <command>property-toggle</command>
+                        <property>sim/model/start-idling</property>
+                    </binding>
+                </item>
+                <item>
+                    <label>Select Livery</label>
+                    <binding>
+                        <command>nasal</command>
+                        <script>aircraft.livery.dialog.toggle()</script>
+                    </binding>
+                </item>
+            </menu>
+        </default>
+    </menubar>
+
     </sim>
 
     <engines>

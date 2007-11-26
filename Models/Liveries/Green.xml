@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+<sim>
+    <model>
+        <livery>
+            <name type="string">Green</name>
+            <index type="int">2</index>
+            <texture>S76livery2.rgb</texture>
+        </livery>
+    </model>
+</sim>
+</PropertyList>
