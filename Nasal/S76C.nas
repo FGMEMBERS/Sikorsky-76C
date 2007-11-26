@@ -1,21 +1,21 @@
+aircraft.livery.init("Aircraft/Sikorsky-76C/Models/Liveries", "sim/model/livery/name", "sim/model/livery/index");
 var ViewNum=0;
 var EyePoint = 0;
 var last_time = 0;
 var GPS = 0.0248015;  ### avg cruise = 600 lbs/hr
 var Fuel_Density=6.72;
-Fuel_Level= props.globals.getNode("/consumables/fuel/tank/level-gal_us",1);
-Fuel_LBS= props.globals.getNode("/consumables/fuel/tank/level-lbs",1);
-NoFuel=props.globals.getNode("/engines/engine/out-of-fuel",1);
-Cvolume=props.globals.getNode("/sim/sound/S76C/Cvolume",1);
-Spitch=props.globals.getNode("/sim/sound/S76C/pitch",1);
-Ovolume=props.globals.getNode("/sim/sound/S76C/Ovolume",1);
-N1 = props.globals.getNode("engines/engine/n1",1);
-N2 = props.globals.getNode("engines/engine/n2",1);
-var FDM = 0;
+var Fuel_Level= props.globals.getNode("/consumables/fuel/tank/level-gal_us",1);
+var Fuel_LBS= props.globals.getNode("/consumables/fuel/tank/level-lbs",1);
+var NoFuel=props.globals.getNode("/engines/engine/out-of-fuel",1);
+var Cvolume=props.globals.getNode("/sim/sound/S76C/Cvolume",1);
+var Spitch=props.globals.getNode("/sim/sound/S76C/pitch",1);
+var Ovolume=props.globals.getNode("/sim/sound/S76C/Ovolume",1);
+var N1 = props.globals.getNode("engines/engine/n1",1);
+var N2 = props.globals.getNode("engines/engine/n2",1);
 
-strobe_switch = props.globals.getNode("controls/lighting/strobe", 1);
+var strobe_switch = props.globals.getNode("controls/lighting/strobe", 1);
 aircraft.light.new("sim/model/S-76C/lighting/strobe-state", [0.05, 1.50], strobe_switch);
-beacon_switch = props.globals.getNode("controls/lighting/beacon", 1);
+var beacon_switch = props.globals.getNode("controls/lighting/beacon", 1);
 aircraft.light.new("sim/model/S-76C/lighting/beacon-state", [1.0, 1.0], beacon_switch);
 
 var FHmeter = aircraft.timer.new("/instrumentation/clock/flight-meter-sec", 10);
@@ -48,8 +48,8 @@ setlistener("/sim/signals/fdm-initialized", func {
     settimer(update_systems,2);
 });
 
-setlistener("/sim/current-view/view-number", func {
-    ViewNum = cmdarg().getValue();
+setlistener("/sim/current-view/view-number", func(vw){
+    ViewNum = vw.getValue();
     Cvolume.setValue(0.1);
     Ovolume.setValue(1.0);
     if(ViewNum == 0){
@@ -60,26 +60,16 @@ setlistener("/sim/current-view/view-number", func {
         Cvolume.setValue(0.8);
         Ovolume.setValue(0.3);
         }
-});
+},0,0);
 
-setlistener("/gear/gear[1]/wow", func {
-    if(cmdarg().getBoolValue()){
+setlistener("/gear/gear[1]/wow", func(gr){
+    if(gr.getBoolValue()){
     FHmeter.stop();
     }else{FHmeter.start();}
-});
+},0,0);
 
-setlistener("/sim/model/variant", func {
-    var VR = cmdarg().getValue();
-    if(VR==nil)VR=0;
-    if(VR >= size(TX_list)){
-    VR=0;
-    setprop("sim/model/variant",0);
-    }
-setprop("/sim/model/texture",TX_list[VR]);
-});
-
-setlistener("/engines/engine/running", func {
-    var running = cmdarg().getBoolValue();
+setlistener("/engines/engine/running", func(run){
+    var running = run.getBoolValue();
     var fuel =props.globals.getNode("/engines/engine/out-of-fuel").getBoolValue();
     if(running and !fuel){
         interpolate(N2, 100, 10);
@@ -87,23 +77,52 @@ setlistener("/engines/engine/running", func {
         props.globals.getNode("/engines/engine/running").setBoolValue(0);
         interpolate(N2, 0, 15);
     }
-});
+},0,0);
 
-setlistener("/engines/engine/out-of-fuel", func {
-    var nofuel = cmdarg().getBoolValue();
+setlistener("/engines/engine/out-of-fuel", func(fl){
+    var nofuel = fl.getBoolValue();
     if(nofuel){
         props.globals.getNode("/engines/engine/running").setBoolValue(0);
     }
-});
+},0,0);
 
-flight_meter = func{
+setlistener("/sim/model/start-idling", func(idle){
+    var run= idle.getBoolValue();
+    if(run){
+    Startup();
+    }else{
+    Shutdown();
+    }
+},0,0);
+
+var Startup = func{
+setprop("controls/electric/engine[0]/generator",1);
+setprop("controls/electric/battery-switch",1);
+setprop("controls/lighting/instrument-lights",1);
+setprop("controls/lighting/nav-lights",1);
+setprop("controls/lighting/beacon",1);
+setprop("controls/lighting/strobe",1);
+setprop("controls/engines/engine[0]/magnetos",3);
+setprop("engines/engine[0]/running",1);
+}
+
+var Shutdown = func{
+setprop("controls/electric/engine[0]/generator",0);
+setprop("controls/electric/battery-switch",0);
+setprop("controls/lighting/instrument-lights",0);
+setprop("controls/lighting/nav-lights",0);
+setprop("controls/lighting/beacon",0);
+setprop("controls/engines/engine[0]/magnetos",0);
+}
+
+var flight_meter = func{
 var fmeter = getprop("/instrumentation/clock/flight-meter-sec");
 var fminute = fmeter * 0.016666;
 var fhour = fminute * 0.016666;
 setprop("/instrumentation/clock/flight-meter-hour",fhour);
 }
 
-update_fuel = func{
+var update_fuel = func{
     var amnt = arg[0] * GPS;
     var lvl = Fuel_Level.getValue();
     Fuel_Level.setDoubleValue(lvl-amnt);
@@ -116,7 +135,7 @@ update_fuel = func{
 
 }
 
-update_systems = func {
+var update_systems = func {
     var time = getprop("/sim/time/elapsed-sec");
     var dt = time - last_time;
     last_time = time;

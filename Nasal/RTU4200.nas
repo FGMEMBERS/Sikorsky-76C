@@ -25,23 +25,23 @@ setlistener("/sim/signals/fdm-initialized", func {
     print("RTU 4200 System ... Check");
 });
 
-setlistener("/instrumentation/RTU4200/unit[0]/mode", func {
+setlistener("/instrumentation/RTU4200/unit[0]/mode", func(m1){
     update_display(0);
-});
+},0,0);
 
-setlistener("/instrumentation/RTU4200/unit[0]/selected", func {
+setlistener("/instrumentation/RTU4200/unit[0]/selected", func(ms1) {
     update_display(0);
-});
+},0,0);
 
-setlistener("/instrumentation/RTU4200/unit[1]/mode", func {
+setlistener("/instrumentation/RTU4200/unit[1]/mode", func(m2){
     update_display(1);
-});
+},0,0);
 
-setlistener("/instrumentation/RTU4200/unit[1]/selected", func {
+setlistener("/instrumentation/RTU4200/unit[1]/selected", func(ms2){
     update_display(0);
-});
+},0,0);
 
-update_display = func{
+var update_display = func{
     var Unit = RTU.getNode("unit["~arg[0]~"]");
     var mode =Unit.getNode("mode").getValue();
     var Comm = props.globals.getNode("instrumentation/comm["~mode~"]/frequencies");

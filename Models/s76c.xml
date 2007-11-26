@@ -16,7 +16,7 @@
       <object-name>LHbaggage</object-name>
       <object-name>RHfrtgeardoor</object-name>
       <object-name>LHfrtgeardoor</object-name>
-      <property-base>/sim/model</property-base>
+      <property-base>/sim/model/livery</property-base>
       <texture-prop>texture</texture-prop>
       <texture>S76livery.rgb</texture>
     </animation>
