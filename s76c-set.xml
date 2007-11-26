@@ -11,7 +11,7 @@ Wim (performance specs)
 <PropertyList>
 
     <sim>
-        <description>Sikorsky S76C (YASim)</description>
+        <description>Sikorsky S76C++</description>
         <author>Syd Adams(Model), Maik Justus (FDM)</author>
         <flight-model>yasim</flight-model>
         <aero>S76c</aero>
