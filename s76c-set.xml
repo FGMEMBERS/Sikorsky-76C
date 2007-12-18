@@ -18,7 +18,7 @@ Wim (performance specs)
         <fuel-fraction>0.5</fuel-fraction>
 
         <startup>
-            <splash-texture>Aircraft/Sikorsky-76C/splash2.rgb</splash-texture>
+            <splash-texture>Aircraft/Sikorsky-76C/splash.rgb</splash-texture>
         </startup>
 
         <model>

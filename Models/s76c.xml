@@ -11,7 +11,8 @@
       <object-name>S76C</object-name>
       <object-name>RF.door</object-name>
       <object-name>LF.door</object-name>
-      <object-name>Rr.Doors</object-name>
+      <object-name>Rr.Door</object-name>
+      <object-name>Lr.Door</object-name>
       <object-name>RHbaggage</object-name>
       <object-name>LHbaggage</object-name>
       <object-name>RHfrtgeardoor</object-name>
@@ -61,17 +62,6 @@
             <z-m>-1.732</z-m>
         </top-left>
     </panel>
-
-    <animation>
-        <type>shader</type>
-        <shader>chrome</shader>
-        <texture>chrome1.rgb</texture>
-        <object-name>Rr.doorglass</object-name>
-        <object-name>S76C.glass</object-name>
-        <object-name>LF.doorglass</object-name>
-        <object-name>RF.doorglass.001</object-name>
-    </animation>
-
 
     <model>
         <path>Aircraft/Sikorsky-76C/Models/Instruments/ehsi.xml</path>
@@ -294,7 +284,27 @@
     </model>
 
     <animation>
-        <name>BlurredRotors</name>
+        <name>Glass</name>
+        <object-name>Rr.doorglass</object-name>
+        <object-name>RF.doorglass</object-name>
+        <object-name>LF.doorglass</object-name>
+        <object-name>Lr.doorglass</object-name>
+        <object-name>S76C.glass</object-name>
+        <object-name>S76C.rhglass</object-name>
+        <object-name>S76C.lhglass</object-name>
+    </animation>
+
+
+    <animation>
+        <type>shader</type>
+        <shader>chrome</shader>
+        <texture>chrome1.rgb</texture>
+        <object-name>Glass</object-name>
+    </animation>
+
+    <animation>
+        <type>noshadow</type>
+        <object-name>Glass</object-name>
         <object-name>fastblade1</object-name>
         <object-name>fastblade2</object-name>
         <object-name>fastblade3</object-name>
@@ -302,18 +312,17 @@
     </animation>
 
     <animation>
-        <name>Rotors</name>
-        <object-name>blade1</object-name>
-        <object-name>blade2</object-name>
-        <object-name>blade3</object-name>
-        <object-name>blade4</object-name>
+        <type>noshadow</type>
+        <object-name>tailfast</object-name>
     </animation>
 
     <animation>
         <type>rotate</type>
         <object-name>Rotorhub</object-name>
-        <object-name>BlurredRotors</object-name>
-        <object-name>Rotors</object-name>
+        <object-name>blade1</object-name>
+        <object-name>blade2</object-name>
+        <object-name>blade3</object-name>
+        <object-name>blade4</object-name>
         <property>rotors/main/tilt/pitch-deg</property>
         <center>
             <x-m>0</x-m>
@@ -327,10 +336,31 @@
         </axis>
     </animation>
 
+    <animation>
+        <type>rotate</type>
+        <object-name>fastblade1</object-name>
+        <object-name>fastblade2</object-name>
+        <object-name>fastblade3</object-name>
+        <object-name>fastblade4</object-name>
+        <property>rotors/main/tilt/pitch-deg</property>
+        <center>
+            <x-m>0</x-m>
+            <y-m>0</y-m>
+            <z-m>0.151</z-m>
+        </center>
+        <axis>
+            <x>0.0</x>
+            <y>1.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
 
     <animation>
         <type>select</type>
-        <object-name>Rotors</object-name>
+        <object-name>blade1</object-name>
+        <object-name>blade2</object-name>
+        <object-name>blade3</object-name>
+        <object-name>blade4</object-name>
         <condition>
             <less-than>
                 <property>rotors/main/rpm</property>
@@ -341,7 +371,10 @@
 
     <animation>
         <type>select</type>
-        <object-name>BlurredRotors</object-name>
+        <object-name>fastblade1</object-name>
+        <object-name>fastblade2</object-name>
+        <object-name>fastblade3</object-name>
+        <object-name>fastblade4</object-name>
         <condition>
             <greater-than>
                 <property>rotors/main/rpm</property>
@@ -356,7 +389,7 @@
         <condition>
             <greater-than>
                 <property>rotors/tail/rpm</property>
-                <value>999.999</value>
+                <value>599.999</value>
             </greater-than>
         </condition>
     </animation>
@@ -367,7 +400,7 @@
         <condition>
             <less-than>
                 <property>rotors/tail/rpm</property>
-                <value>1000</value>
+                <value>600</value>
             </less-than>
         </condition>
     </animation>
