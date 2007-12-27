@@ -13,13 +13,6 @@ var Ovolume=props.globals.getNode("/sim/sound/S76C/Ovolume",1);
 var N1 = props.globals.getNode("engines/engine/n1",1);
 var N2 = props.globals.getNode("engines/engine/n2",1);
 
-var view_list =[];
-var Sview = props.globals.getNode("/sim").getChildren("view");
-foreach (v;Sview) {
-append(view_list,"sim/view["~v.getIndex()~"]/config/default-field-of-view-deg");
-}
-aircraft.data.add(view_list);
-
 
 var strobe_switch = props.globals.getNode("controls/lighting/strobe", 1);
 aircraft.light.new("sim/model/S-76C/lighting/strobe-state", [0.05, 1.50], strobe_switch);

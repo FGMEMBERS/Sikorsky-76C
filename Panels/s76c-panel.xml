@@ -12,8 +12,8 @@
         <name>radar hotspots</name>
         <x>576</x>
         <y>88</y>
-        <w>133</w>
-        <h>102</h>
+        <w>123</w>
+        <h>97</h>
     </instrument>
 
     <instrument include="spz700-hotspots.xml">

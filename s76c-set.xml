@@ -299,7 +299,7 @@ Wim (performance specs)
             <heading-marker type="bool"	archive="y">false</heading-marker>
             <lightning type="bool" archive="y">false</lightning>
             <display-mode type="string">arc</display-mode>
-            <radar-texture-path type="string" archive="y">Aircraft/Instruments/Textures/od_wxradar.rgb</radar-texture-path>
+            <radar-texture-path type="string" archive="y">Aircraft/Instruments-3d/RDR-160/od_wxradar.rgb</radar-texture-path>
             <echo-texture-path type="string" archive="y">Aircraft/Instruments/Textures/wxecho.rgb</echo-texture-path>
             <display-controls>
                 <WX type="bool" archive="y">false</WX>
