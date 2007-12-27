@@ -1,26 +1,20 @@
-####    S76C electrical system    #### 
+####    Experimental electrical system    #### 
 ####    Syd Adams    ####
 #### Based on Curtis Olson's nasal electrical code ####
 
 var last_time = 0.0;
-var vbus_volts = 0.0;
+var bus_volts = 0.0;
 var ammeter_ave = 0.0;
 
-var FDM = 0;
-Outputs = "/systems/electrical/outputs/";
-Volts = props.globals.getNode("/systems/electrical/volts",1);
-Amps = props.globals.getNode("/systems/electrical/amps",1);
-BATT = props.globals.getNode("/controls/electric/battery-switch",1);
-ALT = props.globals.getNode("/controls/electric/engine[0]/generator",1);
-EXT  = props.globals.getNode("/controls/electric/external-power",1);
-var NORM = 0.0357;
-DIMMER = props.globals.getNode("/controls/lighting/instruments-norm",1);
+FDM = 0;
+var OutPuts = "systems/electrical/outputs/"; 
+var Volts = props.globals.getNode("/systems/electrical/volts",1);
+var Amps = props.globals.getNode("/systems/electrical/amps",1);
+var BATT = props.globals.getNode("/controls/electric/battery-switch",1);
+var L_ALT = props.globals.getNode("/controls/electric/engine[0]/generator",1);
+var EXT  = props.globals.getNode("/controls/electric/external-power",1); 
 
 #var battery = Battery.new(volts,amps,amp_hours,charge_percent,charge_amps);
-#var alternator = Alternator.new("rpm-source",rpm_threshold,volts,amps);
-
-Battery={};
-Alternator={};
 
 Battery = {
     new : func {
@@ -28,11 +22,11 @@ Battery = {
             m.ideal_volts = arg[0];
             m.ideal_amps = arg[1];
             m.amp_hours = arg[2];
-            m.charge_percent = arg[3];
+            m.charge_percent = arg[3]; 
             m.charge_amps = arg[4];
     return m;
     },
-
+    
     apply_load : func {
         var amphrs_used = arg[0] * arg[1] / 3600.0;
         percent_used = amphrs_used / me.amp_hours;
@@ -58,8 +52,9 @@ Battery = {
     factor = (tmp*tmp*tmp*tmp*tmp + 32) / 32;
     return me.ideal_amps * factor;
     }
-};
+};	
 
+# var alternator = Alternator.new("rpm-source",rpm_threshold,volts,amps);
 Alternator = {
     new : func {
     m = { parents : [Alternator] };
@@ -96,43 +91,28 @@ Alternator = {
 
 var battery = Battery.new(24,30,12,1.0,7.0);
 
-alternator1 = Alternator.new("/rotors/main/rpm",50.0,28.0,60.0);
+alternator1 = Alternator.new("/engines/engine[0]/n2",50.0,28.0,60.0);
+
+var strobe_switch = props.globals.getNode("controls/lighting/strobe", 1);
+aircraft.light.new("/controls/lighting/strobe-state", [0.05, 1.30], strobe_switch);
+var beacon_switch = props.globals.getNode("controls/lighting/beacon", 1);
+aircraft.light.new("/controls/lighting/beacon-state", [1.0, 1.0], beacon_switch);
 
 #####################################
 setlistener("/sim/signals/fdm-initialized", func {
-    props.globals.getNode("/controls/electric/external-power",1).setBoolValue(0);
-    props.globals.getNode("/controls/electric/battery-switch",1).setBoolValue(1); 
-    props.globals.getNode("/controls/electric/engine[0]/generator",1).setBoolValue(1);
-    props.globals.getNode("/controls/anti-ice/pitot-heat",1).setBoolValue(0);
-    props.globals.getNode("/controls/lighting/landing-lights[0]",1).setBoolValue(0);
-    props.globals.getNode("/controls/lighting/landing-lights[1]",1).setBoolValue(0);
-    props.globals.getNode("/controls/lighting/beacon",1).setBoolValue(0);
-    props.globals.getNode("/controls/lighting/nav-lights",1).setBoolValue(0);
-    props.globals.getNode("/controls/lighting/cabin-lights",1).setBoolValue(0);
-    props.globals.getNode("/controls/lighting/wing-lights",1).setBoolValue(0);
-    props.globals.getNode("/controls/lighting/strobe",1).setBoolValue(0);
-    props.globals.getNode("/controls/lighting/taxi-light",1).setBoolValue(0);
-    props.globals.getNode("/controls/cabin/fan",1).setBoolValue(0);
-    props.globals.getNode("/controls/cabin/heat",1).setBoolValue(0);
-    props.globals.getNode("/controls/lighting/instrument-lights",1).setBoolValue(1);
-    FDM = 1;
-    settimer(update_electrical,1);
-    print("Electrical System ... Check");
-});
+    print("Electrical System ... ok");
+    settimer(update_electrical,2);
+    });
 
 
-update_virtual_bus = func( dt ) {
-    if(FDM != 1 ){return;}
-    var PWR = getprop("systems/electrical/serviceable");
-    var engine0_state = getprop("/rotors/main/rpm");
-    if(engine0_state == nil){engine0_state = 0.0;}
+var update_virtual_bus = func( dt ) {
+    var PWR = props.globals.getNode("systems/electrical/serviceable",1).getBoolValue();
+    var engine0_state = props.globals.getNode("/engines/engine[0]/running").getBoolValue();
     var alternator1_volts = 0.0;
     battery_volts = battery.get_output_volts();
     
-    if (engine0_state > 50){
-    alternator1_volts = alternator1.get_output_volts();
-    }
-    setprop("/engines/engine[0]/amp-v",alternator1_volts);
+    if (engine0_state)alternator1_volts = alternator1.get_output_volts();
+    props.globals.getNode("/engines/engine[0]/amp-v",1).setValue(alternator1_volts);
 
     external_volts = 0.0;
     load = 0.0;
@@ -140,15 +120,15 @@ update_virtual_bus = func( dt ) {
     bus_volts = 0.0;
     power_source = nil;
     if ( BATT.getBoolValue()) {
-        if(PWR){bus_volts = battery_volts;}
+        bus_volts = battery_volts * PWR;
         power_source = "battery";
         }
-   if ( ALT.getBoolValue() and (alternator1_volts > bus_volts) ) {
-        if(PWR){bus_volts = alternator1_volts;}
+   if ( L_ALT.getBoolValue() and (alternator1_volts > bus_volts) ) {
+        bus_volts = alternator1_volts * PWR;
         power_source = "alternator1";
         }
     if ( EXT.getBoolValue() and ( external_volts > bus_volts) ) {
-        if(PWR){bus_volts = external_volts;}
+        bus_volts = external_volts * PWR;
         }
    
     load += electrical_bus(bus_volts);
@@ -177,31 +157,22 @@ update_virtual_bus = func( dt ) {
    return load;
 }
 
-electrical_bus = func() {
+var electrical_bus = func(){
     bus_volts = arg[0]; 
     load = 0.0;
-    var starter_switch = getprop("/controls/engines/engine[0]/starter");
-    setprop(Outputs~"starter",bus_volts * starter_switch);
-
-    setprop(Outputs~"fuel-pump",bus_volts * getprop("/controls/engines/engine[0]/fuel-pump"));
-
-    setprop(Outputs~"pitot-heat",getprop("/controls/anti-ice/pitot-heat")*bus_volts);
-
-    setprop(Outputs~"landing-lights[0]",getprop("/controls/lighting/landing-lights[0]")*(bus_volts * NORM));
-
-    setprop(Outputs~"landing-lights[1]",getprop("/controls/lighting/landing-lights[1]")*(bus_volts * NORM));
-
-    setprop(Outputs~"cabin-lights",getprop("/controls/lighting/cabin-lights")*(bus_volts * NORM));
-
-    setprop(Outputs~"wing-lights",getprop("/controls/lighting/wing-lights")*(bus_volts * NORM));
-
-    setprop(Outputs~"nav-lights",getprop("/controls/lighting/nav-lights")*(bus_volts * NORM));
-
-    setprop(Outputs~"beacon",getprop("/controls/lighting/beacon")*bus_volts);
-
-    setprop(Outputs~"flaps",bus_volts); 
-
-    ebus1_volts = bus_volts;
+    var starter_switch = props.globals.getNode("/controls/engines/engine[0]/starter").getBoolValue();
+    var starter_volts = bus_volts * starter_switch;
+    setprop(OutPuts~"starter",starter_volts); 
+    load += getprop(OutPuts~"starter") * 0.1;
+    var f_pump0 = getprop("/controls/engines/engine[0]/fuel-pump");
+    setprop(OutPuts~"fuel-pump",bus_volts * f_pump0); 
+    load += getprop(OutPuts~"fuel-pump") * 0.02;
+    setprop(OutPuts~"pitot-heat",bus_volts * getprop("/controls/anti-ice/pitot-heat")); 
+    setprop(OutPuts~"landing-lights",bus_volts * getprop("/controls/lighting/landing-lights")); 
+    setprop(OutPuts~"cabin-lights",bus_volts * getprop("/controls/lighting/cabin-lights")); 
+    setprop(OutPuts~"nav-lights",bus_volts * getprop("/controls/lighting/nav-lights")); 
+    setprop(OutPuts~"beacon",bus_volts * getprop("/controls/lighting/beacon-state/state")); 
+    setprop(OutPuts~"strobe",bus_volts * getprop("/controls/lighting/strobe-state/state")); 
     return load;
 }
 
@@ -211,43 +182,36 @@ electrical_bus = func() {
 # nav[0] : nav [1] : comm[0] : comm[1]
 ####
 
-avionics_bus = func() {
+var avionics_bus = func(){
     bus_volts = arg[0];
     load = 0.0;
-    var INSTR = props.globals.getNode("/intrumentation");
-
-    if ( props.globals.getNode("/controls/lighting/instrument-lights").getBoolValue()){
-        setprop(Outputs~"instrument-lights",(bus_volts * NORM) *DIMMER.getValue());
-        } else {
-        setprop(Outputs~"instrument-lights",0);
-        }
-        setprop(Outputs~"clock",bus_volts);
-        setprop(Outputs~"adf",bus_volts);
-        setprop(Outputs~"dme",bus_volts);
-        setprop(Outputs~"encoder",bus_volts);
-        setprop(Outputs~"gps",bus_volts);
-        setprop(Outputs~"DG",bus_volts);
-        setprop(Outputs~"transponder",bus_volts);
-        setprop(Outputs~"mk-viii",bus_volts);
-        setprop(Outputs~"MRG",bus_volts);
-        setprop(Outputs~"tacan",bus_volts);
-        setprop(Outputs~"turn-coordinator",bus_volts);
-        setprop(Outputs~"nav[0]",bus_volts);
-        setprop(Outputs~"nav[1]",bus_volts);
-        setprop(Outputs~"comm[0]",bus_volts);
-        setprop(Outputs~"comm[1]",bus_volts);
-        setprop(Outputs~"radar",bus_volts);
-        setprop(Outputs~"groundradar",bus_volts);
+    var I_DIM = getprop("controls/lighting/instruments-norm");
+    setprop(OutPuts~"instrument-lights",(bus_volts * I_DIM)*getprop("controls/lighting/instrument-lights")); 
+    setprop(OutPuts~"radar",bus_volts); 
+    setprop(OutPuts~"adf",bus_volts); 
+    setprop(OutPuts~"dme",bus_volts); 
+    setprop(OutPuts~"encoder",bus_volts); 
+    setprop(OutPuts~"gps",bus_volts); 
+    setprop(OutPuts~"DG",bus_volts); 
+    setprop(OutPuts~"transponder",bus_volts); 
+    setprop(OutPuts~"mk-viii",bus_volts); 
+    setprop(OutPuts~"MRG",bus_volts); 
+    setprop(OutPuts~"tacan",bus_volts); 
+    setprop(OutPuts~"turn-coordinator",bus_volts); 
+    setprop(OutPuts~"nav[0]",bus_volts); 
+    setprop(OutPuts~"nav[1]",bus_volts); 
+    setprop(OutPuts~"comm[0]",bus_volts); 
+    setprop(OutPuts~"comm[1]",bus_volts); 
+    load +=15;
     return load;
 }
 
-update_electrical = func {
-    if(FDM == 1){
+var update_electrical = func{
     time = getprop("/sim/time/elapsed-sec");
     dt = time - last_time;
     last_time = time;
     update_virtual_bus( dt );
-    }
-settimer(update_electrical, 0);
+
+    settimer(update_electrical, 0);
 }
 

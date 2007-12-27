@@ -13,6 +13,14 @@ var Ovolume=props.globals.getNode("/sim/sound/S76C/Ovolume",1);
 var N1 = props.globals.getNode("engines/engine/n1",1);
 var N2 = props.globals.getNode("engines/engine/n2",1);
 
+var view_list =[];
+var view = props.globals.getNode("/sim").getChildren("view");
+    for(var i=0; i<size(view); i+=1){
+        append(view_list,"sim/view["~i~"]/config/default-field-of-view-deg");
+        }
+aircraft.data.add(view_list);
+
+
 var strobe_switch = props.globals.getNode("controls/lighting/strobe", 1);
 aircraft.light.new("sim/model/S-76C/lighting/strobe-state", [0.05, 1.50], strobe_switch);
 var beacon_switch = props.globals.getNode("controls/lighting/beacon", 1);
@@ -50,6 +58,7 @@ setlistener("/sim/signals/fdm-initialized", func {
 
 setlistener("/sim/current-view/view-number", func(vw){
     ViewNum = vw.getValue();
+    setprop("sim/current-view/field-of-view",getprop("sim/view["~ViewNum~"]/config/default-field-of-view-deg"));
     Cvolume.setValue(0.1);
     Ovolume.setValue(1.0);
     if(ViewNum == 0){

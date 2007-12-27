@@ -240,6 +240,11 @@ Wim (performance specs)
         <rotor>
             <pitch>1</pitch>
         </rotor>
+        <lighting>
+        <instruments-norm type="double">0.8</instruments-norm>
+        <instrument-lights type="double">1</instrument-lights>
+        <cabin-lights type="double">1</cabin-lights>
+        </lighting>
     </controls>
 
     <input>
@@ -291,11 +296,11 @@ Wim (performance specs)
             <switch type="string" archive="y">off</switch>
             <mode-control type="int" archive="y">3</mode-control>
             <range type="int" archive="y">20</range>
-            <mode type="string"	archive="y">WX</mode>
+            <mode type="string" archive="y">WX</mode>
             <heading-marker type="bool"	archive="y">false</heading-marker>
             <lightning type="bool" archive="y">false</lightning>
             <display-mode type="string">arc</display-mode>
-            <radar-texture-path type="string" archive="y">Aircraft/Instruments-3d/RDR-160/od_wxradar.rgb</radar-texture-path>
+            <radar-texture-path type="string" archive="y">Aircraft/Instruments/Textures/od_wxradar.rgb</radar-texture-path>
             <echo-texture-path type="string" archive="y">Aircraft/Instruments/Textures/wxecho.rgb</echo-texture-path>
             <display-controls>
                 <WX type="bool" archive="y">false</WX>
