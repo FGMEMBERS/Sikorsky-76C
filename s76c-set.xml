@@ -58,7 +58,6 @@ Wim (performance specs)
                 <y-offset-m archive="y">-1.05</y-offset-m>
                 <z-offset-m archive="y">-2.05</z-offset-m>
                 <pitch-offset-deg>-16</pitch-offset-deg>
-                <default-field-of-view-deg type="double">55.0</default-field-of-view-deg>
             </config>
         </view>
 
