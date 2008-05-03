@@ -27,11 +27,11 @@ Forward pitch 5 degrees
 
 
 <rotor name="main" x="0.0" y="0.0" z="0.2" nx="0" ny="0" nz="1.0" fx="1" fy="0" fz="0" ccw="1"
-  maxcollective="16" mincollective="0.2"
+  maxcollective="17" mincollective="0.2"
   mincyclicele="-6" maxcyclicele="5"
   mincyclicail="-2.0" maxcyclicail="3.6"
   diameter="13.41" numblades="4" weightperblade="97" relbladecenter="0.5"
-  dynamic="0.85" rpm="293" rellenflaphinge="0.09" delta3="0.3"
+  dynamic="0.75" rpm="293" rellenflaphinge="0.09" delta3="1"
   delta=".15"
   pitch-a="10"
   pitch-b="15"
@@ -69,7 +69,7 @@ Forward pitch 5 degrees
   lift-factor-stall="0.28"
   stall-change-over="5.5"
   drag-factor-stall="2.0"
-  cyclic-factor="0.75"
+  cyclic-factor="0.85"
   rotor-correction-factor="0.8"
 >
   <control-input axis="/controls/flight/aileron-trim" control="CYCLICAIL" split="true"/>
@@ -93,7 +93,7 @@ Forward pitch 5 degrees
 <rotor name="tail" x="-8.12" y="0.2" z="0.4" nx="0.0" ny="-1" nz="0.0" fx="1" fy="0" fz="0" ccw="1"
   maxcollective="15.2" mincollective="-6.3"
   diameter="2.44" numblades="4" weightperblade="2" relbladecenter="0.55"
-  dynamic="0.90" rpm="1758" rellenflaphinge="0.0" delta3="0" translift="0" delta="0.5"
+  dynamic="0.80" rpm="1758" rellenflaphinge="0.0" delta3="0" translift="0" delta="0.5"
   pitch-a="10"
   pitch-b="15"
   airfoil-lift-coefficient="6.4"
@@ -128,7 +128,7 @@ Forward pitch 5 degrees
   engine-prop-factor="0.02"
   engine-accel-limit="5"
 
-  yasimdragfactor="25"
+  yasimdragfactor="20"
   yasimliftfactor="280"
 >
   <control-input axis="/controls/engines/engine[0]/magnetos" control="ROTORGEARENGINEON"/>

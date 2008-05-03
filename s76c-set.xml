@@ -137,6 +137,13 @@ Wim (performance specs)
     </view>
 
         <chase-distance-m type="double" archive="y">-25.0</chase-distance-m>
+
+    <airport>
+        <runways>
+            <start-offset-m>30</start-offset-m>
+        </runways>
+    </airport>
+
 <!--  11,700 Max Gross Weight-->
         <weight n="0">
             <name>Crew</name>
