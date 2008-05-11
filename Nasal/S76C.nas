@@ -123,6 +123,43 @@ var fhour = fminute * 0.016666;
 setprop("/instrumentation/clock/flight-meter-hour",fhour);
 }
 
+var radar_range=func(rng){
+    var rdr_rng=getprop("instrumentation/radar/range");
+    if(rng > 0){
+        rdr_rng = rdr_rng * 2;
+        if(rdr_rng>160)rdr_rng=160;
+    }elsif(rng<0){
+        rdr_rng = rdr_rng * 0.5;
+        if(rdr_rng<10)rdr_rng=10;
+    }
+    setprop("instrumentation/radar/range",rdr_rng);
+}
+
+var radar_switch=func(swt){
+# switch positions= off, stby,tst,on #
+    var rdr_swt=getprop("instrumentation/radar/switch");
+    var pos=getprop("instrumentation/radar/switch-pos");
+    if(swt > 0){
+        if(rdr_swt =="off"){
+            rdr_swt="stby";pos=1;
+            }elsif(rdr_swt=="stby"){
+            rdr_swt="tst";pos=2;
+        }elsif(rdr_swt=="tst"){
+            rdr_swt="on";pos=3;
+        }
+    }elsif(swt<0){
+        if(rdr_swt =="on"){
+            rdr_swt="tst";pos=2;
+        }elsif(rdr_swt=="tst"){
+            rdr_swt="stby";pos=1;
+        }elsif(rdr_swt=="stby"){
+            rdr_swt="off";pos=0;
+        }
+    }
+    setprop("instrumentation/radar/switch",rdr_swt);
+    setprop("instrumentation/radar/switch-pos",pos);
+}
+
 var update_fuel = func{
     var amnt = arg[0] * GPS;
     var lvl = Fuel_Level.getValue();

@@ -63,6 +63,26 @@
         </top-left>
     </panel>
 
+    <panel>
+        <name>Radar</name>
+        <path>Aircraft/Sikorsky-76C/Panels/radar.xml</path>
+        <bottom-left>
+            <x-m>-3.004</x-m>
+            <y-m>0.001</y-m>
+            <z-m>-1.686</z-m>
+        </bottom-left>
+        <bottom-right>
+            <x-m>-3.004</x-m>
+            <y-m>0.163</y-m>
+            <z-m>-1.686</z-m>
+        </bottom-right>
+        <top-left>
+            <x-m>-3.025</x-m>
+            <y-m>0.001</y-m>
+            <z-m>-1.567</z-m>
+        </top-left>
+    </panel>
+
     <model>
         <path>Aircraft/Sikorsky-76C/Models/Instruments/ehsi.xml</path>
         <offsets>
@@ -134,7 +154,7 @@
     </model>
 
     <model>
-        <path>Aircraft/Instruments-3d/RDR-160/RDR-160.xml</path>
+        <path>Aircraft/Sikorsky-76C/Models/Instruments/RDR-160.xml</path>
         <offsets>
             <x-m>-3.019</x-m>
             <y-m>0.082</y-m>

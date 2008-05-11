@@ -8,14 +8,6 @@
 
 <instruments>
 
-    <instrument include="../../Instruments-3d/RDR-160/wxradar-hotspots.xml">
-        <name>radar hotspots</name>
-        <x>576</x>
-        <y>88</y>
-        <w>123</w>
-        <h>97</h>
-    </instrument>
-
     <instrument include="spz700-hotspots.xml">
         <name>autopilot hotspots</name>
         <x>750</x>

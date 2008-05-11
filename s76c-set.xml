@@ -298,33 +298,39 @@ Wim (performance specs)
 
     <instrumentation>
         <radar>
-            <serviceable type="bool" archive="y">true</serviceable>
-            <switch type="string" archive="y">off</switch>
-            <mode-control type="int" archive="y">3</mode-control>
-            <range type="int" archive="y">20</range>
-            <mode type="string" archive="y">WX</mode>
-            <heading-marker type="bool"	archive="y">false</heading-marker>
-            <lightning type="bool" archive="y">false</lightning>
-            <display-mode type="string">arc</display-mode>
-            <radar-texture-path type="string" archive="y">Aircraft/Instruments-3d/RDR-160/od_wxradar.rgb</radar-texture-path>
-            <echo-texture-path type="string" archive="y">Aircraft/Instruments/Textures/wxecho.rgb</echo-texture-path>
+            <switch type="string" >off</switch>
+            <switch-pos type="int">0</switch-pos>
+            <mode-control type="int" >1</mode-control>
             <display-controls>
-                <WX type="bool" archive="y">false</WX>
-                <data type="bool" archive="y">false</data>
-                <pos type="bool" archive="y">true</pos>
+                <WX type="bool" >false</WX>
+                <pos type="bool" >true</pos>
+                <data type="bool" >true</data>
+                <symbol type="bool" >true</symbol>
             </display-controls>
+            <serviceable type="bool">true</serviceable>
+            <range type="int" >10</range>
+            <reference-range-nm type="double" >320</reference-range-nm>
+            <mode type="string" >WX</mode>
+            <font type="string" >typewriter.txf</font>
+            <font-size type="float" >8</font-size>
+            <lightning type="bool" >true</lightning>
+            <display-mode type="string" >arc</display-mode>
+            <radar-texture-path type="string" >Aircraft/Sikorsky-76C/Models/Instruments/od_wxradar.rgb</radar-texture-path>
+            <echo-texture-path type="string" >Aircraft/Instruments/Textures/wxecho.rgb</echo-texture-path>
+            <minimized type="bool" >false</minimized>
+            <heading-marker type="bool" >true</heading-marker>
+            <limit-deg type="int">180</limit-deg>
         </radar>
     </instrumentation>
 
     <nasal>
-        <S-76C>
+        <s76c>
             <file>Aircraft/Sikorsky-76C/Nasal/Electrical.nas</file>
             <file>Aircraft/Sikorsky-76C/Nasal/flightdirector.nas</file>
             <file>Aircraft/Sikorsky-76C/Nasal/RTU4200.nas</file>
             <file>Aircraft/Sikorsky-76C/Nasal/S76C.nas</file>
             <file>Aircraft/Instruments-3d/clock/M877/M877.nas</file>
-            <file>Aircraft/Instruments-3d/RDR-160/RDR160.nas</file>
-        </S-76C>
+        </s76c>
     </nasal>
 
 </PropertyList>
