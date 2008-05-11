@@ -8,20 +8,20 @@
 
 <instruments>
 
-    <instrument include="wxradar-hotspots.xml">
-        <name>radar hotspots</name>
-        <x>80</x>
-        <y>60</y>
-        <w>160</w>
-        <h>120</h>
-    </instrument>
-
     <instrument include="radar-display.xml">
         <name>radar screen</name>
         <x>80</x>
         <y>68</y>
         <w>80</w>
         <h>80</h>
+    </instrument>
+
+    <instrument include="wxradar-hotspots.xml">
+        <name>radar hotspots</name>
+        <x>80</x>
+        <y>60</y>
+        <w>160</w>
+        <h>120</h>
     </instrument>
 
 </instruments>
