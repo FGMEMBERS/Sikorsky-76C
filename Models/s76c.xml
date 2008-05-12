@@ -144,7 +144,7 @@
     </model>
 
     <model>
-        <path>Aircraft/Sikorsky-76C/Models/Instruments/iids.xml</path>
+        <path>Aircraft/Sikorsky-76C/Models/Instruments/iids2.xml</path>
         <offsets>
             <x-m>-3.047</x-m>
             <y-m>-0.022</y-m>

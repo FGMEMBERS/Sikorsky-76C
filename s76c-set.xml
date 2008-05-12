@@ -58,6 +58,19 @@ Wim (performance specs)
                 <y-offset-m archive="y">-1.05</y-offset-m>
                 <z-offset-m archive="y">-2.05</z-offset-m>
                 <pitch-offset-deg>-16</pitch-offset-deg>
+                <limits>
+                    <enabled type="bool">true</enabled>
+                    <left>
+                        <heading-max-deg type="double">120</heading-max-deg>
+                        <x-offset-max-m type="double">0.22</x-offset-max-m>
+                        <x-offset-threshold-deg type="double">45</x-offset-threshold-deg>
+                    </left>
+                    <right>
+                        <heading-max-deg type="double">140</heading-max-deg>
+                        <x-offset-max-m type="double">0.25</x-offset-max-m>
+                        <x-offset-threshold-deg type="double">65</x-offset-threshold-deg>
+                    </right>
+                </limits>
             </config>
         </view>
 
@@ -252,6 +265,17 @@ Wim (performance specs)
         <cabin-lights type="double">1</cabin-lights>
         </lighting>
     </controls>
+
+<consumables>
+    <fuel>
+        <tank n="0">
+            <name>Frt Tank</name>
+        </tank>
+        <tank n="1">
+            <name>Rr Tank</name>
+        </tank>
+    </fuel>
+</consumables>
 
     <input>
         <keyboard>
