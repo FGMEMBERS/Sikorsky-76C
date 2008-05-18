@@ -1,8 +1,4 @@
 aircraft.livery.init("Aircraft/Sikorsky-76C/Models/Liveries", "sim/model/livery/name", "sim/model/livery/index");
-var ViewNum=0;
-var EyePoint = 0;
-var last_time = 0;
-var NoFuel=props.globals.getNode("/engines/engine/out-of-fuel",1);
 var Cvolume=props.globals.getNode("/sim/sound/S76C/Cvolume",1);
 var Spitch=props.globals.getNode("/sim/sound/S76C/pitch",1);
 var Ovolume=props.globals.getNode("/sim/sound/S76C/Ovolume",1);
@@ -21,6 +17,11 @@ var Engine = {
         m.eng = props.globals.getNode("engines/engine["~eng_num~"]",1);
         m.rotor_rpm = props.globals.getNode(rotor_prop,1);
         m.running = m.eng.getNode("running",1);
+        m.fuel_dry = m.eng.getNode("out-of-fuel",1);
+        m.T5 = m.eng.getNode("T5",1);
+        m.T5.setDoubleValue(0);
+        m.TQ = m.eng.getNode("TQ",1);
+        m.TQ.setDoubleValue(0);
         m.magneto = props.globals.getNode("controls/engines/engine["~eng_num~"]/magnetos",1);
         m.cutoff = props.globals.getNode("controls/engines/engine["~eng_num~"]/cutoff",1);
         m.rpm = m.eng.getNode("n2",1);
@@ -28,6 +29,8 @@ var Engine = {
         m.fuel_pph=m.eng.getNode("fuel-flow_pph",1);
         m.oil_temp=m.eng.getNode("oil-temp-c",1);
         m.oil_temp.setDoubleValue(m.air_temp.getValue());
+        m.oil_psi=m.eng.getNode("oil-pressure-psi",1);
+        m.oil_psi.setDoubleValue(0);
         m.fuel_pph.setDoubleValue(0);
         m.fuel_gph=m.eng.getNode("fuel-flow-gph",1);
         m.hpump=props.globals.getNode("systems/hydraulics/pump-psi["~eng_num~"]",1);
@@ -47,7 +50,16 @@ var Engine = {
         if(OT < rpm)OT+=0.01;
         if(OT > rpm)OT-=0.001;
         me.oil_temp.setValue(OT);
-        },
+        var oilp = rpm *2;
+        if(oilp>95)oilp==95;
+        me.oil_psi.setValue(oilp);
+        var t5 = me.T5.getValue();
+        if(t5<rpm){t5 +=0.01}else{t5-=0.005};
+        if(t5<0)t5=0;
+        me.T5.setValue(t5);
+        var tq = getprop("rotors/main/torque");
+        me.TQ.setValue(tq * 0.002857);
+},
 
     update_fuel : func(dt,gph,tnk){
         var Rrpm =me.rpm.getValue();
@@ -56,7 +68,7 @@ var Engine = {
         var cur_gph= gph * rpm_factor;
         var cur_pph = cur_gph * me.fdensity;
         me.fuel_gph.setDoubleValue(cur_gph);
-       me.fuel_pph.setDoubleValue(cur_pph);
+        me.fuel_pph.setDoubleValue(cur_pph);
         var gph_used = (cur_gph/3600)*dt;
         for(var i=0; i<tnk; i+=1) {
             var fl1 = getprop("consumables/fuel/tank["~i~"]/level-gal_us");
@@ -66,17 +78,12 @@ var Engine = {
             setprop("consumables/fuel/tank["~i~"]/level-lbs", fl1 * me.fdensity);
             ttl_lbs +=fl1*me.fdensity;
         }
-    me.ttl_fuel_lbs.setDoubleValue(ttl_lbs);
-    },
-#### check fuel cutoff , copy mixture setting to condition for turboprop ####
-    condition_check :  func{
-        if(me.cutoff.getBoolValue()){
-            me.condition.setValue(0);
-            me.running.setBoolValue(0);
-        }else{
-            me.condition.setValue(me.mixture.getValue());
+        me.ttl_fuel_lbs.setDoubleValue(ttl_lbs);
+        if(ttl_lbs < 5){
+            me.magneto.setValue(0);
+            me.running.setValue(0);
         }
-    }
+    },
 };
 
 
@@ -111,18 +118,21 @@ setlistener("/sim/signals/fdm-initialized", func {
     settimer(update_systems,2);
 });
 
-setlistener("/sim/current-view/view-number", func(vw){
-    ViewNum = vw.getValue();
-    Cvolume.setValue(0.1);
-    Ovolume.setValue(1.0);
-    if(ViewNum == 0){
+setlistener("/sim/signals/reinit", func(ri) {
+    Shutdown();
+},0,0);
+
+setlistener("/sim/current-view/name", func(vw){
+    var VName = vw.getValue();
+    if(VName == "Cockpit View"
+    or VName=="Passenger View" 
+    or VName=="Panel View"){
         Cvolume.setValue(0.8);
-        Ovolume.setValue(0.3);
-        }
-    if(ViewNum == 7){
-        Cvolume.setValue(0.8);
-        Ovolume.setValue(0.3);
-        }
+        Ovolume.setValue(0.2);
+    }else{
+        Cvolume.setValue(0.1);
+        Ovolume.setValue(1.0);
+    }
 },0,0);
 
 setlistener("/gear/gear[1]/wow", func(gr){
@@ -132,8 +142,15 @@ setlistener("/gear/gear[1]/wow", func(gr){
 },0,0);
 
 setlistener("/sim/model/start-idling", func(idle){
-    var run= idle.getBoolValue();
-    if(run){
+    if(idle.getBoolValue()){
+    setprop("/controls/engines/engine/magnetos",1);
+    }else{
+    setprop("/controls/engines/engine/magnetos",0);
+    }
+},0,0);
+
+setlistener("/controls/engines/engine/magnetos", func(strt){
+    if(strt.getValue() >0){
     Startup();
     }else{
     Shutdown();
@@ -147,7 +164,7 @@ setprop("controls/lighting/instrument-lights",1);
 setprop("controls/lighting/nav-lights",1);
 setprop("controls/lighting/beacon",1);
 setprop("controls/lighting/strobe",1);
-setprop("controls/engines/engine[0]/magnetos",3);
+setprop("controls/engines/engine[0]/magnetos",1);
 setprop("engines/engine[0]/running",1);
 }
 
@@ -208,9 +225,7 @@ var update_systems = func {
     Eng.update_eng();
     var dt = getprop("sim/time/delta-sec");
     Eng.update_fuel(dt,92.26,2); # elapsed seconds,gallons per hour, number of tanks
-    setprop("engines/engine/T5",getprop("rotors/tail/torque") * 0.6666);
-    setprop("engines/engine/TQ",getprop("rotors/main/torque") * 0.0025);
-flight_meter();
+    flight_meter();
 settimer(update_systems,0);
 }
 
