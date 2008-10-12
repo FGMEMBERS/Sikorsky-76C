@@ -53,8 +53,8 @@ setlistener("/sim/signals/fdm-initialized", func {
 
 ####    Mode Controller inputs    ####
 
-setlistener("/instrumentation/flightdirector/lnav", func {
-    lnav = cmdarg().getValue();
+setlistener("/instrumentation/flightdirector/lnav", func(n) {
+    lnav = n.getValue();
     var Vn=getprop("/instrumentation/flightdirector/vnav");
     if(Vn==nil){Vn=0;}
     if(lnav == 0 or lnav ==nil){
@@ -87,8 +87,8 @@ setlistener("/instrumentation/flightdirector/lnav", func {
     setprop("instrumentation/flightdirector/vnav",Vn);
 });
 
-setlistener("/instrumentation/flightdirector/vnav", func {
-    vnav = cmdarg().getValue();
+setlistener("/instrumentation/flightdirector/vnav", func(n) {
+    vnav = n.getValue();
     if(vnav == 4){
         if (!getprop("/instrumentation/nav/has-gs",1)){
             vnav = 0;
@@ -101,8 +101,8 @@ setlistener("/instrumentation/flightdirector/vnav", func {
     setprop("instrumentation/flightdirector/vertical-mode",vMode[vnav]);
 });
 
-setlistener("/instrumentation/flightdirector/spd", func {
-    spd = cmdarg().getValue();
+setlistener("/instrumentation/flightdirector/spd", func(n) {
+    spd = n.getValue();
     if(spd == 0){AP_spd.setValue("");}
     if(spd == 1){AP_spd.setValue("speed-with-pitch-trim");}
 });

@@ -25,6 +25,9 @@ Wim (performance specs)
             <path>Aircraft/Sikorsky-76C/Models/s76c.xml</path>
             <start-idling type="bool"></start-idling>
             <variant type="int">1</variant>
+            <livery>
+                <file type="string">Rescue</file>
+            </livery>
         </model>
 
         <hud>
