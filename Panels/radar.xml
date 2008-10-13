@@ -2,7 +2,7 @@
 <PropertyList>
 
 <name>Radar Panel</name>
-<background>Aircraft/Sikorsky-76C/Panels/transparent-bg.rgb</background>
+<background>Aircraft/Sikorsky-76C/Panels/transparent-bg.png</background>
 <w>160</w>
 <h>120</h>
 
@@ -14,14 +14,6 @@
         <y>68</y>
         <w>80</w>
         <h>80</h>
-    </instrument>
-
-    <instrument include="wxradar-hotspots.xml">
-        <name>radar hotspots</name>
-        <x>80</x>
-        <y>60</y>
-        <w>160</w>
-        <h>120</h>
     </instrument>
 
 </instruments>

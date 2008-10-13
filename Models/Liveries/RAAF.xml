@@ -5,8 +5,7 @@
     <model>
         <livery>
             <name type="string">RAAF</name>
-            <index type="int">3</index>
-            <texture>S76livery3.rgb</texture>
+            <texture>S76livery3.png</texture>
         </livery>
     </model>
 </sim>

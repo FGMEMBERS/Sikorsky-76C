@@ -5,8 +5,7 @@
     <model>
         <livery>
             <name type="string">Green</name>
-            <index type="int">2</index>
-            <texture>S76livery2.rgb</texture>
+            <texture>S76livery2.png</texture>
         </livery>
     </model>
 </sim>

@@ -377,7 +377,7 @@ OBJECT poly
 name "ASI.face"
 data 12
 Cylinder.021
-texture "asi.rgb"
+texture "asi.png"
 texrep 1 1
 crease 30.000000
 numvert 9
@@ -444,7 +444,7 @@ OBJECT poly
 name "ASI.needle"
 data 10
 Circle.007
-texture "asi.rgb"
+texture "asi.png"
 texrep 1 1
 crease 30.000000
 numvert 29
@@ -647,7 +647,7 @@ OBJECT poly
 name "Sphere"
 data 6
 Sphere
-texture "asi.rgb"
+texture "asi.png"
 texrep 1 1
 crease 30.000000
 numvert 100

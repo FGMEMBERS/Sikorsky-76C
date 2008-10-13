@@ -22,7 +22,7 @@
                 </not-equals>
             </condition>
             <texture>
-                <path>Aircraft/Sikorsky-76C/Models/Instruments/bkgrd.rgb</path>
+                <path>Aircraft/Sikorsky-76C/Models/Instruments/bkgrd.png</path>
                 <x1>0.132</x1>
                 <y1>0.113</y1>
                 <x2>0.868</x2>
@@ -43,7 +43,7 @@
                 </equals>
             </condition>
             <texture>
-                <path>Aircraft/Sikorsky-76C/Models/Instruments/od_wxradar.rgb</path>
+                <path>Aircraft/Sikorsky-76C/Models/Instruments/od_wxradar.png</path>
                 <x1>0.0</x1>
                 <y1>0.0</y1>
                 <x2>1.0</x2>

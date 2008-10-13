@@ -198,4 +198,212 @@
         </condition>
     </animation>
 
+<!--    Hotspots  -->
+
+    <animation>
+        <type>pick</type>
+        <object-name>SPZ.hdg</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>
+                    if(getprop("/instrumentation/flightdirector/lnav") != 1){
+                    setprop("/instrumentation/flightdirector/lnav",1);}else{
+                    setprop("/instrumentation/flightdirector/lnav",0);}
+                </script>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>SPZ.vs</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>
+                    if(getprop("/instrumentation/flightdirector/vnav") != 6){
+                    setprop("/instrumentation/flightdirector/vnav",6);}else{
+                    setprop("/instrumentation/flightdirector/vnav",0);}
+                </script>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>SPZ.alt</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>
+                    if(getprop("/instrumentation/flightdirector/vlnav") != 1){
+                    setprop("/instrumentation/flightdirector/vnav",1);
+                    setprop("/autopilot-settings/target-altitude-ft",getprop("/position/altitude-ft"));
+                    }else{
+                    setprop("/instrumentation/flightdirector/vnav",0);}
+                </script>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>SPZ.nav</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>
+                    if(getprop("/instrumentation/flightdirector/lnav") != 2){
+                    setprop("/instrumentation/flightdirector/lnav",2);}else{
+                    setprop("/instrumentation/flightdirector/lnav",0);}
+                </script>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>SPZ.ils</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>
+                    if(getprop("/instrumentation/flightdirector/vnav") != 4){
+                    setprop("/instrumentation/flightdirector/vnav",4);}else{
+                    setprop("/instrumentation/flightdirector/vnav",0);}
+                </script>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>SPZ.decel</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>
+                    if(getprop("/instrumentation/flightdirector/spd") != 1){
+                    setprop("/instrumentation/flightdirector/spd",1);}else{
+                    setprop("/instrumentation/flightdirector/spd",0);}
+                </script>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>SPZ.apr</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>
+                    if(getprop("/instrumentation/flightdirector/vnav") != 4){
+                    setprop("/instrumentation/flightdirector/vnav",4);}else{
+                    setprop("/instrumentation/flightdirector/vnav",0);}
+                </script>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>SPZ.ias</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>
+                    if(getprop("/instrumentation/flightdirector/spd") != 1){
+                    setprop("/instrumentation/flightdirector/spd",1);
+                    setprop("/autopilot/settings/target-speed-kt",getprop("/velocities/airspeed-kt"));
+                    }else{
+                    setprop("/instrumentation/flightdirector/spd",0);
+                    setprop("/autopilot/settings/target-speed-kt",0);
+                    }
+                </script>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>SPZ.asel</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>
+                    if(getprop("/instrumentation/flightdirector/vnav") != 2){
+                    setprop("/instrumentation/flightdirector/vnav",2);}else{
+                    setprop("/instrumentation/flightdirector/vnav",0);}
+                </script>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>SPZ.bc</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>
+                    if(getprop("/instrumentation/flightdirector/lnav") != 6){
+                    setprop("/instrumentation/flightdirector/lnav",6);}else{
+                    setprop("/instrumentation/flightdirector/lnav",0);}
+                </script>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>SPZ.sby</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-toggle</command>
+                <property>autopilot/locks/passive-mode</property>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>SPZ.ga</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>
+                    if(getprop("/instrumentation/flightdirector/vnav") != 6){
+                    setprop("/instrumentation/flightdirector/vnav",6);}else{
+                    setprop("/instrumentation/flightdirector/vnav",0);}
+                </script>
+            </binding>
+        </action>
+    </animation>
+
 </PropertyList>

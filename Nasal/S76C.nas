@@ -1,9 +1,9 @@
-aircraft.livery.init("Aircraft/Sikorsky-76C/Models/Liveries", "sim/model/livery/name", "sim/model/livery/index");
+aircraft.livery.init("Aircraft/Sikorsky-76C/Models/Liveries");
 var Cvolume=props.globals.getNode("/sim/sound/S76C/Cvolume",1);
 var Spitch=props.globals.getNode("/sim/sound/S76C/pitch",1);
 var Ovolume=props.globals.getNode("/sim/sound/S76C/Ovolume",1);
 
-#HelicopterEngine class 
+###########HelicopterEngine class ###############
 # ie: var Eng = Engine.new(engine number,rotor_prop,max_rpm);
 var Engine = {
     new : func(eng_num,rotor_prop,max_rpm){
@@ -85,36 +85,58 @@ var Engine = {
         }
     },
 };
+########### Radar Control ####################
+    var Radar = {
+        new : func(){
+        m = { parents : [Radar]};
+        m.switch_mode=["off","stby","tst","on"];
+        m.radar = props.globals.getNode("instrumentation/radar",1);
+        m.range=m.radar.getNode("range",1);
+        m.switch=m.radar.getNode("switch",1);
+        m.switch.setValue(m.switch_mode[0]);
+        m.switch_pos=m.radar.getNode("switch-pos",1);
+        m.switch_pos.setIntValue(0);
+        
+    return m;
+    },
+####
+    set_range:func(rng){
+        var Rng = me.range.getValue();
+        if(rng==1){
+            Rng=Rng*2;
+            if(Rng >160)Rng=160;
+        }elsif(rng==-1){
+            Rng=Rng*0.5;
+            if(Rng <10)Rng=10;
+        }
+        me.range.setValue(Rng);
+    },
+####
+    set_switch:func(sw){
+        var switchpos=me.switch_pos.getValue();
+        switchpos+=sw;
+        if(switchpos>3)md-=4;
+        if(switchpos<0)md+=4;
+        me.switch_pos.setValue(switchpos);
+        me.switch.setValue(me.switch_mode[switchpos]);
+    }
+};
 
-
-var strobe_switch = props.globals.getNode("controls/lighting/strobe", 1);
-aircraft.light.new("sim/model/S-76C/lighting/strobe-state", [0.05, 1.50], strobe_switch);
-var beacon_switch = props.globals.getNode("controls/lighting/beacon", 1);
-aircraft.light.new("sim/model/S-76C/lighting/beacon-state", [1.0, 1.0], beacon_switch);
+########################################
 var Eng = Engine.new(0,"rotors/main/rpm",293);
 var FHmeter = aircraft.timer.new("/instrumentation/clock/flight-meter-sec", 10);
+var Rdr=Radar.new();
 FHmeter.stop();
-var TX_list=["S76livery.rgb","S76livery1.rgb","S76livery2.rgb","S76livery3.rgb"];
 Cvolume.setDoubleValue(0.0);
 Ovolume.setDoubleValue(0.0);
 
 setlistener("/sim/signals/fdm-initialized", func {
     Cvolume.setDoubleValue(0.8);
     Ovolume.setDoubleValue(0.3);
-    setprop("/instrumentation/clock/ET-min",0);
-    setprop("/instrumentation/clock/ET-hr",0);
-    setprop("/instrumentation/clock/flight-meter-hour",0);
     setprop("/instrumentation/inst-vertical-speed-indicator/serviceable",1);
     setprop("/instrumentation/altimeter/DH",200);
     setprop("/autopilot/settings/altitude-preset",0);
     print("Systems ... Check");
-    var VR =getprop("sim/model/variant");
-    if(VR==nil)VR=0;
-    if(VR > size(TX_list)){
-    VR=0;
-    setprop("sim/model/variant",0);
-    }
-    setprop("/sim/model/texture",TX_list[VR]);
     settimer(update_systems,2);
 });
 
@@ -122,11 +144,8 @@ setlistener("/sim/signals/reinit", func(ri) {
     Shutdown();
 },0,0);
 
-setlistener("/sim/current-view/name", func(vw){
-    var VName = vw.getValue();
-    if(VName == "Cockpit View"
-    or VName=="Passenger View" 
-    or VName=="Panel View"){
+setlistener("/sim/current-view/internal", func(vw){
+    if(vw.getValue()){
         Cvolume.setValue(0.8);
         Ovolume.setValue(0.2);
     }else{
@@ -182,43 +201,6 @@ var fmeter = getprop("/instrumentation/clock/flight-meter-sec");
 var fminute = fmeter * 0.016666;
 var fhour = fminute * 0.016666;
 setprop("/instrumentation/clock/flight-meter-hour",fhour);
-}
-
-var radar_range=func(rng){
-    var rdr_rng=getprop("instrumentation/radar/range");
-    if(rng > 0){
-        rdr_rng = rdr_rng * 2;
-        if(rdr_rng>160)rdr_rng=160;
-    }elsif(rng<0){
-        rdr_rng = rdr_rng * 0.5;
-        if(rdr_rng<10)rdr_rng=10;
-    }
-    setprop("instrumentation/radar/range",rdr_rng);
-}
-
-var radar_switch=func(swt){
-# switch positions= off, stby,tst,on #
-    var rdr_swt=getprop("instrumentation/radar/switch");
-    var pos=getprop("instrumentation/radar/switch-pos");
-    if(swt > 0){
-        if(rdr_swt =="off"){
-            rdr_swt="stby";pos=1;
-            }elsif(rdr_swt=="stby"){
-            rdr_swt="tst";pos=2;
-        }elsif(rdr_swt=="tst"){
-            rdr_swt="on";pos=3;
-        }
-    }elsif(swt<0){
-        if(rdr_swt =="on"){
-            rdr_swt="tst";pos=2;
-        }elsif(rdr_swt=="tst"){
-            rdr_swt="stby";pos=1;
-        }elsif(rdr_swt=="stby"){
-            rdr_swt="off";pos=0;
-        }
-    }
-    setprop("instrumentation/radar/switch",rdr_swt);
-    setprop("instrumentation/radar/switch-pos",pos);
 }
 
 var update_systems = func {

@@ -697,7 +697,7 @@ OBJECT poly
 name "TCAS.screen"
 data 9
 Plane.009
-texture "tcas.rgb"
+texture "tcas.png"
 texrep 1 1
 crease 30.000000
 numvert 4

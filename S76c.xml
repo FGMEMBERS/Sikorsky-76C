@@ -69,7 +69,7 @@ Forward pitch 5 degrees
   lift-factor-stall="0.28"
   stall-change-over="5.5"
   drag-factor-stall="2.0"
-  cyclic-factor="0.85"
+  cyclic-factor="0.75"
   rotor-correction-factor="0.8"
 >
   <control-input axis="/controls/flight/aileron-trim" control="CYCLICAIL" split="true"/>
@@ -110,6 +110,7 @@ Forward pitch 5 degrees
   lift-factor-stall="0.18"
   stall-change-over="5.5"
   drag-factor-stall="8"
+  cyclic-factor="0.85"
   rotor-correction-factor="0.8"
 >
 <control-input axis="/controls/flight/rudder" control="COLLECTIVE" invert="true"

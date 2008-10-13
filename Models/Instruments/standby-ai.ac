@@ -13,7 +13,7 @@ OBJECT poly
 name "AI.ball"
 data 10
 Sphere.007
-texture "ai.rgb"
+texture "ai.png"
 texrep 1 1
 crease 45.000000
 numvert 252

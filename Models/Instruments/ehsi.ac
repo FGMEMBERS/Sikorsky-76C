@@ -217,7 +217,7 @@ OBJECT poly
 name "EHSI.compass"
 data 10
 Circle.009
-texture "hsi.rgb"
+texture "hsi.png"
 texrep 1 1
 crease 30.000000
 numvert 17
@@ -340,7 +340,7 @@ OBJECT poly
 name "EHSI.crs"
 data 9
 Plane.075
-texture "hsi.rgb"
+texture "hsi.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -361,7 +361,7 @@ OBJECT poly
 name "EHSI.crs.001"
 data 9
 Plane.085
-texture "hsi.rgb"
+texture "hsi.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -382,7 +382,7 @@ OBJECT poly
 name "EHSI.crs1"
 data 9
 Plane.076
-texture "digits.rgb"
+texture "digits.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -403,7 +403,7 @@ OBJECT poly
 name "EHSI.crs2"
 data 9
 Plane.088
-texture "digits.rgb"
+texture "digits.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -424,7 +424,7 @@ OBJECT poly
 name "EHSI.crs3"
 data 9
 Plane.089
-texture "digits.rgb"
+texture "digits.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -445,7 +445,7 @@ OBJECT poly
 name "EHSI.crsneedle"
 data 9
 Plane.072
-texture "hsi.rgb"
+texture "hsi.png"
 texrep 1 1
 crease 30.000000
 numvert 24
@@ -528,7 +528,7 @@ OBJECT poly
 name "EHSI.crsneedle.1"
 data 9
 Plane.073
-texture "hsi.rgb"
+texture "hsi.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -549,7 +549,7 @@ OBJECT poly
 name "EHSI.gsp1"
 data 9
 Plane.081
-texture "digits.rgb"
+texture "digits.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -570,7 +570,7 @@ OBJECT poly
 name "EHSI.gsp2"
 data 9
 Plane.086
-texture "digits.rgb"
+texture "digits.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -591,7 +591,7 @@ OBJECT poly
 name "EHSI.gsp3"
 data 9
 Plane.087
-texture "digits.rgb"
+texture "digits.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -612,7 +612,7 @@ OBJECT poly
 name "EHSI.gspd"
 data 9
 Plane.071
-texture "hsi.rgb"
+texture "hsi.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -633,7 +633,7 @@ OBJECT poly
 name "EHSI.hdg-bug"
 data 9
 Plane.074
-texture "hsi.rgb"
+texture "hsi.png"
 texrep 1 1
 crease 30.000000
 numvert 10
@@ -681,7 +681,7 @@ OBJECT poly
 name "EHSI.hdg1"
 data 9
 Plane.082
-texture "digits.rgb"
+texture "digits.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -702,7 +702,7 @@ OBJECT poly
 name "EHSI.hdg2"
 data 9
 Plane.090
-texture "digits.rgb"
+texture "digits.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -723,7 +723,7 @@ OBJECT poly
 name "EHSI.hdg3"
 data 9
 Plane.091
-texture "digits.rgb"
+texture "digits.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -763,7 +763,7 @@ OBJECT poly
 name "EHSI.ticks"
 data 10
 Circle.010
-texture "hsi.rgb"
+texture "hsi.png"
 texrep 1 1
 crease 30.000000
 numvert 23
@@ -886,7 +886,7 @@ OBJECT poly
 name "EHSI.vsi"
 data 9
 Plane.023
-texture "hsi.rgb"
+texture "hsi.png"
 texrep 1 1
 crease 30.000000
 numvert 6

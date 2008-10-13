@@ -9,7 +9,7 @@ OBJECT poly
 name "IIDS.btn"
 data 4
 Cube
-texture "iids.rgb"
+texture "iids.png"
 texrep 1 1
 crease 30.000000
 numvert 32
@@ -191,7 +191,7 @@ OBJECT poly
 name "IIDS.dimmer"
 data 8
 Cube.005
-texture "iids.rgb"
+texture "iids.png"
 texrep 1 1
 crease 30.000000
 numvert 12
@@ -269,7 +269,7 @@ OBJECT poly
 name "IIDS.menu"
 data 8
 Cube.004
-texture "iids.rgb"
+texture "iids.png"
 texrep 1 1
 crease 30.000000
 numvert 8
@@ -322,7 +322,7 @@ OBJECT poly
 name "IIDS.screen"
 data 9
 Plane.093
-texture "iids.rgb"
+texture "iids.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -343,7 +343,7 @@ OBJECT poly
 name "N1.needle"
 data 9
 Plane.025
-texture "iids.rgb"
+texture "iids.png"
 texrep 1 1
 crease 30.000000
 numvert 6
@@ -371,7 +371,7 @@ OBJECT poly
 name "N1L.001"
 data 9
 Plane.015
-texture "iids.rgb"
+texture "iids.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -392,7 +392,7 @@ OBJECT poly
 name "N1L.002"
 data 9
 Plane.016
-texture "iids.rgb"
+texture "iids.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -413,7 +413,7 @@ OBJECT poly
 name "N1L.003"
 data 9
 Plane.017
-texture "iids.rgb"
+texture "iids.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -434,7 +434,7 @@ OBJECT poly
 name "N1R.001"
 data 9
 Plane.014
-texture "iids.rgb"
+texture "iids.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -455,7 +455,7 @@ OBJECT poly
 name "N1R.002"
 data 9
 Plane.013
-texture "iids.rgb"
+texture "iids.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -476,7 +476,7 @@ OBJECT poly
 name "N1R.003"
 data 9
 Plane.012
-texture "iids.rgb"
+texture "iids.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -497,7 +497,7 @@ OBJECT poly
 name "N2.001"
 data 9
 Plane.011
-texture "iids.rgb"
+texture "iids.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -518,7 +518,7 @@ OBJECT poly
 name "N2.002"
 data 9
 Plane.010
-texture "iids.rgb"
+texture "iids.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -539,7 +539,7 @@ OBJECT poly
 name "N2.003"
 data 9
 Plane.009
-texture "iids.rgb"
+texture "iids.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -560,7 +560,7 @@ OBJECT poly
 name "N2.needle"
 data 9
 Plane.027
-texture "iids.rgb"
+texture "iids.png"
 texrep 1 1
 crease 30.000000
 numvert 6
@@ -588,7 +588,7 @@ OBJECT poly
 name "T5.needle"
 data 9
 Plane.024
-texture "iids.rgb"
+texture "iids.png"
 texrep 1 1
 crease 30.000000
 numvert 6
@@ -616,7 +616,7 @@ OBJECT poly
 name "T5L.001"
 data 9
 Plane.021
-texture "iids.rgb"
+texture "iids.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -637,7 +637,7 @@ OBJECT poly
 name "T5L.002"
 data 9
 Plane.022
-texture "iids.rgb"
+texture "iids.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -658,7 +658,7 @@ OBJECT poly
 name "T5L.003"
 data 9
 Plane.023
-texture "iids.rgb"
+texture "iids.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -679,7 +679,7 @@ OBJECT poly
 name "T5R.001"
 data 9
 Plane.020
-texture "iids.rgb"
+texture "iids.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -700,7 +700,7 @@ OBJECT poly
 name "T5R.002"
 data 9
 Plane.019
-texture "iids.rgb"
+texture "iids.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -721,7 +721,7 @@ OBJECT poly
 name "T5R.003"
 data 9
 Plane.018
-texture "iids.rgb"
+texture "iids.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -742,7 +742,7 @@ OBJECT poly
 name "TQ.needle"
 data 9
 Plane.026
-texture "iids.rgb"
+texture "iids.png"
 texrep 1 1
 crease 30.000000
 numvert 6
@@ -770,7 +770,7 @@ OBJECT poly
 name "TQL.001"
 data 9
 Plane.006
-texture "iids.rgb"
+texture "iids.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -791,7 +791,7 @@ OBJECT poly
 name "TQL.002"
 data 9
 Plane.007
-texture "iids.rgb"
+texture "iids.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -812,7 +812,7 @@ OBJECT poly
 name "TQL.003"
 data 9
 Plane.008
-texture "iids.rgb"
+texture "iids.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -1303,7 +1303,7 @@ OBJECT poly
 name "TQR.001"
 data 9
 Plane.005
-texture "iids.rgb"
+texture "iids.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -1324,7 +1324,7 @@ OBJECT poly
 name "TQR.002"
 data 9
 Plane.004
-texture "iids.rgb"
+texture "iids.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -1345,7 +1345,7 @@ OBJECT poly
 name "TQR.003"
 data 9
 Plane.003
-texture "iids.rgb"
+texture "iids.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -1366,7 +1366,7 @@ OBJECT poly
 name "temp1"
 data 5
 Plane
-texture "iids.rgb"
+texture "iids.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -1387,7 +1387,7 @@ OBJECT poly
 name "temp10"
 data 9
 Plane.001
-texture "iids.rgb"
+texture "iids.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -1408,7 +1408,7 @@ OBJECT poly
 name "tempsign"
 data 9
 Plane.002
-texture "iids.rgb"
+texture "iids.png"
 texrep 1 1
 crease 30.000000
 numvert 4

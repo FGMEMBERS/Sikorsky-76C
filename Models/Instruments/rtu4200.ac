@@ -28,7 +28,7 @@ OBJECT poly
 name "Plane.051"
 data 9
 Plane.134
-texture "rtu4200.rgb"
+texture "rtu4200.png"
 texrep 1 1
 crease 30.000000
 numvert 16
@@ -82,7 +82,7 @@ OBJECT poly
 name "RTU.adf-select"
 data 8
 Cube.029
-texture "rtu4200.rgb"
+texture "rtu4200.png"
 texrep 1 1
 crease 30.000000
 numvert 8
@@ -135,7 +135,7 @@ OBJECT poly
 name "RTU.atc-select"
 data 8
 Cube.027
-texture "rtu4200.rgb"
+texture "rtu4200.png"
 texrep 1 1
 crease 30.000000
 numvert 8
@@ -188,7 +188,7 @@ OBJECT poly
 name "RTU.com-select"
 data 8
 Cube.031
-texture "rtu4200.rgb"
+texture "rtu4200.png"
 texrep 1 1
 crease 30.000000
 numvert 8
@@ -241,7 +241,7 @@ OBJECT poly
 name "RTU.com-swap"
 data 8
 Cube.008
-texture "rtu4200.rgb"
+texture "rtu4200.png"
 texrep 1 1
 crease 30.000000
 numvert 8
@@ -294,7 +294,7 @@ OBJECT poly
 name "RTU.com-swap.003"
 data 8
 Cube.028
-texture "rtu4200.rgb"
+texture "rtu4200.png"
 texrep 1 1
 crease 30.000000
 numvert 8
@@ -1370,7 +1370,7 @@ OBJECT poly
 name "RTU.nav-select"
 data 8
 Cube.030
-texture "rtu4200.rgb"
+texture "rtu4200.png"
 texrep 1 1
 crease 30.000000
 numvert 8
@@ -1423,7 +1423,7 @@ OBJECT poly
 name "RTU.nav-swap"
 data 8
 Cube.020
-texture "rtu4200.rgb"
+texture "rtu4200.png"
 texrep 1 1
 crease 30.000000
 numvert 8
@@ -2936,7 +2936,7 @@ OBJECT poly
 name "RTU4200.screen"
 data 9
 Plane.125
-texture "rtu4200.rgb"
+texture "rtu4200.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -2976,7 +2976,7 @@ OBJECT poly
 name "adf.1"
 data 9
 Plane.151
-texture "rtu4200.rgb"
+texture "rtu4200.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -2997,7 +2997,7 @@ OBJECT poly
 name "adf.2"
 data 9
 Plane.152
-texture "rtu4200.rgb"
+texture "rtu4200.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -3018,7 +3018,7 @@ OBJECT poly
 name "adf.3"
 data 9
 Plane.153
-texture "rtu4200.rgb"
+texture "rtu4200.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -3039,7 +3039,7 @@ OBJECT poly
 name "adf.4"
 data 9
 Plane.155
-texture "rtu4200.rgb"
+texture "rtu4200.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -3060,7 +3060,7 @@ OBJECT poly
 name "adf.dec"
 data 9
 Plane.154
-texture "rtu4200.rgb"
+texture "rtu4200.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -3081,7 +3081,7 @@ OBJECT poly
 name "atc.1"
 data 9
 Plane.147
-texture "rtu4200.rgb"
+texture "rtu4200.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -3102,7 +3102,7 @@ OBJECT poly
 name "atc.2"
 data 9
 Plane.148
-texture "rtu4200.rgb"
+texture "rtu4200.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -3123,7 +3123,7 @@ OBJECT poly
 name "atc.3"
 data 9
 Plane.149
-texture "rtu4200.rgb"
+texture "rtu4200.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -3144,7 +3144,7 @@ OBJECT poly
 name "atc.4"
 data 9
 Plane.150
-texture "rtu4200.rgb"
+texture "rtu4200.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -3165,7 +3165,7 @@ OBJECT poly
 name "channel.indicator"
 data 9
 Plane.170
-texture "rtu4200.rgb"
+texture "rtu4200.png"
 texrep 1 1
 crease 30.000000
 numvert 16
@@ -3219,7 +3219,7 @@ OBJECT poly
 name "com.1"
 data 9
 Plane.135
-texture "rtu4200.rgb"
+texture "rtu4200.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -3240,7 +3240,7 @@ OBJECT poly
 name "com.2"
 data 9
 Plane.136
-texture "rtu4200.rgb"
+texture "rtu4200.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -3261,7 +3261,7 @@ OBJECT poly
 name "com.3"
 data 9
 Plane.137
-texture "rtu4200.rgb"
+texture "rtu4200.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -3282,7 +3282,7 @@ OBJECT poly
 name "com.4"
 data 9
 Plane.138
-texture "rtu4200.rgb"
+texture "rtu4200.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -3303,7 +3303,7 @@ OBJECT poly
 name "com.5"
 data 9
 Plane.139
-texture "rtu4200.rgb"
+texture "rtu4200.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -3324,7 +3324,7 @@ OBJECT poly
 name "com.dec"
 data 9
 Plane.140
-texture "rtu4200.rgb"
+texture "rtu4200.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -3345,7 +3345,7 @@ OBJECT poly
 name "coms.1"
 data 9
 Plane.162
-texture "rtu4200.rgb"
+texture "rtu4200.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -3366,7 +3366,7 @@ OBJECT poly
 name "coms.2"
 data 9
 Plane.163
-texture "rtu4200.rgb"
+texture "rtu4200.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -3387,7 +3387,7 @@ OBJECT poly
 name "coms.3"
 data 9
 Plane.164
-texture "rtu4200.rgb"
+texture "rtu4200.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -3408,7 +3408,7 @@ OBJECT poly
 name "coms.4"
 data 9
 Plane.166
-texture "rtu4200.rgb"
+texture "rtu4200.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -3429,7 +3429,7 @@ OBJECT poly
 name "coms.5"
 data 9
 Plane.167
-texture "rtu4200.rgb"
+texture "rtu4200.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -3450,7 +3450,7 @@ OBJECT poly
 name "coms.dec"
 data 9
 Plane.165
-texture "rtu4200.rgb"
+texture "rtu4200.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -3471,7 +3471,7 @@ OBJECT poly
 name "mode.select"
 data 9
 Plane.168
-texture "rtu4200.rgb"
+texture "rtu4200.png"
 texrep 1 1
 crease 30.000000
 numvert 8
@@ -3517,7 +3517,7 @@ OBJECT poly
 name "nav.1"
 data 9
 Plane.141
-texture "rtu4200.rgb"
+texture "rtu4200.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -3538,7 +3538,7 @@ OBJECT poly
 name "nav.2"
 data 9
 Plane.142
-texture "rtu4200.rgb"
+texture "rtu4200.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -3559,7 +3559,7 @@ OBJECT poly
 name "nav.3"
 data 9
 Plane.143
-texture "rtu4200.rgb"
+texture "rtu4200.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -3580,7 +3580,7 @@ OBJECT poly
 name "nav.4"
 data 9
 Plane.145
-texture "rtu4200.rgb"
+texture "rtu4200.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -3601,7 +3601,7 @@ OBJECT poly
 name "nav.5"
 data 9
 Plane.146
-texture "rtu4200.rgb"
+texture "rtu4200.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -3622,7 +3622,7 @@ OBJECT poly
 name "nav.dec"
 data 9
 Plane.144
-texture "rtu4200.rgb"
+texture "rtu4200.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -3643,7 +3643,7 @@ OBJECT poly
 name "navs.1"
 data 9
 Plane.156
-texture "rtu4200.rgb"
+texture "rtu4200.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -3664,7 +3664,7 @@ OBJECT poly
 name "navs.2"
 data 9
 Plane.157
-texture "rtu4200.rgb"
+texture "rtu4200.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -3685,7 +3685,7 @@ OBJECT poly
 name "navs.3"
 data 9
 Plane.158
-texture "rtu4200.rgb"
+texture "rtu4200.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -3706,7 +3706,7 @@ OBJECT poly
 name "navs.4"
 data 9
 Plane.160
-texture "rtu4200.rgb"
+texture "rtu4200.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -3727,7 +3727,7 @@ OBJECT poly
 name "navs.5"
 data 9
 Plane.161
-texture "rtu4200.rgb"
+texture "rtu4200.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -3748,7 +3748,7 @@ OBJECT poly
 name "navs.dec"
 data 9
 Plane.159
-texture "rtu4200.rgb"
+texture "rtu4200.png"
 texrep 1 1
 crease 30.000000
 numvert 4

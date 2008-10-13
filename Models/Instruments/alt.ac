@@ -376,7 +376,7 @@ OBJECT poly
 name "ALT.face"
 data 10
 Circle.002
-texture "alt.rgb"
+texture "alt.png"
 texrep 1 1
 crease 30.000000
 numvert 79
@@ -929,7 +929,7 @@ OBJECT poly
 name "ALTneedle100"
 data 9
 Plane.238
-texture "alt.rgb"
+texture "alt.png"
 texrep 1 1
 crease 30.000000
 numvert 19
@@ -1026,7 +1026,7 @@ OBJECT poly
 name "ALTneedle1000"
 data 10
 Circle.005
-texture "alt.rgb"
+texture "alt.png"
 texrep 1 1
 crease 30.000000
 numvert 20
@@ -1162,7 +1162,7 @@ OBJECT poly
 name "ALTneedle10000"
 data 10
 Circle.001
-texture "alt.rgb"
+texture "alt.png"
 texrep 1 1
 crease 30.000000
 numvert 23
@@ -1309,7 +1309,7 @@ OBJECT poly
 name "Cylinder"
 data 8
 Cylinder
-texture "alt.rgb"
+texture "alt.png"
 texrep 1 1
 crease 30.000000
 numvert 25
@@ -1500,7 +1500,7 @@ OBJECT poly
 name "inhg"
 data 10
 Circle.003
-texture "alt.rgb"
+texture "alt.png"
 texrep 1 1
 crease 30.000000
 numvert 27
@@ -1693,7 +1693,7 @@ OBJECT poly
 name "mb"
 data 10
 Circle.004
-texture "alt.rgb"
+texture "alt.png"
 texrep 1 1
 crease 30.000000
 numvert 27

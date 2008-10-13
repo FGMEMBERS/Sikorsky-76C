@@ -8,7 +8,7 @@ OBJECT poly
 name "DC550"
 data 8
 Cube.110
-texture "displayctrl.rgb"
+texture "displayctrl.png"
 texrep 1 1
 crease 30.000000
 numvert 8
@@ -61,7 +61,7 @@ OBJECT poly
 name "DCbuttons"
 data 9
 Plane.322
-texture "displayctrl.rgb"
+texture "displayctrl.png"
 texrep 1 1
 crease 30.000000
 numvert 28
@@ -148,7 +148,7 @@ OBJECT poly
 name "DSPknob1"
 data 12
 Cylinder.086
-texture "displayctrl.rgb"
+texture "displayctrl.png"
 texrep 1 1
 crease 30.000000
 numvert 26
@@ -322,7 +322,7 @@ OBJECT poly
 name "DSPknob2"
 data 12
 Cylinder.088
-texture "displayctrl.rgb"
+texture "displayctrl.png"
 texrep 1 1
 crease 30.000000
 numvert 26
@@ -496,7 +496,7 @@ OBJECT poly
 name "DSPknob3"
 data 12
 Cylinder.090
-texture "displayctrl.rgb"
+texture "displayctrl.png"
 texrep 1 1
 crease 30.000000
 numvert 24
@@ -649,7 +649,7 @@ OBJECT poly
 name "DSPknob4"
 data 12
 Cylinder.092
-texture "displayctrl.rgb"
+texture "displayctrl.png"
 texrep 1 1
 crease 30.000000
 numvert 24

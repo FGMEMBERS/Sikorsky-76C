@@ -258,7 +258,7 @@ OBJECT poly
 name "RAlt"
 data 10
 Circle.001
-texture "ralt.rgb"
+texture "ralt.png"
 texrep 1 1
 crease 30.000000
 numvert 64
@@ -771,7 +771,7 @@ OBJECT poly
 name "RAlt.DHoff_1"
 data 4
 Cube
-texture "ralt.rgb"
+texture "ralt.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -839,7 +839,7 @@ OBJECT poly
 name "RAlt.DHon_1"
 data 8
 Cube.001
-texture "ralt.rgb"
+texture "ralt.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -860,7 +860,7 @@ OBJECT poly
 name "RAlt.bug"
 data 9
 Plane.028
-texture "ralt.rgb"
+texture "ralt.png"
 texrep 1 1
 crease 30.000000
 numvert 8
@@ -899,7 +899,7 @@ OBJECT poly
 name "RAlt.face"
 data 9
 Plane.002
-texture "ralt.rgb"
+texture "ralt.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -920,7 +920,7 @@ OBJECT poly
 name "RAlt.knob"
 data 12
 Cylinder.001
-texture "ralt.rgb"
+texture "ralt.png"
 texrep 1 1
 crease 30.000000
 numvert 25
@@ -1111,7 +1111,7 @@ OBJECT poly
 name "RAlt.needle"
 data 10
 Circle.003
-texture "ralt.rgb"
+texture "ralt.png"
 texrep 1 1
 crease 30.000000
 numvert 14
