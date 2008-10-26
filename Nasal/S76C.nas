@@ -115,8 +115,8 @@ var Engine = {
     set_switch:func(sw){
         var switchpos=me.switch_pos.getValue();
         switchpos+=sw;
-        if(switchpos>3)md-=4;
-        if(switchpos<0)md+=4;
+        if(switchpos>3)switchpos-=4;
+        if(switchpos<0)switchpos+=4;
         me.switch_pos.setValue(switchpos);
         me.switch.setValue(me.switch_mode[switchpos]);
     }

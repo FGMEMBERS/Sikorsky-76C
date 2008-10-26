@@ -348,8 +348,8 @@ Wim (performance specs)
             </font>
             <lightning type="bool" >true</lightning>
             <display-mode type="string" >arc</display-mode>
-            <radar-texture-path type="string" >Aircraft/Sikorsky-76C/Models/Instruments/od_wxradar.png</radar-texture-path>
-            <echo-texture-path type="string" >Aircraft/Sikorsky-76C/Models/Instruments/wxecho.png</echo-texture-path>
+            <radar-texture-path type="string" >Aircraft/Sikorsky-76C/Models/Instruments/RDR160/od_wxradar.png</radar-texture-path>
+            <echo-texture-path type="string" >Aircraft/Sikorsky-76C/Models/Instruments/RDR160/wxecho.png</echo-texture-path>
             <minimized type="bool" >false</minimized>
             <heading-marker type="bool" >true</heading-marker>
             <limit-deg type="int">180</limit-deg>

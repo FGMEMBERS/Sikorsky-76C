@@ -31,8 +31,8 @@ Forward pitch 5 degrees
   mincyclicele="-5.5" maxcyclicele="6"
   mincyclicail="-2.0" maxcyclicail="3.6"
   diameter="13.41" numblades="4" weightperblade="97" relbladecenter="0.5"
-  dynamic="0.75" rpm="293" rellenflaphinge="0.09" delta3="0.33"
-  delta=".2"
+  dynamic="0.85" rpm="293" rellenflaphinge="0.09" delta3="0.324"
+  delta=".15"
   pitch-a="10"
   pitch-b="15"
   flapmin="-15"
@@ -69,7 +69,7 @@ Forward pitch 5 degrees
   lift-factor-stall="0.28"
   stall-change-over="5.5"
   drag-factor-stall="2.0"
-  cyclic-factor="0.75"
+  cyclic-factor="0.85"
   rotor-correction-factor="0.8"
 >
   <control-input axis="/controls/flight/aileron-trim" control="CYCLICAIL" split="true"/>
@@ -93,7 +93,7 @@ Forward pitch 5 degrees
 <rotor name="tail" x="-8.12" y="0.2" z="0.4" nx="0.0" ny="-1" nz="0.0" fx="1" fy="0" fz="0" ccw="1"
   maxcollective="15.0" mincollective="-5"
   diameter="2.44" numblades="4" weightperblade="2" relbladecenter="0.55"
-  dynamic="0.70" rpm="1758" rellenflaphinge="0.0" delta3="0" translift="0" delta="0.5"
+  dynamic="0.70" rpm="1758" rellenflaphinge="0.0" delta3="0" translift="0" delta="0.3"
   pitch-a="10"
   pitch-b="15"
   airfoil-lift-coefficient="6.4"
@@ -198,13 +198,7 @@ length="1.20" chord="0.36" sweep="0">
 <weight x="2.2" y="0.0"  z="-1.5" mass-prop="/sim/weight[0]/weight-lb"/><!-- crew -->
 <weight x="0.0" y="0.0" z="-1.5" mass-prop="/sim/weight[1]/weight-lb"/><!-- cargo -->
 
-<ballast x="-1.8" y="0.0" z="-0.5" mass="800"/><!--engines-->
-<ballast x="-1.35" y="1.0" z="-2.0" mass="600"/><!--gear-->
-<ballast x="-1.35" y="-1.0" z="-2.0" mass="600"/><!--gear-->
-<ballast x="3.5" y="0.0" z="-2.0" mass="550"/><!--gear-->
-<ballast x="3.0" y="0.0" z="-1.0" mass="650"/><!--cockpit-->
-<ballast x="0.0" y="0.0" z="-1.5" mass="1400"/><!--cabin-->
-<ballast x="-8.0" y="0.0" z="0.4" mass="-360"/><!--tail-->
+<ballast x="2.5" y="0.0" z="-1.5" mass="2400"/>
 
 <hitch name="aerotow" x="0.0" y="0" z="-2.5"  force-is-calculated-by-other="1">
   <tow length="100" weight-per-meter="0.035" elastic-constant="8000" break-force="10000" mp-auto-connect-period="1.0"/>

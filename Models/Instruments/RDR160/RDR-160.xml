@@ -7,6 +7,26 @@ Syd Adams
 
 <path>RDR160.ac</path>
 
+    <panel>
+        <name>Radar</name>
+        <path>Aircraft/Sikorsky-76C/Models/Instruments/RDR160/radar.xml</path>
+        <bottom-left>
+            <x-m>0.003</x-m>
+            <y-m>-0.050</y-m>
+            <z-m>-0.033</z-m>
+        </bottom-left>
+        <bottom-right>
+            <x-m>0.003</x-m>
+            <y-m>0.050</y-m>
+            <z-m>-0.033</z-m>
+        </bottom-right>
+        <top-left>
+            <x-m>0.003</x-m>
+            <y-m>-0.050</y-m>
+            <z-m>0.049</z-m>
+        </top-left>
+    </panel>
+
     <animation>
         <type>material</type>
         <object-name>RDR160.labels</object-name>
