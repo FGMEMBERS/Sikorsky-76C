@@ -22,7 +22,7 @@ Wim (performance specs)
         </startup>
 
         <model>
-            <path>Aircraft/Sikorsky-76C/Models/S76C.xml</path>
+            <path>Aircraft/Sikorsky-76C/Models/s76c.xml</path>
             <livery>
                 <file type="string">Rescue</file>
             </livery>

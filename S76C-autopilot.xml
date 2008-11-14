@@ -47,7 +47,7 @@
         <prop>/autopilot/internal/target-roll-deg</prop>
     </output>
     <config>
-        <Kp>-1.0</Kp>        <!-- proportional gain -->
+        <Kp>-1.5</Kp>        <!-- proportional gain -->
         <Ki>0.0</Ki>         <!-- integral gain -->
         <u_min>-30.0</u_min> <!-- minimum output clamp -->
         <u_max>30.0</u_max>  <!-- maximum output clamp -->
@@ -76,7 +76,7 @@
         <beta>1.0</beta>    <!-- input value weighing factor -->
         <alpha>0.1</alpha>  <!-- low pass filter weighing factor -->
         <gamma>0.0</gamma>  <!-- input value weighing factor for -->
-        <Ti>5.0</Ti>       <!-- integrator time -->
+        <Ti>20.0</Ti>       <!-- integrator time -->
         <Td>0.0</Td>       <!-- derivator time -->
         <u_min>-0.7</u_min> <!-- minimum output clamp -->
         <u_max>0.7</u_max>  <!-- maximum output clamp -->
@@ -211,11 +211,11 @@
         <prop>/controls/engines/engine/throttle</prop>
     </output>
     <config>
-        <Kp>-0.1</Kp>      <!-- proportional gain -->
+        <Kp>-0.5</Kp>      <!-- proportional gain -->
         <beta>1.0</beta>    <!-- input value weighing factor -->
         <alpha>0.1</alpha>  <!-- low pass filter weighing factor -->
         <gamma>0.0</gamma>  <!-- input value weighing factor for -->
-        <Ti>10.0</Ti>       <!-- integrator time -->
+        <Ti>50.0</Ti>       <!-- integrator time -->
         <Td>0.0</Td>       <!-- derivator time -->
         <u_min>0.21</u_min> <!-- minimum output clamp -->
         <u_max>0.7</u_max>  <!-- maximum output clamp -->
