@@ -103,7 +103,7 @@
     </model>
 
     <model>
-        <path>Aircraft/Sikorsky-76C/Models/Instruments/RDR160/RDR-160.xml</path>
+        <path>Aircraft/Instruments-3d/RDR-160/RDR-160.xml</path>
         <offsets>
             <x-m>-3.019</x-m>
             <y-m>0.082</y-m>

@@ -85,47 +85,10 @@ var Engine = {
         }
     },
 };
-########### Radar Control ####################
-    var Radar = {
-        new : func(){
-        m = { parents : [Radar]};
-        m.switch_mode=["off","stby","tst","on"];
-        m.radar = props.globals.getNode("instrumentation/radar",1);
-        m.range=m.radar.getNode("range",1);
-        m.switch=m.radar.getNode("switch",1);
-        m.switch.setValue(m.switch_mode[0]);
-        m.switch_pos=m.radar.getNode("switch-pos",1);
-        m.switch_pos.setIntValue(0);
-        
-    return m;
-    },
-####
-    set_range:func(rng){
-        var Rng = me.range.getValue();
-        if(rng==1){
-            Rng=Rng*2;
-            if(Rng >160)Rng=160;
-        }elsif(rng==-1){
-            Rng=Rng*0.5;
-            if(Rng <10)Rng=10;
-        }
-        me.range.setValue(Rng);
-    },
-####
-    set_switch:func(sw){
-        var switchpos=me.switch_pos.getValue();
-        switchpos+=sw;
-        if(switchpos>3)switchpos-=4;
-        if(switchpos<0)switchpos+=4;
-        me.switch_pos.setValue(switchpos);
-        me.switch.setValue(me.switch_mode[switchpos]);
-    }
-};
 
 ########################################
 var Eng = Engine.new(0,"rotors/main/rpm",293);
 var FHmeter = aircraft.timer.new("/instrumentation/clock/flight-meter-sec", 10);
-var Rdr=Radar.new();
 FHmeter.stop();
 Cvolume.setDoubleValue(0.0);
 Ovolume.setDoubleValue(0.0);

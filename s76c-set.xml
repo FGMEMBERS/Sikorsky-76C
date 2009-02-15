@@ -29,10 +29,6 @@ Wim (performance specs)
             <start-idling type="bool"></start-idling>
         </model>
 
-        <hud>
-            <enable3d>false</enable3d>
-        </hud>
-
         <systems>
             <electrical>
                 <path></path>
@@ -79,48 +75,42 @@ Wim (performance specs)
     <view n="1">
         <config>
             <target-y-offset-m archive="y" type="double">-1.5</target-y-offset-m>
-            <target-z-offset-m archive="y" type="double">-1</target-z-offset-m>
-            <default-field-of-view-deg type="double">55.0</default-field-of-view-deg>
         </config>
     </view>
-        
+
     <view n="2">
         <config>
             <target-y-offset-m archive="y" type="double">-1.5</target-y-offset-m>
-            <target-z-offset-m archive="y" type="double">-1</target-z-offset-m>
-            <default-field-of-view-deg type="double">55.0</default-field-of-view-deg>
         </config>
     </view>
     
     <view n="3">
         <config>
             <target-y-offset-m archive="y" type="double">-1.5</target-y-offset-m>
-            <target-z-offset-m archive="y" type="double">-1</target-z-offset-m>
-            <default-field-of-view-deg type="double">55.0</default-field-of-view-deg>
         </config>
     </view>
         
     <view n="4">
         <config>
             <target-y-offset-m archive="y" type="double">-1.5</target-y-offset-m>
-            <target-z-offset-m archive="y" type="double">-1</target-z-offset-m>
-            <default-field-of-view-deg type="double">55.0</default-field-of-view-deg>
         </config>
     </view>
         
     <view n="5">
         <config>
             <target-y-offset-m archive="y" type="double">-1.5</target-y-offset-m>
-            <target-z-offset-m archive="y" type="double">-1</target-z-offset-m>
-            <default-field-of-view-deg type="double">55.0</default-field-of-view-deg>
         </config>
     </view>
         
     <view n="6">
         <config>
             <target-y-offset-m archive="y" type="double">-1.5</target-y-offset-m>
-            <target-z-offset-m archive="y" type="double">-1</target-z-offset-m>
-            <default-field-of-view-deg type="double">55.0</default-field-of-view-deg>
+        </config>
+    </view>
+
+    <view n="7">
+        <config>
+            <target-y-offset-m archive="y" type="double">-1.5</target-y-offset-m>
         </config>
     </view>
 
@@ -164,7 +154,6 @@ Wim (performance specs)
       <z-offset-m archive="y" type="double">-1.45 </z-offset-m> <!--Back-->
       <heading-offset-deg>180</heading-offset-deg>
       <pitch-offset-deg>-5</pitch-offset-deg>
-      <default-field-of-view-deg>60</default-field-of-view-deg>
       <dynamic-view type="bool">true</dynamic-view>
     </config>
     </view>
@@ -348,8 +337,8 @@ Wim (performance specs)
             </font>
             <lightning type="bool" >true</lightning>
             <display-mode type="string" >arc</display-mode>
-            <radar-texture-path type="string" >Aircraft/Sikorsky-76C/Models/Instruments/RDR160/od_wxradar.png</radar-texture-path>
-            <echo-texture-path type="string" >Aircraft/Sikorsky-76C/Models/Instruments/RDR160/wxecho.png</echo-texture-path>
+            <radar-texture-path type="string" >Aircraft/Instruments-3d/RDR-160/od_wxradar.png</radar-texture-path>
+            <echo-texture-path type="string" >Aircraft/Instruments-3d/RDR-160/wxecho.png</echo-texture-path>
             <minimized type="bool" >false</minimized>
             <heading-marker type="bool" >true</heading-marker>
             <limit-deg type="int">180</limit-deg>
@@ -364,6 +353,9 @@ Wim (performance specs)
             <file>Aircraft/Sikorsky-76C/Nasal/S76C.nas</file>
             <file>Aircraft/Sikorsky-76C/Nasal/M877.nas</file>
         </s76c>
+        <radar>
+            <file>Aircraft/Instruments-3d/RDR-160/RDR160.nas</file>
+        </radar>
     </nasal>
 
 </PropertyList>
