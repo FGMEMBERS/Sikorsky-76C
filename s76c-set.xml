@@ -123,21 +123,13 @@ Wim (performance specs)
             <from-model-idx type="int">0</from-model-idx>
             <ground-level-nearplane-m type="double">0.5f</ground-level-nearplane-m>
             <default-field-of-view-deg type="double">30.0</default-field-of-view-deg>
-            <default-pitch-deg type="double">0</default-pitch-deg>
-            <default-heading-deg type="double">0</default-heading-deg>
-            <front-direction-deg type="double">0</front-direction-deg>
-            <front-left-direction-deg type="double">45</front-left-direction-deg>
-            <left-direction-deg type="double">90</left-direction-deg>
-            <back-left-direction-deg type="double">135</back-left-direction-deg>
-            <back-direction-deg type="double">180</back-direction-deg>
-            <back-right-direction-deg type="double">225</back-right-direction-deg>
-            <right-direction-deg type="double">270</right-direction-deg>
-            <front-right-direction-deg type="double">315</front-right-direction-deg>
             <x-offset-m archive="y">0.45</x-offset-m>
             <y-offset-m archive="y">-1.05</y-offset-m>
             <z-offset-m archive="y">-2.05</z-offset-m>
             <heading-offset-deg>8.4</heading-offset-deg>
             <pitch-offset-deg>-28</pitch-offset-deg>
+            <default-heading-offset-deg>8.4</default-heading-offset-deg>
+            <default-pitch-offset-deg>-28</default-pitch-offset-deg>
         </config>
     </view>
 
@@ -148,11 +140,11 @@ Wim (performance specs)
     <config>
       <from-model type="bool">true</from-model>
       <ground-level-nearplane-m type="double">0.5f</ground-level-nearplane-m>
-      <default-heading-deg type="double">180</default-heading-deg>
+      <heading-offset-deg type="double">180</heading-offset-deg>
       <x-offset-m archive="y" type="double">-0.60 </x-offset-m> <!--Right-->
       <y-offset-m archive="y" type="double">-1.16 </y-offset-m> <!--Up-->
       <z-offset-m archive="y" type="double">-1.45 </z-offset-m> <!--Back-->
-      <heading-offset-deg>180</heading-offset-deg>
+      <default-heading-offset-deg>180</default-heading-offset-deg>
       <pitch-offset-deg>-5</pitch-offset-deg>
       <dynamic-view type="bool">true</dynamic-view>
     </config>
@@ -351,11 +343,13 @@ Wim (performance specs)
             <file>Aircraft/Sikorsky-76C/Nasal/flightdirector.nas</file>
             <file>Aircraft/Sikorsky-76C/Nasal/RTU4200.nas</file>
             <file>Aircraft/Sikorsky-76C/Nasal/S76C.nas</file>
-            <file>Aircraft/Sikorsky-76C/Nasal/M877.nas</file>
         </s76c>
         <radar>
             <file>Aircraft/Instruments-3d/RDR-160/RDR160.nas</file>
         </radar>
+        <m877>
+            <file>Aircraft/Instruments-3d/clock/M877/M877.nas</file>
+        </m877>
     </nasal>
 
 </PropertyList>

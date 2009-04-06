@@ -233,7 +233,7 @@
     </model>
 
     <model>
-        <path>Aircraft/Sikorsky-76C/Models/Instruments/m877.xml</path>
+        <path>Aircraft/Instruments-3d/clock/M877/m877.xml</path>
         <offsets>
             <x-m>-3.006</x-m>
             <y-m>0.207</y-m>
@@ -243,7 +243,7 @@
     </model>
 
     <model>
-        <path>Aircraft/Sikorsky-76C/Models/Instruments/m877.xml</path>
+        <path>Aircraft/Instruments-3d/clock/M877/m877.xml</path>
         <offsets>
             <x-m>-3.006</x-m>
             <y-m>-0.216</y-m>
@@ -1180,9 +1180,15 @@
             <button>0</button>
             <repeatable>false</repeatable>
             <binding>
-                <command>property-toggle</command>
-                <property>controls/gear/gear-down</property>
+                <command>nasal</command>
+                <script>controls.gearDown(-1)</script>
             </binding>
+            <mod-up>
+                <binding>
+                    <command>nasal</command>
+                    <script>controls.gearDown(0)</script>
+                </binding>
+            </mod-up>
         </action>
     </animation>
 
