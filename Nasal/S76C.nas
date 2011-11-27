@@ -9,9 +9,7 @@ var Engine = {
     new : func(eng_num,rotor_prop,max_rpm){
         m = { parents : [Engine]};
         m.fdensity = getprop("consumables/fuel/tank/density-ppg");
-        if(m.fdensity ==nil)m.fdensity=6.72;
         m.ttl_fuel_lbs = props.globals.getNode("consumables/fuel/total-fuel-lbs",1);
-        m.ttl_fuel_lbs.setDoubleValue(10);
         m.MAXrpm=max_rpm;
         m.air_temp = props.globals.getNode("environment/temperature-degc",1);
         m.eng = props.globals.getNode("engines/engine["~eng_num~"]",1);
@@ -63,23 +61,19 @@ var Engine = {
 
     update_fuel : func(dt,gph,tnk){
         var Rrpm =me.rpm.getValue();
-        var ttl_lbs=0;
         var rpm_factor= Rrpm *0.01;
         var cur_gph= gph * rpm_factor;
         var cur_pph = cur_gph * me.fdensity;
         me.fuel_gph.setDoubleValue(cur_gph);
         me.fuel_pph.setDoubleValue(cur_pph);
         var gph_used = (cur_gph/3600)*dt;
+        var amnt = gph_used /tnk;
         for(var i=0; i<tnk; i+=1) {
             var fl1 = getprop("consumables/fuel/tank["~i~"]/level-gal_us");
-            var amnt = gph_used /tnk;
             fl1 = fl1 - amnt;
             setprop("consumables/fuel/tank["~i~"]/level-gal_us", fl1);
-            setprop("consumables/fuel/tank["~i~"]/level-lbs", fl1 * me.fdensity);
-            ttl_lbs +=fl1*me.fdensity;
         }
-        me.ttl_fuel_lbs.setDoubleValue(ttl_lbs);
-        if(ttl_lbs < 5){
+        if( me.ttl_fuel_lbs.getValue() < 5.0 ) {
             me.magneto.setValue(0);
             me.running.setValue(0);
         }
