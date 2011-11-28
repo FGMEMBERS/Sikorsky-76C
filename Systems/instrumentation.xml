@@ -26,6 +26,12 @@ This file selects the instrumentation modules that should be available.
         <static-pressure>/systems/static/pressure-inhg</static-pressure>
     </altimeter>
 
+    <altimeter>
+        <name>standby-altimeter</name>
+        <number>0</number>
+        <static-pressure>/systems/static/pressure-inhg</static-pressure>
+    </altimeter>
+
     <attitude-indicator>
         <name>attitude-indicator</name>
         <number>0</number>
@@ -110,5 +116,10 @@ This file selects the instrumentation modules that should be available.
         <name>master-reference-gyro</name>
         <number>0</number>
     </master-reference-gyro>
+
+    <tcas>
+       <name>tcas</name>
+       <number>0</number>
+    </tcas> 
 
 </PropertyList>

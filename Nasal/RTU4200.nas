@@ -1,54 +1,59 @@
-var RTU=props.globals.getNode("/instrumentation/RTU4200",1);
-var ADF=props.globals.getNode("/instrumentation/adf/frequencies",1);
-var SELECTED0 =["comm","nav","atc","adf"];
-var SELECTED1 =["comm[1]","nav[1]","atc","adf"];
-RTU.getNode("unit[0]/serviceable",1).setBoolValue(1);
-RTU.getNode("unit[0]/mode",1).setIntValue(0);
-RTU.getNode("unit[0]/selected",1).setIntValue(0);
-RTU.getNode("unit[0]/comm",1).setDoubleValue(000.00);
-RTU.getNode("unit[0]/comm-stby",1).setDoubleValue(000.00);
-RTU.getNode("unit[0]/nav",1).setDoubleValue(000.00);
-RTU.getNode("unit[0]/nav-stby",1).setDoubleValue(000.00);
-RTU.getNode("unit[0]/adf",1).setDoubleValue(000.0);
-RTU.getNode("unit[1]/serviceable",1).setBoolValue(1);
-RTU.getNode("unit[1]/mode",1).setIntValue(1);
-RTU.getNode("unit[1]/selected",1).setIntValue(0);
-RTU.getNode("unit[1]/comm",1).setDoubleValue(000.00);
-RTU.getNode("unit[1]/comm-stby",1).setDoubleValue(000.00);
-RTU.getNode("unit[1]/nav",1).setDoubleValue(000.00);
-RTU.getNode("unit[1]/nav-stby",1).setDoubleValue(000.00);
-RTU.getNode("unit[1]/adf",1).setDoubleValue(000.0);
+RTU4200 = {
+    new : func(number,comm_num,nav_num,atc_num,adf_num){
+        m = { parents : [RTU4200] };
+        m.RTU=props.globals.getNode("/instrumentation/RTU4200["~number~"]",1);
+        m.comm_sby = props.globals.initNode("instrumentation/comm["~comm_num~"]/frequencies/standby-mhz");
+        m.nav_sby = props.globals.initNode("instrumentation/nav["~nav_num~"]/frequencies/standby-mhz");
+        m.atc = props.globals.initNode("instrumentation/transponder["~atc_num~"]/id-code");
+        m.adf = props.globals.initNode("instrumentation/adf["~adf_num~"]/frequencies/standby-khz");
+        m.selected = m.RTU.initNode("selected",0,"INT");
+        return m;
+    },
+   
+     set_freq_int: func (dir){
+     var mode = me.selected.getValue();
+    if(mode==0){
+        var commfreq=me.comm_sby.getValue();
+        commfreq += dir;
+        if(commfreq >135.975) commfreq -=18.000;
+        if(commfreq <118.000) commfreq +=18.000;
+        me.comm_sby.setValue(commfreq);
+    }elsif(mode==1){
+        var navfreq=me.nav_sby.getValue();
+        navfreq += dir;
+        if(navfreq >117.975) navfreq -=10.000;
+        if(navfreq <108.000) navfreq +=10.000;
+        me.nav_sby.setValue(navfreq);
+    }elsif(mode==2){
+     
+    }elsif(mode==3){
+     
+    }
+    },
 
-setlistener("/sim/signals/fdm-initialized", func {
-    update_display(0);
-    update_display(1);
-    print("RTU 4200 System ... Check");
-});
+set_freq_dec: func (dir){
+     var mode = me.selected.getValue();
+    if(mode==0){
+        var commfreq=me.comm_sby.getValue();
+        commfreq += (0.025 * dir);
+        if(commfreq >135.975) commfreq -=18.000;
+        if(commfreq <118.000) commfreq +=18.000;
+        me.comm_sby.setValue(commfreq);
+        }elsif(mode==1){
+        var navfreq=me.nav_sby.getValue();
+        navfreq += (0.05*dir);
+        if(navfreq >117.975) navfreq -=10.000;
+        if(navfreq <108.000) navfreq +=10.000;
+        me.nav_sby.setValue(navfreq);        
+    }elsif(mode==2){
+     
+    }elsif(mode==3){
+     
+    }
+    },
+};
 
-setlistener("/instrumentation/RTU4200/unit[0]/mode", func(m1){
-    update_display(0);
-},0,0);
 
-setlistener("/instrumentation/RTU4200/unit[0]/selected", func(ms1) {
-    update_display(0);
-},0,0);
 
-setlistener("/instrumentation/RTU4200/unit[1]/mode", func(m2){
-    update_display(1);
-},0,0);
-
-setlistener("/instrumentation/RTU4200/unit[1]/selected", func(ms2){
-    update_display(0);
-},0,0);
-
-var update_display = func{
-    var Unit = RTU.getNode("unit["~arg[0]~"]");
-    var mode =Unit.getNode("mode").getValue();
-    var Comm = props.globals.getNode("instrumentation/comm["~mode~"]/frequencies");
-    var Nav = props.globals.getNode("instrumentation/nav["~mode~"]/frequencies");
-    Unit.getNode("comm").setValue(Comm.getNode("selected-mhz").getValue());
-    Unit.getNode("comm-stby").setValue(Comm.getNode("standby-mhz").getValue());
-    Unit.getNode("nav").setValue(Nav.getNode("selected-mhz").getValue());
-    Unit.getNode("nav-stby").setValue(Nav.getNode("standby-mhz").getValue());
-    Unit.getNode("adf").setValue(ADF.getNode("selected-khz").getValue());
-}
+var RTU1=RTU4200.new(0,0,0,0,0);
+var RTU2=RTU4200.new(1,1,1,0,0);

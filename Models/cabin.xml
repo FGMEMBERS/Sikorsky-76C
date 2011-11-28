@@ -1,0 +1,386 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+    <path>cabin.ac</path>
+
+    <model>
+        <path>Aircraft/Sikorsky-76C/Models/Instruments/ehsi.xml</path>
+        <offsets>
+            <x-m>-3.027</x-m>
+            <y-m>-0.450</y-m>
+            <z-m>-1.668</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <path>Aircraft/Sikorsky-76C/Models/Instruments/ehsi.xml</path>
+        <offsets>
+            <x-m>-3.027</x-m>
+            <y-m>0.450</y-m>
+            <z-m>-1.668</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <path>Aircraft/Sikorsky-76C/Models/Instruments/eadi.xml</path>
+        <offsets>
+            <x-m>-3.051</x-m>
+            <y-m>-0.450</y-m>
+            <z-m>-1.532</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <path>Aircraft/Sikorsky-76C/Models/Instruments/eadi.xml</path>
+        <offsets>
+            <x-m>-3.051</x-m>
+            <y-m>0.450</y-m>
+            <z-m>-1.532</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <path>Aircraft/Sikorsky-76C/Models/Instruments/iids.xml</path>
+        <offsets>
+            <x-m>-3.033</x-m>
+            <y-m>-0.265</y-m>
+            <z-m>-1.632</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <path>Aircraft/Sikorsky-76C/Models/Instruments/iids.xml</path>
+        <offsets>
+            <x-m>-3.033</x-m>
+            <y-m>0.265</y-m>
+            <z-m>-1.632</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <path>Aircraft/Sikorsky-76C/Models/Instruments/iids2.xml</path>
+        <offsets>
+            <x-m>-3.049</x-m>
+            <y-m>-0.017</y-m>
+            <z-m>-1.539</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <path>Aircraft/Instruments-3d/RDR-160/RDR-160.xml</path>
+        <offsets>
+            <x-m>-3.021</x-m>
+            <y-m>0.088</y-m>
+            <z-m>-1.692</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <path>Aircraft/Sikorsky-76C/Models/Instruments/asi.xml</path>
+        <offsets>
+            <x-m>-3.053</x-m>
+            <y-m>0.221</y-m>
+            <z-m>-1.510</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <path>Aircraft/Sikorsky-76C/Models/Instruments/alt.xml</path>
+        <offsets>
+            <x-m>-3.053</x-m>
+            <y-m>0.316</y-m>
+            <z-m>-1.510</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <path>Aircraft/Sikorsky-76C/Models/Instruments/tcas.xml</path>
+        <offsets>
+            <x-m>-3.053</x-m>
+            <y-m>-0.219</y-m>
+            <z-m>-1.510</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <path>Aircraft/Sikorsky-76C/Models/Instruments/spz700.xml</path>
+        <offsets>
+            <x-m>-3.009</x-m>
+            <y-m>-0.310</y-m>
+            <z-m>-1.757</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <path>Aircraft/Sikorsky-76C/Models/Instruments/spz700.xml</path>
+        <offsets>
+            <x-m>-3.009</x-m>
+            <y-m>0.310</y-m>
+            <z-m>-1.757</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <path>Aircraft/Sikorsky-76C/Models/Instruments/standby-ai.xml</path>
+        <offsets>
+            <x-m>-3.047</x-m>
+            <y-m>0.124</y-m>
+            <z-m>-1.534</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <path>Aircraft/Sikorsky-76C/Models/Instruments/altset.xml</path>
+        <offsets>
+            <x-m>-3.035</x-m>
+            <y-m>0.124</y-m>
+            <z-m>-1.604</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <path>Aircraft/Sikorsky-76C/Models/Instruments/Ralt.xml</path>
+        <offsets>
+            <x-m>-3.010</x-m>
+            <y-m>0.581</y-m>
+            <z-m>-1.755</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <path>Aircraft/Sikorsky-76C/Models/Instruments/dc.xml</path>
+        <offsets>
+            <x-m>-3.006</x-m>
+            <y-m>0.449</y-m>
+            <z-m>-1.776</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <path>Aircraft/Sikorsky-76C/Models/Instruments/dc.xml</path>
+        <offsets>
+            <x-m>-3.006</x-m>
+            <y-m>-0.449</y-m>
+            <z-m>-1.776</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <path>Aircraft/Instruments-3d/clock/M877/m877.xml</path>
+        <offsets>
+            <x-m>-3.008</x-m>
+            <y-m>-0.212</y-m>
+            <z-m>-1.767</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <path>Aircraft/Instruments-3d/clock/M877/m877.xml</path>
+        <offsets>
+            <x-m>-3.008</x-m>
+            <y-m>0.212</y-m>
+            <z-m>-1.767</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <path>Aircraft/Sikorsky-76C/Models/Instruments/gear-ctl.xml</path>
+        <offsets>
+            <x-m>-2.975</x-m>
+            <y-m>0.210</y-m>
+            <z-m>-1.871</z-m>
+            <pitch-deg>-20.0</pitch-deg>
+        </offsets>
+    </model>
+<!--   Pedestal   -->
+
+
+    <model>
+        <path>Aircraft/Sikorsky-76C/Models/Instruments/rtu4200-1.xml</path>
+        <offsets>
+            <x-m>-2.855</x-m>
+            <y-m>-0.074</y-m>
+            <z-m>-1.825</z-m>
+            <pitch-deg>-85.0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <path>Aircraft/Sikorsky-76C/Models/Instruments/rtu4200-2.xml</path>
+        <offsets>
+            <x-m>-2.855</x-m>
+            <y-m>0.074</y-m>
+            <z-m>-1.825</z-m>
+            <pitch-deg>-85.0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <path>Aircraft/Sikorsky-76C/Models/Instruments/RIC.xml</path>
+        <offsets>
+            <x-m>-2.622</x-m>
+            <y-m>-0.0745</y-m>
+            <z-m>-1.844</z-m>
+            <pitch-deg>-85.0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <path>Aircraft/Sikorsky-76C/Models/Instruments/ap-ctl.xml</path>
+        <offsets>
+            <x-m>-2.582</x-m>
+            <y-m>-0.0745</y-m>
+            <z-m>-1.848</z-m>
+            <pitch-deg>-85.0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <path>Aircraft/Sikorsky-76C/Models/Instruments/dooropen.xml</path>
+        <offsets>
+            <x-m>-2.582</x-m>
+            <y-m>0.033</y-m>
+            <z-m>-1.849</z-m>
+            <pitch-deg>-85.0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <path>Aircraft/Sikorsky-76C/Models/Instruments/filtermon.xml</path>
+        <offsets>
+            <x-m>-2.748</x-m>
+            <y-m>0.044</y-m>
+            <z-m>-1.834</z-m>
+            <pitch-deg>-85.0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <path>Aircraft/Sikorsky-76C/Models/Instruments/uns-1f.xml</path>
+        <offsets>
+            <x-m>-2.723</x-m>
+            <y-m>-0.074</y-m>
+            <z-m>-1.837</z-m>
+            <pitch-deg>-85.0</pitch-deg>
+        </offsets>
+    </model>
+
+<!--####    Instrumentation    ####-->
+
+<!-- Hotspots-->
+
+    <animation>
+        <type>pick</type>
+        <object-name>Baro.knob</object-name>
+        <action>
+            <button>0</button>
+            <binding>
+            <command>property-assign</command>
+            <property>instrumentation/altimeter/setting-inhg</property>
+            <value>29.92</value>
+        </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>Baro.knob</object-name>
+        <action>
+            <button>3</button>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/altimeter/setting-inhg</property>
+                <step>0.01</step>
+                <min>28.10</min>
+                <max>31.00</max>
+                <wrap>0</wrap>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>Baro.knob</object-name>
+        <action>
+            <button>4</button>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/altimeter/setting-inhg</property>
+                <step>-0.01</step>
+                <min>28.10</min>
+                <max>31.00</max>
+                <wrap>0</wrap>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>Rr.doorpanel</object-name>
+        <action>
+            <button>0</button>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/doors/open[3]</property>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>Lr.doorpanel</object-name>
+        <action>
+            <button>0</button>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/doors/open[2]</property>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>LF.doorpanel</object-name>
+        <action>
+            <button>0</button>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/doors/open[0]</property>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>RF.doorpanel</object-name>
+        <action>
+            <button>0</button>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/doors/open[1]</property>
+            </binding>
+        </action>
+    </animation>
+
+</PropertyList>

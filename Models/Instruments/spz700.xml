@@ -8,8 +8,8 @@
         <object-name>SPZ.hdg.on</object-name>
         <condition>
             <equals>
-                <property>instrumentation/flightdirector/lnav</property>
-                <value>1</value>
+                <property>autopilot/locks/heading</property>
+                <value>HDG</value>
             </equals>
         </condition>
     </animation>
@@ -19,8 +19,8 @@
         <object-name>SPZ.vs.on</object-name>
         <condition>
             <equals>
-                <property>instrumentation/flightdirector/vnav</property>
-                <value>6</value>
+                <property>autopilot/locks/altitude</property>
+                <value>VS</value>
             </equals>
         </condition>
     </animation>
@@ -30,8 +30,8 @@
         <object-name>SPZ.alt.on</object-name>
         <condition>
             <equals>
-                <property>instrumentation/flightdirector/vnav</property>
-                <value>1</value>
+                <property>autopilot/locks/altitude</property>
+                <value>ALT</value>
             </equals>
         </condition>
     </animation>
@@ -41,8 +41,8 @@
         <object-name>SPZ.nav.arm</object-name>
         <condition>
             <equals>
-                <property>instrumentation/flightdirector/lnav</property>
-                <value>2</value>
+                <property>autopilot/locks/heading-armed</property>
+                <value>NAV</value>
             </equals>
         </condition>
     </animation>
@@ -52,8 +52,8 @@
         <object-name>SPZ.nav.cap</object-name>
         <condition>
             <equals>
-                <property>instrumentation/flightdirector/lnav</property>
-                <value>2</value>
+                <property>autopilot/locks/heading</property>
+                <value>NAV</value>
             </equals>
         </condition>
     </animation>
@@ -63,8 +63,8 @@
         <object-name>SPZ.ils.arm</object-name>
         <condition>
             <equals>
-                <property>instrumentation/flightdirector/vnav</property>
-                <value>4</value>
+                <property>autopilot/locks/heading-armed</property>
+                <value>LOC</value>
             </equals>
         </condition>
     </animation>
@@ -74,8 +74,8 @@
         <object-name>SPZ.ils.cap</object-name>
         <condition>
             <equals>
-                <property>instrumentation/flightdirector/vnav</property>
-                <value>4</value>
+                <property>autopilot/locks/heading</property>
+                <value>LOC</value>
             </equals>
         </condition>
     </animation>
@@ -85,8 +85,8 @@
         <object-name>SPZ.decel.arm</object-name>
         <condition>
             <equals>
-                <property>instrumentation/flightdirector/spd</property>
-                <value>2</value>
+                <property>autopilot/locks/altitude-armed</property>
+                <value>DECEL</value>
             </equals>
         </condition>
     </animation>
@@ -96,8 +96,8 @@
         <object-name>SPZ.decel.cap</object-name>
         <condition>
             <equals>
-                <property>instrumentation/flightdirector/spd</property>
-                <value>3</value>
+                <property>autopilot/locks/altitude</property>
+                <value>DECEL</value>
             </equals>
         </condition>
     </animation>
@@ -107,8 +107,8 @@
         <object-name>SPZ.apr.arm</object-name>
         <condition>
             <equals>
-                <property>instrumentation/flightdirector/lnav</property>
-                <value>5</value>
+                <property>autopilot/locks/altitude-armed</property>
+                <value>GS</value>
             </equals>
         </condition>
     </animation>
@@ -118,8 +118,8 @@
         <object-name>SPZ.apr.cap</object-name>
         <condition>
             <equals>
-                <property>instrumentation/flightdirector/lnav</property>
-                <value>5</value>
+                <property>autopilot/locks/altitude</property>
+                <value>GS</value>
             </equals>
         </condition>
     </animation>
@@ -129,8 +129,8 @@
         <object-name>SPZ.ias.on</object-name>
         <condition>
             <equals>
-                <property>instrumentation/flightdirector/spd</property>
-                <value>1</value>
+                <property>autopilot/locks/altitude</property>
+                <value>IAS</value>
             </equals>
         </condition>
     </animation>
@@ -140,8 +140,8 @@
         <object-name>SPZ.asel.arm</object-name>
         <condition>
             <equals>
-                <property>instrumentation/flightdirector/vnav</property>
-                <value>2</value>
+                <property>autopilot/locks/altitude-armed</property>
+                <value>ASEL</value>
             </equals>
         </condition>
     </animation>
@@ -151,8 +151,8 @@
         <object-name>SPZ.asel.cap</object-name>
         <condition>
             <equals>
-                <property>instrumentation/flightdirector/vnav</property>
-                <value>2</value>
+                <property>autopilot/locks/altitude</property>
+                <value>ASEL</value>
             </equals>
         </condition>
     </animation>
@@ -162,8 +162,8 @@
         <object-name>SPZ.bc.arm</object-name>
         <condition>
             <equals>
-                <property>instrumentation/flightdirector/lnav</property>
-                <value>6</value>
+                <property>autopilot/locks/heading-armed</property>
+                <value>BC</value>
             </equals>
         </condition>
     </animation>
@@ -173,8 +173,8 @@
         <object-name>SPZ.bc.cap</object-name>
         <condition>
             <equals>
-                <property>instrumentation/flightdirector/lnav</property>
-                <value>6</value>
+                <property>instrumentation/nav/back-course-btn</property>
+                <value>true</value>
             </equals>
         </condition>
     </animation>
@@ -183,7 +183,7 @@
         <type>select</type>
         <object-name>SPZ.sby.on</object-name>
         <condition>
-            <property>autopilot/locks/passive-mode</property>
+            <property>autopilot/locks/standby</property>
         </condition>
     </animation>
 
@@ -192,8 +192,8 @@
         <object-name>SPZ.ga.on</object-name>
         <condition>
             <equals>
-                <property>instrumentation/flightdirector/vnav</property>
-                <value>3</value>
+                <property>autopilot/locks/altitude</property>
+                <value>GA</value>
             </equals>
         </condition>
     </animation>
@@ -208,11 +208,7 @@
             <repeatable>false</repeatable>
             <binding>
                 <command>nasal</command>
-                <script>
-                    if(getprop("/instrumentation/flightdirector/lnav") != 1){
-                    setprop("/instrumentation/flightdirector/lnav",1);}else{
-                    setprop("/instrumentation/flightdirector/lnav",0);}
-                </script>
+                <script>s76c.FlDr.set_lateral_mode("HDG");</script>
             </binding>
         </action>
     </animation>
@@ -225,11 +221,7 @@
             <repeatable>false</repeatable>
             <binding>
                 <command>nasal</command>
-                <script>
-                    if(getprop("/instrumentation/flightdirector/vnav") != 6){
-                    setprop("/instrumentation/flightdirector/vnav",6);}else{
-                    setprop("/instrumentation/flightdirector/vnav",0);}
-                </script>
+                <script>s76c.FlDr.set_vertical_mode("VS");</script>
             </binding>
         </action>
     </animation>
@@ -242,13 +234,7 @@
             <repeatable>false</repeatable>
             <binding>
                 <command>nasal</command>
-                <script>
-                    if(getprop("/instrumentation/flightdirector/vlnav") != 1){
-                    setprop("/instrumentation/flightdirector/vnav",1);
-                    setprop("/autopilot-settings/target-altitude-ft",getprop("/position/altitude-ft"));
-                    }else{
-                    setprop("/instrumentation/flightdirector/vnav",0);}
-                </script>
+                <script>s76c.FlDr.set_vertical_mode("ALT");</script>
             </binding>
         </action>
     </animation>
@@ -261,11 +247,7 @@
             <repeatable>false</repeatable>
             <binding>
                 <command>nasal</command>
-                <script>
-                    if(getprop("/instrumentation/flightdirector/lnav") != 2){
-                    setprop("/instrumentation/flightdirector/lnav",2);}else{
-                    setprop("/instrumentation/flightdirector/lnav",0);}
-                </script>
+                <script>s76c.FlDr.set_lateral_arm_mode("NAV");</script>
             </binding>
         </action>
     </animation>
@@ -278,11 +260,7 @@
             <repeatable>false</repeatable>
             <binding>
                 <command>nasal</command>
-                <script>
-                    if(getprop("/instrumentation/flightdirector/vnav") != 4){
-                    setprop("/instrumentation/flightdirector/vnav",4);}else{
-                    setprop("/instrumentation/flightdirector/vnav",0);}
-                </script>
+                <script>s76c.FlDr.set_lateral_arm_mode("LOC");</script>
             </binding>
         </action>
     </animation>
@@ -295,11 +273,7 @@
             <repeatable>false</repeatable>
             <binding>
                 <command>nasal</command>
-                <script>
-                    if(getprop("/instrumentation/flightdirector/spd") != 1){
-                    setprop("/instrumentation/flightdirector/spd",1);}else{
-                    setprop("/instrumentation/flightdirector/spd",0);}
-                </script>
+                <script>s76c.FlDr.set_vertical_arm_mode("DECEL");</script>
             </binding>
         </action>
     </animation>
@@ -312,11 +286,8 @@
             <repeatable>false</repeatable>
             <binding>
                 <command>nasal</command>
-                <script>
-                    if(getprop("/instrumentation/flightdirector/vnav") != 4){
-                    setprop("/instrumentation/flightdirector/vnav",4);}else{
-                    setprop("/instrumentation/flightdirector/vnav",0);}
-                </script>
+                <script>s76c.FlDr.set_lateral_arm_mode("LOC");
+                s76c.FlDr.set_vertical_arm_mode("GS");</script>
             </binding>
         </action>
     </animation>
@@ -329,15 +300,7 @@
             <repeatable>false</repeatable>
             <binding>
                 <command>nasal</command>
-                <script>
-                    if(getprop("/instrumentation/flightdirector/spd") != 1){
-                    setprop("/instrumentation/flightdirector/spd",1);
-                    setprop("/autopilot/settings/target-speed-kt",getprop("/velocities/airspeed-kt"));
-                    }else{
-                    setprop("/instrumentation/flightdirector/spd",0);
-                    setprop("/autopilot/settings/target-speed-kt",0);
-                    }
-                </script>
+                <script>s76c.FlDr.set_vertical_arm_mode("IAS");</script>
             </binding>
         </action>
     </animation>
@@ -350,11 +313,7 @@
             <repeatable>false</repeatable>
             <binding>
                 <command>nasal</command>
-                <script>
-                    if(getprop("/instrumentation/flightdirector/vnav") != 2){
-                    setprop("/instrumentation/flightdirector/vnav",2);}else{
-                    setprop("/instrumentation/flightdirector/vnav",0);}
-                </script>
+                <script>s76c.FlDr.set_vertical_arm_mode("ASEL");</script>
             </binding>
         </action>
     </animation>
@@ -367,11 +326,7 @@
             <repeatable>false</repeatable>
             <binding>
                 <command>nasal</command>
-                <script>
-                    if(getprop("/instrumentation/flightdirector/lnav") != 6){
-                    setprop("/instrumentation/flightdirector/lnav",6);}else{
-                    setprop("/instrumentation/flightdirector/lnav",0);}
-                </script>
+                <script>s76c.FlDr.set_lateral_arm_mode("BC");</script>
             </binding>
         </action>
     </animation>
@@ -384,7 +339,7 @@
             <repeatable>false</repeatable>
             <binding>
                 <command>property-toggle</command>
-                <property>autopilot/locks/passive-mode</property>
+                <property>autopilot/locks/standby</property>
             </binding>
         </action>
     </animation>
@@ -397,11 +352,8 @@
             <repeatable>false</repeatable>
             <binding>
                 <command>nasal</command>
-                <script>
-                    if(getprop("/instrumentation/flightdirector/vnav") != 6){
-                    setprop("/instrumentation/flightdirector/vnav",6);}else{
-                    setprop("/instrumentation/flightdirector/vnav",0);}
-                </script>
+                <script>s76c.FlDr.set_vertical_mode("GA");
+                s76c.FlDr.set_lateral_mode("GA");</script>
             </binding>
         </action>
     </animation>

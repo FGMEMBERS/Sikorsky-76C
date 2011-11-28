@@ -3,19 +3,22 @@ var Cvolume=props.globals.getNode("/sim/sound/S76C/Cvolume",1);
 var Spitch=props.globals.getNode("/sim/sound/S76C/pitch",1);
 var Ovolume=props.globals.getNode("/sim/sound/S76C/Ovolume",1);
 
+
 ###########HelicopterEngine class ###############
 # ie: var Eng = Engine.new(engine number,rotor_prop,max_rpm);
 var Engine = {
     new : func(eng_num,rotor_prop,max_rpm){
         m = { parents : [Engine]};
-        m.fdensity = getprop("consumables/fuel/tank/density-ppg");
+        m.fdensity = getprop("consumables/fuel/tank/density-ppg") or 6.72;
         m.ttl_fuel_lbs = props.globals.getNode("consumables/fuel/total-fuel-lbs",1);
+        m.ttl_fuel_lbs.setDoubleValue(10);
         m.MAXrpm=max_rpm;
         m.air_temp = props.globals.getNode("environment/temperature-degc",1);
         m.eng = props.globals.getNode("engines/engine["~eng_num~"]",1);
         m.rotor_rpm = props.globals.getNode(rotor_prop,1);
         m.running = m.eng.getNode("running",1);
         m.fuel_dry = m.eng.getNode("out-of-fuel",1);
+        m.fuel_consumed = m.eng.initNode("fuel-consumed-lbs",0.0);
         m.T5 = m.eng.getNode("T5",1);
         m.T5.setDoubleValue(0);
         m.TQ = m.eng.getNode("TQ",1);
@@ -59,25 +62,15 @@ var Engine = {
         me.TQ.setValue(tq * 0.002857);
 },
 
-    update_fuel : func(dt,gph,tnk){
-        var Rrpm =me.rpm.getValue();
-        var rpm_factor= Rrpm *0.01;
-        var cur_gph= gph * rpm_factor;
-        var cur_pph = cur_gph * me.fdensity;
-        me.fuel_gph.setDoubleValue(cur_gph);
-        me.fuel_pph.setDoubleValue(cur_pph);
-        var gph_used = (cur_gph/3600)*dt;
-        var amnt = gph_used /tnk;
-        for(var i=0; i<tnk; i+=1) {
-            var fl1 = getprop("consumables/fuel/tank["~i~"]/level-gal_us");
-            fl1 = fl1 - amnt;
-            setprop("consumables/fuel/tank["~i~"]/level-gal_us", fl1);
+    update_fuel : func(gph){
+        var gph_consumed = me.fuel_consumed.getValue();
+        var gph_used=0;
+         if(me.magneto.getValue()){
+            gph_used=(gph*0.00027777)*getprop("sim/time/delta-sec");
         }
-        if( me.ttl_fuel_lbs.getValue() < 5.0 ) {
-            me.magneto.setValue(0);
-            me.running.setValue(0);
-        }
-    },
+        gph_consumed+=(gph_used * me.fdensity);
+        me.fuel_consumed.setValue(gph_consumed);
+       },
 };
 
 ########################################
@@ -171,7 +164,7 @@ setprop("/instrumentation/clock/flight-meter-hour",fhour);
 var update_systems = func {
     Eng.update_eng();
     var dt = getprop("sim/time/delta-sec");
-    Eng.update_fuel(dt,92.26,2); # elapsed seconds,gallons per hour, number of tanks
+    Eng.update_fuel(93); # elapsed seconds,gallons per hour
     flight_meter();
 settimer(update_systems,0);
 }

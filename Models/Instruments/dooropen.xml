@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+    <path>dooropen.ac</path>
+
+    <animation>
+        <type>select</type>
+        <object-name>LfLamp</object-name>
+        <condition>
+            <property>controls/doors/position-norm[0]</property>
+            </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>RfLamp</object-name>
+        <condition>
+            <property>controls/doors/position-norm[1]</property>
+            </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>LrLamp</object-name>
+        <condition>
+            <property>controls/doors/position-norm[2]</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>RrLamp</object-name>
+        <condition>
+            <property>controls/doors/position-norm[3]</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>LbLamp</object-name>
+        <condition>
+            <property>controls/doors/position-norm[4]</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>RbLamp</object-name>
+        <condition>
+            <property>controls/doors/position-norm[5]</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>ExtPwrLamp</object-name>
+        <condition>
+            <property>controls/doors/position-norm[6]</property>
+         </condition>
+    </animation>
+
+</PropertyList>

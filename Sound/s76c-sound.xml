@@ -111,7 +111,7 @@
             </position>
         </turbine-stop>
 
-        <overspeed>
+        <!--overspeed>
             <name>overspeed</name>
             <mode>looped</mode>
             <path>Sounds/overspeed.wav</path>
@@ -131,7 +131,7 @@
                 <y>0</y>
                 <z>0</z>
             </position>
-        </overspeed>
+        </overspeed-->
 
         <contact>
             <name>ground contact</name>
@@ -151,7 +151,7 @@
                 <property>/sim/sound/S76C/Cvolume</property>
             </volume>
             <volume>
-                <factor>0.8</factor>
+                <factor>0.9</factor>
             </volume>
             <pitch>
                 <factor>0.01</factor>
@@ -233,15 +233,21 @@
             <mode>once</mode>
             <path>Sounds/door_close.wav</path>
             <condition>
-                <equals>
-                    <property>controls/doors/rear</property>
-                    <value>0</value>
-                </equals>
+                <not>
+                    <or>
+                        <property>controls/doors/position-norm[0]</property>
+                        <property>controls/doors/position-norm[1]</property>
+                        <property>controls/doors/position-norm[2]</property>
+                        <property>controls/doors/position-norm[3]</property>
+                        <property>controls/doors/position-norm[4]</property>
+                        <property>controls/doors/position-norm[5]</property>
+                    </or>
+                 </not>
             </condition>
-            <max-dist>5</max-dist>
+            <max-dist>3</max-dist>
             <reference-dist>2</reference-dist>
             <volume>
-                <factor>0.5</factor>
+                <factor>1</factor>
             </volume>
         </door>
 

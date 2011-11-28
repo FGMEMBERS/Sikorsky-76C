@@ -3,4 +3,22 @@
 
     <path>tcas.ac</path>
 
+    <panel>
+        <path>Aircraft/Sikorsky-76C/Models/Instruments/tcas-screen.xml</path>
+        <bottom-left>
+            <x-m>0.005</x-m>
+            <y-m>-0.028</y-m>
+            <z-m>-0.028</z-m>
+        </bottom-left>
+        <bottom-right>
+            <x-m>0.005</x-m>
+            <y-m>0.028</y-m>
+            <z-m>-0.028</z-m>
+        </bottom-right>
+        <top-left>
+            <x-m>0.005</x-m>
+            <y-m>-0.028</y-m>
+            <z-m>0.028</z-m>
+        </top-left>
+    </panel>
 </PropertyList>

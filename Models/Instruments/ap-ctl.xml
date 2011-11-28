@@ -1,0 +1,238 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+    <path>ap-ctl.ac</path>
+
+    <animation>
+        <type>select</type>
+        <object-name>AP.ap1.lit</object-name>
+        <condition>
+            <or>
+                <equals>
+                    <property>autopilot/locks/AP-selected</property>
+                    <value>1</value>
+                </equals>
+                <property>autopilot/locks/test</property>
+            </or>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>AP.ap2.lit</object-name>
+        <condition>
+            <or>
+                <equals>
+                    <property>autopilot/locks/AP-selected</property>
+                    <value>2</value>
+                </equals>
+            <property>autopilot/locks/test</property>
+            </or>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>AP.fd1.lit</object-name>
+        <condition>
+            <or>
+                <equals>
+                    <property>autopilot/locks/FD-enabled</property>
+                    <value>1</value>
+                </equals>
+                <property>autopilot/locks/test</property>
+            </or>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>AP.fd2.lit</object-name>
+        <condition>
+            <or>
+                <equals>
+                    <property>autopilot/locks/FD-enabled</property>
+                    <value>2</value>
+                </equals>
+                <property>autopilot/locks/test</property>
+            </or>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>AP.coll.lit</object-name>
+        <condition>
+            <or>
+                <property>autopilot/locks/collective</property>
+                <property>autopilot/locks/test</property>
+            </or>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>AP.cpl.lit</object-name>
+        <condition>
+            <or>
+                <property>autopilot/locks/coupled</property>
+                <property>autopilot/locks/test</property>
+            </or>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>AP.radalt.lit</object-name>
+        <condition>
+            <or>
+                <property>autopilot/locks/radalt</property>
+                <property>autopilot/locks/test</property>
+            </or>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>AP.velhld.lit</object-name>
+        <condition>
+            <or>
+                <property>autopilot/locks/velocity-hold</property>
+                <property>autopilot/locks/test</property>
+            </or>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <condition>
+            <property>autopilot/locks/test</property>
+        </condition>
+        <object-name>AP.test.lit</object-name>
+        <object-name>AP.btn7.lit</object-name>
+    </animation>
+
+    
+    <animation>
+        <type>pick</type>
+        <object-name>AP.ap1</object-name>
+        <action>
+            <button>0</button>
+            <binding>
+                <command>nasal</command>
+                <script>s76c.FlDr.toggle_autopilot(1);</script>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>AP.ap2</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>s76c.FlDr.toggle_autopilot(2);</script>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>AP.fd1</object-name>
+        <action>
+            <button>0</button>
+            <binding>
+                <command>nasal</command>
+                <script>s76c.FlDr.toggle_fd(1);</script>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>AP.fd2</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>s76c.FlDr.toggle_fd(2);</script>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>AP.coll</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-toggle</command>
+                <property>autopilot/locks/collective</property>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>AP.cpl</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-toggle</command>
+                <property>autopilot/locks/coupled</property>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>AP.radalt</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-toggle</command>
+                <property>autopilot/locks/radalt</property>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>AP.velhld</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-toggle</command>
+                <property>autopilot/locks/velocity-hold</property>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>AP.test</object-name>
+        <action>
+            <button>0</button>
+            <binding>
+                <command>property-assign</command>
+                <property>autopilot/locks/test</property>
+                <value>1</value>
+            </binding>
+            <mod-up>
+                <binding>
+                    <command>property-assign</command>
+                    <property>autopilot/locks/test</property>
+                    <value>0</value>
+                </binding>
+            </mod-up>
+        </action>
+    </animation>
+
+</PropertyList>
