@@ -9,7 +9,7 @@
             <max-dist>10</max-dist>
             <reference-dist>5</reference-dist>
             <condition>
-                <property>/engines/engine/running</property>
+                <property>controls/engines/engine/magnetos</property>
             </condition>
             <volume>
                 <property>/sim/sound/S76C/Ovolume</property>
@@ -93,7 +93,7 @@
             <reference-dist>5</reference-dist>
             <condition>
                 <not>
-                    <property>/engines/engine/running</property>
+                    <property>controls/engines/engine/magnetos</property>
                 </not>
             </condition>
             <volume>
