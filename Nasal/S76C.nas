@@ -2,8 +2,8 @@ aircraft.livery.init("Aircraft/Sikorsky-76C/Models/Liveries");
 var Cvolume=props.globals.getNode("/sim/sound/S76C/Cvolume",1);
 var Spitch=props.globals.getNode("/sim/sound/S76C/pitch",1);
 var Ovolume=props.globals.getNode("/sim/sound/S76C/Ovolume",1);
-
-
+var tcas_index=0;
+var tcas_list=[3,5,10,15,20,40];
 ###########HelicopterEngine class ###############
 # ie: var Eng = Engine.new(engine number,rotor_prop,max_rpm);
 var Engine = {
@@ -23,7 +23,7 @@ var Engine = {
         m.T5.setDoubleValue(0);
         m.TQ = m.eng.getNode("TQ",1);
         m.TQ.setDoubleValue(0);
-        m.magneto = props.globals.getNode("controls/engines/engine["~eng_num~"]/magnetos",1);
+        m.magneto = props.globals.getNode("controls/engines/engine["~eng_num~"]/ignition",1);
         m.cutoff = props.globals.getNode("controls/engines/engine["~eng_num~"]/cutoff",1);
         m.rpm = m.eng.getNode("n2",1);
         m.n1 = m.eng.getNode("n1",1);
@@ -60,7 +60,7 @@ var Engine = {
         me.T5.setValue(t5);
         var tq = getprop("rotors/main/torque");
         me.TQ.setValue(tq * 0.002857);
-},
+}, 
 
     update_fuel : func(gph){
         var gph_consumed = me.fuel_consumed.getValue();
@@ -70,6 +70,7 @@ var Engine = {
         }
         gph_consumed+=(gph_used * me.fdensity);
         me.fuel_consumed.setValue(gph_consumed);
+        if(me.fuel_dry.getValue())me.magneto.setValue(0);
        },
 };
 
@@ -120,19 +121,12 @@ setlistener("/gear/gear[1]/wow", func(gr){
 
 setlistener("/sim/model/start-idling", func(idle){
     if(idle.getBoolValue()){
-    setprop("/controls/engines/engine/magnetos",1);
+        Startup();
     }else{
-    setprop("/controls/engines/engine/magnetos",0);
+        Shutdown();
     }
 },0,0);
 
-setlistener("/controls/engines/engine/magnetos", func(strt){
-    if(strt.getValue() >0){
-    Startup();
-    }else{
-    Shutdown();
-    }
-},0,0);
 
 var Startup = func{
 setprop("controls/electric/engine[0]/generator",1);
@@ -141,7 +135,7 @@ setprop("controls/lighting/instrument-lights",1);
 setprop("controls/lighting/nav-lights",1);
 setprop("controls/lighting/beacon",1);
 setprop("controls/lighting/strobe",1);
-setprop("controls/engines/engine[0]/magnetos",1);
+if(getprop("consumables/fuel/total-fuel-lbs")>2)setprop("controls/engines/engine[0]/ignition",1);
 setprop("engines/engine[0]/running",1);
 }
 
@@ -151,7 +145,16 @@ setprop("controls/electric/battery-switch",0);
 setprop("controls/lighting/instrument-lights",0);
 setprop("controls/lighting/nav-lights",0);
 setprop("controls/lighting/beacon",0);
-setprop("controls/engines/engine[0]/magnetos",0);
+setprop("controls/engines/engine[0]/ignition",0);
+}
+
+var tcas_range = func(x1){
+    tcas_index +=x1;
+    if(tcas_index<0)tcas_index=0;
+    if(tcas_index>5)tcas_index=5;
+    var x2=tcas_list[tcas_index];
+    setprop("/instrumentation/tcas/range",x2);
+    setprop("/instrumentation/tcas-display/range",x2);
 }
 
 var flight_meter = func{

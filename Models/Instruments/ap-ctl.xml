@@ -7,13 +7,10 @@
         <type>select</type>
         <object-name>AP.ap1.lit</object-name>
         <condition>
-            <or>
-                <equals>
-                    <property>autopilot/locks/AP-selected</property>
-                    <value>1</value>
-                </equals>
-                <property>autopilot/locks/test</property>
-            </or>
+           <equals>
+                <property>autopilot/locks/AP</property>
+                <value>1</value>
+            </equals>
         </condition>
     </animation>
 
@@ -21,13 +18,10 @@
         <type>select</type>
         <object-name>AP.ap2.lit</object-name>
         <condition>
-            <or>
-                <equals>
-                    <property>autopilot/locks/AP-selected</property>
-                    <value>2</value>
-                </equals>
-            <property>autopilot/locks/test</property>
-            </or>
+            <equals>
+                <property>autopilot/locks/AP</property>
+                <value>2</value>
+            </equals>
         </condition>
     </animation>
 
@@ -35,13 +29,10 @@
         <type>select</type>
         <object-name>AP.fd1.lit</object-name>
         <condition>
-            <or>
-                <equals>
-                    <property>autopilot/locks/FD-enabled</property>
-                    <value>1</value>
-                </equals>
-                <property>autopilot/locks/test</property>
-            </or>
+            <equals>
+                <property>autopilot/locks/FD</property>
+                <value>1</value>
+            </equals>
         </condition>
     </animation>
 
@@ -49,13 +40,10 @@
         <type>select</type>
         <object-name>AP.fd2.lit</object-name>
         <condition>
-            <or>
-                <equals>
-                    <property>autopilot/locks/FD-enabled</property>
-                    <value>2</value>
-                </equals>
-                <property>autopilot/locks/test</property>
-            </or>
+            <equals>
+                <property>autopilot/locks/FD</property>
+                <value>2</value>
+            </equals>
         </condition>
     </animation>
 
@@ -120,7 +108,7 @@
             <button>0</button>
             <binding>
                 <command>nasal</command>
-                <script>s76c.FlDr.toggle_autopilot(1);</script>
+                <script>FD.input("AP1");</script>
             </binding>
         </action>
     </animation>
@@ -133,7 +121,7 @@
             <repeatable>false</repeatable>
             <binding>
                 <command>nasal</command>
-                <script>s76c.FlDr.toggle_autopilot(2);</script>
+                <script>FD.input("AP2");</script>
             </binding>
         </action>
     </animation>
@@ -145,7 +133,7 @@
             <button>0</button>
             <binding>
                 <command>nasal</command>
-                <script>s76c.FlDr.toggle_fd(1);</script>
+                <script>FD.input("FD1");</script>
             </binding>
         </action>
     </animation>
@@ -158,7 +146,7 @@
             <repeatable>false</repeatable>
             <binding>
                 <command>nasal</command>
-                <script>s76c.FlDr.toggle_fd(2);</script>
+                <script>FD.input("FD2");</script>
             </binding>
         </action>
     </animation>

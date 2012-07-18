@@ -6,13 +6,13 @@
             <name>turbine on</name>
             <mode>once</mode>
             <path>Aircraft/Sikorsky-76C/Sound/s76-start.wav</path>
-            <max-dist>10</max-dist>
-            <reference-dist>5</reference-dist>
+            <max-dist>35</max-dist>
+            <reference-dist>1</reference-dist>
             <condition>
-                <property>controls/engines/engine/magnetos</property>
+                <property>controls/engines/engine/ignition</property>
             </condition>
             <volume>
-                <property>/sim/sound/S76C/Ovolume</property>
+                <property>/sim/sound/volume</property>
                 <min>0</min>
                 <max>1.0</max>
             </volume>
@@ -30,18 +30,21 @@
             <name>main rotor</name>
             <mode>looped</mode>
             <path>Aircraft/Sikorsky-76C/Sound/s76-rotor.wav</path>
-            <max-dist>500</max-dist>
-            <reference-dist>150</reference-dist>
+            <max-dist>2000</max-dist>
+            <reference-dist>50</reference-dist>
             <condition>
-                <greater-than>
-                <property>/rotors/main/rpm</property>
-                <value>2</value>
-                </greater-than>
+                <and>
+                    <not>
+                        <property>sim/current-view/internal</property>
+                    </not>
+                    <greater-than>
+                        <property>/rotors/main/rpm</property>
+                        <value>2</value>
+                    </greater-than>
+                </and>
             </condition>
             <volume>
-                <property>/sim/sound/S76C/Ovolume</property>
-                <min>0</min>
-                <max>1.0</max>
+                <property>/sim/sound/volume</property>
             </volume>
             <pitch>
                 <property>/rotors/main/rpm</property>
@@ -58,18 +61,22 @@
         </rotor>
 
         <cabin>
-            <name>whine</name>
+            <name>whine internal</name>
             <mode>looped</mode>
             <path>Aircraft/Sikorsky-76C/Sound/whine.wav</path>
             <condition>
-                <greater-than>
-                <property>/rotors/main/rpm</property>
-                <value>5</value>
-                </greater-than>
+                <and>
+                    <property>sim/current-view/internal</property>
+                    <greater-than>
+                        <property>/rotors/main/rpm</property>
+                        <value>5</value>
+                    </greater-than>
+                </and>
             </condition>
-            <reference-dist>5</reference-dist>
+            <reference-dist>3</reference-dist>
+            <max-dist>7</max-dist>
             <volume>
-                <property>/sim/sound/S76C/Cvolume</property>
+                <property>/sim/sound/volume</property>
             </volume>
             <pitch>
                 <property>/rotors/main/rpm</property>
@@ -89,15 +96,15 @@
             <name>turbine off</name>
             <mode>once</mode>
             <path>Aircraft/Sikorsky-76C/Sound/s76-shutdown.wav</path>
-            <max-dist>10</max-dist>
-            <reference-dist>5</reference-dist>
+            <max-dist>30</max-dist>
+            <reference-dist>1</reference-dist>
             <condition>
                 <not>
-                    <property>controls/engines/engine/magnetos</property>
+                    <property>controls/engines/engine/ignition</property>
                 </not>
             </condition>
             <volume>
-                <property>/sim/sound/S76C/Ovolume</property>
+                <property>/sim/sound/volume</property>
                 <min>0</min>
                 <max>1.0</max>
             </volume>
@@ -148,7 +155,7 @@
             <max-dist>10</max-dist>
             <reference-dist>5</reference-dist>
             <volume>
-                <property>/sim/sound/S76C/Cvolume</property>
+                <property>/sim/sound/volume</property>
             </volume>
             <volume>
                 <factor>0.9</factor>
@@ -180,7 +187,7 @@
             <max-dist>5</max-dist>
             <reference-dist>2</reference-dist>
             <volume>
-                <property>/sim/sound/S76C/Cvolume</property>
+                <property>/sim/sound/volume</property>
             </volume>
             <volume>
                 <property>position/altitude-ft</property>
@@ -216,7 +223,7 @@
             <max-dist>100</max-dist>
             <reference-dist>50</reference-dist>
             <volume>
-                <factor>1</factor>
+                <property>/sim/sound/volume</property>
             </volume>
             <pitch>
                 <factor>0.1</factor>
@@ -244,10 +251,10 @@
                     </or>
                  </not>
             </condition>
-            <max-dist>3</max-dist>
+            <max-dist>20</max-dist>
             <reference-dist>2</reference-dist>
             <volume>
-                <factor>1</factor>
+                <property>/sim/sound/volume</property>
             </volume>
         </door>
 
@@ -263,6 +270,9 @@
             </pitch>
             <reference-dist>5.0</reference-dist>
             <max-dist>10.0</max-dist>
+            <volume>
+                <property>/sim/sound/volume</property>
+            </volume>
             <position>
                 <x>-2</x>
                 <y>0</y>
@@ -281,6 +291,9 @@
             </condition>
             <reference-dist>5.0</reference-dist>
             <max-dist>10.0</max-dist>
+            <volume>
+                <property>/sim/sound/volume</property>
+            </volume>
             <position>
                 <x>-2</x>
                 <y>0</y>

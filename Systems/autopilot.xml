@@ -9,17 +9,17 @@
 -->
 
     <pi-simple-controller>
-        <name>Roll</name>
+        <name>SBY</name>
         <debug>false</debug>
         <enable>
             <property>/autopilot/locks/heading</property>
-            <value>ROLL</value>
+            <value>SBY</value>
         </enable>
         <input>
             <property>orientation/roll-deg</property>
         </input>
         <reference>
-            <property>/autopilot/settings/target-roll-deg</property>
+            <value>0</value>
         </reference>
         <output>
             <property>autopilot/internal/target-roll-filter</property>
@@ -56,10 +56,10 @@
             <Kp>-1.0</Kp>
             <Ki>0.0</Ki>
             <min>
-                <value>-15</value>
+                <value>-25</value>
             </min>
             <max>
-                <value>15</value>
+                <value>25</value>
             </max>
         </config>
     </pi-simple-controller>
@@ -69,16 +69,10 @@
         <debug>false</debug>
         <enable>
             <condition>
-                <and>
-                    <equals>
-                        <property>/autopilot/locks/heading</property>
-                        <value>NAV</value>
-                    </equals>
-                    <equals>
-                        <property>/autopilot/locks/nav-source</property>
-                        <value>VOR1</value>
-                    </equals>
-                </and>
+                <equals>
+                    <property>/autopilot/locks/heading</property>
+                    <value>NAV</value>
+                </equals>
             </condition>
         </enable>
         <input>
@@ -188,7 +182,7 @@
         <enable>
             <condition>
                 <greater-than>
-                    <property>autopilot/locks/FD-enabled</property>
+                    <property>autopilot/locks/FD</property>
                     <value>0</value>
                 </greater-than>
             </condition>
@@ -206,15 +200,10 @@
         <debug>false</debug>
         <enable>
             <condition>
-                <and>
-                    <equals>
-                        <property>/autopilot/locks/AP-state</property>
-                        <value>AP ENGAGED</value>
-                    </equals>
-                    <not>
-                        <property>/autopilot/locks/standby</property>
-                    </not>
-                </and>
+                <greater-than>
+                    <property>/autopilot/locks/AP</property>
+                    <value>0</value>
+                </greater-than>
             </condition>
         </enable>
         <input>
@@ -250,13 +239,13 @@
         <debug>false</debug>
         <enable>
             <property>/autopilot/locks/altitude</property>
-            <value>PTCH</value>
+            <value>SBY</value>
         </enable>
         <input>
             <property>orientation/pitch-deg</property>
         </input>
         <reference>
-            <property>/autopilot/settings/target-pitch-deg</property>
+            <value>0</value>
         </reference>
         <output>
             <property>autopilot/internal/pitch-filter</property>
@@ -318,42 +307,12 @@
         </config>
     </pi-simple-controller>
 
-
-
-    <pid-controller>
-        <name>Altitude Hold  2</name>
-        <debug>false</debug>
-        <enable>
-            <property>/autopilot/locks/altitude</property>
-            <value>ALTtest</value>
-        </enable>
-        <input>
-            <property>/velocities/vertical-speed-fps</property>
-        </input>
-        <reference>
-            <property>/autopilot/internal/target-climb-rate-fps</property>
-        </reference>
-        <output>
-            <property>autopilot/internal/pitch-filter</property>
-        </output>
-        <config>
-            <Kp>2.5</Kp>
-            <beta>1.0</beta>
-            <alpha>0.1</alpha>
-            <gamma>0.0</gamma>
-            <Ti>1.0</Ti>
-            <Td>0.0</Td>
-            <min>-5</min>
-            <max>10</max>
-        </config>
-    </pid-controller>
-
     <pid-controller>
         <name>Glideslope Hold</name>
         <debug>false</debug>
         <enable>
             <property>/autopilot/locks/altitude</property>
-            <value>GS</value>
+            <value>ILS</value>
         </enable>
         <input>
             <property>/velocities/vertical-speed-fps</property>
@@ -381,7 +340,7 @@
         <debug>false</debug>
         <enable>
             <property>/autopilot/locks/altitude</property>
-            <value>FLC</value>
+            <value>IAS</value>
         </enable>
         <input>
             <property>instrumentation/airspeed-indicator/indicated-speed-kt</property>
@@ -421,40 +380,16 @@
             <property>autopilot/internal/pitch-filter</property>
         </output>
         <config>
-            <Kp>0.01</Kp>
+            <Kp>0.015</Kp>
             <beta>1.0</beta>
             <alpha>0.1</alpha>
             <gamma>0.0</gamma>
             <Ti>10</Ti>
             <Td>0.00001</Td>
-            <min>-5</min>
-            <max>5</max>
+            <min>-10</min>
+            <max>10</max>
         </config>
     </pid-controller>
-
- <pi-simple-controller>
-    <name>VSItest1</name>
-    <debug>false</debug>
-    <enable>
-      <property>/autopilot/locks/altitude</property>
-      <value>VStest</value>
-    </enable>
-    <input>
-      <property>autopilot/internal/vert-speed-fpm</property>
-    </input>
-    <reference>
-      <property>/autopilot/settings/target-vs</property>
-    </reference>
-    <output>
-      <property>autopilot/internal/pitch-filter</property>
-    </output>
-    <config>
-      <Kp>1.5</Kp>
-      <Ki>0.0</Ki>
-      <min>-5</min>
-    <max>5</max>   <!-- maximum output clamp -->
-    </config>
-  </pi-simple-controller>
 
     <filter>
         <name>FD pitch</name>
@@ -464,7 +399,7 @@
         <enable>
             <condition>
                 <greater-than>
-                    <property>autopilot/locks/FD-enabled</property>
+                    <property>autopilot/locks/FD</property>
                     <value>0</value>
                 </greater-than>
             </condition>
@@ -474,7 +409,7 @@
         </input>
         <output>autopilot/internal/target-pitch-deg</output>
         <type>noise-spike</type>
-        <max-rate-of-change>2</max-rate-of-change>
+        <max-rate-of-change>1</max-rate-of-change>
     </filter>
 
     <pid-controller>
@@ -482,15 +417,7 @@
         <debug>false</debug>
         <enable>
             <condition>
-                <and>
-                    <equals>
-                        <property>/autopilot/locks/AP-state</property>
-                        <value>AP ENGAGED</value>
-                    </equals>
-                    <not>
-                        <property>/autopilot/locks/standby</property>
-                    </not>
-                </and>
+                <property>/autopilot/locks/AP</property>
             </condition>
         </enable>
         <input>
@@ -503,7 +430,7 @@
             <property>controls/flight/elevator-trim</property>
         </output>
         <config>
-            <Kp>-0.05</Kp>
+            <Kp>-0.015</Kp>
             <beta>1.0</beta>
             <alpha>0.1</alpha>
             <gamma>0.0</gamma>
@@ -514,8 +441,9 @@
         </config>
     </pid-controller>
 
+
     <pid-controller>
-        <name>Yaw damper</name>
+        <name>Yaw slow</name>
         <debug>false</debug>
         <enable>
             <condition>
@@ -527,20 +455,20 @@
         </input>
         <reference>
             <property>orientation/roll-deg</property>
-            <scale>0.2</scale>
+            <scale>0.3</scale>
         </reference>
         <output>
-            <property>controls/flight/rudder-trim</property>
+            <property>controls/flight/rudder</property>
         </output>
         <config>
-            <Kp>0.15</Kp>
+            <Kp>0.1</Kp>
             <beta>1.0</beta>
             <alpha>0.1</alpha>
             <gamma>0.0</gamma>
-            <Ti>10</Ti>
-            <Td>0.1</Td>
-            <min>-0.7</min>
-            <max>0.7</max>
+            <Ti>1</Ti>
+            <Td>0.00001</Td>
+            <min>-0.9</min>
+            <max>0.9</max>
         </config>
     </pid-controller>
 

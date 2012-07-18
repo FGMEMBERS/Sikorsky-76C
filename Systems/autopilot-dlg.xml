@@ -12,7 +12,7 @@
 <!-- Autopilot Locks Display-->
 
     <text>
-        <label>   Lateral Arm   Lateral   AP   Vertical    Vertical Arm</label>
+        <label>   Armed   Lateral   AP   FD   Vertical   Armed</label>
         <halign>left</halign>
     </text>
 
@@ -42,7 +42,15 @@
             <pref-width>50</pref-width>
             <height>25</height>
             <border>2</border>
-            <property>autopilot/locks/AP-state</property>
+            <property>autopilot/locks/AP</property>
+            <live>true</live>
+        </input>
+
+        <input>
+            <pref-width>50</pref-width>
+            <height>25</height>
+            <border>2</border>
+            <property>autopilot/locks/FD</property>
             <live>true</live>
         </input>
 
@@ -87,9 +95,8 @@
                     <height>30</height>
                     <legend>HDG</legend>
                     <binding>
-                        <command>property-assign</command>
-                        <property>instrumentation/SPZ-7600/MS-700/HDG</property>
-                        <value>1</value>
+                        <command>nasal</command>
+                        <script>FD.input("HDG");</script>
                     </binding>
                 </button>
 
@@ -100,9 +107,8 @@
                     <height>30</height>
                     <legend>VS</legend>
                     <binding>
-                        <command>property-assign</command>
-                        <property>instrumentation/SPZ-7600/MS-700/VS</property>
-                        <value>1</value>
+                        <command>nasal</command>
+                        <script>FD.input("VS");</script>
                     </binding>
                 </button>
 
@@ -113,9 +119,8 @@
                     <height>30</height>
                     <legend>ALT</legend>
                     <binding>
-                        <command>property-assign</command>
-                        <property>instrumentation/SPZ-7600/MS-700/ALT</property>
-                        <value>1</value>
+                        <command>nasal</command>
+                        <script>FD.input("ALT");</script>
                     </binding>
                 </button>
 
@@ -132,9 +137,8 @@
                     <height>30</height>
                     <legend>NAV</legend>
                     <binding>
-                        <command>property-assign</command>
-                        <property>instrumentation/SPZ-7600/MS-700/NAV</property>
-                        <value>1</value>
+                        <command>nasal</command>
+                        <script>FD.input("NAV");</script>
                     </binding>
                 </button>
 
@@ -145,9 +149,8 @@
                     <height>30</height>
                     <legend>ILS</legend>
                     <binding>
-                        <command>property-assign</command>
-                        <property>instrumentation/SPZ-7600/MS-700/ILS</property>
-                        <value>1</value>
+                        <command>nasal</command>
+                        <script>FD.input("ILS");</script>
                     </binding>
                 </button>
 
@@ -158,9 +161,8 @@
                     <height>30</height>
                     <legend>DECEL</legend>
                     <binding>
-                        <command>property-assign</command>
-                        <property>instrumentation/SPZ-7600/MS-700/DECEL</property>
-                        <value>1</value>
+                        <command>nasal</command>
+                        <script>FD.input("DECEL");</script>
                     </binding>
                 </button>
 
@@ -177,9 +179,8 @@
                     <height>30</height>
                     <legend>VORAPR</legend>
                     <binding>
-                        <command>property-assign</command>
-                        <property>instrumentation/SPZ-7600/MS-700/VORAPR</property>
-                        <value>1</value>
+                        <command>nasal</command>
+                        <script>FD.input("VORAPP");</script>
                     </binding>
                 </button>
 
@@ -190,9 +191,8 @@
                     <height>30</height>
                     <legend>IAS</legend>
                     <binding>
-                        <command>property-assign</command>
-                        <property>instrumentation/SPZ-7600/MS-700/IAS</property>
-                        <value>1</value>
+                        <command>nasal</command>
+                        <script>FD.input("IAS");</script>
                     </binding>
                 </button>
 
@@ -203,9 +203,8 @@
                     <height>30</height>
                     <legend>ALTPRE</legend>
                     <binding>
-                        <command>property-assign</command>
-                        <property>instrumentation/SPZ-7600/MS-700/ALTPRE</property>
-                        <value>1</value>
+                        <command>nasal</command>
+                        <script>FD.input("ALTPRE");</script>
                     </binding>
                 </button>
 
@@ -222,9 +221,8 @@
                     <height>30</height>
                     <legend>BC</legend>
                     <binding>
-                        <command>property-assign</command>
-                        <property>instrumentation/SPZ-7600/MS-700/BC</property>
-                        <value>1</value>
+                        <command>nasal</command>
+                        <script>FD.input("BC");</script>
                     </binding>
                 </button>
 
@@ -235,9 +233,8 @@
                     <height>30</height>
                     <legend>SBY</legend>
                     <binding>
-                        <command>property-assign</command>
-                        <property>instrumentation/SPZ-7600/MS-700/SBY</property>
-                        <value>1</value>
+                        <command>nasal</command>
+                        <script>FD.input("SBY");</script>
                     </binding>
                 </button>
 
@@ -248,9 +245,8 @@
                     <height>30</height>
                     <legend>GA</legend>
                     <binding>
-                        <command>property-assign</command>
-                        <property>instrumentation/SPZ-7600/MS-700/GA</property>
-                        <value>1</value>
+                        <command>nasal</command>
+                        <script>FD.input("HDG");</script>
                     </binding>
                 </button>
 
@@ -271,9 +267,8 @@
                 <height>30</height>
                 <legend>DN</legend>
                 <binding>
-                    <command>property-assign</command>
-                    <property>autopilot/settings/pitch-wheel</property>
-                    <value>-1</value>
+                    <command>nasal</command>
+                    <script>FD.pitchwheel(-1);</script>
                 </binding>
             </button>
 
@@ -285,9 +280,8 @@
                 <height>30</height>
                 <legend>UP</legend>
                 <binding>
-                    <command>property-assign</command>
-                    <property>autopilot/settings/pitch-wheel</property>
-                    <value>1</value>
+                    <command>nasal</command>
+                    <script>FD.pitchwheel(1);</script>
                 </binding>
             </button>
 
@@ -313,10 +307,8 @@
                         <height>30</height>
                         <legend>AP1</legend>
                         <binding>
-                            <command>property-cycle</command>
-                            <property>/autopilot/locks/AP-state</property>
-                            <value type="string">AP1</value>
-                            <value type="string"></value>
+                            <command>nasal</command>
+                            <script>FD.input("AP1");</script>
                         </binding>
                     </button>
 
@@ -327,10 +319,8 @@
                         <height>30</height>
                         <legend>AP2</legend>
                         <binding>
-                            <command>property-cycle</command>
-                            <property>/autopilot/locks/AP-state</property>
-                            <value type="string">AP2</value>
-                            <value type="string"></value>
+                            <command>nasal</command>
+                            <script>FD.input("AP2");</script>
                         </binding>
                     </button>
 
@@ -341,10 +331,8 @@
                         <height>30</height>
                         <legend>FD1</legend>
                         <binding>
-                            <command>property-cycle</command>
-                            <property>/autopilot/locks/FD-state</property>
-                            <value type="string">FD1</value>
-                            <value type="string"></value>
+                            <command>nasal</command>
+                            <script>FD.input("FD1");</script>
                         </binding>
                     </button>
 
@@ -355,10 +343,8 @@
                         <height>30</height>
                         <legend>FD2</legend>
                         <binding>
-                            <command>property-cycle</command>
-                            <property>/autopilot/locks/FD-state</property>
-                            <value type="string">FD1</value>
-                            <value type="string"></value>
+                            <command>nasal</command>
+                            <script>FD.input("FD2");</script>
                         </binding>
                     </button>
 

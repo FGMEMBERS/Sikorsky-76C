@@ -28,7 +28,7 @@ Forward pitch 5 degrees
   mincyclicele="-15" maxcyclicele="15"
   mincyclicail="-7" maxcyclicail="7"
   diameter="13.41" numblades="4" weightperblade="97" relbladecenter="0.49"
-  dynamic="0.85" rpm="293" rellenflaphinge="0.09" delta3="0.1"
+  dynamic="0.85" rpm="293" rellenflaphinge="0.09" delta3="0.2"
   delta="0.25"
   pitch-a="10"
   pitch-b="15"
@@ -91,7 +91,7 @@ src0="-1.0"  dst0="-1.0" src1="1.0" dst1="1.0"/>
 
 <rotor name="tail" x="-8.12" y="0.2" z=
 "0.4" nx="0.0" ny="-1" nz="0.0" fx="1" fy="0" fz="0" ccw="1"
-  maxcollective="12.5" mincollective="-11.0"
+  maxcollective="17.5" mincollective="-17"
   diameter="2.44" numblades="4" weightperblade="2" relbladecenter="0.55"
   dynamic="0.80" rpm="1758" rellenflaphinge="0.0" delta3="0" translift="0" delta="0.3"
   pitch-a="10"
@@ -121,9 +121,9 @@ src0="-1.0" src1="1.0"
     dst0="1.0" dst1="-1.0"/>
 <!--control-input axis="/controls/engines/engine[0]/throttle" control="COLLECTIVE"
     src0="0.0" dst0="0.0"
-     src1="1.0" dst1="-1.0"/-->
+     src1=
+     "1.0" dst1="-1.0"/-->
 </rotor>
-
 
 <rotorgear
   max-power-engine="1276"
@@ -132,10 +132,10 @@ src0="-1.0" src1="1.0"
   engine-prop-factor="0.05"
   engine-accel-limit="2"
 
-  yasimdragfactor="10"
+  yasimdragfactor="20"
   yasimliftfactor="310"
 >
-  <control-input axis="/controls/engines/engine/magnetos" control="ROTORGEARENGINEON"/>
+  <control-input axis="/controls/engines/engine/ignition" control="ROTORGEARENGINEON"/>
   <control-input axis="/controls/rotor/brake" control="ROTORBRAKE"
                  src0="0.0" src1="1.0"
                  dst0="0.0" dst1="1.0"/>
@@ -189,7 +189,7 @@ sweep="40" effectiveness="0.5" idrag="0">
 
 <hstab x="-8.12" y="0.1" z="0.420" taper="0.8" incidence="0"
 length="1.20" chord="0.36" sweep="0" idrag="0">
-  <stall aoa="0" width="0" peak="1.5"/>
+  <stall aoa="15" width="3" peak="1.5"/>
 </hstab>
 
 <!-- frt doors -->
@@ -257,16 +257,14 @@ length="1.20" chord="0.36" sweep="0" idrag="0">
   </gear>
 
 
-<tank x="-0.8" y="0.5" z="-1.8" capacity="944" jet="true"/>
-<tank x="-0.8" y="-0.5" z="-1.8" capacity="944" jet="true"/>
-<tank x="0" y="0.0" z="0" capacity="0"/>
+<tank x="0" y="0" z="-1.8" capacity="1800" jet="true"/>
 
 <weight x="2.2" y="0.0"  z="-1.5" mass-prop="/sim/weight[0]/weight-lb"/><!-- crew -->
 <weight x="0.0" y="0.0" z="-2.0" mass-prop="/sim/weight[1]/weight-lb"/><!-- cargo -->
 
-<ballast x="0.25" y="0.0" z="-2.5" mass="1000"/>
+<ballast x="0.25" y="0.0" z="-2.0" mass="1500"/>
 <ballast x="1.0" y="0.0" z="-1.0" mass="1000"/>
-<ballast x="3.45" y="0.0" z="-2.0" mass="700"/>
+<ballast x="3.45" y="0.0" z="-1.5" mass="700"/>
 <ballast x="-1.3" y="0.6" z="-2.0" mass="500"/>
 <ballast x="-1.3" y="-0.6" z="-2.0" mass="500"/>
 

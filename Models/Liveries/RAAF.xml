@@ -6,7 +6,10 @@
         <livery>
             <name type="string">RAAF</name>
             <texture>S76livery3.png</texture>
+            <amb>0.0</amb>
+            <refl>-0.1</refl>
         </livery>
+        <sliding-door>1</sliding-door>
     </model>
 </sim>
 </PropertyList>
