@@ -447,7 +447,13 @@
         <debug>false</debug>
         <enable>
             <condition>
-                <property>controls/flight/auto-pedals</property>
+                <and>
+                    <property>controls/flight/auto-pedals</property>
+                    <less-than>
+                        <property>velocities/airspeed-kt</property>
+                        <value>30.000</value>
+                    </less-than>
+                </and>
             </condition>
         </enable>
         <input>
@@ -471,6 +477,31 @@
             <max>0.9</max>
         </config>
     </pid-controller>
+
+    <filter>
+        <name>Yaw fast</name>
+        <debug>false</debug>
+        <feedback-if-disabled>false</feedback-if-disabled>
+        <initialize-to>output</initialize-to>
+        <enable>
+            <condition>
+                <and>
+                    <property>controls/flight/auto-pedals</property>
+                    <greater-than>
+                        <property>velocities/airspeed-kt</property>
+                        <value>29.999</value>
+                    </greater-than>
+                </and>
+            </condition>
+        </enable>
+        <input>
+            <property>orientation/roll-deg</property>
+            <scale>0.0222</scale>
+        </input>
+        <output>controls/flight/rudder</output>
+        <type>noise-spike</type>
+        <max-rate-of-change>0.25</max-rate-of-change>
+    </filter>
 
 </PropertyList>
 
