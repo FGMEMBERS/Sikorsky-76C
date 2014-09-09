@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+<sim>
+    <model>
+        <livery>
+            <name type="string">Green</name>
+            <texture>S76livery2.png</texture>
+            <amb>0.0</amb>
+            <refl>-0.1</refl>
+        </livery>
+        <sliding-door>0</sliding-door>
+    </model>
+</sim>
+</PropertyList>

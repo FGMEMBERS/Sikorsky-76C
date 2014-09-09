@@ -1,0 +1,170 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+    <path>alt.ac</path>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>ALTneedle100</object-name>
+        <property>instrumentation/standby-altimeter/indicated-altitude-ft</property>
+        <factor>0.36</factor>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>-0</z>
+        </axis>
+        <center>
+            <x-m>0</x-m>
+            <y-m>0</y-m>
+            <z-m>0</z-m>
+        </center>
+    </animation>
+
+<animation>
+    <type>select</type>
+    <object-name>mask</object-name>
+    <condition>
+        <less-than>
+            <property>instrumentation/standby-altimeter/indicated-altitude-ft</property>
+            <value>10000.00</value>
+            </less-than>
+    </condition>
+</animation>
+
+
+<animation>
+    <type>textranslate</type>
+    <object-name>Digit1</object-name>
+    <property>instrumentation/standby-altimeter/indicated-altitude-ft</property>
+    <factor>0.00001</factor>
+    <step>10000</step>
+    <axis>
+        <x>0</x>
+        <y>-1</y>
+        <z>0</z>
+    </axis>
+</animation>
+
+<animation>
+    <type>textranslate</type>
+    <object-name>Digit2</object-name>
+    <property>instrumentation/standby-altimeter/indicated-altitude-ft</property>
+    <factor>0.0001</factor>
+    <step>1000</step>
+    <axis>
+        <x>0</x>
+        <y>-1</y>
+        <z>0</z>
+    </axis>
+</animation>
+
+<animation>
+    <type>textranslate</type>
+    <object-name>Odom.100</object-name>
+    <property>instrumentation/standby-altimeter/indicated-altitude-ft</property>
+    <factor>0.001</factor>
+    <!--step>100</step-->
+    <axis>
+        <x>0</x>
+        <y>-1</y>
+        <z>0</z>
+    </axis>
+</animation>
+
+<animation>
+    <type>textranslate</type>
+    <object-name>InHg.1</object-name>
+    <property>/instrumentation/standby-altimeter/setting-inhg</property>
+        <factor>0.01</factor>
+        <step>10</step>
+		<bias>0.005</bias>
+    <axis>
+        <x>0</x>
+        <y>-1</y>
+        <z>0</z>
+    </axis>
+</animation>
+
+<animation>
+    <type>textranslate</type>
+    <object-name>InHg.2</object-name>
+    <property>/instrumentation/standby-altimeter/setting-inhg</property>
+        <factor>0.1</factor>
+        <step>1</step>
+		<bias>0.005</bias>
+    <axis>
+        <x>0</x>
+        <y>-1</y>
+        <z>0</z>
+    </axis>
+</animation>
+
+<animation>
+    <type>textranslate</type>
+    <object-name>InHg.3</object-name>
+    <property>/instrumentation/standby-altimeter/setting-inhg</property>
+        <factor>1.0</factor>
+        <step>0.10</step>
+		<bias>0.005</bias>
+    <axis>
+        <x>0</x>
+        <y>-1</y>
+        <z>0</z>
+    </axis>
+</animation>
+
+<animation>
+    <type>textranslate</type>
+    <object-name>InHg.4</object-name>
+    <property>/instrumentation/standby-altimeter/setting-inhg</property>
+        <factor>10.0</factor>
+        <step>0.010</step>
+		<bias>0.005</bias>
+    <axis>
+        <x>0</x>
+        <y>-1</y>
+        <z>0</z>
+    </axis>
+</animation>
+
+
+
+
+
+    <animation>
+        <type>pick</type>
+        <object-name>ALTknob</object-name>
+        <action>
+            <button>3</button>
+            <repeatable>true</repeatable>
+            <interval-sec>0.2</interval-sec>
+            <binding>
+                <command>property-adjust</command>
+                <property>/instrumentation/standby-altimeter/setting-inhg</property>
+                <step>0.01</step>
+                <min>28.10</min>
+                <max>31.00</max>
+                <wrap>false</wrap>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>ALTknob</object-name>
+        <action>
+            <button>4</button>
+            <repeatable>true</repeatable>
+            <interval-sec>0.2</interval-sec>
+            <binding>
+                <command>property-adjust</command>
+                <property>/instrumentation/standby-altimeter/setting-inhg</property>
+                <step>-0.01</step>
+                <min>28.10</min>
+                <max>31.00</max>
+                <wrap>false</wrap>
+            </binding>
+        </action>
+    </animation>
+
+</PropertyList>

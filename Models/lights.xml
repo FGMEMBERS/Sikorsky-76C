@@ -1,0 +1,143 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+    <path>lights.ac</path>
+
+<effect>
+        <inherits-from>Effects/model-transparent</inherits-from>
+        <object-name>strobe.1</object-name>
+        <object-name>strobe.2</object-name>
+        <object-name>redlight.1</object-name>
+        <object-name>redlight.2</object-name>
+    </effect>
+
+    <animation>
+        <type>select</type>
+        <object-name>strobe.1</object-name>
+        <object-name>strobe.2</object-name>
+        <condition>
+            <greater-than>
+                <property>systems/electrical/outputs/strobe</property>
+                <value>5</value>
+            </greater-than>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>redlight.1</object-name>
+        <object-name>redlight.2</object-name>
+        <condition>
+            <greater-than>
+                <property>systems/electrical/outputs/beacon</property>
+                <value>5</value>
+            </greater-than>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>translate</type>
+        <object-name>strobe.1</object-name>
+        <offset-m>7.25</offset-m>
+        <axis>
+            <x>0.963</x>
+            <y>-0.214</y>
+            <z>-0.163</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>billboard</type>
+        <object-name>strobe.1</object-name>
+    </animation>
+
+    <animation>
+        <type>dist-scale</type>
+        <object-name>strobe.1</object-name>
+        <interpolation>
+        <entry><ind>0</ind><dep>1</dep></entry>
+        <entry><ind>500</ind><dep>2.5</dep></entry>
+        <entry><ind>16000</ind><dep>10</dep></entry>
+        </interpolation>
+    </animation>
+
+    <animation>
+        <type>translate</type>
+        <object-name>strobe.2</object-name>
+        <offset-m>7.25</offset-m>
+        <axis>
+            <x>0.963</x>
+            <y>0.214</y>
+            <z>-0.163</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>billboard</type>
+        <object-name>strobe.2</object-name>
+    </animation>
+
+    <animation>
+        <type>dist-scale</type>
+        <object-name>strobe.2</object-name>
+        <interpolation>
+        <entry><ind>0</ind><dep>1</dep></entry>
+        <entry><ind>500</ind><dep>2.5</dep></entry>
+        <entry><ind>16000</ind><dep>10</dep></entry>
+        </interpolation>
+    </animation>
+
+    <animation>
+        <type>translate</type>
+        <object-name>redlight.1</object-name>
+        <offset-m>8.0</offset-m>
+        <axis>
+            <x>0.995</x>
+            <y>0.0</y>
+            <z>0.101</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>billboard</type>
+        <object-name>redlight.1</object-name>
+    </animation>
+
+    <animation>
+        <type>dist-scale</type>
+        <object-name>redlight.1</object-name>
+        <interpolation>
+        <entry><ind>0</ind><dep>1</dep></entry>
+        <entry><ind>500</ind><dep>2.5</dep></entry>
+        <entry><ind>16000</ind><dep>10</dep></entry>
+        </interpolation>
+    </animation>
+
+    <animation>
+        <type>translate</type>
+        <object-name>redlight.2</object-name>
+        <offset-m>2.60</offset-m>
+        <axis>
+            <x>0.231</x>
+            <y>0.0</y>
+            <z>-0.973</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>billboard</type>
+        <object-name>redlight.2</object-name>
+    </animation>
+
+    <animation>
+        <type>dist-scale</type>
+        <object-name>redlight.2</object-name>
+        <interpolation>
+        <entry><ind>0</ind><dep>1</dep></entry>
+        <entry><ind>500</ind><dep>2.5</dep></entry>
+        <entry><ind>16000</ind><dep>10</dep></entry>
+        </interpolation>
+    </animation>
+
+</PropertyList>

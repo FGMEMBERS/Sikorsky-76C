@@ -1,0 +1,459 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+    <path>rtu4200.ac</path>
+<!-- 3d text -->
+
+    <animation>
+        <type>select</type>
+        <object-name>RTU4200.screenoff</object-name>
+        <condition>
+            <equals>
+            <property>systems/electrical/outputs/rtu[0]</property>
+            <value>0</value>
+            </equals>
+        </condition>
+    </animation>
+
+    <text>
+        <name>ComLabel</name>
+        <offsets>
+            <x-m>0.003</x-m>
+            <y-m>-0.006</y-m>
+            <z-m>0.032</z-m>
+            </offsets>
+        <alignment>center-center</alignment>
+        <axis-alignment>yz-plane</axis-alignment>
+        <type>literal</type>
+        <text>COM 1</text>
+        <font>helvetica_bold.txf</font>
+        <character-size>0.0055</character-size>
+        <character-aspect-ratio type="double">1.5</character-aspect-ratio>
+        <font-resolution>
+            <width type="int">32</width>
+            <height type="int">32</height>
+        </font-resolution>
+    </text>
+
+    <text>
+        <name>ComProp1</name>
+        <offsets>
+            <x-m>0.003</x-m>
+            <y-m>-0.034</y-m>
+            <z-m>0.023</z-m>
+        </offsets>
+        <alignment>left-center</alignment>
+        <axis-alignment>yz-plane</axis-alignment>
+        <type>number-value</type>
+        <property>instrumentation/comm/frequencies/selected-mhz</property>
+        <format>%03.2f</format>
+        <font>helvetica_bold.txf</font>
+        <character-size>0.007</character-size>
+        <character-aspect-ratio type="double">1.2</character-aspect-ratio>
+        <font-resolution>
+            <width type="int">32</width>
+            <height type="int">32</height>
+        </font-resolution>
+    </text>
+
+    <text>
+        <name>ComProp2</name>
+        <offsets>
+            <x-m>0.003</x-m>
+            <y-m>0.001</y-m>
+            <z-m>0.023</z-m>
+        </offsets>
+        <alignment>left-center</alignment>
+        <axis-alignment>yz-plane</axis-alignment>
+        <type>number-value</type>
+        <property>instrumentation/comm/frequencies/standby-mhz</property>
+        <format>%03.2f</format>
+        <font>helvetica_bold.txf</font>
+        <character-size>0.007</character-size>
+        <character-aspect-ratio>1.2</character-aspect-ratio>
+        <font-resolution>
+            <width type="int">32</width>
+            <height type="int">32</height>
+        </font-resolution>
+    </text>
+
+    <text>
+        <name>NavLabel</name>
+        <offsets>
+            <x-m>0.003</x-m>
+            <y-m>-0.006</y-m>
+            <z-m>0.014</z-m>
+            </offsets>
+        <alignment>center-center</alignment>
+        <axis-alignment>yz-plane</axis-alignment>
+        <type>literal</type>
+        <text>NAV 1</text>
+        <font>helvetica_bold.txf</font>
+        <character-size>0.0055</character-size>
+        <character-aspect-ratio type="double">1.5</character-aspect-ratio>
+        <font-resolution>
+            <width type="int">32</width>
+            <height type="int">32</height>
+        </font-resolution>
+    </text>
+
+    <text>
+        <name>NavProp1</name>
+        <offsets>
+            <x-m>0.003</x-m>
+            <y-m>-0.034</y-m>
+            <z-m>0.007</z-m>
+        </offsets>
+        <alignment>left-center</alignment>
+        <axis-alignment>yz-plane</axis-alignment>
+        <type>number-value</type>
+        <property>instrumentation/nav/frequencies/selected-mhz</property>
+        <format>%03.2f</format>
+        <font>helvetica_bold.txf</font>
+        <character-size>0.007</character-size>
+        <character-aspect-ratio type="double">1.2</character-aspect-ratio>
+        <font-resolution>
+            <width type="int">32</width>
+            <height type="int">32</height>
+        </font-resolution>
+    </text>
+
+    <text>
+        <name>NavProp2</name>
+        <offsets>
+            <x-m>0.003</x-m>
+            <y-m>0.001</y-m>
+            <z-m>0.007</z-m>
+        </offsets>
+        <alignment>left-center</alignment>
+        <axis-alignment>yz-plane</axis-alignment>
+        <type>number-value</type>
+        <property>instrumentation/nav/frequencies/standby-mhz</property>
+        <format>%03.2f</format>
+        <font>helvetica_bold.txf</font>
+        <character-size>0.007</character-size>
+        <character-aspect-ratio type="double">1.2</character-aspect-ratio>
+        <font-resolution>
+            <width type="int">32</width>
+            <height type="int">32</height>
+        </font-resolution>
+    </text>
+
+    <text>
+        <name>ATCLabel</name>
+        <offsets>
+            <x-m>0.003</x-m>
+            <y-m>-0.024</y-m>
+            <z-m>-0.003</z-m>
+            </offsets>
+        <alignment>center-center</alignment>
+        <axis-alignment>yz-plane</axis-alignment>
+        <type>literal</type>
+        <text>ATC 1</text>
+        <font>helvetica_bold.txf</font>
+        <character-size>0.0055</character-size>
+        <character-aspect-ratio type="double">1.5</character-aspect-ratio>
+        <font-resolution>
+            <width type="int">32</width>
+            <height type="int">32</height>
+        </font-resolution>
+    </text>
+
+    <text>
+        <name>ATCProp</name>
+        <offsets>
+            <x-m>0.003</x-m>
+            <y-m>-0.034</y-m>
+            <z-m>-0.012</z-m>
+        </offsets>
+        <alignment>left-center</alignment>
+        <axis-alignment>yz-plane</axis-alignment>
+        <type>number-value</type>
+        <property>instrumentation/transponder/id-code</property>
+        <format>%04.0f</format>
+        <font>helvetica_bold.txf</font>
+        <character-size>0.007</character-size>
+        <character-aspect-ratio type="double">1.2</character-aspect-ratio>
+        <font-resolution>
+            <width type="int">32</width>
+            <height type="int">32</height>
+        </font-resolution>
+    </text>
+
+    <text>
+        <name>ADFLabel</name>
+        <offsets>
+            <x-m>0.003</x-m>
+            <y-m>0.012</y-m>
+            <z-m>-0.003</z-m>
+            </offsets>
+        <alignment>center-center</alignment>
+        <axis-alignment>yz-plane</axis-alignment>
+        <type>literal</type>
+        <text>ADF 1</text>
+        <font>helvetica_bold.txf</font>
+        <character-size>0.0055</character-size>
+        <character-aspect-ratio type="double">1.5</character-aspect-ratio>
+        <font-resolution>
+            <width type="int">32</width>
+            <height type="int">32</height>
+        </font-resolution>
+    </text>
+
+    <text>
+        <name>ADFProp</name>
+        <offsets>
+            <x-m>0.003</x-m>
+            <y-m>0.001</y-m>
+            <z-m>-0.012</z-m>
+        </offsets>
+        <alignment>left-center</alignment>
+        <axis-alignment>yz-plane</axis-alignment>
+        <type>number-value</type>
+        <property>instrumentation/adf/frequencies/selected-khz</property>
+        <format>%4.0f</format>
+        <font>helvetica_bold.txf</font>
+        <character-size>0.007</character-size>
+        <character-aspect-ratio>1.2</character-aspect-ratio>
+        <font-resolution>
+            <width type="int">32</width>
+            <height type="int">32</height>
+        </font-resolution>
+    </text>
+
+
+    <animation>
+        <name>green-text</name>
+        <type>material</type>
+        <object-name>ComProp1</object-name>
+        <object-name>NavProp1</object-name>
+        <object-name>ATCProp</object-name>
+        <object-name>ADFProp</object-name>
+        <emission>
+            <red>0.1</red>
+            <green>0.9</green>
+            <blue>0.2</blue>
+        </emission>
+        <ambient>
+            <red>0</red>
+            <green>0</green>
+            <blue>0</blue>
+        </ambient>
+        <diffuse>
+            <red>0</red>
+            <green>0</green>
+            <blue>0</blue>
+        </diffuse>
+        <specular>
+            <red>0</red>
+            <green>0</green>
+            <blue>0</blue>
+        </specular>
+    </animation>
+
+
+    <animation>
+        <name>white-text</name>
+        <type>material</type>
+        <object-name>ComLabel</object-name>
+        <object-name>NavLabel</object-name>
+        <object-name>ATCLabel</object-name>
+        <object-name>ADFLabel</object-name>
+        <object-name>ComProp2</object-name>
+        <object-name>NavProp2</object-name>
+            <emission>
+            <red>0.8</red>
+            <green>0.8</green>
+            <blue>1.0</blue>
+        </emission>
+        <ambient>
+            <red>0</red>
+            <green>0</green>
+            <blue>0</blue>
+        </ambient>
+        <diffuse>
+            <red>0</red>
+            <green>0</green>
+            <blue>0</blue>
+        </diffuse>
+        <specular>
+            <red>0</red>
+            <green>0</green>
+            <blue>0</blue>
+        </specular>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>comm.select</object-name>
+        <condition>
+            <equals>
+                <property>instrumentation/RTU4200[0]/selected</property>
+                <value>0</value>
+            </equals>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>nav.select</object-name>
+        <condition>
+            <equals>
+                <property>instrumentation/RTU4200[0]/selected</property>
+                <value>1</value>
+            </equals>
+        </condition>
+    </animation>
+    
+     <animation>
+        <type>select</type>
+        <object-name>atc.select</object-name>
+        <condition>
+            <equals>
+                <property>instrumentation/RTU4200[0]/selected</property>
+                <value>2</value>
+            </equals>
+        </condition>
+    </animation>
+   
+    <animation>
+        <type>select</type>
+        <object-name>adf.select</object-name>
+        <condition>
+            <equals>
+                <property>instrumentation/RTU4200[0]/selected</property>
+                <value>3</value>
+            </equals>
+        </condition>
+    </animation>
+
+
+
+
+    <animation>
+        <type>pick</type>
+        <object-name>RTU.L1btn</object-name>
+        <action>
+            <button>0</button>
+            <binding>
+                <command>property-assign</command>
+                <property>instrumentation/RTU4200/selected</property>
+                <value>0</value>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>RTU.L2btn</object-name>
+        <action>
+            <button>0</button>
+            <binding>
+                <command>property-assign</command>
+                <property>instrumentation/RTU4200/selected</property>
+                <value>1</value>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>RTU.L3btn</object-name>
+        <action>
+            <button>0</button>
+            <binding>
+                <command>property-assign</command>
+                <property>instrumentation/RTU4200/selected</property>
+                <value>3</value>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>RTU.R3btn</object-name>
+        <action>
+            <button>0</button>
+            <binding>
+                <command>property-assign</command>
+                <property>instrumentation/RTU4200/selected</property>
+                <value>2</value>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>RTU.R1btn</object-name>
+        <action>
+            <button>0</button>
+            <binding>
+                <command>property-swap</command>
+                <property>instrumentation/comm/frequencies/standby-mhz</property>
+                <property>instrumentation/comm/frequencies/selected-mhz</property>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>RTU.R2btn</object-name>
+        <action>
+            <button>0</button>
+            <binding>
+                <command>property-swap</command>
+                <property>instrumentation/nav/frequencies/standby-mhz</property>
+                <property>instrumentation/nav/frequencies/selected-mhz</property>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>RTU.knob</object-name>
+        <action>
+            <button>3</button>
+            <binding>
+                <command>nasal</command>
+                <script>s76c.RTU1.set_freq_int(1);</script>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>RTU.knob</object-name>
+        <action>
+            <button>4</button>
+            <binding>
+                <command>nasal</command>
+                <script>s76c.RTU1.set_freq_int(-1);</script>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>RTU.knob1</object-name>
+        <action>
+            <button>3</button>
+            <binding>
+                <command>nasal</command>
+                <script>s76c.RTU1.set_freq_dec(1);</script>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>RTU.knob1</object-name>
+        <action>
+            <button>4</button>
+            <binding>
+                <command>nasal</command>
+                <script>s76c.RTU1.set_freq_dec(-1);</script>
+            </binding>
+        </action>
+    </animation>
+
+</PropertyList>
