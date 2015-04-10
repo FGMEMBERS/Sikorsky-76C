@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+	<path>gsdi.ac</path>
+
+	<animation>
+		<type>material</type>
+			<object-name>screen</object-name>
+		<emission>
+			<red>0.1</red>
+			<green>0.9</green>
+			<blue>0.2</blue>
+		</emission>
+	</animation>
+	
+	<animation>
+	  <type>select</type>
+	  <object-name>pneedle</object-name>
+	  <object-name>rneedle</object-name>
+	  <object-name>uneedle</object-name>
+	  <object-name>vneedle</object-name>
+	  <condition>
+	    <property>instrumentation/gsdi/on</property>
+	  </condition>
+	</animation>
+	
+	<animation>
+		<type>translate</type>
+		<object-name>uneedle</object-name>
+		<property>instrumentation/gsdi/drift-u-kt</property>
+		<factor>0.002</factor>
+		<min-m>-0.035</min-m>
+		<max-m>0.035</max-m>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>translate</type>
+		<object-name>vneedle</object-name>
+		<property>instrumentation/gsdi/drift-v-kt</property>
+		<factor>0.002</factor>
+		<min-m>-0.035</min-m>
+		<max-m>0.035</max-m>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>translate</type>
+		<object-name>pneedle</object-name>
+		<property>orientation/pitch-deg</property>
+		<factor>0.001</factor>
+		<min-m>-0.035</min-m>
+		<max-m>0.035</max-m>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>translate</type>
+		<object-name>rneedle</object-name>
+		<property>orientation/roll-deg</property>
+		<factor>0.001</factor>
+		<min-m>-0.035</min-m>
+		<max-m>0.035</max-m>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+	  <type>pick</type>
+	  <object-name>face</object-name>
+	  <object-name>screen</object-name>
+	    <action>
+	        <name>onoff</name>
+	        <button>0</button>
+	        <repeatable>true</repeatable>
+	        <binding>
+	            <command>property-toggle</command>
+	            <property>instrumentation/gsdi/on</property>
+	        </binding>
+	    </action>
+	</animation>
+</PropertyList>

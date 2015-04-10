@@ -1,0 +1,219 @@
+<?xml version="1.0"?>
+<!--###################################################################################
+		Lake of Constance Hangar :: M.Kraus
+		Septemper 2013
+		This file is licenced under the terms of the GNU General Public Licence V2 or later
+		###################################################################################
+-->
+
+<PropertyList>
+
+<path>trim.ac</path>
+
+<!-- Disable extra indicator, used in stand-alone control position version to indicate El trim -->
+<animation>
+  <type>select</type>
+  <object-name>Trim.NeedleEl2</object-name>
+  <condition>
+    <equals>
+      <value>0</value>
+      <value>1</value>
+    </equals>
+  </condition>
+</animation>
+
+<animation>
+	<type>material</type>
+		<object-name>Trim.Face</object-name>
+		<object-name>Trim.NeedleEl</object-name>
+		<object-name>Trim.NeedleRud</object-name>
+		<object-name>Trim.NeedleAil</object-name>
+	<emission>
+		<red>0.1</red>
+		<green>0.9</green>
+		<blue>0.2</blue>
+	</emission>
+</animation>
+
+<animation>
+  <type>translate</type>
+  <object-name>Trim.NeedleEl</object-name>
+  <property>/controls/flight/elevator-trim</property>
+  <factor>0.0085</factor>
+  <axis>
+    <x>0</x>
+    <y>0</y>
+    <z>1</z>
+  </axis>
+</animation>
+
+<animation>
+  <type>translate</type>
+  <object-name>Trim.NeedleRud</object-name>
+  <property>/controls/flight/rudder-trim</property>
+  <factor>0.0085</factor>
+  <axis>
+    <x>0</x>
+    <y>1</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+<animation>
+  <type>rotate</type>
+  <object-name>Trim.NeedleAil</object-name>
+  <property>/controls/flight/aileron-trim</property>
+  <interpolation>
+    <entry><ind>-1</ind><dep>-30</dep></entry>
+    <entry><ind> 0</ind><dep>  0</dep></entry>
+    <entry><ind> 1</ind><dep> 30</dep></entry>
+  </interpolation>
+  <axis>
+    <x>-1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+<!-- all trim wheels to zero -->
+<animation>
+	<type>pick</type>
+	<object-name>Trim.Face</object-name>
+	<action>
+	  <button>0</button>
+	  <repeatable>true</repeatable>
+	  <interval-sec>0.2</interval-sec>
+	   <binding>
+	    <command>nasal</command>
+	    <script>s76c.applyTrimWheels()</script>
+	   </binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>Trim.zero</object-name>
+    <visible>false</visible>
+	<action>
+	  <button>0</button>
+	  <repeatable>true</repeatable>
+	  <interval-sec>0.2</interval-sec>
+	   <binding>
+	    <command>nasal</command>
+	    <script>s76c.applyTrimWheelsZero()</script>
+	   </binding>
+	</action>
+</animation>
+
+<animation>
+  <type>pick</type>
+  <object-name>rud.left</object-name>
+  <visible>false</visible>
+    <action>
+        <name>rud trim inc</name>
+        <button>0</button>
+        <repeatable>true</repeatable>
+        <binding>
+            <command>property-adjust</command>
+            <property>/controls/flight/rudder-trim</property>
+            <step>-0.01</step>
+            <min>-1</min>
+            <max>1</max>
+            <wrap>false</wrap>
+        </binding>
+    </action>
+</animation>
+<animation>
+  <type>pick</type>
+  <object-name>rud.right</object-name>
+  <visible>false</visible>
+    <action>
+        <name>rud trim inc</name>
+        <button>0</button>
+        <repeatable>true</repeatable>
+        <binding>
+            <command>property-adjust</command>
+            <property>/controls/flight/rudder-trim</property>
+            <step>0.01</step>
+            <min>-1</min>
+            <max>1</max>
+            <wrap>false</wrap>
+        </binding>
+    </action>
+</animation>
+
+<animation>
+  <type>pick</type>
+  <object-name>ail.left</object-name>
+  <visible>false</visible>
+    <action>
+        <name>ail trim inc</name>
+        <button>0</button>
+        <repeatable>true</repeatable>
+        <binding>
+            <command>property-adjust</command>
+            <property>/controls/flight/aileron-trim</property>
+            <step>-0.01</step>
+            <min>-1</min>
+            <max>1</max>
+            <wrap>false</wrap>
+        </binding>
+    </action>
+</animation>
+<animation>
+  <type>pick</type>
+  <object-name>ail.right</object-name>
+  <visible>false</visible>
+    <action>
+        <name>ail trim inc</name>
+        <button>0</button>
+        <repeatable>true</repeatable>
+        <binding>
+            <command>property-adjust</command>
+            <property>/controls/flight/aileron-trim</property>
+            <step>0.01</step>
+            <min>-1</min>
+            <max>1</max>
+            <wrap>false</wrap>
+        </binding>
+    </action>
+</animation>
+
+<animation>
+  <type>pick</type>
+  <object-name>elev.left</object-name>
+  <visible>false</visible>
+    <action>
+        <name>elev trim inc</name>
+        <button>0</button>
+        <repeatable>true</repeatable>
+        <binding>
+            <command>property-adjust</command>
+            <property>/controls/flight/elevator-trim</property>
+            <step>-0.01</step>
+            <min>-1</min>
+            <max>1</max>
+            <wrap>false</wrap>
+        </binding>
+    </action>
+</animation>
+<animation>
+  <type>pick</type>
+  <object-name>elev.right</object-name>
+  <visible>false</visible>
+    <action>
+        <name>elev trim inc</name>
+        <button>0</button>
+        <repeatable>true</repeatable>
+        <binding>
+            <command>property-adjust</command>
+            <property>/controls/flight/elevator-trim</property>
+            <step>0.01</step>
+            <min>-1</min>
+            <max>1</max>
+            <wrap>false</wrap>
+        </binding>
+    </action>
+</animation>
+
+</PropertyList>

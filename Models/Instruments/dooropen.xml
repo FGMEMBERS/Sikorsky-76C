@@ -7,23 +7,32 @@
         <type>select</type>
         <object-name>LfLamp</object-name>
         <condition>
-            <property>controls/doors/position-norm[0]</property>
-            </condition>
+            <not-equals>
+                <property>controls/doors/LF-door/position-norm</property>
+                <value>0</value>
+            </not-equals>
+        </condition>
     </animation>
 
     <animation>
         <type>select</type>
         <object-name>RfLamp</object-name>
         <condition>
-            <property>controls/doors/position-norm[1]</property>
-            </condition>
+            <not-equals>
+                <property>controls/doors/RF-door/position-norm</property>
+                <value>0</value>
+            </not-equals>
+        </condition>
     </animation>
 
     <animation>
         <type>select</type>
         <object-name>LrLamp</object-name>
         <condition>
-            <property>controls/doors/position-norm[2]</property>
+            <not-equals>
+                <property>controls/doors/LR-door/position-norm</property>
+                <value>0</value>
+            </not-equals>
         </condition>
     </animation>
 
@@ -31,7 +40,10 @@
         <type>select</type>
         <object-name>RrLamp</object-name>
         <condition>
-            <property>controls/doors/position-norm[3]</property>
+            <not-equals>
+                <property>controls/doors/RR-door/position-norm</property>
+                <value>0</value>
+            </not-equals>
         </condition>
     </animation>
 
@@ -39,7 +51,10 @@
         <type>select</type>
         <object-name>LbLamp</object-name>
         <condition>
-            <property>controls/doors/position-norm[4]</property>
+            <not-equals>
+                <property>controls/doors/LB-door/position-norm</property>
+                <value>0</value>
+            </not-equals>
         </condition>
     </animation>
 
@@ -47,7 +62,10 @@
         <type>select</type>
         <object-name>RbLamp</object-name>
         <condition>
-            <property>controls/doors/position-norm[5]</property>
+            <not-equals>
+                <property>controls/doors/RB-door/position-norm</property>
+                <value>0</value>
+            </not-equals>
         </condition>
     </animation>
 
@@ -55,8 +73,11 @@
         <type>select</type>
         <object-name>ExtPwrLamp</object-name>
         <condition>
-            <property>controls/doors/position-norm[6]</property>
-         </condition>
+            <not-equals>
+                <property>controls/doors/ExtPwr-door/position-norm</property>
+                <value>0</value>
+            </not-equals>
+        </condition>
     </animation>
 
 </PropertyList>

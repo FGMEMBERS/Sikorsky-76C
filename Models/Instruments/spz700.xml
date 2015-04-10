@@ -9,7 +9,7 @@
         <condition>
             <equals>
                 <property>autopilot/locks/heading</property>
-                <value>HDG</value>
+                <value>dg-heading-hold</value>
             </equals>
         </condition>
     </animation>
@@ -31,7 +31,7 @@
         <condition>
             <equals>
                 <property>autopilot/locks/altitude</property>
-                <value>ALT</value>
+                <value>altitude-hold</value>
             </equals>
         </condition>
     </animation>
@@ -40,10 +40,7 @@
         <type>select</type>
         <object-name>SPZ.nav.arm</object-name>
         <condition>
-            <equals>
-                <property>autopilot/locks/heading-armed</property>
-                <value>NAV</value>
-            </equals>
+			<property>instrumentation/nav/in-range</property>
         </condition>
     </animation>
 
@@ -53,19 +50,17 @@
         <condition>
             <equals>
                 <property>autopilot/locks/heading</property>
-                <value>NAV</value>
+                <value>nav1-hold</value>
             </equals>
         </condition>
     </animation>
 
+    <!-- old ILS knob is now GPS knob -->
     <animation>
         <type>select</type>
         <object-name>SPZ.ils.arm</object-name>
         <condition>
-            <equals>
-                <property>autopilot/locks/heading-armed</property>
-                <value>LOC</value>
-            </equals>
+            <property>autopilot/route-manager/active</property>
         </condition>
     </animation>
 
@@ -75,7 +70,7 @@
         <condition>
             <equals>
                 <property>autopilot/locks/heading</property>
-                <value>LOC</value>
+                <value>true-heading-hold</value>
             </equals>
         </condition>
     </animation>
@@ -106,10 +101,7 @@
         <type>select</type>
         <object-name>SPZ.apr.arm</object-name>
         <condition>
-            <equals>
-                <property>autopilot/locks/altitude-armed</property>
-                <value>GS</value>
-            </equals>
+			<property>instrumentation/nav/has-gs</property>
         </condition>
     </animation>
 
@@ -119,7 +111,7 @@
         <condition>
             <equals>
                 <property>autopilot/locks/altitude</property>
-                <value>GS</value>
+                <value>gs1-hold</value>
             </equals>
         </condition>
     </animation>
@@ -129,8 +121,8 @@
         <object-name>SPZ.ias.on</object-name>
         <condition>
             <equals>
-                <property>autopilot/locks/altitude</property>
-                <value>IAS</value>
+                <property>autopilot/locks/speed</property>
+                <value>speed-with-throttle</value>
             </equals>
         </condition>
     </animation>
@@ -191,10 +183,7 @@
         <type>select</type>
         <object-name>SPZ.ga.on</object-name>
         <condition>
-            <equals>
-                <property>autopilot/locks/altitude</property>
-                <value>GA</value>
-            </equals>
+            <property>/controls/flight/auto-coordination</property>
         </condition>
     </animation>
 
@@ -207,13 +196,21 @@
             <button>0</button>
             <repeatable>false</repeatable>
             <binding>
-                <command>nasal</command>
-                <script>s76c.FlDr.set_lateral_mode("HDG");</script>
+  		  	    <command>nasal</command>
+  		        <script><![CDATA[
+  		  		  if(getprop("/autopilot/locks/heading") == ""){
+  		  	  		setprop("/autopilot/locks/heading", "dg-heading-hold");		  
+  		  		  }else{
+  		  	  		setprop("/autopilot/locks/heading", "");		  
+  		  		  }
+  		        ]]></script>
+                <!--command>nasal</command>
+                <script>s76c.FlDr.set_lateral_mode("HDG");</script-->
             </binding>
         </action>
     </animation>
 
-    <animation>
+    <!--animation>
         <type>pick</type>
         <object-name>SPZ.vs</object-name>
         <action>
@@ -224,7 +221,7 @@
                 <script>s76c.FlDr.set_vertical_mode("VS");</script>
             </binding>
         </action>
-    </animation>
+    </animation-->
 
     <animation>
         <type>pick</type>
@@ -233,8 +230,17 @@
             <button>0</button>
             <repeatable>false</repeatable>
             <binding>
-                <command>nasal</command>
-                <script>s76c.FlDr.set_vertical_mode("ALT");</script>
+                <!--command>nasal</command>
+                <script>s76c.FlDr.set_vertical_mode("ALT");</script-->
+		  	  <command>nasal</command>
+		        <script><![CDATA[
+		  		  if(getprop("/autopilot/locks/altitude") == ""){
+		  	  		setprop("/autopilot/settings/target-altitude-ft", getprop("/position/altitude-ft"));
+		  	  		setprop("/autopilot/locks/altitude", "altitude-hold");	  
+		  		  }else{
+		  	  		setprop("/autopilot/locks/altitude", "");	  
+		  		  }
+		        ]]></script>
             </binding>
         </action>
     </animation>
@@ -246,8 +252,16 @@
             <button>0</button>
             <repeatable>false</repeatable>
             <binding>
-                <command>nasal</command>
-                <script>s76c.FlDr.set_lateral_arm_mode("NAV");</script>
+                <!--command>nasal</command>
+                <script>s76c.FlDr.set_lateral_arm_mode("NAV");</script-->
+  		  	  <command>nasal</command>
+  		        <script><![CDATA[
+  		  		  if(getprop("/autopilot/locks/heading") != "nav1-hold"){
+  		  	  		setprop("/autopilot/locks/heading", "nav1-hold");	  
+  		  		  }else{
+  		  	  		setprop("/autopilot/locks/heading", "");	  
+  		  		  }
+  		        ]]></script>
             </binding>
         </action>
     </animation>
@@ -259,13 +273,21 @@
             <button>0</button>
             <repeatable>false</repeatable>
             <binding>
-                <command>nasal</command>
-                <script>s76c.FlDr.set_lateral_arm_mode("LOC");</script>
+                <!--command>nasal</command>
+                <script>s76c.FlDr.set_lateral_arm_mode("LOC");</script-->
+    		  	  <command>nasal</command>
+    		        <script><![CDATA[
+    		  		  if(getprop("/autopilot/locks/heading") != "true-heading-hold"){
+    		  	  		setprop("/autopilot/locks/heading", "true-heading-hold");	  
+    		  		  }else{
+    		  	  		setprop("/autopilot/locks/heading", "");	  
+    		  		  }
+    		        ]]></script>
             </binding>
         </action>
     </animation>
 
-    <animation>
+    <!--animation>
         <type>pick</type>
         <object-name>SPZ.decel</object-name>
         <action>
@@ -276,7 +298,7 @@
                 <script>s76c.FlDr.set_vertical_arm_mode("DECEL");</script>
             </binding>
         </action>
-    </animation>
+    </animation-->
 
     <animation>
         <type>pick</type>
@@ -285,9 +307,17 @@
             <button>0</button>
             <repeatable>false</repeatable>
             <binding>
-                <command>nasal</command>
+                <!--command>nasal</command>
                 <script>s76c.FlDr.set_lateral_arm_mode("LOC");
-                s76c.FlDr.set_vertical_arm_mode("GS");</script>
+                s76c.FlDr.set_vertical_arm_mode("GS");</script-->
+  		  	  <command>nasal</command>
+  		        <script><![CDATA[
+  		  		  if(getprop("/autopilot/locks/altitude") != "gs1-hold"){
+  		  	  		setprop("/autopilot/locks/altitude", "gs1-hold");	  
+  		  		  }else{
+  		  	  		setprop("/autopilot/locks/altitude", "");	  
+  		  		  }
+  		        ]]></script>
             </binding>
         </action>
     </animation>
@@ -299,13 +329,27 @@
             <button>0</button>
             <repeatable>false</repeatable>
             <binding>
-                <command>nasal</command>
-                <script>s76c.FlDr.set_vertical_arm_mode("IAS");</script>
+                <!--command>nasal</command>
+                <script>s76c.FlDr.set_vertical_arm_mode("IAS");</script-->
+    		  	  <command>nasal</command>
+    		        <script><![CDATA[
+    		  		  if(getprop("/autopilot/locks/altitude")){
+	    		  		  if(!getprop("/autopilot/locks/speed")){
+						    var actualSpeed = getprop("/instrumentation/airspeed-indicator/indicated-speed-kt") or 0;
+						    setprop("/autopilot/settings/target-speed-kt", actualSpeed );
+	    		  	  		setprop("/autopilot/locks/speed", "speed-with-throttle");	  
+	    		  		  }else{
+	    		  	  		setprop("/autopilot/locks/speed", "");	  
+	    		  		  }	  
+    		  		  }else{
+    		  	  		setprop("/autopilot/locks/speed", "");	  
+    		  		  }
+    		        ]]></script>
             </binding>
         </action>
     </animation>
 
-    <animation>
+    <!--animation>
         <type>pick</type>
         <object-name>SPZ.asel</object-name>
         <action>
@@ -342,20 +386,19 @@
                 <property>autopilot/locks/standby</property>
             </binding>
         </action>
-    </animation>
+    </animation-->
 
-    <animation>
+    <!--animation>
         <type>pick</type>
         <object-name>SPZ.ga</object-name>
         <action>
             <button>0</button>
             <repeatable>false</repeatable>
             <binding>
-                <command>nasal</command>
-                <script>s76c.FlDr.set_vertical_mode("GA");
-                s76c.FlDr.set_lateral_mode("GA");</script>
+                <command>property-toggle</command>
+                <property>/controls/flight/auto-coordination</property>
             </binding>
         </action>
-    </animation>
+    </animation-->
 
 </PropertyList>

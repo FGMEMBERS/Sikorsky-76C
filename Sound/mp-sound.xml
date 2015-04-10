@@ -1,0 +1,54 @@
+<!-- S-76C sound config-->
+<PropertyList>
+    <fx>
+        <rotor>
+            <name>main rotor</name>
+            <mode>looped</mode>
+            <path>Aircraft/Sikorsky-76C/Sound/s76-rotor.wav</path>
+            <max-dist>1900</max-dist>
+            <reference-dist>120</reference-dist>
+	        <property>engines/engine[0]/n1</property>
+	        <volume>
+	            <property>engines/engine[0]/n1</property>
+	            <factor>0.005</factor>
+	            <min>0.0</min>
+	            <max>0.3</max>
+	        </volume>
+	        <pitch>
+	            <property>engines/engine[0]/n1</property>
+	            <factor>0.0006</factor>
+	            <min>0.2</min>
+	            <max>0.5</max>
+	        </pitch>
+            <position>
+                <x>0</x>
+                <y>0</y>
+                <z>0</z>
+            </position>
+        </rotor>
+
+        <door>
+            <name>close doors</name>
+            <mode>once</mode>
+            <path>Sounds/door_close.wav</path>
+            <condition>
+                <not>
+                    <or>
+                        <property>sim/multiplay/generic/float[0]</property>
+                        <property>sim/multiplay/generic/float[1]</property>
+                        <property>sim/multiplay/generic/float[2]</property>
+                        <property>sim/multiplay/generic/float[3]</property>
+                        <property>sim/multiplay/generic/float[4]</property>
+                        <property>sim/multiplay/generic/float[5]</property>
+                    </or>
+                 </not>
+            </condition>
+            <max-dist>3</max-dist>
+            <reference-dist>2</reference-dist>
+            <volume>
+                <factor>1</factor>
+            </volume>
+        </door>
+
+    </fx>
+</PropertyList>

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+<sim>
+    <model>
+        <livery>
+            <name type="string">Fuerza Aerea Espanola</name>
+            <texture>Liveries/FAE.png</texture>
+        </livery>
+    </model>
+</sim>
+</PropertyList>

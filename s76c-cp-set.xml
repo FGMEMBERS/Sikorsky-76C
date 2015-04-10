@@ -1,0 +1,206 @@
+<?xml version="1.0"?>
+<!--###################################################################################
+		Lake of Constance Hangar :: M.Kraus
+		Boeing 707 for Flightgear Septemper 2013
+		This file is licenced under the terms of the GNU General Public Licence V2 or later
+		###################################################################################
+-->
+<PropertyList>
+
+    <sim>
+        <description>Sikorsky S76C++ Copilot</description>
+        <author>LAKE OF CONTANCE HANGAR</author>
+		<status>alpha</status>
+		<version>0.0.1</version>
+		<flight-model>null</flight-model>
+
+        <startup>
+            <splash-texture>Aircraft/Sikorsky-76C/splash.png</splash-texture>
+        </startup>
+
+        <model>
+            <path>Aircraft/Sikorsky-76C/Models/s76c-cp.xml</path>
+        </model>
+	
+		<remote>
+			<pilot-callsign type="string"/>
+		</remote>
+
+        <sound>
+            <path>Aircraft/Sikorsky-76C/Sound/s76c-sound.xml</path>
+        </sound>
+
+        <allow-toggle-cockpit archive="y">true</allow-toggle-cockpit>
+
+        <instrumentation>
+            <path>Aircraft/Sikorsky-76C/Systems/instrumentation.xml</path>
+        </instrumentation>
+		
+		<!-- Multiplay -->
+		<multiplay n="0">
+			<chat_display>1</chat_display>
+			<generic n="0">         
+				<!-- nothing -->
+			</generic>
+	    </multiplay>
+		
+		<view n="0">      
+			<name>Copilot</name>
+			<internal archive="y">true</internal>
+			<enabled type="bool">true</enabled>
+			<config>
+                <x-offset-m archive="y">-0.45</x-offset-m>
+                <y-offset-m archive="y">-1.0</y-offset-m>
+                <z-offset-m archive="y">-1.8</z-offset-m>
+                <pitch-offset-deg>-13</pitch-offset-deg>
+                <limits>
+                    <enabled type="bool">true</enabled>
+                    <left>
+                        <heading-max-deg type="double">120</heading-max-deg>
+                        <x-offset-max-m type="double">0.22</x-offset-max-m>
+                        <x-offset-threshold-deg type="double">45</x-offset-threshold-deg>
+                    </left>
+                    <right>
+                        <heading-max-deg type="double">140</heading-max-deg>
+                        <x-offset-max-m type="double">0.25</x-offset-max-m>
+                        <x-offset-threshold-deg type="double">65</x-offset-threshold-deg>
+                    </right>
+                </limits>
+			</config>
+		</view>
+	
+		<view n="1">
+			<enabled type="bool">true</enabled>
+		</view>
+
+		<view n="2">
+			<enabled type="bool">true</enabled>
+		</view>
+
+		<view n="6">
+			<enabled type="bool">true</enabled>
+		</view>
+
+        <chase-distance-m type="double" archive="y">-25.0</chase-distance-m>
+
+    <menubar>
+        <default>
+            <menu n="10">
+            <label>S76C++</label>
+			<enabled type="bool">true</enabled>
+				<item>
+					<label>Select MP-Pilot</label>
+			        <binding>
+			         <command>nasal</command>
+			         <script>
+			          dual_control_tools.copilot_dialog.show(aircraft_dual_control.pilot_type);
+			         </script>
+			        </binding>
+				</item>
+			</menu>
+		</default>
+	</menubar>
+
+    </sim>
+
+<input>
+	<keyboard include="Systems/keyboard.xml"/>
+</input>
+
+    <instrumentation>
+        <tcas>
+            <serviceable type="bool">true</serviceable>
+            <inputs>
+                <mode type="int">3</mode>       <!-- 0=off, 1=standby, 2=TA-only, 3=auto(TA/RA) -->
+            </inputs>
+            <speaker>
+                <max-dist>2</max-dist>
+                <reference-dist>1</reference-dist>
+                <volume>1.0</volume>
+            </speaker>
+        </tcas>
+        <radar>
+            <switch type="string" >off</switch>
+            <switch-pos type="int">0</switch-pos>
+            <mode-control type="int" >1</mode-control>
+            <display-controls>
+                <WX type="bool" >false</WX>
+                <pos type="bool" >true</pos>
+                <data type="bool" >false</data>
+                <centre type="bool" >true</centre>
+				<symbol type="bool" >true</symbol>
+                <tcas type="bool" >true</tcas>
+            </display-controls>
+            <serviceable type="bool">true</serviceable>
+            <range type="int" >10</range>
+            <reference-range-nm type="double" >20</reference-range-nm>
+            <mode type="string" >WX</mode>
+            <font>
+                <tcas>
+                   <color n="0"> <!-- distant targets -->
+                       <red type="float">0</red>
+                       <green type="float">1</green>
+                       <blue type="float">1</blue>
+                   </color>
+                   <color n="1"> <!-- proximity targets -->
+                       <red type="float">0</red>
+                       <green type="float">1</green>
+                       <blue type="float">1</blue>
+                   </color>
+                   <color n="2"> <!-- TA threat targets -->
+                       <red type="float">1</red>
+                       <green type="float">0.5</green>
+                       <blue type="float">0</blue>
+                   </color>
+                   <color n="3"> <!-- RA threat targets -->
+                       <red type="float">1</red>
+                       <green type="float">0</green>
+                       <blue type="float">0</blue>
+                   </color>
+               </tcas>
+            </font>
+            <lightning type="bool" >false</lightning>
+            <display-mode type="string" >map</display-mode>
+            <radar-texture-path type="string">Aircraft/Sikorsky-76C/Models/Instruments/tcas-2.png</radar-texture-path>
+            <echo-texture-path type="string" >Aircraft/Sikorsky-76C/Models/Instruments/wxecho.png</echo-texture-path>
+            <minimized type="bool" >false</minimized>
+            <heading-marker type="bool" >true</heading-marker>
+            <limit-deg type="int">180</limit-deg>
+        </radar>
+	<standby-altimeter>
+		<serviceable type="bool">1</serviceable>
+	</standby-altimeter>
+	<encoder>
+		<serviceable type="bool">1</serviceable>
+	</encoder>
+	<transponder>
+		<id-code>1200</id-code>
+	</transponder>
+    <filter-monitor>
+        <test type="bool">0</test>
+        <life n="0">0.1</life>
+        <life n="1">0.1</life>
+    </filter-monitor>
+    </instrumentation>
+
+    <nasal>        
+		<s76c>
+            <file>Aircraft/Sikorsky-76C/Nasal/DualControl/s76c-cp.nas</file>
+        </s76c>
+	    <dual_control_tools>
+	     <file>Aircraft/Sikorsky-76C/Nasal/DualControl/dual-control-tools.nas</file>
+	    </dual_control_tools>
+	    <aircraft_dual_control>
+	     <file>Aircraft/Sikorsky-76C/Nasal/DualControl/s76c-dual-control.nas</file>
+	    </aircraft_dual_control>
+	    <dual_control>
+	     <file>Aircraft/Sikorsky-76C/Nasal/DualControl/copilot-dual-control.nas</file>
+	    </dual_control>
+    </nasal>
+
+  <!-- Dual control depend on this value -->
+  <dual-control>
+    <active type="bool">0</active>
+  </dual-control>
+
+</PropertyList>

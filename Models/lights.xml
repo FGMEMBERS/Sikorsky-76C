@@ -4,14 +4,6 @@
 
     <path>lights.ac</path>
 
-<effect>
-        <inherits-from>Effects/model-transparent</inherits-from>
-        <object-name>strobe.1</object-name>
-        <object-name>strobe.2</object-name>
-        <object-name>redlight.1</object-name>
-        <object-name>redlight.2</object-name>
-    </effect>
-
     <animation>
         <type>select</type>
         <object-name>strobe.1</object-name>

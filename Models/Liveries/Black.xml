@@ -6,10 +6,7 @@
         <livery>
             <name type="string">Black</name>
             <texture>S76livery1.png</texture>
-            <amb>0.0</amb>
-            <refl>-0.2</refl>
         </livery>
-        <sliding-door>0</sliding-door>
     </model>
 </sim>
 </PropertyList>

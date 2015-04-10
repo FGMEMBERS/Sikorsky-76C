@@ -26,12 +26,6 @@ This file selects the instrumentation modules that should be available.
         <static-pressure>/systems/static/pressure-inhg</static-pressure>
     </altimeter>
 
-    <altimeter>
-        <name>standby-altimeter</name>
-        <number>0</number>
-        <static-pressure>/systems/static/pressure-inhg</static-pressure>
-    </altimeter>
-
     <attitude-indicator>
         <name>attitude-indicator</name>
         <number>0</number>
@@ -90,6 +84,13 @@ This file selects the instrumentation modules that should be available.
         <number>0</number>
     </turn-indicator>
 
+    <inst-vertical-speed-indicator>
+        <name>inst-vertical-speed-indicator</name>
+        <number>0</number>
+        <static-pressure>/systems/static/pressure-inhg</static-pressure>
+        <serviceable>true</serviceable>
+    </inst-vertical-speed-indicator>
+
     <mk-viii>
         <name>mk-viii</name>
         <number>0</number>
@@ -114,11 +115,11 @@ This file selects the instrumentation modules that should be available.
        <name>tcas</name>
        <number>0</number>
     </tcas> 
-
-    <navigation-display>
-        <name>tcas-display</name>
-        <number>0</number>
-        <symbols include="tcas-display.xml"/>
-    </navigation-display>
+	
+    <gsdi>
+  		<name>gsdi</name>
+  		<number>0</number>
+        <serviceable>true</serviceable>
+  	</gsdi>
 
 </PropertyList>

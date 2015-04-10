@@ -12,44 +12,44 @@ RTU4200 = {
    
      set_freq_int: func (dir){
      var mode = me.selected.getValue();
-    if(mode==0){
-        var commfreq=me.comm_sby.getValue();
-        commfreq += dir;
-        if(commfreq >135.975) commfreq -=18.000;
-        if(commfreq <118.000) commfreq +=18.000;
-        me.comm_sby.setValue(commfreq);
-    }elsif(mode==1){
-        var navfreq=me.nav_sby.getValue();
-        navfreq += dir;
-        if(navfreq >117.975) navfreq -=10.000;
-        if(navfreq <108.000) navfreq +=10.000;
-        me.nav_sby.setValue(navfreq);
-    }elsif(mode==2){
+	if(mode==0){
+		var commfreq=me.comm_sby.getValue();
+		commfreq += dir;
+		if(commfreq >135.975) commfreq -=18.000;
+		if(commfreq <118.000) commfreq +=18.000;
+		me.comm_sby.setValue(commfreq);
+ 	}elsif(mode==1){
+		var navfreq=me.nav_sby.getValue();
+		navfreq += dir;
+		if(navfreq >117.975) navfreq -=10.000;
+		if(navfreq <108.000) navfreq +=10.000;
+		me.nav_sby.setValue(navfreq);     
+	}elsif(mode==2){
      
-    }elsif(mode==3){
+	}elsif(mode==3){
      
-    }
+	}
     },
 
 set_freq_dec: func (dir){
      var mode = me.selected.getValue();
-    if(mode==0){
-        var commfreq=me.comm_sby.getValue();
-        commfreq += (0.025 * dir);
-        if(commfreq >135.975) commfreq -=18.000;
-        if(commfreq <118.000) commfreq +=18.000;
-        me.comm_sby.setValue(commfreq);
+	if(mode==0){
+		var commfreq=me.comm_sby.getValue();
+		commfreq += (0.025 * dir);
+		if(commfreq >135.975) commfreq -=18.000;
+		if(commfreq <118.000) commfreq +=18.000;
+		me.comm_sby.setValue(commfreq);
         }elsif(mode==1){
-        var navfreq=me.nav_sby.getValue();
-        navfreq += (0.05*dir);
-        if(navfreq >117.975) navfreq -=10.000;
-        if(navfreq <108.000) navfreq +=10.000;
-        me.nav_sby.setValue(navfreq);        
-    }elsif(mode==2){
+ 		var navfreq=me.nav_sby.getValue();
+		navfreq += (0.05*dir);
+		if(navfreq >117.975) navfreq -=10.000;
+		if(navfreq <108.000) navfreq +=10.000;
+		me.nav_sby.setValue(navfreq);        
+	}elsif(mode==2){
      
-    }elsif(mode==3){
+	}elsif(mode==3){
      
-    }
+	}
     },
 };
 

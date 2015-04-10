@@ -1,0 +1,202 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+ <name>dme</name>
+ <path>dme.ac</path>
+
+	<effect>
+		<inherits-from>Effects/model-transparent</inherits-from>
+    <object-name>shadow</object-name>
+	</effect>
+
+  <animation>
+      <type>material</type>
+      <object-name>Dme.1</object-name>
+      <object-name>Dme.10</object-name>
+      <object-name>Dme.100</object-name>
+      <object-name>Dot</object-name>
+      <object-name>Tacan.1</object-name>
+      <object-name>Tacan.10</object-name>
+      <object-name>Tacan.100</object-name>
+      <condition>
+        <and>
+          <not>
+            <property>/controls/electric/master-switch</property>
+          </not>
+          <greater-than>
+            <property>/systems/electrical/outputs/cabin-dim</property>
+            <value>0</value>
+          </greater-than>
+        </and>
+      </condition>
+      <emission>
+        <red>0.32</red>
+        <green>0.15</green>
+        <blue>0.075</blue>
+        <factor-prop>/systems/electrical/outputs/cabin-dim</factor-prop>
+      </emission>
+  </animation>
+
+  <animation>
+      <type>material</type>
+      <object-name>Dme.1</object-name>
+      <object-name>Dme.10</object-name>
+      <object-name>Dme.100</object-name>
+      <object-name>Dot</object-name>
+      <object-name>Tacan.1</object-name>
+      <object-name>Tacan.10</object-name>
+      <object-name>Tacan.100</object-name>
+      <emission>
+	      <red>0.028</red>
+	      <green>0.014</green>
+	      <blue>0.007</blue>
+        <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
+      </emission>
+  </animation>
+
+<animation>
+    <type>select</type>
+    <object-name>Dme.1</object-name>
+    <object-name>Dme.10</object-name>
+    <object-name>Dme.100</object-name>
+    <condition>
+      <equals>
+        <property>/autopilot/switches/dme</property>
+        <value>1</value>
+      </equals>
+    </condition>
+</animation>
+
+<animation>
+    <type>select</type>
+    <object-name>Tacan.1</object-name>
+    <object-name>Tacan.10</object-name>
+    <object-name>Tacan.100</object-name>
+    <condition>
+      <not-equals>
+        <property>/autopilot/switches/dme</property>
+        <value>1</value>
+      </not-equals>
+    </condition>
+</animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>Dme.100</object-name>
+        <property>/instrumentation/dme/indicated-distance-nm</property>
+        <factor>0.01</factor>
+        <step>10</step>
+		    <bias>0.005</bias>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>Dme.10</object-name>
+        <property>/instrumentation/dme/indicated-distance-nm</property>
+        <factor>0.1</factor>
+        <step>1</step>
+		    <bias>0.005</bias>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>Dme.1</object-name>
+        <property>/instrumentation/dme/indicated-distance-nm</property>
+        <factor>1</factor>
+        <step>0.1</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>Tacan.100</object-name>
+        <property>/instrumentation/tacan/indicated-distance-nm</property>
+        <factor>0.01</factor>
+        <step>10</step>
+		    <bias>0.005</bias>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>Tacan.10</object-name>
+        <property>/instrumentation/tacan/indicated-distance-nm</property>
+        <factor>0.1</factor>
+        <step>1</step>
+		    <bias>0.005</bias>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>Tacan.1</object-name>
+        <property>/instrumentation/tacan/indicated-distance-nm</property>
+        <factor>1</factor>
+        <step>0.1</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <!-- Click on the vitre showing the flighttime on the screen -->    
+    <animation>
+      <type>pick</type>
+      <object-name>face</object-name>
+      <visible>true</visible>
+      <action>
+        <button>0</button>
+        <repeatable>false</repeatable>
+			  <binding>
+				  <command>nasal</command>
+				  <script>
+            var dme = getprop("/autopilot/switches/dme") or 0;
+            var tacan_miles = getprop("/instrumentation/tacan/indicated-distance-nm") or 0;
+            var dme_miles = getprop("/instrumentation/dme/indicated-distance-nm") or 0;
+
+            var decToString = func(x){
+              var d = int(math.mod((x*100),100));
+
+              return (int(x)~"."~d);  
+            }
+
+            if (!dme){
+              var x = decToString(tacan_miles);
+              var freq = getprop("/instrumentation/tacan/frequencies/selected-channel") or 0;
+              var frex = getprop("/instrumentation/tacan/frequencies/selected-channel[4]");
+              screen.log.write("Distance to TACAN \""~freq ~ frex~"\" " ~ x ~" nm", 1, 1, 0.0);
+            }else{
+              var x = decToString(dme_miles);
+              var id = getprop("/instrumentation/nav/nav-id") or 0.0;
+              screen.log.write("Distance to VOR-DME \""~id~"\" " ~ x ~" nm", 1, 1, 0.0);
+            }
+          </script>
+			  </binding>
+      </action>
+    </animation>
+
+</PropertyList>

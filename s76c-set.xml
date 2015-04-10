@@ -12,8 +12,9 @@ Wim (performance specs)
 
     <sim>
         <description>Sikorsky S76C++</description>
-        <author>Syd Adams(Model), Maik Justus (FDM)</author>
+        <author>Syd Adams(Model), Maik Justus (FDM) and hacks from the LAKE OF CONTANCE HANGAR</author>
         <flight-model>yasim</flight-model>
+		<version>0.0.1</version>
         <aero>S76c</aero>
         <fuel-fraction>0.5</fuel-fraction>
 
@@ -25,20 +26,21 @@ Wim (performance specs)
             <path>Aircraft/Sikorsky-76C/Models/s76c.xml</path>
             <livery>
                 <file type="string">Black</file>
-                <refl type="float">0.0</refl>
-                <amb type="float">0.0</amb>
             </livery>
             <start-idling type="bool"></start-idling>
-            <sliding-door type="bool">0</sliding-door>
         </model>
+
+		<remote>
+			<pilot-callsign type="string"/>
+		</remote>
 
         <systems>
             <electrical>
                 <path></path>
             </electrical>
             <autopilot>
-            <path>Aircraft/Sikorsky-76C/Systems/autopilot.xml</path>
-        </autopilot>
+            	<path>Aircraft/Sikorsky-76C/Systems/autopilot.xml</path>
+        	</autopilot>
         </systems>
 
         <instrumentation>
@@ -49,15 +51,34 @@ Wim (performance specs)
             <path>Aircraft/Sikorsky-76C/Sound/s76c-sound.xml</path>
         </sound>
 
+        <virtual-cockpit archive="y">true</virtual-cockpit>
         <allow-toggle-cockpit archive="y">true</allow-toggle-cockpit>
+		
+		<flight-recorder include="Systems/flightrecorder.xml"/>
+		
+		<!-- Multiplay -->
+		<multiplay n="0">
+			<chat_display>1</chat_display>
+			<generic n="0">         
+				<float n="0" alias="/controls/doors/LB-door/position-norm"/>
+				<float n="1" alias="/controls/doors/RB-door/position-norm"/>
+				<float n="2" alias="/controls/doors/RR-door/position-norm"/>
+				<float n="3" alias="/controls/doors/LR-door/position-norm"/>
+				<float n="4" alias="/controls/doors/LF-door/position-norm"/>
+				<float n="5" alias="/controls/doors/RF-door/position-norm"/>
+				<float n="6" alias="/gear/gear[0]/compression-m"/>
+				<float n="7" alias="/gear/gear[1]/compression-m"/>
+				<float n="8" alias="/gear/gear[2]/compression-m"/>
+			</generic>
+	    </multiplay>
 
         <view>
             <internal archive="y">true</internal>
             <config>
                 <x-offset-m archive="y">0.45</x-offset-m>
-                <y-offset-m archive="y">-1.1</y-offset-m>
-                <z-offset-m archive="y">-2.1</z-offset-m>
-                <pitch-offset-deg>-16</pitch-offset-deg>
+                <y-offset-m archive="y">-1.0</y-offset-m>
+                <z-offset-m archive="y">-1.8</z-offset-m>
+                <pitch-offset-deg>-13</pitch-offset-deg>
                 <limits>
                     <enabled type="bool">true</enabled>
                     <left>
@@ -124,14 +145,14 @@ Wim (performance specs)
             <from-model type="bool">true</from-model>
             <from-model-idx type="int">0</from-model-idx>
             <ground-level-nearplane-m type="double">0.5f</ground-level-nearplane-m>
-            <default-field-of-view-deg type="double">45.0</default-field-of-view-deg>
-            <x-offset-m archive="y">0.130</x-offset-m>
-            <y-offset-m archive="y">-1.44</y-offset-m>
-            <z-offset-m archive="y">-2.03</z-offset-m>
-            <heading-offset-deg>0</heading-offset-deg>
-            <pitch-offset-deg>-10</pitch-offset-deg>
-            <default-heading-offset-deg>0</default-heading-offset-deg>
-            <default-pitch-offset-deg>-10</default-pitch-offset-deg>
+            <default-field-of-view-deg type="double">30.0</default-field-of-view-deg>
+            <x-offset-m archive="y">0.45</x-offset-m>
+            <y-offset-m archive="y">-1.05</y-offset-m>
+            <z-offset-m archive="y">-1.9</z-offset-m>
+            <heading-offset-deg>8.4</heading-offset-deg>
+            <pitch-offset-deg>-28</pitch-offset-deg>
+            <default-heading-offset-deg>8.4</default-heading-offset-deg>
+            <default-pitch-offset-deg>-28</default-pitch-offset-deg>
         </config>
     </view>
 
@@ -145,14 +166,20 @@ Wim (performance specs)
       <heading-offset-deg type="double">180</heading-offset-deg>
       <x-offset-m archive="y" type="double">-0.60 </x-offset-m> <!--Right-->
       <y-offset-m archive="y" type="double">-1.16 </y-offset-m> <!--Up-->
-      <z-offset-m archive="y" type="double">-1.45 </z-offset-m> <!--Back-->
+      <z-offset-m archive="y" type="double">-1.3 </z-offset-m> <!--Back-->
       <default-heading-offset-deg>180</default-heading-offset-deg>
       <pitch-offset-deg>-5</pitch-offset-deg>
       <dynamic-view type="bool">true</dynamic-view>
     </config>
     </view>
 
-        <chase-distance-m type="double" archive="y">-30.0</chase-distance-m>
+        <chase-distance-m type="double" archive="y">-25.0</chase-distance-m>
+
+    <airport>
+        <runways>
+            <start-offset-m>30</start-offset-m>
+        </runways>
+    </airport>
 
 <!--  11,700 Max Gross Weight-->
         <weight n="0">
@@ -179,7 +206,31 @@ Wim (performance specs)
             <key>
                 <name>O</name>
                 <desc>open aerotow-hook</desc>
-            </key>
+            </key>		
+			<key>
+				<name>></name>
+				<desc>toggle Pilot - Panel view</desc>
+			</key>
+	        <key>
+	          <name>1</name>
+	          <desc>trim to zero</desc>
+	        </key>
+	        <key>
+	          <name>2</name>
+	          <desc>trim for startup</desc>
+	        </key>
+			<key>
+			  <name>F6</name>
+			  <desc>toggle AP1/FD1</desc>
+			</key>
+			<key>
+			  <name>F7</name>
+			  <desc>open Map</desc>
+			</key>
+			<key>
+			  <name>F9</name>
+			  <desc>open Fuel &amp; Weight Menu</desc>
+			</key>
         </help>
 
         <hitches>
@@ -218,24 +269,45 @@ Wim (performance specs)
                     </binding>
                 </item>
                 <item>
-                    <label>Options</label>
-                    <binding>
-                        <command>nasal</command>
-                        <script>dialogs.options.open()</script>
-                    </binding>
-                </item>
-                <item>
                     <label>Select Livery</label>
                     <binding>
                         <command>nasal</command>
                         <script>aircraft.livery.dialog.toggle()</script>
                     </binding>
-                </item>
+                </item>				
+	            <item>
+	              <label>A/C Registration</label>
+	              <binding>
+	                <command>nasal</command>
+	                <script><![CDATA[ 
+	                  s76c.registrationDialog.toggle();
+	                ]]></script>
+	              </binding>
+	            </item>
+				<item>
+					<label>Select MP-Copilot</label>
+					<binding>
+						<command>nasal</command>
+						<script>
+						dual_control_tools.copilot_dialog.show(aircraft_dual_control.copilot_type);
+						</script>
+					</binding>
+				</item>
             </menu>
         </default>
     </menubar>
 
     </sim>
+	
+	<autopilot n="0">
+		<locks n="0">
+			<collective type="bool">0</collective>
+			<couple type="bool">0</couple>
+		</locks>
+		<switches n="0">
+			<dme type="bool">1</dme>
+		</switches>
+	</autopilot>
 
     <engines>
         <engine>
@@ -256,12 +328,6 @@ Wim (performance specs)
                 <throttle>1.0</throttle>
             </engine>
         </engines>
-        <flight>
-            <aileron-trim>0</aileron-trim>
-            <elevator-trim>0</elevator-trim>
-            <!-- if no pedal controls-->
-            <auto-pedals type="bool" userarchive="y">0</auto-pedals>
-        </flight>
         <gear>
             <brake-parking>1</brake-parking>
         </gear>
@@ -270,10 +336,10 @@ Wim (performance specs)
         </aerotow>
         <rotor>
             <pitch type="double">-0.5</pitch>
-        <roll type="double">0</roll>
-        <yaw type="double">0</yaw>
-        <brake>0</brake>
-             <reltarget>1</reltarget>
+	    <roll type="double">0</roll>
+	    <yaw type="double">0</yaw>
+	    <brake>0</brake>
+	         <reltarget>1</reltarget>
        <maxreltorque>1</maxreltorque>
         </rotor>
         <lighting>
@@ -281,121 +347,62 @@ Wim (performance specs)
         <instrument-lights type="double">1</instrument-lights>
         <cabin-lights type="double">1</cabin-lights>
         </lighting>
-        <doors>
-            <position-norm type="double" n="0">0.0</position-norm>
-            <open type="bool" n="0">0</open>
-            <position-norm type="double" n="1">0.0</position-norm>
-            <open type="bool" n="1">0</open>
-            <position-norm type="double" n="2">0.0</position-norm>
-            <open type="bool" n="2">0</open>
-            <position-norm type="double" n="3">0.0</position-norm>
-            <open type="bool" n="3">0</open>
-            <position-norm type="double" n="4">0.0</position-norm>
-            <open type="bool" n="4">0</open>
-            <position-norm type="double" n="5">0.0</position-norm>
-            <open type="bool" n="5">0</open>
-        </doors>
     </controls>
 
 <consumables>
     <fuel>
         <tank n="0">
-            <name>Fuel Tank</name>
+            <name>LH Tank</name>
             <empty type="bool">0</empty>
             <kill-when-empty type="bool">0</kill-when-empty>
-            <capacity-gal_us>280</capacity-gal_us>
-            <level-lbs>1000</level-lbs>
-            <selected>1</selected>
+            <capacity-gal_us>140</capacity-gal_us>
+            <level-lbs>500</level-lbs>
+        </tank>
+        <tank n="1">
+            <name>RH Tank</name>
+            <empty type="bool">0</empty>
+            <kill-when-empty type="bool">0</kill-when-empty>
+            <capacity-gal_us>140</capacity-gal_us>
+            <level-lbs>500</level-lbs>
         </tank>
     </fuel>
 </consumables>
 
-    <input>
-        <keyboard>
-            <key n="79">
-                <name>O</name>
-                <desc>Open aerotow hook</desc>
-                <binding>
-                    <command>property-assign</command>
-                    <property>/sim/hitches/aerotow/open</property>
-                    <value type="bool">true</value>
-                </binding>
-            </key>
-            <key n="111">
-                <name>o</name>
-                <desc>Lock aerotow hook</desc>
-                <binding>
-                    <command>property-assign</command>
-                    <property>/sim/hitches/aerotow/open</property>
-                    <value type="bool">false</value>
-                </binding>
-            </key>
-        </keyboard>
-    </input>
+<input>
+	<keyboard include="Systems/keyboard.xml"/>
+</input>
 
     <instrumentation>
-
-        <mk-viii>                             <!-- http://wiki.flightgear.org/index.php/GPWS -->
-            <serviceable>true</serviceable>    <!-- EGPWS_ENABLE -->
-            <configuration-module>
-                <category-1>   1 </category-1>  <!-- AIRCRAFT_MODE_TYPE_SELECT -->
-                <category-8>                    <!-- RADIO_ALTITUDE_INPUT_SELECT -->
-                    3 <!-- YASim --> 
-                </category-8>
-            </configuration-module>
-            <inputs>                           <!-- Module I/O -->
-                <arinc429>
-                    <decision-height-ncd> false </decision-height-ncd>
-                    <decision-height> 200 </decision-height>
-                </arinc429>
-            </inputs>
-            <speaker>
-                <volume>0.5</volume>
-            </speaker>
-        </mk-viii>
-
-
+		<!-- Flightgear Rallye Watch  -->
+		<frw>
+			<running type="bool">0</running>
+			<btn-mode type="bool">0</btn-mode>
+			<btn-reset type="bool">0</btn-reset>
+			<btn-start-stop type="bool">0</btn-start-stop>
+			<flight-time>
+				<start-time type="double">0</start-time>
+				<accu type="double">0</accu>
+				<total type="double">0</total>
+				<hours type="int">0</hours>
+				<minutes type="int">0</minutes>
+				<seconds type="int">0</seconds>
+			</flight-time>
+		</frw>
         <tcas>
             <serviceable type="bool">true</serviceable>
             <inputs>
                 <mode type="int">3</mode>       <!-- 0=off, 1=standby, 2=TA-only, 3=auto(TA/RA) -->
             </inputs>
-            <!--voice>
-                <file-prefix type="string">Sounds/tcas/</file-prefix>
-            </voice-->
-            <speaker>                           <!-- Speaker Configuration -->
-                <max-dist type="double">2</max-dist>        <!-- Max. distance where speaker is heard -->
-                <reference-dist type="double">1</reference-dist> <!-- Distance to pilot -->
-                <volume type="double"> 1 </volume>          <!-- Volume at reference distance -->
+            <speaker>
+                <max-dist>2</max-dist>
+                <reference-dist>1</reference-dist>
+                <volume>1.0</volume>
             </speaker>
-            <range type="int">3</range>
         </tcas>
-
-        <tcas-display>
-            <radar-texture-path type="string">Aircraft/Sikorsky-76C/Models/Instruments/TCAS/tcas-display.png</radar-texture-path>
-            <symbol-texture-path type="string">Aircraft/Sikorsky-76C/Models/Instruments/TCAS/symbols.png</symbol-texture-path>
-            <font>
-                <color>
-                    <red type="float">0.7</red>
-                    <green type="float">0.7</green>
-                    <blue type="float">0.7</blue>
-                    <alpha type="float">1</alpha>
-                </color>
-                <name type="string">helvetica_bold.txf</name>
-                <size type="float">14</size>
-                <line-spacing type="float">0.01</line-spacing>
-            </font>
+        <gsdi>
             <serviceable type="bool">true</serviceable>
-            <range type="int" archive="y">3</range>
-            <aircraft-heading-up type="bool">true</aircraft-heading-up>
-            <heading-up-deg type="float">0.01</heading-up-deg>
-            <x-center type="float">0.5</x-center>
-            <y-center type="float">0.5</y-center>
-            <display>
-            </display>
-            <line-width type="double">3</line-width>
-        </tcas-display>
-
+            <on type="bool">false</on>
+        </gsdi>
         <radar>
             <switch type="string" >off</switch>
             <switch-pos type="int">0</switch-pos>
@@ -405,7 +412,7 @@ Wim (performance specs)
                 <pos type="bool" >true</pos>
                 <data type="bool" >false</data>
                 <centre type="bool" >true</centre>
-        <symbol type="bool" >true</symbol>
+				<symbol type="bool" >true</symbol>
                 <tcas type="bool" >true</tcas>
             </display-controls>
             <serviceable type="bool">true</serviceable>
@@ -444,15 +451,15 @@ Wim (performance specs)
             <heading-marker type="bool" >true</heading-marker>
             <limit-deg type="int">180</limit-deg>
         </radar>
-    <standby-altimeter>
-        <serviceable type="bool">1</serviceable>
-    </standby-altimeter>
-    <encoder>
-        <serviceable type="bool">1</serviceable>
-    </encoder>
-    <transponder>
-        <id-code>1200</id-code>
-    </transponder>
+	<standby-altimeter>
+		<serviceable type="bool">1</serviceable>
+	</standby-altimeter>
+	<encoder>
+		<serviceable type="bool">1</serviceable>
+	</encoder>
+	<transponder>
+		<id-code>1200</id-code>
+	</transponder>
     <filter-monitor>
         <test type="bool">0</test>
         <life n="0">0.1</life>
@@ -460,31 +467,36 @@ Wim (performance specs)
     </filter-monitor>
     </instrumentation>
 
-    <autopilot>
-        <locks>
-            <heading>SBY</heading>
-            <altitude>SBY</altitude>
-            <heading-arm type="string"></heading-arm>
-            <altitude-arm type="string"></altitude-arm>
-            <AP type="int">0</AP>
-            <FD type="int">0</FD>
-        </locks>
-        <settings>
-            <target-vs type="int">0</target-vs>
-            <heading-bug-deg type="int">0</heading-bug-deg>
-        </settings>
-    </autopilot>
-
     <nasal>
         <s76c>
             <file>Aircraft/Sikorsky-76C/Nasal/Electrical.nas</file>
+            <!--file>Aircraft/Sikorsky-76C/Nasal/flightdirector.nas</file-->
             <file>Aircraft/Sikorsky-76C/Nasal/RTU4200.nas</file>
+            <file>Aircraft/Sikorsky-76C/Nasal/registration.nas</file>
             <file>Aircraft/Sikorsky-76C/Nasal/S76C.nas</file>
+            <file>Aircraft/Sikorsky-76C/Nasal/mk-S76C.nas</file>
+            <file>Aircraft/Sikorsky-76C/Nasal/mk-tcas.nas</file>
         </s76c>
-        <radar><file>Aircraft/Instruments-3d/RDR-160/RDR160.nas</file></radar>
-        <m877><file>Aircraft/Instruments-3d/clock/M877/M877.nas</file></m877>
-        <dialogs><file>Aircraft/Sikorsky-76C/Nasal/dialogs.nas</file></dialogs>
-        <FD><file>Aircraft/Sikorsky-76C/Nasal/spz700.nas</file></FD>
+        <frw>
+            <file>Aircraft/Sikorsky-76C/Nasal/mk-frw.nas</file>
+        </frw>
+        <m877>
+            <file>Aircraft/Instruments-3d/clock/M877/M877.nas</file>
+        </m877>
+	    <dual_control_tools>
+	     <file>Aircraft/Sikorsky-76C/Nasal/DualControl/dual-control-tools.nas</file>
+	    </dual_control_tools>
+	    <aircraft_dual_control>
+	     <file>Aircraft/Sikorsky-76C/Nasal/DualControl/s76c-dual-control.nas</file>
+	    </aircraft_dual_control>
+	    <dual_control>
+	     <file>Aircraft/Sikorsky-76C/Nasal/DualControl/pilot-dual-control.nas</file>
+	    </dual_control>
     </nasal>
+	
+    <!-- Dual control depend on this value -->
+    <dual-control>
+      <active type="bool">0</active>
+    </dual-control>
 
 </PropertyList>

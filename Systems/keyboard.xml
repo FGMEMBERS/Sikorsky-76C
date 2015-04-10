@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--###################################################################################
+		Lake of Constance Hangar :: M.Kraus
+		Sikorsky S76C for Flightgear January 2014
+		This file is licenced under the terms of the GNU General Public Licence V2 or later
+		###################################################################################
+-->
+
+<PropertyList>
+
+<key n="79">
+    <name>O</name>
+    <desc>Open aerotow hook</desc>
+    <binding>
+        <command>property-assign</command>
+        <property>/sim/hitches/aerotow/open</property>
+        <value type="bool">true</value>
+    </binding>
+</key>
+<key n="111">
+    <name>o</name>
+    <desc>Lock aerotow hook</desc>
+    <binding>
+        <command>property-assign</command>
+        <property>/sim/hitches/aerotow/open</property>
+        <value type="bool">false</value>
+    </binding>
+</key>
+<key n="60">
+  <name> > </name>
+  <desc>toggle pilot - panel view</desc>
+  <binding>
+		  <command>nasal</command>
+		  <script>s76c.changeView(9);</script>
+  </binding>
+</key>
+<key n="49">
+  <name>1</name>
+  <desc>Trim setting for takeoff</desc>
+  <binding>
+		  <command>nasal</command>
+		  <script>s76c.applyTrimWheelsZero();</script>
+  </binding>
+</key>
+<key n="50">
+  <name>2</name>
+  <desc>Trim setting for takeoff</desc>
+  <binding>
+		  <command>nasal</command>
+		  <script>s76c.applyTrimWheels();</script>
+  </binding>
+</key>
+
+<key n="262">
+	<name>F6</name>
+	<desc>toggle autopilot</desc>
+    <binding>
+  		  <command>nasal</command>
+  		  <script>s76c.toggle_autopilot();</script>
+    </binding>
+</key>
+
+<key n="263">
+	<name>F7</name>
+	<desc>Show map</desc>
+	<binding>
+	<command>dialog-show</command>
+	<dialog-name>map</dialog-name>
+	</binding>
+</key>
+
+<key n="264">
+	<name>F8</name>
+	<desc>Show map</desc>
+	<binding>
+	<command>dialog-show</command>
+	<dialog-name>route-manager</dialog-name>
+	</binding>
+</key>
+
+<key n="265">
+    <name>F9</name>
+    <desc>Pop up Fuel and Weight dialog</desc>
+	<command>dialog-show</command>
+	<binding>
+		<command>nasal</command>
+		<script>gui.showWeightDialog()</script>
+	</binding>
+</key>
+
+</PropertyList>

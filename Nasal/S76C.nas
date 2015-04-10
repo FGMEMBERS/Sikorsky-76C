@@ -2,8 +2,15 @@ aircraft.livery.init("Aircraft/Sikorsky-76C/Models/Liveries");
 var Cvolume=props.globals.getNode("/sim/sound/S76C/Cvolume",1);
 var Spitch=props.globals.getNode("/sim/sound/S76C/pitch",1);
 var Ovolume=props.globals.getNode("/sim/sound/S76C/Ovolume",1);
-var tcas_index=0;
-var tcas_list=[3,5,10,15,20,40];
+
+var LF_door = aircraft.door.new("controls/doors/LF-door", 1);
+var LR_door = aircraft.door.new("controls/doors/LR-door", 1);
+var RF_door = aircraft.door.new("controls/doors/RF-door", 1);
+var RR_door = aircraft.door.new("controls/doors/RR-door", 1);
+var LB_door = aircraft.door.new("controls/doors/LB-door", 1);
+var RB_door = aircraft.door.new("controls/doors/RB-door", 1);
+var ExtPwr_door = aircraft.door.new("controls/doors/ExtPwr-door", 2);
+
 ###########HelicopterEngine class ###############
 # ie: var Eng = Engine.new(engine number,rotor_prop,max_rpm);
 var Engine = {
@@ -23,7 +30,7 @@ var Engine = {
         m.T5.setDoubleValue(0);
         m.TQ = m.eng.getNode("TQ",1);
         m.TQ.setDoubleValue(0);
-        m.magneto = props.globals.getNode("controls/engines/engine["~eng_num~"]/ignition",1);
+        m.magneto = props.globals.getNode("controls/engines/engine["~eng_num~"]/magnetos",1);
         m.cutoff = props.globals.getNode("controls/engines/engine["~eng_num~"]/cutoff",1);
         m.rpm = m.eng.getNode("n2",1);
         m.n1 = m.eng.getNode("n1",1);
@@ -36,6 +43,10 @@ var Engine = {
         m.fuel_gph=m.eng.getNode("fuel-flow-gph",1);
         m.hpump=props.globals.getNode("systems/hydraulics/pump-psi["~eng_num~"]",1);
         m.hpump.setDoubleValue(0);
+		m.stall=props.globals.getNode("rotors/main/stall", 1);
+		m.stall_filtered=props.globals.getNode("rotors/main/stall-filtered", 1);
+        m.collective=props.globals.getNode("controls/engines/engine[0]/throttle");
+		m.delta_time=props.globals.getNode("/sim/time/delta-realtime-sec", 1);
     return m;
     },
 #### update ####
@@ -60,7 +71,21 @@ var Engine = {
         me.T5.setValue(t5);
         var tq = getprop("rotors/main/torque");
         me.TQ.setValue(tq * 0.002857);
-}, 
+		
+		# stall sound
+		var stall_val = 0;
+		var dt = me.delta_time.getValue();
+		var s = me.stall.getValue();
+		if (s < stall_val) {
+			var f = dt / (0.3 + dt);
+			stall_val = s * f + stall_val * (1 - f);
+		} else {
+			stall_val = s;
+		}
+		var c = me.collective.getValue();
+		me.stall_filtered.setDoubleValue(stall_val + 0.006 * (1 - c));
+
+		},
 
     update_fuel : func(gph){
         var gph_consumed = me.fuel_consumed.getValue();
@@ -70,7 +95,6 @@ var Engine = {
         }
         gph_consumed+=(gph_used * me.fdensity);
         me.fuel_consumed.setValue(gph_consumed);
-        if(me.fuel_dry.getValue())me.magneto.setValue(0);
        },
 };
 
@@ -89,6 +113,9 @@ setlistener("/sim/signals/fdm-initialized", func {
     setprop("/autopilot/settings/altitude-preset",0);
     print("Systems ... Check");
     settimer(update_systems,2);
+	
+	###  ONLY FOR DEV ###### 
+	settimer(func{setprop("sim/model/start-idling",1)},2);
 });
 
 controls.gearDown = func(v) {
@@ -121,12 +148,19 @@ setlistener("/gear/gear[1]/wow", func(gr){
 
 setlistener("/sim/model/start-idling", func(idle){
     if(idle.getBoolValue()){
-        Startup();
+    setprop("/controls/engines/engine/magnetos",1);
     }else{
-        Shutdown();
+    setprop("/controls/engines/engine/magnetos",0);
     }
 },0,0);
 
+setlistener("/controls/engines/engine/magnetos", func(strt){
+    if(strt.getValue() >0){
+    Startup();
+    }else{
+    Shutdown();
+    }
+},0,0);
 
 var Startup = func{
 setprop("controls/electric/engine[0]/generator",1);
@@ -135,7 +169,7 @@ setprop("controls/lighting/instrument-lights",1);
 setprop("controls/lighting/nav-lights",1);
 setprop("controls/lighting/beacon",1);
 setprop("controls/lighting/strobe",1);
-if(getprop("consumables/fuel/total-fuel-lbs")>2)setprop("controls/engines/engine[0]/ignition",1);
+setprop("controls/engines/engine[0]/magnetos",1);
 setprop("engines/engine[0]/running",1);
 }
 
@@ -145,16 +179,7 @@ setprop("controls/electric/battery-switch",0);
 setprop("controls/lighting/instrument-lights",0);
 setprop("controls/lighting/nav-lights",0);
 setprop("controls/lighting/beacon",0);
-setprop("controls/engines/engine[0]/ignition",0);
-}
-
-var tcas_range = func(x1){
-    tcas_index +=x1;
-    if(tcas_index<0)tcas_index=0;
-    if(tcas_index>5)tcas_index=5;
-    var x2=tcas_list[tcas_index];
-    setprop("/instrumentation/tcas/range",x2);
-    setprop("/instrumentation/tcas-display/range",x2);
+setprop("controls/engines/engine[0]/magnetos",0);
 }
 
 var flight_meter = func{
@@ -171,5 +196,20 @@ var update_systems = func {
     flight_meter();
 settimer(update_systems,0);
 }
+
+#############  for a smoother flight behavior ##########################
+setlistener("/controls/flight/aileron", func (position){
+    var position = position.getValue();
+	var np = math.round(position*position*position*10);
+	np = np/10;
+	interpolate("/controls/flight/manual-aileron", np,0.2);
+});
+
+setlistener("/controls/flight/rudder", func (position){
+    var position = position.getValue();
+	var np = math.round(position*position*position*100);
+	np = np/100;
+	interpolate("/controls/flight/manual-rudder", np,0.1);
+});
 
 

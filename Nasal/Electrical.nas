@@ -174,6 +174,10 @@ init_switches = func() {
     append(watt_list,0.5);
 
     append(switch_list,"controls/electric/avionics-switch");
+    append(output_list,"ai");
+    append(watt_list,0.2);
+
+    append(switch_list,"controls/electric/avionics-switch");
     append(output_list,"adf");
     append(watt_list,0.2);
 

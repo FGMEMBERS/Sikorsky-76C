@@ -5,12 +5,13 @@
 
     <animation>
         <type>select</type>
-        <object-name>RAlt.DHon</object-name>
+        <object-name>RAlt.DHon_0</object-name>
+        <object-name>RAlt.DHon_1</object-name>
         <condition>
             <less-than>
                 <property>position/gear-agl-ft</property>
                 <property>instrumentation/altimeter/DH</property>
-                </less-than>
+            </less-than>
         </condition>
     </animation>
 
@@ -57,5 +58,100 @@
             <z-m>0</z-m>
         </center>
     </animation>
+	
+    <animation>
+        <type>rotate</type>
+        <object-name>RAlt.knob</object-name>
+        <property>instrumentation/altimeter/DH</property>
+        <factor>1</factor>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+        <center>
+            <x-m>0</x-m>
+            <y-m>0.0286</y-m>
+            <z-m>-0.0277</z-m>
+        </center>
+    </animation>
+	
+	<animation>
+	  <type>pick</type>
+	  <object-name>RAlt.knob</object-name>
+	  <object-name>RAlt.face</object-name>
+	  <visible>true</visible>
+	    <action>
+	        <name>ralt_inc</name>
+	        <button>3</button>
+	        <repeatable>true</repeatable>
+	        <binding>
+	           <condition>
+	              <not><property>devices/status/keyboard/shift</property></not>
+	              <not><property>devices/status/keyboard/super</property></not>
+	           </condition>
+	            <command>property-adjust</command>
+	            <property>instrumentation/altimeter/DH</property>
+	            <step>10</step>
+	            <min>0</min>
+	            <max>2500</max>
+	            <wrap>false</wrap>
+	        </binding>
+	        <binding>
+	           <condition>
+	              <or>
+					  <property>devices/status/keyboard/shift</property>
+	              	  <property>devices/status/keyboard/super</property>
+			  	  </or>
+	           </condition>
+	            <command>property-adjust</command>
+	            <property>instrumentation/altimeter/DH</property>
+	            <step>100</step>
+	            <min>0</min>
+	            <max>2500</max>
+	            <wrap>false</wrap>
+	        </binding>		
+	    </action>
+	    <action>
+	        <name>ralt_dec</name>
+	        <button>4</button>
+	        <repeatable>true</repeatable>
+	        <binding>
+	           <condition>
+	              <not><property>devices/status/keyboard/shift</property></not>
+	              <not><property>devices/status/keyboard/super</property></not>
+	           </condition>
+	            <command>property-adjust</command>
+	            <property>instrumentation/altimeter/DH</property>
+	            <step>-10</step>
+	            <min>0</min>
+	            <max>2500</max>
+	            <wrap>false</wrap>
+	        </binding>
+	        <binding>
+	           <condition>
+	              <or>
+					  <property>devices/status/keyboard/shift</property>
+	              	  <property>devices/status/keyboard/super</property>
+			  	  </or>
+	           </condition>
+	            <command>property-adjust</command>
+	            <property>instrumentation/altimeter/DH</property>
+	            <step>-100</step>
+	            <min>0</min>
+	            <max>2500</max>
+	            <wrap>false</wrap>
+	        </binding>	
+	    </action>
+		  <action>
+		    <name>show alt</name>
+		    <button>0</button>
+		    <repeatable>true</repeatable>
+				<binding>
+					 <command>nasal</command>
+					 <script>s76c.show_alti();</script>
+				</binding>
+		  </action>
+	</animation>
 
 </PropertyList>

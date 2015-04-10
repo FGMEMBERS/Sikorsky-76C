@@ -7,10 +7,29 @@
         <type>select</type>
         <object-name>AP.ap1.lit</object-name>
         <condition>
-           <equals>
-                <property>autopilot/locks/AP</property>
-                <value>1</value>
-            </equals>
+			<or>
+				<equals>
+           		 	<property>autopilot/locks/altitude</property>
+					<value type="string">altitude-hold</value>
+				</equals>
+				<equals>
+           		 	<property>autopilot/locks/heading</property>
+					<value type="string">true-heading-hold</value>
+				</equals>
+				<equals>
+           		 	<property>autopilot/locks/heading</property>
+					<value type="string">nav1-hold</value>
+				</equals>
+				<equals>
+           		 	<property>autopilot/locks/heading</property>
+					<value type="string">dg-heading-hold</value>
+				</equals>
+				<equals>
+           		 	<property>autopilot/locks/heading</property>
+					<value type="string">wing-leveler</value>
+				</equals>
+				<property>autopilot/locks/test</property>
+			</or>
         </condition>
     </animation>
 
@@ -18,10 +37,13 @@
         <type>select</type>
         <object-name>AP.ap2.lit</object-name>
         <condition>
-            <equals>
-                <property>autopilot/locks/AP</property>
-                <value>2</value>
-            </equals>
+			<or>
+				<equals>
+           		 	<property>autopilot/locks/AP-selected</property>
+					<value>2</value>
+				</equals>
+			<property>autopilot/locks/test</property>
+			</or>
         </condition>
     </animation>
 
@@ -29,10 +51,13 @@
         <type>select</type>
         <object-name>AP.fd1.lit</object-name>
         <condition>
-            <equals>
-                <property>autopilot/locks/FD</property>
-                <value>1</value>
-            </equals>
+			<or>
+				<equals>
+            		<property>autopilot/locks/FD-enabled</property>
+					<value>1</value>
+				</equals>
+				<property>autopilot/locks/test</property>
+			</or>
         </condition>
     </animation>
 
@@ -40,62 +65,65 @@
         <type>select</type>
         <object-name>AP.fd2.lit</object-name>
         <condition>
-            <equals>
-                <property>autopilot/locks/FD</property>
-                <value>2</value>
-            </equals>
+			<or>
+				<equals>
+            		<property>autopilot/locks/FD-enabled</property>
+					<value>2</value>
+				</equals>
+				<property>autopilot/locks/test</property>
+			</or>
         </condition>
     </animation>
 
-    <animation>
+	<animation>
         <type>select</type>
         <object-name>AP.coll.lit</object-name>
         <condition>
-            <or>
-                <property>autopilot/locks/collective</property>
-                <property>autopilot/locks/test</property>
-            </or>
-        </condition>
+			<or>
+				<property>autopilot/locks/collective</property>
+				<property>autopilot/locks/test</property>
+			</or>
+		</condition>
     </animation>
 
-    <animation>
+	<animation>
         <type>select</type>
         <object-name>AP.cpl.lit</object-name>
         <condition>
-            <or>
-                <property>autopilot/locks/coupled</property>
-                <property>autopilot/locks/test</property>
-            </or>
-        </condition>
+			<or>
+				<property>autopilot/locks/couple</property>
+				<property>autopilot/locks/test</property>
+			</or>
+		</condition>
     </animation>
 
-    <animation>
+	<animation>
         <type>select</type>
         <object-name>AP.radalt.lit</object-name>
         <condition>
-            <or>
-                <property>autopilot/locks/radalt</property>
-                <property>autopilot/locks/test</property>
-            </or>
-        </condition>
+			<or>
+				<property>autopilot/locks/radalt</property>
+				<property>autopilot/locks/test</property>
+			</or>
+		</condition>
     </animation>
 
-    <animation>
+	<animation>
         <type>select</type>
         <object-name>AP.velhld.lit</object-name>
         <condition>
-            <or>
-                <property>autopilot/locks/velocity-hold</property>
-                <property>autopilot/locks/test</property>
-            </or>
-        </condition>
+			<or>
+				<property>autopilot/locks/velocity-hold</property>
+				<property>autopilot/locks/test</property>
+			</or>
+		</condition>
     </animation>
 
-    <animation>
+	<animation>
         <type>select</type>
         <condition>
-            <property>autopilot/locks/test</property>
-        </condition>
+			<property>autopilot/locks/test</property>
+		</condition>
         <object-name>AP.test.lit</object-name>
         <object-name>AP.btn7.lit</object-name>
     </animation>
@@ -107,13 +135,25 @@
         <action>
             <button>0</button>
             <binding>
-                <command>nasal</command>
-                <script>FD.input("AP1");</script>
+              <!--command>nasal</command>
+              <script>s76c.FlDr.toggle_autopilot(1);</script-->
+		  	  <command>nasal</command>
+		        <script><![CDATA[
+		  		  if(getprop("/autopilot/locks/heading") == ""){
+		  	  		setprop("/autopilot/locks/heading", "wing-leveler");		  
+		  		  }else{
+		  	  		setprop("/autopilot/locks/altitude", "");
+		  	  		setprop("/autopilot/locks/heading", "");
+		  	  		setprop("/autopilot/locks/speed", "");
+		  	  		setprop("/autopilot/locks/collective", 0);
+		  	  		setprop("/autopilot/locks/couple", 0);		  
+		  		  }
+		        ]]></script>
             </binding>
         </action>
     </animation>
 
-    <animation>
+    <!--animation>
         <type>pick</type>
         <object-name>AP.ap2</object-name>
         <action>
@@ -121,24 +161,24 @@
             <repeatable>false</repeatable>
             <binding>
                 <command>nasal</command>
-                <script>FD.input("AP2");</script>
+                <script>s76c.FlDr.toggle_autopilot(2);</script>
             </binding>
         </action>
-    </animation>
+    </animation-->
 
-    <animation>
+    <!--animation>
         <type>pick</type>
         <object-name>AP.fd1</object-name>
         <action>
             <button>0</button>
             <binding>
                 <command>nasal</command>
-                <script>FD.input("FD1");</script>
+                <script>s76c.FlDr.toggle_fd(1);</script>
             </binding>
         </action>
-    </animation>
+    </animation-->
 
-    <animation>
+    <!--animation>
         <type>pick</type>
         <object-name>AP.fd2</object-name>
         <action>
@@ -146,10 +186,10 @@
             <repeatable>false</repeatable>
             <binding>
                 <command>nasal</command>
-                <script>FD.input("FD2");</script>
+                <script>s76c.FlDr.toggle_fd(2);</script>
             </binding>
         </action>
-    </animation>
+    </animation-->
 
     <animation>
         <type>pick</type>
@@ -172,12 +212,12 @@
             <repeatable>false</repeatable>
             <binding>
                 <command>property-toggle</command>
-                <property>autopilot/locks/coupled</property>
+                <property>autopilot/locks/couple</property>
             </binding>
         </action>
     </animation>
 
-    <animation>
+    <!--animation>
         <type>pick</type>
         <object-name>AP.radalt</object-name>
         <action>
@@ -201,7 +241,7 @@
                 <property>autopilot/locks/velocity-hold</property>
             </binding>
         </action>
-    </animation>
+    </animation-->
 
     <animation>
         <type>pick</type>
@@ -211,15 +251,15 @@
             <binding>
                 <command>property-assign</command>
                 <property>autopilot/locks/test</property>
-                <value>1</value>
+				<value>1</value>
             </binding>
-            <mod-up>
-                <binding>
-                    <command>property-assign</command>
-                    <property>autopilot/locks/test</property>
-                    <value>0</value>
-                </binding>
-            </mod-up>
+			<mod-up>
+				<binding>
+                	<command>property-assign</command>
+                	<property>autopilot/locks/test</property>
+					<value>0</value>
+            	</binding>
+			</mod-up>
         </action>
     </animation>
 

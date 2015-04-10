@@ -4,32 +4,96 @@
 
     <path>cabin.ac</path>
 
+    <animation>
+      <type>material</type>
+      <object-name>Panel</object-name>
+      <object-name>Cube</object-name>
+      <condition>
+        <not><property>/sim/rendering/rembrandt/enabled</property></not>
+      </condition>    
+      <emission>
+        <red>0.4</red>
+        <green>0.4</green>
+        <blue>1.4</blue>
+        <factor-prop>sim/multiplay/generic/float[11]</factor-prop>
+      </emission>
+    </animation>
+
+    <animation>
+      <type>material</type>
+      <object-name>LF.doorpanel</object-name>
+      <object-name>Lr.doorpanel</object-name>
+      <object-name>RF.doorpanel</object-name>
+      <object-name>Rr.doorpanel</object-name>
+      <object-name>S76C.cabin.001</object-name>
+      <object-name>seat</object-name>
+      <object-name>seat.001</object-name>
+      <condition>
+        <not><property>/sim/rendering/rembrandt/enabled</property></not>
+      </condition>    
+      <emission>
+        <red>0.3</red>
+        <green>0.3</green>
+        <blue>0.5</blue>
+        <factor-prop>sim/multiplay/generic/float[11]</factor-prop>
+      </emission>
+    </animation>
+	
     <model>
-        <name>hsi1</name>
-        <path>Aircraft/Sikorsky-76C/Models/Instruments/EHSI/ehsi.xml</path>
+        <path>Aircraft/Sikorsky-76C/Models/Instruments/ehsi.xml</path>
         <offsets>
-            <x-m>-3.024</x-m>
+            <x-m>-3.027</x-m>
             <y-m>-0.450</y-m>
-            <z-m>-1.665</z-m>
+            <z-m>-1.668</z-m>
             <pitch-deg>-10.0</pitch-deg>
         </offsets>
     </model>
 
     <model>
-        <name>hsi2</name>
-        <path>Aircraft/Sikorsky-76C/Models/Instruments/EHSI/ehsi.xml</path>
+        <path>Aircraft/Sikorsky-76C/Models/Instruments/ehsi.xml</path>
         <offsets>
-            <x-m>-3.024</x-m>
+            <x-m>-3.027</x-m>
             <y-m>0.450</y-m>
-            <z-m>-1.665</z-m>
+            <z-m>-1.668</z-m>
             <pitch-deg>-10.0</pitch-deg>
         </offsets>
     </model>
-<!--
+	
     <model>
-        <path>Aircraft/Sikorsky-76C/Models/Instruments/eadi.xml</path>
+        <path>Aircraft/Sikorsky-76C/Models/Instrumentation/frw/frw.xml</path>
         <offsets>
-            <x-m>-3.051</x-m>
+            <x-m>-3.027</x-m>
+            <y-m>0.58</y-m>
+            <z-m>-1.51</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+	
+    <model>
+        <path>Aircraft/Sikorsky-76C/Models/Instrumentation/dme/dme.xml</path>
+        <offsets>
+            <x-m>-3.027</x-m>
+            <y-m>0.58</y-m>
+            <z-m>-1.585</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+	
+    <model>
+        <path>Aircraft/Sikorsky-76C/Models/Instruments/trim/trim.xml</path>
+        <offsets>
+            <x-m>-3.024</x-m>
+            <y-m>0.58</y-m>
+            <z-m>-1.668</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+		<!--path>Aircraft/Sikorsky-76C/Models/Instruments/eadi.xml</path-->
+        <path>Aircraft/Sikorsky-76C/Models/Instrumentation/ai/ai.xml</path>
+        <offsets>
+            <x-m>-3.08</x-m>
             <y-m>-0.450</y-m>
             <z-m>-1.532</z-m>
             <pitch-deg>-10.0</pitch-deg>
@@ -37,60 +101,47 @@
     </model>
 
     <model>
-        <path>Aircraft/Sikorsky-76C/Models/Instruments/eadi.xml</path>
+		<!--path>Aircraft/Sikorsky-76C/Models/Instruments/eadi.xml</path-->
+        <path>Aircraft/Sikorsky-76C/Models/Instrumentation/ai/ai.xml</path>
         <offsets>
-            <x-m>-3.051</x-m>
+            <x-m>-3.08</x-m>
             <y-m>0.450</y-m>
             <z-m>-1.532</z-m>
             <pitch-deg>-10.0</pitch-deg>
         </offsets>
     </model>
--->
 
     <model>
-        <name>tcas</name>
-        <path>Aircraft/Sikorsky-76C/Models/Instruments/TCAS/TID66A.xml</path>
+        <path>Aircraft/Sikorsky-76C/Models/Instruments/iids.xml</path>
+        <offsets>
+            <x-m>-3.033</x-m>
+            <y-m>-0.265</y-m>
+            <z-m>-1.632</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <path>Aircraft/Sikorsky-76C/Models/Instruments/iids.xml</path>
+        <offsets>
+            <x-m>-3.033</x-m>
+            <y-m>0.265</y-m>
+            <z-m>-1.632</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <path>Aircraft/Sikorsky-76C/Models/Instruments/iids2.xml</path>
         <offsets>
             <x-m>-3.049</x-m>
-            <y-m>-0.224</y-m>
-            <z-m>-1.509</z-m>
-            <pitch-deg>-10.0</pitch-deg>
-        </offsets>
-    </model>
-
-    <model>
-        <name>iids1</name>
-        <path>Aircraft/Sikorsky-76C/Models/Instruments/IIDS/iids.xml</path>
-        <offsets>
-            <x-m>-3.027</x-m>
-            <y-m>-0.269</y-m>
-            <z-m>-1.629</z-m>
-            <pitch-deg>-10.0</pitch-deg>
-        </offsets>
-    </model>
-
-    <model>
-        <name>iids2</name>
-        <path>Aircraft/Sikorsky-76C/Models/Instruments/IIDS/iids.xml</path>
-        <offsets>
-            <x-m>-3.027</x-m>
-            <y-m>0.269</y-m>
-            <z-m>-1.629</z-m>
-            <pitch-deg>-10.0</pitch-deg>
-        </offsets>
-    </model>
-
-    <model>
-        <name>iids3</name>
-        <path>Aircraft/Sikorsky-76C/Models/Instruments/IIDS/iids2.xml</path>
-        <offsets>
-            <x-m>-3.043</x-m>
             <y-m>-0.017</y-m>
-            <z-m>-1.538</z-m>
+            <z-m>-1.539</z-m>
             <pitch-deg>-10.0</pitch-deg>
         </offsets>
     </model>
 
+	<!--
     <model>
         <path>Aircraft/Instruments-3d/RDR-160/RDR-160.xml</path>
         <offsets>
@@ -100,20 +151,77 @@
             <pitch-deg>-10.0</pitch-deg>
         </offsets>
     </model>
+    -->
 
-<!--
+    <model>
+        <path>Aircraft/Sikorsky-76C/Models/Instruments/radar/radar.xml</path>
+        <offsets>
+            <x-m>-3.021</x-m>
+            <y-m>0.09</y-m>
+            <z-m>-1.7</z-m>
+            <pitch-deg>-10</pitch-deg>
+        </offsets>
+    </model>
+	
+    <model>
+        <path>Aircraft/Sikorsky-76C/Models/Instruments/gsdi/gsdi.xml</path>
+        <offsets>
+            <x-m>-3.021</x-m>
+            <y-m>-0.08</y-m>
+            <z-m>-1.7</z-m>
+            <pitch-deg>-10</pitch-deg>
+        </offsets>
+    </model>
 
+    <model>
+        <path>Aircraft/Sikorsky-76C/Models/Instruments/asi.xml</path>
+        <offsets>
+            <x-m>-3.053</x-m>
+            <y-m>0.221</y-m>
+            <z-m>-1.510</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <path>Aircraft/Sikorsky-76C/Models/Instruments/alt.xml</path>
+        <offsets>
+            <x-m>-3.053</x-m>
+            <y-m>0.316</y-m>
+            <z-m>-1.510</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
 
     <model>
         <path>Aircraft/Sikorsky-76C/Models/Instruments/tcas.xml</path>
         <offsets>
-            <x-m>-3.048</x-m>
-            <y-m>-0.224</y-m>
-            <z-m>-1.506</z-m>
+            <x-m>-3.053</x-m>
+            <y-m>-0.219</y-m>
+            <z-m>-1.510</z-m>
             <pitch-deg>-10.0</pitch-deg>
         </offsets>
     </model>
--->
+
+    <model>
+        <path>Aircraft/Sikorsky-76C/Models/Instruments/spz700.xml</path>
+        <offsets>
+            <x-m>-3.009</x-m>
+            <y-m>-0.310</y-m>
+            <z-m>-1.757</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <path>Aircraft/Sikorsky-76C/Models/Instruments/spz700.xml</path>
+        <offsets>
+            <x-m>-3.009</x-m>
+            <y-m>0.310</y-m>
+            <z-m>-1.757</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
 
     <model>
         <path>Aircraft/Sikorsky-76C/Models/Instruments/standby-ai.xml</path>
@@ -185,101 +293,47 @@
         </offsets>
     </model>
 
-
-<animation>
-    <type>select</type>
-    <object-name>tcas</object-name>
-    <object-name>iids1</object-name>
-    <object-name>iids2</object-name>
-    <object-name>iids3</object-name>
-    <object-name>hsi1</object-name>
-    <object-name>hsi2</object-name>
-    <condition>
-        <greater-than>
-            <property>systems/electrical/volts</property>
-            <value>15</value>
-            </greater-than>
-    </condition>
-</animation>
-
+    <model>
+        <path>Aircraft/Sikorsky-76C/Models/Instruments/gear-ctl.xml</path>
+        <offsets>
+            <x-m>-2.975</x-m>
+            <y-m>0.210</y-m>
+            <z-m>-1.871</z-m>
+            <pitch-deg>-20.0</pitch-deg>
+        </offsets>
+    </model>
 <!--   Pedestal   -->
 
-<!-- ric -->
 
-<animation>
-    <type>pick</type>
-    <object-name>RIC.crs1</object-name>
-    <object-name>RIC.crs2</object-name>
-    <action>
-        <button>0</button>
-        <repeatable>false</repeatable>
-        <binding>
-            <command>property-assign</command>
-            <property>instrumentation/nav/radials/selected-deg</property>
-            <property>orientation/heading-magnetic-deg</property>
-        </binding>
-    </action>
-    <action>
-        <button>3</button>
-        <binding>
-            <command>property-adjust</command>
-            <property>instrumentation/nav/radials/selected-deg</property>
-            <step>1</step>
-            <min>0</min>
-            <max>360</max>
-            <wrap>1</wrap>
-        </binding>
-    </action>
-    <action>
-        <button>4</button>
-        <binding>
-            <command>property-adjust</command>
-            <property>instrumentation/nav/radials/selected-deg</property>
-            <step>-1</step>
-            <min>0</min>
-            <max>360</max>
-            <wrap>1</wrap>
-        </binding>
-    </action>
-</animation>
+    <model>
+        <path>Aircraft/Sikorsky-76C/Models/Instruments/rtu4200-1.xml</path>
+        <offsets>
+            <x-m>-2.855</x-m>
+            <y-m>0.074</y-m>
+            <z-m>-1.825</z-m>
+            <pitch-deg>-85.0</pitch-deg>
+        </offsets>
+    </model>
 
-<animation>
-    <type>pick</type>
-    <object-name>RIC.hdg</object-name>
-    <action>
-        <button>0</button>
-        <repeatable>false</repeatable>
-        <binding>
-            <command>property-assign</command>
-            <property>autopilot/settings/heading-bug-deg</property>
-            <property>/orientation/heading-magnetic-deg</property>
-        </binding>
-    </action>
-    <action>
-        <button>3</button>
-        <binding>
-            <command>property-adjust</command>
-            <property>autopilot/settings/heading-bug-deg</property>
-            <step>1</step>
-            <min>0</min>
-            <max>360</max>
-            <wrap>true</wrap>
-        </binding>
-    </action>
-    <action>
-        <button>4</button>
-        <binding>
-            <command>property-adjust</command>
-            <property>autopilot/settings/heading-bug-deg</property>
-            <step>-1</step>
-            <min>0</min>
-            <max>360</max>
-            <wrap>true</wrap>
-        </binding>
-    </action>
-</animation>
+    <model>
+        <path>Aircraft/Sikorsky-76C/Models/Instruments/rtu4200-2.xml</path>
+        <offsets>
+            <x-m>-2.855</x-m>
+            <y-m>-0.074</y-m>
+            <z-m>-1.825</z-m>
+            <pitch-deg>-85.0</pitch-deg>
+        </offsets>
+    </model>
 
-
+    <model>
+        <path>Aircraft/Sikorsky-76C/Models/Instruments/RIC.xml</path>
+        <offsets>
+            <x-m>-2.622</x-m>
+            <y-m>-0.0745</y-m>
+            <z-m>-1.844</z-m>
+            <pitch-deg>-85.0</pitch-deg>
+        </offsets>
+    </model>
 
     <model>
         <path>Aircraft/Sikorsky-76C/Models/Instruments/ap-ctl.xml</path>
@@ -287,6 +341,27 @@
             <x-m>-2.582</x-m>
             <y-m>-0.0745</y-m>
             <z-m>-1.848</z-m>
+            <pitch-deg>-85.0</pitch-deg>
+        </offsets>
+    </model>
+	
+	<!-- second time for easy setting during the flight -->
+    <model>
+        <path>Aircraft/Sikorsky-76C/Models/Instruments/ap-ctl.xml</path>
+        <offsets>
+            <x-m>-2.95</x-m>
+            <y-m> 0.073</y-m>
+            <z-m>-1.816</z-m>
+            <pitch-deg>-85.0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <path>Aircraft/Sikorsky-76C/Models/Instruments/lightpanel.xml</path>
+        <offsets>
+            <x-m>-2.682</x-m>
+            <y-m>0.033</y-m>
+            <z-m>-1.84</z-m>
             <pitch-deg>-85.0</pitch-deg>
         </offsets>
     </model>
@@ -321,87 +396,7 @@
         </offsets>
     </model>
 
-    <animation>
-        <type>range</type>
-        <object-name>iids1</object-name>
-        <object-name>iids2</object-name>
-        <object-name>iids3</object-name>
-        <object-name>hsi1</object-name>
-        <object-name>hsi2</object-name>
-        <min-m>0</min-m>
-        <max-m>1.5</max-m>
-    </animation>
-
 <!--####    Instrumentation    ####-->
-
-    <animation>
-        <type>pick</type>
-        <object-name>tcas.up</object-name>
-        <action>
-            <button>0</button>
-            <binding>
-                <command>nasal</command>
-                <script>s76c.tcas_range(1)</script>
-            </binding>
-        </action>
-    </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>tcas.dn</object-name>
-        <action>
-            <button>0</button>
-            <binding>
-                <command>nasal</command>
-                <script>s76c.tcas_range(-1)</script>
-            </binding>
-        </action>
-    </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>Baro.knob</object-name>
-        <action>
-            <button>0</button>
-            <binding>
-            <command>property-assign</command>
-            <property>instrumentation/altimeter/setting-inhg</property>
-            <value>29.92</value>
-        </binding>
-        </action>
-    </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>Baro.knob</object-name>
-        <action>
-            <button>3</button>
-            <binding>
-                <command>property-adjust</command>
-                <property>instrumentation/altimeter/setting-inhg</property>
-                <step>0.01</step>
-                <min>28.10</min>
-                <max>31.00</max>
-                <wrap>0</wrap>
-            </binding>
-        </action>
-    </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>Baro.knob</object-name>
-        <action>
-            <button>4</button>
-            <binding>
-                <command>property-adjust</command>
-                <property>instrumentation/altimeter/setting-inhg</property>
-                <step>-0.01</step>
-                <min>28.10</min>
-                <max>31.00</max>
-                <wrap>0</wrap>
-            </binding>
-        </action>
-    </animation>
 
     <animation>
         <type>pick</type>
@@ -409,9 +404,9 @@
         <action>
             <button>0</button>
             <binding>
-                <command>property-toggle</command>
-                <property>controls/doors/open[3]</property>
-            </binding>
+            <command>nasal</command>
+            <script>s76c.RR_door.toggle()</script>
+        </binding>
         </action>
     </animation>
 
@@ -421,9 +416,9 @@
         <action>
             <button>0</button>
             <binding>
-                <command>property-toggle</command>
-                <property>controls/doors/open[2]</property>
-            </binding>
+            <command>nasal</command>
+            <script>s76c.LR_door.toggle()</script>
+        </binding>
         </action>
     </animation>
 
@@ -433,9 +428,9 @@
         <action>
             <button>0</button>
             <binding>
-                <command>property-toggle</command>
-                <property>controls/doors/open[0]</property>
-            </binding>
+            <command>nasal</command>
+            <script>s76c.LF_door.toggle()</script>
+        </binding>
         </action>
     </animation>
 
@@ -445,493 +440,10 @@
         <action>
             <button>0</button>
             <binding>
-                <command>property-toggle</command>
-                <property>controls/doors/open[1]</property>
-            </binding>
+            <command>nasal</command>
+            <script>s76c.RF_door.toggle()</script>
+        </binding>
         </action>
-    </animation>
-
-<!-- gear controlr-->
-
-    <animation>
-        <type>select</type>
-        <object-name>Glamp.N</object-name>
-        <condition>
-            <equals>
-                <property>gear/gear[0]/position-norm</property>
-                <value>1</value>
-            </equals>
-        </condition>
-    </animation>
-
-    <animation>
-        <type>select</type>
-        <object-name>Glamp.L</object-name>
-        <condition>
-            <equals>
-                <property>gear/gear[1]/position-norm</property>
-                <value>1</value>
-            </equals>
-        </condition>
-    </animation>
-
-    <animation>
-        <type>select</type>
-        <object-name>Glamp.R</object-name>
-        <condition>
-            <equals>
-                <property>gear/gear[2]/position-norm</property>
-                <value>1</value>
-            </equals>
-        </condition>
-    </animation>
-
-    <animation>
-        <type>select</type>
-        <object-name>Glamp.UNLKD</object-name>
-        <condition>
-            <and>
-        <greater-than>
-            <property>gear/gear[0]/position-norm</property>
-            <value>0</value>
-        </greater-than>
-        <less-than>
-            <property>gear/gear[0]/position-norm</property>
-            <value>1.0</value>
-        </less-than>
-            </and>
-        </condition>
-    </animation>
-
-<!--####    Controls    ####-->
-
-    <animation>
-        <type>rotate</type>
-        <object-name>GearLever</object-name>
-        <property>controls/gear/gear-down</property>
-        <factor>20</factor>
-        <center>
-            <x-m>-3.058</x-m>
-            <y-m>0</y-m>
-            <z-m>-1.932</z-m>
-        </center>
-        <axis>
-            <x>0.0</x>
-            <y>1.0</y>
-            <z>0.0</z>
-        </axis>
-    </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>GearLever</object-name>
-        <action>
-            <button>0</button>
-            <repeatable>false</repeatable>
-            <binding>
-                <command>nasal</command>
-                <script>controls.gearDown(-1)</script>
-            </binding>
-            <mod-up>
-                <binding>
-                    <command>nasal</command>
-                    <script>controls.gearDown(0)</script>
-                </binding>
-            </mod-up>
-        </action>
-    </animation>
-
-<!-- SPZ-700 -->
-
-    <animation>
-        <type>select</type>
-        <object-name>SPZ.hdg.on</object-name>
-        <condition>
-            <equals>
-                <property>autopilot/locks/heading</property>
-                <value>HDG</value>
-            </equals>
-        </condition>
-    </animation>
-
-    <animation>
-        <type>select</type>
-        <object-name>SPZ.vs.on</object-name>
-        <condition>
-            <equals>
-                <property>autopilot/locks/altitude</property>
-                <value>VS</value>
-            </equals>
-        </condition>
-    </animation>
-
-    <animation>
-        <type>select</type>
-        <object-name>SPZ.alt.on</object-name>
-        <condition>
-            <equals>
-                <property>autopilot/locks/altitude</property>
-                <value>ALT</value>
-            </equals>
-        </condition>
-    </animation>
-
-    <animation>
-        <type>select</type>
-        <object-name>SPZ.nav.arm</object-name>
-        <condition>
-            <equals>
-                <property>autopilot/locks/heading-armed</property>
-                <value>NAV</value>
-            </equals>
-        </condition>
-    </animation>
-
-    <animation>
-        <type>select</type>
-        <object-name>SPZ.nav.cap</object-name>
-        <condition>
-            <equals>
-                <property>autopilot/locks/heading</property>
-                <value>NAV</value>
-            </equals>
-        </condition>
-    </animation>
-
-    <animation>
-        <type>select</type>
-        <object-name>SPZ.ils.arm</object-name>
-        <condition>
-            <equals>
-                <property>autopilot/locks/heading-armed</property>
-                <value>LOC</value>
-            </equals>
-        </condition>
-    </animation>
-
-    <animation>
-        <type>select</type>
-        <object-name>SPZ.ils.cap</object-name>
-        <condition>
-            <equals>
-                <property>autopilot/locks/heading</property>
-                <value>LOC</value>
-            </equals>
-        </condition>
-    </animation>
-
-    <animation>
-        <type>select</type>
-        <object-name>SPZ.decel.arm</object-name>
-        <condition>
-            <equals>
-                <property>autopilot/locks/altitude-armed</property>
-                <value>DECEL</value>
-            </equals>
-        </condition>
-    </animation>
-
-    <animation>
-        <type>select</type>
-        <object-name>SPZ.decel.cap</object-name>
-        <condition>
-            <equals>
-                <property>autopilot/locks/altitude</property>
-                <value>DECEL</value>
-            </equals>
-        </condition>
-    </animation>
-
-    <animation>
-        <type>select</type>
-        <object-name>SPZ.apr.arm</object-name>
-        <condition>
-            <equals>
-                <property>autopilot/locks/altitude-armed</property>
-                <value>GS</value>
-            </equals>
-        </condition>
-    </animation>
-
-    <animation>
-        <type>select</type>
-        <object-name>SPZ.apr.cap</object-name>
-        <condition>
-            <equals>
-                <property>autopilot/locks/altitude</property>
-                <value>GS</value>
-            </equals>
-        </condition>
-    </animation>
-
-    <animation>
-        <type>select</type>
-        <object-name>SPZ.ias.on</object-name>
-        <condition>
-            <equals>
-                <property>autopilot/locks/altitude</property>
-                <value>IAS</value>
-            </equals>
-        </condition>
-    </animation>
-
-    <animation>
-        <type>select</type>
-        <object-name>SPZ.asel.arm</object-name>
-        <condition>
-            <equals>
-                <property>autopilot/locks/altitude-armed</property>
-                <value>ASEL</value>
-            </equals>
-        </condition>
-    </animation>
-
-    <animation>
-        <type>select</type>
-        <object-name>SPZ.asel.cap</object-name>
-        <condition>
-            <equals>
-                <property>autopilot/locks/altitude</property>
-                <value>ASEL</value>
-            </equals>
-        </condition>
-    </animation>
-
-    <animation>
-        <type>select</type>
-        <object-name>SPZ.bc.arm</object-name>
-        <condition>
-            <equals>
-                <property>autopilot/locks/heading-armed</property>
-                <value>BC</value>
-            </equals>
-        </condition>
-    </animation>
-
-    <animation>
-        <type>select</type>
-        <object-name>SPZ.bc.cap</object-name>
-        <condition>
-            <equals>
-                <property>instrumentation/nav/back-course-btn</property>
-                <value>true</value>
-            </equals>
-        </condition>
-    </animation>
-
-    <animation>
-        <type>select</type>
-        <object-name>SPZ.sby.on</object-name>
-        <condition>
-            <property>autopilot/locks/standby</property>
-        </condition>
-    </animation>
-
-    <animation>
-        <type>select</type>
-        <object-name>SPZ.ga.on</object-name>
-        <condition>
-            <equals>
-                <property>autopilot/locks/altitude</property>
-                <value>GA</value>
-            </equals>
-        </condition>
-    </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>SPZ.hdg</object-name>
-        <action>
-            <button>0</button>
-            <repeatable>false</repeatable>
-            <binding>
-                <command>nasal</command>
-                <script>FD.input("HDG");</script>
-            </binding>
-        </action>
-    </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>SPZ.vs</object-name>
-        <action>
-            <button>0</button>
-            <repeatable>false</repeatable>
-            <binding>
-                <command>nasal</command>
-                <script>FD.input("VS");</script>
-            </binding>
-        </action>
-    </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>SPZ.alt</object-name>
-        <action>
-            <button>0</button>
-            <repeatable>false</repeatable>
-            <binding>
-                <command>nasal</command>
-                <script>FD.input("ALT");</script>
-            </binding>
-        </action>
-    </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>SPZ.nav</object-name>
-        <action>
-            <button>0</button>
-            <repeatable>false</repeatable>
-            <binding>
-                <command>nasal</command>
-                <script>FD.input("NAV");</script>
-            </binding>
-        </action>
-    </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>SPZ.ils</object-name>
-        <action>
-            <button>0</button>
-            <repeatable>false</repeatable>
-            <binding>
-                <command>nasal</command>
-                <script>FD.input("ILS");</script>
-            </binding>
-        </action>
-    </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>SPZ.decel</object-name>
-        <action>
-            <button>0</button>
-            <repeatable>false</repeatable>
-            <binding>
-                <command>nasal</command>
-                <script>FD.input("DECEL");</script>
-            </binding>
-        </action>
-    </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>SPZ.apr</object-name>
-        <action>
-            <button>0</button>
-            <repeatable>false</repeatable>
-            <binding>
-                <command>nasal</command>
-                <script>FD.input("VORAPP");</script>
-            </binding>
-        </action>
-    </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>SPZ.ias</object-name>
-        <action>
-            <button>0</button>
-            <repeatable>false</repeatable>
-            <binding>
-                <command>nasal</command>
-                <script>FD.input("IAS");</script>
-            </binding>
-        </action>
-    </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>SPZ.asel</object-name>
-        <action>
-            <button>0</button>
-            <repeatable>false</repeatable>
-            <binding>
-                <command>nasal</command>
-                <script>FD.input("ALTPRE");</script>
-            </binding>
-        </action>
-    </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>SPZ.bc</object-name>
-        <action>
-            <button>0</button>
-            <repeatable>false</repeatable>
-            <binding>
-                <command>nasal</command>
-                <script>FD.input("BC");</script>
-            </binding>
-        </action>
-    </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>SPZ.sby</object-name>
-        <action>
-            <button>0</button>
-            <repeatable>false</repeatable>
-            <binding>
-                <command>nasal</command>
-                <script>FD.input("SBY");</script>
-            </binding>
-        </action>
-    </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>SPZ.ga</object-name>
-        <action>
-            <button>0</button>
-            <repeatable>false</repeatable>
-            <binding>
-                <command>nasal</command>
-                <command>nasal</command>
-                <script>FD.input("GA");</script>
-            </binding>
-        </action>
-    </animation>
-
-<!-- ASI -->
-
-    <animation>
-        <type>rotate</type>
-        <object-name>ASI.needle</object-name>
-        <property>instrumentation/airspeed-indicator/indicated-speed-kt</property>
-        <interpolation>
-            <entry><ind>0.0</ind><dep>0.0</dep></entry>
-            <entry><ind>20.0</ind><dep>15.0</dep></entry>
-            <entry><ind>40.0</ind><dep>75.0</dep></entry>
-            <entry><ind>80.0</ind><dep>180.0</dep></entry>
-            <entry><ind>120.0</ind><dep>243.0</dep></entry>
-            <entry><ind>160.0</ind><dep>305.0</dep></entry>
-            <entry><ind>200.0</ind><dep>345.0</dep></entry>
-        </interpolation>
-        <axis>
-            <x>-0.985</x>
-            <y>0</y>
-            <z>-0.178</z>
-        </axis>
-        <center>
-            <x-m>-3.052</x-m>
-            <y-m>0.221</y-m>
-            <z-m>-1.509</z-m>
-        </center>
-    </animation>
-
-<!-- lighting -->
-<animation>
-        <type>material</type>
-        <object-name>instruments</object-name>
-        <emission>
-            <red>0.04</red>
-            <green>0.03</green>
-            <blue>0.02</blue>
-            <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
-        </emission>
     </animation>
 
 </PropertyList>

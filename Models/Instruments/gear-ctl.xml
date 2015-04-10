@@ -71,26 +71,54 @@
             <z>0.0</z>
         </axis>
     </animation>
+	
+    <animation>
+         <type>pick</type>
+         <object-name>GearLever</object-name>
+         <action>
+             <button>0</button>
+             <repeatable>false</repeatable>
+             <binding>
+                 <command>nasal</command>
+                 <script>controls.gearDown(-1)</script>
+             </binding>
+             <mod-up>
+                 <binding>
+                     <command>nasal</command>
+                     <script>controls.gearDown(0)</script>
+                 </binding>
+             </mod-up>
+         </action>
+     </animation>
+	 
+     <animation>
+          <type>pick</type>
+          <object-name>Ebrake</object-name>
+          <action>
+              <button>0</button>
+              <repeatable>true</repeatable>
+              <binding>
+                  <command>property-toggle</command>
+                  <property>controls/gear/brake-parking</property>
+              </binding>
+          </action>
+      </animation>
 
-
-
-   <animation>
-        <type>pick</type>
-        <object-name>GearLever</object-name>
-        <action>
-            <button>0</button>
-            <repeatable>false</repeatable>
-            <binding>
-                <command>nasal</command>
-                <script>controls.gearDown(-1)</script>
-            </binding>
-            <mod-up>
-                <binding>
-                    <command>nasal</command>
-                    <script>controls.gearDown(0)</script>
-                </binding>
-            </mod-up>
-        </action>
+    <animation>
+        <type>rotate</type>
+        <object-name>Ebrake</object-name>
+        <property>controls/gear/brake-parking</property>
+        <factor>90</factor>
+        <center>
+            <x-m>0</x-m>
+            <y-m>-0.025</y-m>
+            <z-m>-0.025</z-m>
+        </center>
+        <axis>
+            <x>1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
     </animation>
 
 </PropertyList>
